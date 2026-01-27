@@ -22,12 +22,46 @@
         {
           "id": "1-to-mrowka",
           "name": "PSB Mrówka",
-          "stops": [1, 2, 3, 12, 13, 14, 15, 16, 10, 4, 5, 6, 7, 8, 9, 10, 11]
+          "stops": [
+            { "stopId": 1, "platform": "A" },
+            { "stopId": 2, "platform": "A" },
+            { "stopId": 3, "platform": "A" },
+            { "stopId": 12, "platform": "A" },
+            { "stopId": 13, "platform": "A" },
+            { "stopId": 14, "platform": "A" },
+            { "stopId": 15, "platform": "A" },
+            { "stopId": 16, "platform": "A" },
+            { "stopId": 10, "platform": "A" },
+            { "stopId": 4, "platform": "A" },
+            { "stopId": 5, "platform": "A" },
+            { "stopId": 6, "platform": "A" },
+            { "stopId": 7, "platform": "A" },
+            { "stopId": 8, "platform": "A" },
+            { "stopId": 9, "platform": "A" },
+            { "stopId": 11, "platform": "A" }
+          ]
         },
         {
           "id": "1-from-mrowka",
           "name": "Os. Zamkowa Wola",
-          "stops": [11, 10, 9, 8, 7, 6, 5, 4, 12, 13, 14, 15, 16, 17, 4, 12, 2, 1]
+          "stops": [
+            { "stopId": 11, "platform": "B" },
+            { "stopId": 10, "platform": "B" },
+            { "stopId": 9, "platform": "B" },
+            { "stopId": 8, "platform": "B" },
+            { "stopId": 7, "platform": "B" },
+            { "stopId": 6, "platform": "B" },
+            { "stopId": 5, "platform": "B" },
+            { "stopId": 4, "platform": "B" },
+            { "stopId": 12, "platform": "B" },
+            { "stopId": 13, "platform": "B" },
+            { "stopId": 14, "platform": "B" },
+            { "stopId": 15, "platform": "B" },
+            { "stopId": 16, "platform": "B" },
+            { "stopId": 17, "platform": "B" },
+            { "stopId": 2, "platform": "B" },
+            { "stopId": 1, "platform": "B" }
+          ]
         }
       ]
     },
@@ -40,12 +74,46 @@
         {
           "id": "2-to-domki",
           "name": "Księże Domki",
-          "stops": [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+          "stops": [
+            { "stopId": 18, "platform": "A" },
+            { "stopId": 19, "platform": "A" },
+            { "stopId": 20, "platform": "A" },
+            { "stopId": 21, "platform": "A" },
+            { "stopId": 22, "platform": "A" },
+            { "stopId": 23, "platform": "A" },
+            { "stopId": 24, "platform": "A" },
+            { "stopId": 25, "platform": "A" },
+            { "stopId": 26, "platform": "A" },
+            { "stopId": 27, "platform": "A" },
+            { "stopId": 28, "platform": "A" },
+            { "stopId": 29, "platform": "A" },
+            { "stopId": 30, "platform": "A" },
+            { "stopId": 31, "platform": "A" },
+            { "stopId": 32, "platform": "A" },
+            { "stopId": 33, "platform": "A" }
+          ]
         },
         {
           "id": "2-from-domki",
           "name": "Mszczonowska",
-          "stops": [33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18]
+          "stops": [
+            { "stopId": 33, "platform": "B" },
+            { "stopId": 32, "platform": "B" },
+            { "stopId": 31, "platform": "B" },
+            { "stopId": 30, "platform": "B" },
+            { "stopId": 29, "platform": "B" },
+            { "stopId": 28, "platform": "B" },
+            { "stopId": 27, "platform": "B" },
+            { "stopId": 26, "platform": "B" },
+            { "stopId": 25, "platform": "B" },
+            { "stopId": 24, "platform": "B" },
+            { "stopId": 23, "platform": "B" },
+            { "stopId": 22, "platform": "B" },
+            { "stopId": 21, "platform": "B" },
+            { "stopId": 20, "platform": "B" },
+            { "stopId": 19, "platform": "B" },
+            { "stopId": 18, "platform": "B" }
+          ]
         }
       ]
     }
@@ -54,167 +122,530 @@
     {
       "id": 1,
       "name": "ul. Kazimierza Wielkiego",
-      "coordinates": { "lat": 51.7500, "lng": 20.5000 }
+      "platforms": {
+        "A": {
+          "lat": 51.7500,
+          "lng": 20.5000,
+          "description": "Platform towards PSB Mrówka / Księże Domki"
+        },
+        "B": {
+          "lat": 51.75010,
+          "lng": 20.49990,
+          "description": "Platform towards Zamkowa Wola / Mszczonowska"
+        }
+      }
     },
     {
       "id": 2,
       "name": "ul. Jerozolimska",
-      "coordinates": { "lat": 51.7510, "lng": 20.5010 }
+      "platforms": {
+        "A": {
+          "lat": 51.7510,
+          "lng": 20.5010,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75110,
+          "lng": 20.50090,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 3,
       "name": "Plac Piłsudskiego",
-      "coordinates": { "lat": 51.7520, "lng": 20.5020 }
+      "platforms": {
+        "A": {
+          "lat": 51.7520,
+          "lng": 20.5020,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75210,
+          "lng": 20.50190,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 4,
       "name": "Kościuszki",
-      "coordinates": { "lat": 51.7530, "lng": 20.5030 }
+      "platforms": {
+        "A": {
+          "lat": 51.7530,
+          "lng": 20.5030,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75310,
+          "lng": 20.50290,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 5,
       "name": "Liceum Ogólnokształcące",
-      "coordinates": { "lat": 51.7540, "lng": 20.5040 }
+      "platforms": {
+        "A": {
+          "lat": 51.7540,
+          "lng": 20.5040,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75410,
+          "lng": 20.50390,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 6,
       "name": "Cmentarz",
-      "coordinates": { "lat": 51.7550, "lng": 20.5050 }
+      "platforms": {
+        "A": {
+          "lat": 51.7550,
+          "lng": 20.5050,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75510,
+          "lng": 20.50490,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 7,
       "name": "Sklep Adar",
-      "coordinates": { "lat": 51.7560, "lng": 20.5060 }
+      "platforms": {
+        "A": {
+          "lat": 51.7560,
+          "lng": 20.5060,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75610,
+          "lng": 20.50590,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 8,
       "name": "Orzeszkowej",
-      "coordinates": { "lat": 51.7570, "lng": 20.5070 }
+      "platforms": {
+        "A": {
+          "lat": 51.75233,
+          "lng": 20.5070,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75243,
+          "lng": 20.50690,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 9,
       "name": "Aquarium",
-      "coordinates": { "lat": 51.7580, "lng": 20.5080 }
+      "platforms": {
+        "A": {
+          "lat": 51.75329,
+          "lng": 20.23370,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75339,
+          "lng": 20.23360,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 10,
       "name": "Katowicka (Osiedle)",
-      "coordinates": { "lat": 51.7590, "lng": 20.5090 }
+      "platforms": {
+        "A": {
+          "lat": 51.75238,
+          "lng": 20.22632,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75248,
+          "lng": 20.22622,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 11,
       "name": "PSB Mrówka",
-      "coordinates": { "lat": 51.7600, "lng": 20.5100 }
+      "platforms": {
+        "A": {
+          "lat": 51.75125,
+          "lng": 20.22027,
+          "description": "Terminal platform (arrival)"
+        },
+        "B": {
+          "lat": 51.75135,
+          "lng": 20.22017,
+          "description": "Terminal platform (departure)"
+        }
+      }
     },
     {
       "id": 12,
       "name": "Miła",
-      "coordinates": { "lat": 51.7515, "lng": 20.5015 }
+      "platforms": {
+        "A": {
+          "lat": 51.7515,
+          "lng": 20.5015,
+          "description": "Platform towards PSB Mrówka"
+        },
+        "B": {
+          "lat": 51.75160,
+          "lng": 20.50140,
+          "description": "Platform towards Zamkowa Wola"
+        }
+      }
     },
     {
       "id": 13,
       "name": "Sadowa (od strony Willowej)",
-      "coordinates": { "lat": 51.7516, "lng": 20.5016 }
+      "platforms": {
+        "A": {
+          "lat": 51.7516,
+          "lng": 20.5016,
+          "description": "Platform towards PSB Mrówka (detour route)"
+        },
+        "B": {
+          "lat": 51.75170,
+          "lng": 20.50150,
+          "description": "Platform towards Zamkowa Wola (detour route)"
+        }
+      }
     },
     {
       "id": 14,
       "name": "Willowa",
-      "coordinates": { "lat": 51.7517, "lng": 20.5017 }
+      "platforms": {
+        "A": {
+          "lat": 51.7517,
+          "lng": 20.5017,
+          "description": "Platform towards PSB Mrówka (detour route)"
+        },
+        "B": {
+          "lat": 51.75180,
+          "lng": 20.50160,
+          "description": "Platform towards Zamkowa Wola (detour route)"
+        }
+      }
     },
     {
       "id": 15,
       "name": "Ogrodowa",
-      "coordinates": { "lat": 51.7518, "lng": 20.5018 }
+      "platforms": {
+        "A": {
+          "lat": 51.7518,
+          "lng": 20.5018,
+          "description": "Platform towards PSB Mrówka (detour route)"
+        },
+        "B": {
+          "lat": 51.75190,
+          "lng": 20.50170,
+          "description": "Platform towards Zamkowa Wola (detour route)"
+        }
+      }
     },
     {
       "id": 16,
       "name": "Sadowa (od strony Ogrodowej)",
-      "coordinates": { "lat": 51.7519, "lng": 20.5019 }
+      "platforms": {
+        "A": {
+          "lat": 51.7519,
+          "lng": 20.5019,
+          "description": "Platform towards PSB Mrówka (detour route)"
+        },
+        "B": {
+          "lat": 51.75200,
+          "lng": 20.50180,
+          "description": "Platform towards Zamkowa Wola (detour route)"
+        }
+      }
     },
     {
       "id": 17,
       "name": "Kolejowa",
-      "coordinates": { "lat": 51.7521, "lng": 20.5021 }
+      "platforms": {
+        "A": {
+          "lat": 51.7521,
+          "lng": 20.5021,
+          "description": "Platform (only served on return from Mrówka)"
+        },
+        "B": {
+          "lat": 51.75220,
+          "lng": 20.50200,
+          "description": "Platform towards Zamkowa Wola (detour route)"
+        }
+      }
     },
     {
       "id": 18,
       "name": "ul. Mszczonowska",
-      "coordinates": { "lat": 51.7400, "lng": 20.4900 }
+      "platforms": {
+        "A": {
+          "lat": 51.7400,
+          "lng": 20.4900,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74010,
+          "lng": 20.48990,
+          "description": "Terminal platform (arrival from Domki)"
+        }
+      }
     },
     {
       "id": 19,
       "name": "ul. K. Wielkiego",
-      "coordinates": { "lat": 51.7410, "lng": 20.4910 }
+      "platforms": {
+        "A": {
+          "lat": 51.7410,
+          "lng": 20.4910,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74110,
+          "lng": 20.49090,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 20,
       "name": "Aleksandrówka 1",
-      "coordinates": { "lat": 51.7420, "lng": 20.4920 }
+      "platforms": {
+        "A": {
+          "lat": 51.7420,
+          "lng": 20.4920,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74210,
+          "lng": 20.49190,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 21,
       "name": "Aleksandrówka 2",
-      "coordinates": { "lat": 51.7425, "lng": 20.4925 }
+      "platforms": {
+        "A": {
+          "lat": 51.7425,
+          "lng": 20.4925,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74260,
+          "lng": 20.49240,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 22,
       "name": "ul. Zamkowa Wola",
-      "coordinates": { "lat": 51.7430, "lng": 20.4930 }
+      "platforms": {
+        "A": {
+          "lat": 51.7430,
+          "lng": 20.4930,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74310,
+          "lng": 20.49290,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 23,
       "name": "ul. Targowa",
-      "coordinates": { "lat": 51.7440, "lng": 20.4940 }
+      "platforms": {
+        "A": {
+          "lat": 51.7440,
+          "lng": 20.4940,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74410,
+          "lng": 20.49390,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 24,
       "name": "Al. Konstytucji 3 Maja",
-      "coordinates": { "lat": 51.7450, "lng": 20.4950 }
+      "platforms": {
+        "A": {
+          "lat": 51.7450,
+          "lng": 20.4950,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74510,
+          "lng": 20.49490,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 25,
       "name": "ul. Kościuszki (Liceum)",
-      "coordinates": { "lat": 51.7460, "lng": 20.4960 }
+      "platforms": {
+        "A": {
+          "lat": 51.7460,
+          "lng": 20.4960,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74610,
+          "lng": 20.49590,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 26,
       "name": "ul. Tomaszowska (Cmentarz)",
-      "coordinates": { "lat": 51.7470, "lng": 20.4970 }
+      "platforms": {
+        "A": {
+          "lat": 51.7470,
+          "lng": 20.4970,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74710,
+          "lng": 20.49690,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 27,
       "name": "ul. Tomaszowska (Adar)",
-      "coordinates": { "lat": 51.7480, "lng": 20.4980 }
+      "platforms": {
+        "A": {
+          "lat": 51.7480,
+          "lng": 20.4980,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74810,
+          "lng": 20.49790,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 28,
       "name": "Rondo J.P.II",
-      "coordinates": { "lat": 51.7490, "lng": 20.4990 }
+      "platforms": {
+        "A": {
+          "lat": 51.7490,
+          "lng": 20.4990,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.74910,
+          "lng": 20.49890,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 29,
       "name": "ul. Przemysłowa",
-      "coordinates": { "lat": 51.7500, "lng": 20.5000 }
+      "platforms": {
+        "A": {
+          "lat": 51.7500,
+          "lng": 20.5000,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.75010,
+          "lng": 20.49990,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 30,
       "name": "ul. Zwolińskiego",
-      "coordinates": { "lat": 51.7510, "lng": 20.5010 }
+      "platforms": {
+        "A": {
+          "lat": 51.7510,
+          "lng": 20.5010,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.75110,
+          "lng": 20.50090,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 31,
       "name": "ul. 1-Maja",
-      "coordinates": { "lat": 51.7520, "lng": 20.5020 }
+      "platforms": {
+        "A": {
+          "lat": 51.7520,
+          "lng": 20.5020,
+          "description": "Platform towards Księże Domki"
+        },
+        "B": {
+          "lat": 51.75210,
+          "lng": 20.50190,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 32,
       "name": "ul. Księże Domki (Zalew)",
-      "coordinates": { "lat": 51.7530, "lng": 20.5030 }
+      "platforms": {
+        "A": {
+          "lat": 51.7530,
+          "lng": 20.5030,
+          "description": "Platform towards Granica"
+        },
+        "B": {
+          "lat": 51.75310,
+          "lng": 20.50290,
+          "description": "Platform towards Mszczonowska"
+        }
+      }
     },
     {
       "id": 33,
       "name": "ul. Księże Domki (Granica)",
-      "coordinates": { "lat": 51.7540, "lng": 20.5040 }
+      "platforms": {
+        "A": {
+          "lat": 51.7540,
+          "lng": 20.5040,
+          "description": "Terminal platform (arrival)"
+        },
+        "B": {
+          "lat": 51.75410,
+          "lng": 20.50390,
+          "description": "Terminal platform (departure)"
+        }
+      }
     }
   ],
   "schedules": {
