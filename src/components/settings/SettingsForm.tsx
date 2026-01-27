@@ -11,6 +11,10 @@ import {
   IconButton,
   Typography,
   Paper,
+  FormControl,
+  Select,
+  MenuItem,
+  type SelectChangeEvent,
 } from '@mui/material';
 import {
   DarkMode,
@@ -19,13 +23,18 @@ import {
   Home,
   Info,
   Close,
+  Language,
 } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useSettings } from '@/contexts/SettingsContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { StopSelector } from '@/components/home/StopSelector';
 import { getStopById } from '@/utils/scheduleParser';
+import { setLanguage, supportedLanguages, detectBrowserLanguage, type SupportedLanguage } from '@/i18n';
+import type { Language as LanguageType } from '@/types';
 
 export function SettingsForm() {
+  const { t } = useTranslation();
   const { settings, updateSettings } = useSettings();
   const { toggleDarkMode } = useTheme();
 
@@ -45,12 +54,26 @@ export function SettingsForm() {
     });
   };
 
+  const handleLanguageChange = (event: SelectChangeEvent<string>) => {
+    const value = event.target.value;
+    if (value === 'auto') {
+      setLanguage(null);
+      updateSettings({ language: null });
+    } else {
+      const lang = value as SupportedLanguage;
+      setLanguage(lang);
+      updateSettings({ language: lang as LanguageType });
+    }
+  };
+
+  const currentLanguageValue = settings.language ?? 'auto';
+
   return (
     <Box>
       {/* Preferences */}
       <List
         subheader={
-          <ListSubheader component="div">Preferences</ListSubheader>
+          <ListSubheader component="div">{t('settings.preferences')}</ListSubheader>
         }
       >
         <ListItem>
@@ -59,12 +82,12 @@ export function SettingsForm() {
           </ListItemIcon>
           <Box sx={{ flex: 1 }}>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              Default Home Stop
+              {t('settings.defaultHomeStop')}
             </Typography>
             <StopSelector
               value={settings.defaultStopId}
               onChange={stopId => updateSettings({ defaultStopId: stopId })}
-              label="Select default stop"
+              label={t('settings.selectDefaultStop')}
             />
           </Box>
         </ListItem>
@@ -73,14 +96,14 @@ export function SettingsForm() {
           <ListItemIcon>
             <AccessTime />
           </ListItemIcon>
-          <ListItemText primary="24-hour time format" />
+          <ListItemText primary={t('settings.timeFormat24h')} />
           <Switch
             edge="end"
             checked={settings.timeFormat === '24h'}
             onChange={e =>
               updateSettings({ timeFormat: e.target.checked ? '24h' : '12h' })
             }
-            inputProps={{ 'aria-label': 'Toggle 24-hour time format' }}
+            inputProps={{ 'aria-label': t('settings.toggleTimeFormat') }}
           />
         </ListItem>
 
@@ -88,13 +111,36 @@ export function SettingsForm() {
           <ListItemIcon>
             <DarkMode />
           </ListItemIcon>
-          <ListItemText primary="Dark mode" />
+          <ListItemText primary={t('settings.darkMode')} />
           <Switch
             edge="end"
             checked={settings.darkMode}
             onChange={toggleDarkMode}
-            inputProps={{ 'aria-label': 'Toggle dark mode' }}
+            inputProps={{ 'aria-label': t('settings.toggleDarkMode') }}
           />
+        </ListItem>
+
+        <ListItem>
+          <ListItemIcon>
+            <Language />
+          </ListItemIcon>
+          <ListItemText primary={t('settings.language')} />
+          <FormControl size="small" sx={{ minWidth: 150 }}>
+            <Select
+              value={currentLanguageValue}
+              onChange={handleLanguageChange}
+              aria-label={t('settings.selectLanguage')}
+            >
+              <MenuItem value="auto">
+                Auto ({t(`languages.${detectBrowserLanguage()}`)})
+              </MenuItem>
+              {supportedLanguages.map(lang => (
+                <MenuItem key={lang} value={lang}>
+                  {t(`languages.${lang}`)}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </ListItem>
       </List>
 
@@ -104,7 +150,7 @@ export function SettingsForm() {
       <List
         subheader={
           <ListSubheader component="div">
-            Favorite Stops ({settings.favoriteStops.length}/3)
+            {t('settings.favoriteStops', { count: settings.favoriteStops.length })}
           </ListSubheader>
         }
       >
@@ -124,7 +170,7 @@ export function SettingsForm() {
                     label={stop.name}
                     onDelete={() => handleRemoveFavorite(stopId)}
                     deleteIcon={
-                      <IconButton size="small" aria-label={`Remove ${stop.name} from favorites`}>
+                      <IconButton size="small" aria-label={t('settings.removeFavorite', { stopName: stop.name })}>
                         <Close fontSize="small" />
                       </IconButton>
                     }
@@ -133,7 +179,7 @@ export function SettingsForm() {
               })}
               {settings.favoriteStops.length === 0 && (
                 <Typography variant="body2" color="text.disabled">
-                  No favorite stops yet
+                  {t('settings.noFavoriteStops')}
                 </Typography>
               )}
             </Box>
@@ -143,7 +189,7 @@ export function SettingsForm() {
               <StopSelector
                 value={null}
                 onChange={handleAddFavorite}
-                label="Add favorite stop"
+                label={t('settings.addFavoriteStop')}
               />
             )}
           </Box>
@@ -154,23 +200,22 @@ export function SettingsForm() {
 
       {/* About */}
       <List
-        subheader={<ListSubheader component="div">About</ListSubheader>}
+        subheader={<ListSubheader component="div">{t('settings.about')}</ListSubheader>}
       >
         <ListItem>
           <ListItemIcon>
             <Info />
           </ListItemIcon>
           <ListItemText
-            primary="Bus Schedule Helper"
-            secondary="Version 1.0.0"
+            primary={t('app.name')}
+            secondary={t('app.version')}
           />
         </ListItem>
       </List>
 
       <Paper sx={{ m: 2, p: 2 }} variant="outlined">
         <Typography variant="caption" color="text.secondary">
-          This app provides municipal bus schedule information. Data may not reflect
-          real-time conditions. Always verify with official sources.
+          {t('settings.disclaimer')}
         </Typography>
       </Paper>
     </Box>

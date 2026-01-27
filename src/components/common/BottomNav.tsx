@@ -1,17 +1,19 @@
 import { Paper, BottomNavigation, BottomNavigationAction } from '@mui/material';
 import { Home, Schedule, Map, Settings } from '@mui/icons-material';
 import { useLocation, useNavigate } from 'react-router-dom';
-
-const navItems = [
-  { label: 'Home', icon: <Home />, path: '/' },
-  { label: 'Schedule', icon: <Schedule />, path: '/schedule' },
-  { label: 'Map', icon: <Map />, path: '/map' },
-  { label: 'Settings', icon: <Settings />, path: '/settings' },
-];
+import { useTranslation } from 'react-i18next';
 
 export function BottomNav() {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+
+  const navItems = [
+    { label: t('nav.home'), icon: <Home />, path: '/' },
+    { label: t('nav.schedule'), icon: <Schedule />, path: '/schedule' },
+    { label: t('nav.map'), icon: <Map />, path: '/map' },
+    { label: t('nav.settings'), icon: <Settings />, path: '/settings' },
+  ];
 
   const currentIndex = navItems.findIndex(item => item.path === location.pathname);
 
@@ -35,7 +37,7 @@ export function BottomNav() {
             key={item.path}
             label={item.label}
             icon={item.icon}
-            aria-label={`Navigate to ${item.label}`}
+            aria-label={t('nav.navigateTo', { label: item.label })}
           />
         ))}
       </BottomNavigation>

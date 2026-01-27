@@ -10,8 +10,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: 'Bus Schedule Helper',
-        short_name: 'Bus Schedule',
+        name: 'Autobusy | Rawa Mazowiecka',
+        short_name: 'Autobusy',
         description: 'Municipal bus schedule with offline support',
         theme_color: '#1976D2',
         background_color: '#ffffff',

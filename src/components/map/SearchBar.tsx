@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Paper, InputBase, IconButton, List, ListItemButton, ListItemText, Box } from '@mui/material';
 import { Search, Close } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import type { Stop } from '@/types';
 import { getAllStops } from '@/utils/scheduleParser';
 
@@ -9,6 +10,7 @@ interface SearchBarProps {
 }
 
 export function SearchBar({ onSelectStop }: SearchBarProps) {
+  const { t } = useTranslation();
   const [query, setQuery] = useState('');
   const [showResults, setShowResults] = useState(false);
 
@@ -53,7 +55,7 @@ export function SearchBar({ onSelectStop }: SearchBarProps) {
       >
         <Search sx={{ color: 'text.secondary', mr: 1 }} />
         <InputBase
-          placeholder="Search stops..."
+          placeholder={t('map.searchStops')}
           value={query}
           onChange={e => {
             setQuery(e.target.value);
@@ -61,10 +63,10 @@ export function SearchBar({ onSelectStop }: SearchBarProps) {
           }}
           onFocus={() => query.length > 0 && setShowResults(true)}
           sx={{ flex: 1 }}
-          inputProps={{ 'aria-label': 'Search stops' }}
+          inputProps={{ 'aria-label': t('map.searchStopsLabel') }}
         />
         {query && (
-          <IconButton size="small" onClick={handleClear} aria-label="Clear search">
+          <IconButton size="small" onClick={handleClear} aria-label={t('map.clearSearch')}>
             <Close fontSize="small" />
           </IconButton>
         )}

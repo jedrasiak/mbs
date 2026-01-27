@@ -1,6 +1,7 @@
 import { AppBar, Toolbar, Typography, IconButton, Box } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
   title: string;
@@ -9,6 +10,7 @@ interface HeaderProps {
 }
 
 export function Header({ title, showBack = false, actions }: HeaderProps) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
@@ -19,7 +21,7 @@ export function Header({ title, showBack = false, actions }: HeaderProps) {
             edge="start"
             color="inherit"
             onClick={() => navigate(-1)}
-            aria-label="Go back"
+            aria-label={t('nav.goBack')}
             sx={{ mr: 1 }}
           >
             <ArrowBack />

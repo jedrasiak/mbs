@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box, Container, Alert, Typography } from '@mui/material';
 import { EventBusy } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { Header } from '@/components/common';
 import {
   LineTabs,
@@ -17,12 +18,14 @@ import {
 import {
   getDayType,
   getServiceStatus,
-  formatDate,
   getNextOperatingDay,
 } from '@/utils/timeCalculations';
+import { useLocalizedDate } from '@/hooks/useLocalizedDate';
 import type { DayType } from '@/types';
 
 export function SchedulePage() {
+  const { t } = useTranslation();
+  const { formatDate } = useLocalizedDate();
   const lines = getAllLines();
   const defaultLine = lines[0];
   const serviceStatus = getServiceStatus();
@@ -66,13 +69,13 @@ export function SchedulePage() {
 
   return (
     <Box sx={{ pb: 10 }}>
-      <Header title="Full Schedule" />
+      <Header title={t('schedule.fullSchedule')} />
       <Container maxWidth="lg" sx={{ pt: 2 }}>
         {/* Non-operating day alert */}
         {!serviceStatus.isOperating && (
           <Alert severity="warning" icon={<EventBusy />} sx={{ mb: 2 }}>
-            No bus service today ({serviceStatus.reason}).
-            Next service: {formatDate(getNextOperatingDay())}
+            {t('home.noServiceToday')} ({serviceStatus.reason}).{' '}
+            {t('home.nextService', { date: formatDate(getNextOperatingDay()) })}
           </Alert>
         )}
 
@@ -98,7 +101,7 @@ export function SchedulePage() {
           <TimeTable directionId={selectedDirectionId} dayType={dayType} />
         ) : (
           <Typography color="text.secondary" textAlign="center" sx={{ py: 4 }}>
-            Select a direction to view the schedule
+            {t('schedule.selectDirection')}
           </Typography>
         )}
       </Container>

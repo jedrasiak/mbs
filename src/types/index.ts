@@ -99,12 +99,16 @@ export interface ServiceStatus {
   reason?: string; // e.g., "Christmas", "Easter Sunday"
 }
 
+// Supported language codes
+export type Language = 'en' | 'pl' | 'uk';
+
 // User settings
 export interface UserSettings {
   defaultStopId: number | null;
   favoriteStops: number[];
   timeFormat: '12h' | '24h';
   darkMode: boolean;
+  language: Language | null; // null means use browser default
 }
 
 // Geolocation state

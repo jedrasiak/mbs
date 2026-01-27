@@ -1,13 +1,28 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
-import { SettingsProvider } from '@/contexts/SettingsContext';
+import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { BottomNav } from '@/components/common';
 import { HomePage, SchedulePage, MapPage, SettingsPage } from '@/pages';
+import { setLanguage } from '@/i18n';
+
+function LanguageSync() {
+  const { settings } = useSettings();
+
+  useEffect(() => {
+    // Sync language from settings on mount and when it changes
+    // null means "Auto" - detect from browser
+    setLanguage(settings.language);
+  }, [settings.language]);
+
+  return null;
+}
 
 function AppContent() {
   return (
     <BrowserRouter>
+      <LanguageSync />
       <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
         <Routes>
           <Route path="/" element={<HomePage />} />

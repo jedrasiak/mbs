@@ -1,5 +1,6 @@
 import { Box, Fab, Tooltip } from '@mui/material';
 import { MyLocation, Layers } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 
 interface MapFABProps {
   onCenterUser: () => void;
@@ -8,6 +9,8 @@ interface MapFABProps {
 }
 
 export function MapFAB({ onCenterUser, onToggleLayers, showLayersButton = false }: MapFABProps) {
+  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -21,24 +24,24 @@ export function MapFAB({ onCenterUser, onToggleLayers, showLayersButton = false 
       }}
     >
       {showLayersButton && onToggleLayers && (
-        <Tooltip title="Toggle layers" placement="left">
+        <Tooltip title={t('map.toggleLayers')} placement="left">
           <Fab
             size="small"
             color="default"
             onClick={onToggleLayers}
-            aria-label="Toggle map layers"
+            aria-label={t('map.toggleMapLayers')}
             sx={{ bgcolor: 'background.paper' }}
           >
             <Layers />
           </Fab>
         </Tooltip>
       )}
-      <Tooltip title="My location" placement="left">
+      <Tooltip title={t('map.myLocation')} placement="left">
         <Fab
           size="medium"
           color="primary"
           onClick={onCenterUser}
-          aria-label="Center on my location"
+          aria-label={t('map.centerOnMyLocation')}
         >
           <MyLocation />
         </Fab>

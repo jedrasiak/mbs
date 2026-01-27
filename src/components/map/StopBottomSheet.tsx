@@ -1,15 +1,17 @@
 import { Paper, Box, Typography, Chip, IconButton, Divider, Button } from '@mui/material';
 import { Close, Directions, ArrowForward } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import type { Stop } from '@/types';
 import { useNextDepartures } from '@/hooks/useNextDepartures';
 import { useSettings } from '@/contexts/SettingsContext';
+import { useLocalizedTime } from '@/hooks/useLocalizedTime';
 import {
   formatDistance,
   calculateDistance,
   getDirectionsServingPlatform,
 } from '@/utils/scheduleParser';
-import { formatTime, formatMinutesUntil, getServiceStatus } from '@/utils/timeCalculations';
+import { formatTime, getServiceStatus } from '@/utils/timeCalculations';
 
 interface StopBottomSheetProps {
   stop: Stop;
@@ -24,8 +26,10 @@ export function StopBottomSheet({
   userLocation,
   onClose,
 }: StopBottomSheetProps) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { settings } = useSettings();
+  const { formatMinutesUntil } = useLocalizedTime();
   const departures = useNextDepartures(stop.id, 5);
   const serviceStatus = getServiceStatus();
 
@@ -87,7 +91,7 @@ export function StopBottomSheet({
               {stop.name}
             </Typography>
             <Typography variant="caption" color="text.secondary">
-              Platform {platform}
+              {t('map.platform', { platform })}
               {platformInfo.description && ` - ${platformInfo.description}`}
             </Typography>
             <Box sx={{ display: 'flex', gap: 1, mt: 1, alignItems: 'center', flexWrap: 'wrap' }}>
@@ -114,7 +118,7 @@ export function StopBottomSheet({
               )}
             </Box>
           </Box>
-          <IconButton onClick={onClose} size="small" aria-label="Close">
+          <IconButton onClick={onClose} size="small" aria-label={t('map.close')}>
             <Close />
           </IconButton>
         </Box>
@@ -125,16 +129,16 @@ export function StopBottomSheet({
       {/* Departures */}
       <Box sx={{ p: 2 }}>
         <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-          Next Departures from Platform {platform}
+          {t('map.nextDeparturesFrom', { platform })}
         </Typography>
 
         {!serviceStatus.isOperating ? (
           <Typography variant="body2" color="warning.main">
-            No service today ({serviceStatus.reason})
+            {t('map.noServiceToday', { reason: serviceStatus.reason })}
           </Typography>
         ) : platformDepartures.length === 0 ? (
           <Typography variant="body2" color="text.disabled">
-            No more departures from this platform today
+            {t('map.noMoreDepartures')}
           </Typography>
         ) : (
           platformDepartures.slice(0, 4).map((dep, index) => (
@@ -191,7 +195,7 @@ export function StopBottomSheet({
           sx={{ mt: 2 }}
           onClick={() => navigate('/schedule')}
         >
-          View Full Schedule
+          {t('map.viewFullSchedule')}
         </Button>
       </Box>
     </Paper>

@@ -1,5 +1,6 @@
 import { Box, Chip, Typography } from '@mui/material';
 import { ArrowForward } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import type { Direction } from '@/types';
 import { getDirectionsForLine, getLineById } from '@/utils/scheduleParser';
 
@@ -14,6 +15,7 @@ export function DirectionSelector({
   selectedDirectionId,
   onChange,
 }: DirectionSelectorProps) {
+  const { t } = useTranslation();
   const directions = getDirectionsForLine(lineId);
   const line = getLineById(lineId);
 
@@ -24,7 +26,7 @@ export function DirectionSelector({
   return (
     <Box sx={{ mb: 2 }}>
       <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1 }}>
-        Select direction
+        {t('schedule.selectDirectionLabel')}
       </Typography>
       <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
         {directions.map((direction: Direction) => (

@@ -1,5 +1,6 @@
 import { useState, useCallback, Suspense, lazy } from 'react';
 import { Box } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import { Header, LoadingSpinner } from '@/components/common';
 import { MapFAB, SearchBar, StopBottomSheet } from '@/components/map';
 import { useGeolocation } from '@/hooks/useGeolocation';
@@ -11,6 +12,7 @@ const BusMap = lazy(() =>
 );
 
 export function MapPage() {
+  const { t } = useTranslation();
   const [selectedStopId, setSelectedStopId] = useState<number | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<'A' | 'B' | null>(null);
   const [centerOnUser, setCenterOnUser] = useState(false);
@@ -50,7 +52,7 @@ export function MapPage() {
 
   return (
     <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Header title="Route Map" />
+      <Header title={t('map.routeMap')} />
       <Box sx={{ flex: 1, position: 'relative' }}>
         <Suspense fallback={<LoadingSpinner fullScreen />}>
           <BusMap

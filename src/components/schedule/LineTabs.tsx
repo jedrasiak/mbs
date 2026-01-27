@@ -1,4 +1,5 @@
 import { Tabs, Tab, Box, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import type { Line } from '@/types';
 import { getAllLines, doesLineOperateOnDayType } from '@/utils/scheduleParser';
 import { getDayType } from '@/utils/timeCalculations';
@@ -11,6 +12,7 @@ interface LineTabsProps {
 }
 
 export function LineTabs({ value, onChange, dayType }: LineTabsProps) {
+  const { t } = useTranslation();
   const lines = getAllLines();
   const currentDayType = dayType ?? getDayType() ?? 'weekday';
 
@@ -39,7 +41,7 @@ export function LineTabs({ value, onChange, dayType }: LineTabsProps) {
                   <span>{line.name}</span>
                   {!operates && (
                     <Typography variant="caption" sx={{ opacity: 0.7 }}>
-                      (weekdays only)
+                      {t('schedule.weekdaysOnly')}
                     </Typography>
                   )}
                 </Box>

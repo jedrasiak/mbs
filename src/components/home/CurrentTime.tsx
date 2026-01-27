@@ -1,16 +1,19 @@
 import { Typography, Box } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import { useCurrentTime } from '@/hooks/useCurrentTime';
 import { useSettings } from '@/contexts/SettingsContext';
+import { useLocalizedDate } from '@/hooks/useLocalizedDate';
 import { formatCurrentTime, isWeekend } from '@/utils/timeCalculations';
-import { format } from 'date-fns';
 
 export function CurrentTime() {
+  const { t } = useTranslation();
   const currentTime = useCurrentTime();
   const { settings } = useSettings();
+  const { formatDateShort } = useLocalizedDate();
 
   const timeString = formatCurrentTime(settings.timeFormat === '24h');
-  const dateString = format(currentTime, 'EEEE, MMMM d');
-  const dayType = isWeekend(currentTime) ? 'Weekend Schedule' : 'Weekday Schedule';
+  const dateString = formatDateShort(currentTime);
+  const dayType = isWeekend(currentTime) ? t('home.weekendSchedule') : t('home.weekdaySchedule');
 
   return (
     <Box sx={{ textAlign: 'center', mb: 3 }}>

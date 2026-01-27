@@ -7,6 +7,7 @@ export const DEFAULT_SETTINGS: UserSettings = {
   favoriteStops: [],
   timeFormat: '24h',
   darkMode: false,
+  language: null, // null means use browser default
 };
 
 export function loadSettings(): UserSettings {

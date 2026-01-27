@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box, Container, Alert } from '@mui/material';
 import { EventBusy } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { Header } from '@/components/common';
 import {
   StopSelector,
@@ -11,10 +12,13 @@ import {
 import { useSettings } from '@/contexts/SettingsContext';
 import { useNextDepartures } from '@/hooks/useNextDepartures';
 import { getStopById } from '@/utils/scheduleParser';
-import { getServiceStatus, formatDate, getNextOperatingDay } from '@/utils/timeCalculations';
+import { getServiceStatus, getNextOperatingDay } from '@/utils/timeCalculations';
+import { useLocalizedDate } from '@/hooks/useLocalizedDate';
 
 export function HomePage() {
+  const { t } = useTranslation();
   const { settings } = useSettings();
+  const { formatDate } = useLocalizedDate();
   const [selectedStopId, setSelectedStopId] = useState<number | null>(
     settings.defaultStopId
   );
@@ -32,7 +36,7 @@ export function HomePage() {
 
   return (
     <Box sx={{ pb: 10 }}>
-      <Header title="Bus Schedule" />
+      <Header title={t('app.title')} />
       <Container maxWidth="sm" sx={{ pt: 3 }}>
         <CurrentTime />
 
@@ -43,15 +47,15 @@ export function HomePage() {
             icon={<EventBusy />}
             sx={{ mb: 2 }}
           >
-            No bus service today ({serviceStatus.reason}).
-            Next service: {formatDate(getNextOperatingDay())}
+            {t('home.noServiceToday')} ({serviceStatus.reason}).{' '}
+            {t('home.nextService', { date: formatDate(getNextOperatingDay()) })}
           </Alert>
         )}
 
         <StopSelector
           value={selectedStopId}
           onChange={setSelectedStopId}
-          label="Select your stop"
+          label={t('home.selectYourStop')}
         />
 
         <DepartureList

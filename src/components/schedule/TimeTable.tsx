@@ -1,4 +1,5 @@
 import { Box, Typography, Paper, useTheme } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import type { Stop, DayType, Trip } from '@/types';
 import {
   getStopsForDirection,
@@ -15,6 +16,7 @@ interface TimeTableProps {
 }
 
 export function TimeTable({ directionId, dayType }: TimeTableProps) {
+  const { t } = useTranslation();
   const theme = useTheme();
   const { settings } = useSettings();
   const direction = getDirectionById(directionId);
@@ -25,7 +27,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
     return (
       <Paper sx={{ p: 3, textAlign: 'center' }}>
         <Typography color="text.secondary">
-          Select a direction to view the schedule
+          {t('schedule.selectDirection')}
         </Typography>
       </Paper>
     );
@@ -35,7 +37,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
     return (
       <Paper sx={{ p: 3, textAlign: 'center' }}>
         <Typography color="text.secondary">
-          No schedule available for this direction on {dayType}s
+          {t('schedule.noScheduleAvailable', { dayType })}
         </Typography>
       </Paper>
     );
@@ -50,7 +52,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
   return (
     <Box>
       <Typography variant="subtitle1" fontWeight={600} sx={{ mb: 1 }}>
-        To {direction.name}
+        {t('schedule.to', { destination: direction.name })}
       </Typography>
       <Paper
         sx={{
@@ -78,7 +80,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
               fontWeight: 600,
             }}
           >
-            Stop
+            {t('schedule.stop')}
           </Box>
           {trips.map((trip: Trip, index: number) => {
             const isCurrentTrip = index === currentTripIndex;

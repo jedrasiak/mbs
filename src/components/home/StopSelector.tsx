@@ -1,4 +1,5 @@
 import { Autocomplete, TextField } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import type { Stop } from '@/types';
 import { getAllStops } from '@/utils/scheduleParser';
 
@@ -8,9 +9,11 @@ interface StopSelectorProps {
   label?: string;
 }
 
-export function StopSelector({ value, onChange, label = 'Select Stop' }: StopSelectorProps) {
+export function StopSelector({ value, onChange, label }: StopSelectorProps) {
+  const { t } = useTranslation();
   const stops = getAllStops();
   const selectedStop = stops.find(stop => stop.id === value) ?? null;
+  const displayLabel = label ?? t('home.selectStop');
 
   return (
     <Autocomplete
@@ -24,7 +27,7 @@ export function StopSelector({ value, onChange, label = 'Select Stop' }: StopSel
         return (
           <TextField
             {...rest}
-            label={label}
+            label={displayLabel}
             variant="outlined"
             fullWidth
             InputLabelProps={InputLabelProps}

@@ -1,8 +1,10 @@
 import { Card, CardContent, Box, Typography, Chip } from '@mui/material';
 import { ArrowForward } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import type { Departure } from '@/types';
 import { useSettings } from '@/contexts/SettingsContext';
-import { formatTime, formatMinutesUntil } from '@/utils/timeCalculations';
+import { formatTime } from '@/utils/timeCalculations';
+import { useLocalizedTime } from '@/hooks/useLocalizedTime';
 import { ACCENT_COLOR } from '@/theme/theme';
 
 interface DepartureCardProps {
@@ -11,7 +13,9 @@ interface DepartureCardProps {
 }
 
 export function DepartureCard({ departure, isNext = false }: DepartureCardProps) {
+  const { t } = useTranslation();
   const { settings } = useSettings();
+  const { formatMinutesUntil } = useLocalizedTime();
   const formattedTime = formatTime(departure.time, settings.timeFormat === '24h');
   const timeUntil = formatMinutesUntil(departure.minutesUntil);
 
@@ -26,7 +30,7 @@ export function DepartureCard({ departure, isNext = false }: DepartureCardProps)
     >
       {isNext && (
         <Chip
-          label="NEXT BUS"
+          label={t('home.nextBus')}
           size="small"
           sx={{
             position: 'absolute',

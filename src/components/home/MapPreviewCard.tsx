@@ -1,8 +1,10 @@
 import { Card, CardContent, CardActionArea, Typography, Box } from '@mui/material';
 import { Map as MapIcon, ChevronRight } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export function MapPreviewCard() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
@@ -14,10 +16,10 @@ export function MapPreviewCard() {
               <MapIcon color="primary" />
               <Box>
                 <Typography variant="subtitle1" fontWeight={500}>
-                  View Route Map
+                  {t('home.viewRouteMap')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  See all stops and your location
+                  {t('home.seeAllStops')}
                 </Typography>
               </Box>
             </Box>

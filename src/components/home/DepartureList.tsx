@@ -1,8 +1,10 @@
 import { Box, Typography, Paper } from '@mui/material';
 import { Schedule, EventBusy } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import type { Departure, ServiceStatus } from '@/types';
 import { DepartureCard } from './DepartureCard';
-import { getServiceStatus, getNextOperatingDay, formatDate } from '@/utils/timeCalculations';
+import { getServiceStatus, getNextOperatingDay } from '@/utils/timeCalculations';
+import { useLocalizedDate } from '@/hooks/useLocalizedDate';
 
 interface DepartureListProps {
   departures: Departure[];
@@ -11,6 +13,8 @@ interface DepartureListProps {
 }
 
 export function DepartureList({ departures, stopName, serviceStatus }: DepartureListProps) {
+  const { t } = useTranslation();
+  const { formatDate } = useLocalizedDate();
   const status = serviceStatus ?? getServiceStatus();
 
   // Non-operating day
@@ -27,13 +31,13 @@ export function DepartureList({ departures, stopName, serviceStatus }: Departure
       >
         <EventBusy sx={{ fontSize: 48, color: 'warning.main', mb: 2 }} />
         <Typography variant="h6" color="text.primary" gutterBottom>
-          No Service Today
+          {t('home.noServiceToday')}
         </Typography>
         <Typography variant="body1" color="text.secondary" gutterBottom>
-          {status.reason ? `Buses do not operate on ${status.reason}` : 'Buses are not operating today'}
+          {status.reason ? t('home.busesDoNotOperate', { reason: status.reason }) : t('home.busesNotOperatingToday')}
         </Typography>
         <Typography variant="body2" color="text.disabled" sx={{ mt: 2 }}>
-          Next service: {formatDate(nextOperatingDay)}
+          {t('home.nextService', { date: formatDate(nextOperatingDay) })}
         </Typography>
       </Paper>
     );
@@ -51,10 +55,10 @@ export function DepartureList({ departures, stopName, serviceStatus }: Departure
       >
         <Schedule sx={{ fontSize: 48, color: 'text.disabled', mb: 2 }} />
         <Typography variant="h6" color="text.secondary">
-          No more buses today
+          {t('home.noMoreBusesToday')}
         </Typography>
         <Typography variant="body2" color="text.disabled">
-          Check back tomorrow for the schedule
+          {t('home.checkBackTomorrow')}
         </Typography>
       </Paper>
     );
@@ -64,7 +68,7 @@ export function DepartureList({ departures, stopName, serviceStatus }: Departure
     <Box>
       {stopName && (
         <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 1.5 }}>
-          Departures from {stopName}
+          {t('home.departuresFrom', { stopName })}
         </Typography>
       )}
       {departures.map((departure, index) => (
