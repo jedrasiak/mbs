@@ -29,232 +29,232 @@
       "id": 1,
       "name": "Kazimierza Wielkiego",
       "platforms": {
-        "A": { "lat": 51.7500, "lng": 20.5000, "description": "Platform towards Mrówka / Księże Domki" },
-        "B": { "lat": 51.75010, "lng": 20.49990, "description": "Platform towards center / Mszczonowska" }
+        "A": { "lat": 51.773347452781, "lng": 20.260259433666647, "description": "Kierunek: Katowicka (Mrówka) / Księże Domki" },
+        "B": { "lat": 51.773347452781, "lng": 20.260259433666647, "description": "Kierunek: Mszczonowska" }
       }
     },
     {
       "id": 2,
       "name": "Jerozolimska",
       "platforms": {
-        "A": { "lat": 51.7510, "lng": 20.5010, "description": "Platform towards Mrówka" },
-        "B": { "lat": 51.75110, "lng": 20.50090, "description": "Platform towards Kazimierza Wielkiego" }
+        "A": { "lat": 51.76739574498035, "lng": 20.259705502790712, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.767915678886816, "lng": 20.260332520619848, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 3,
       "name": "Plac Piłsudskiego",
       "platforms": {
-        "A": { "lat": 51.7520, "lng": 20.5020, "description": "Platform towards Mrówka" },
-        "B": { "lat": 51.75210, "lng": 20.50190, "description": "Platform towards Kazimierza Wielkiego" }
+        "A": { "lat": 51.76586085629598, "lng": 20.254150291694906, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.76586085629598, "lng": 20.254150291694906, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 4,
       "name": "Miła",
       "platforms": {
-        "A": { "lat": 51.7515, "lng": 20.5015, "description": "Platform towards Mrówka" },
-        "B": { "lat": 51.75160, "lng": 20.50140, "description": "Platform towards Kazimierza Wielkiego" }
+        "A": { "lat": 51.76488638701276, "lng": 20.256501619573626, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.76488638701276, "lng": 20.256501619573626, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 5,
       "name": "Sadowa - Willowa",
       "platforms": {
-        "A": { "lat": 51.7516, "lng": 20.5016, "description": "Platform towards Mrówka (detour)" },
-        "B": { "lat": 51.75170, "lng": 20.50150, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+        "A": { "lat": 51.769248184728106, "lng": 20.244112287120764, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.769248184728106, "lng": 20.244112287120764, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 6,
       "name": "Willowa",
       "platforms": {
-        "A": { "lat": 51.7517, "lng": 20.5017, "description": "Platform towards Mrówka (detour)" },
-        "B": { "lat": 51.75180, "lng": 20.50160, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+        "A": { "lat": 51.770577096948706, "lng": 20.24173552036208, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.770577096948706, "lng": 20.24173552036208, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 7,
       "name": "Ogrodowa",
       "platforms": {
-        "A": { "lat": 51.7518, "lng": 20.5018, "description": "Platform towards Mrówka (detour)" },
-        "B": { "lat": 51.75190, "lng": 20.50170, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+        "A": { "lat": 51.768933791330646, "lng": 20.238845365813972, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.768933791330646, "lng": 20.238845365813972, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 8,
       "name": "Sadowa - Ogrodowa",
       "platforms": {
-        "A": { "lat": 51.7519, "lng": 20.5019, "description": "Platform towards Mrówka (detour)" },
-        "B": { "lat": 51.75200, "lng": 20.50180, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+        "A": { "lat": 51.76865172505815, "lng": 20.244035795327086, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.76865172505815, "lng": 20.244035795327086, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 9,
       "name": "Kościuszki",
       "platforms": {
-        "A": { "lat": 51.7530, "lng": 20.5030, "description": "Platform towards Mrówka" },
-        "B": { "lat": 51.75310, "lng": 20.50290, "description": "Platform towards Kazimierza Wielkiego" }
+        "A": { "lat": 51.76393779624841, "lng": 20.250645754726015, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.76393779624841, "lng": 20.250645754726015, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 10,
       "name": "Kościuszki - Liceum",
       "platforms": {
-        "A": { "lat": 51.7540, "lng": 20.5040, "description": "Platform towards Mrówka / Księże Domki" },
-        "B": { "lat": 51.75410, "lng": 20.50390, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+        "A": { "lat": 51.76159025741317, "lng": 20.247028673866165, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.76159025741317, "lng": 20.247028673866165, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 11,
       "name": "Kościuszki - Szkoła",
       "platforms": {
-        "A": { "lat": 51.7545, "lng": 20.5045, "description": "Platform towards Księże Domki" },
-        "B": { "lat": 51.75460, "lng": 20.50440, "description": "Platform towards Mrówka / Mszczonowska" }
+        "A": { "lat": 51.76244448553878, "lng": 20.24817111413339, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.76244448553878, "lng": 20.24817111413339, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 12,
       "name": "Tomaszowska - Cmentarz",
       "platforms": {
-        "A": { "lat": 51.7550, "lng": 20.5050, "description": "Platform towards Mrówka / Księże Domki" },
-        "B": { "lat": 51.75510, "lng": 20.50490, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+        "A": { "lat": 51.75786215101163, "lng": 20.24449244291742, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.75794461929431, "lng": 20.244689445086248, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 13,
       "name": "Tomaszowska - Adar",
       "platforms": {
-        "A": { "lat": 51.7560, "lng": 20.5060, "description": "Platform towards Mrówka / Księże Domki" },
-        "B": { "lat": 51.75610, "lng": 20.50590, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+        "A": { "lat": 51.75413375942842, "lng": 20.242324559553253, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.75331542274436, "lng": 20.24199815822624, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 14,
       "name": "Katowicka - Orzeszkowej",
       "platforms": {
-        "A": { "lat": 51.75233, "lng": 20.5070, "description": "Platform towards Mrówka" },
-        "B": { "lat": 51.75243, "lng": 20.50690, "description": "Platform towards Kazimierza Wielkiego" }
+        "A": { "lat": 51.75249713734618, "lng": 20.239366746157938, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.75232195979154, "lng": 20.23982540384903, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 15,
       "name": "Katowicka - Aquarium",
       "platforms": {
-        "A": { "lat": 51.75329, "lng": 20.23370, "description": "Platform towards Mrówka" },
-        "B": { "lat": 51.75339, "lng": 20.23360, "description": "Platform towards Kazimierza Wielkiego" }
+        "A": { "lat": 51.75326955351484, "lng": 20.23388875693458, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.75326955351484, "lng": 20.23388875693458, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 16,
       "name": "Katowicka - Osiedle",
       "platforms": {
-        "A": { "lat": 51.75238, "lng": 20.22632, "description": "Platform towards Mrówka" },
-        "B": { "lat": 51.75248, "lng": 20.22622, "description": "Platform towards Kazimierza Wielkiego" }
+        "A": { "lat": 51.75236233804316, "lng": 20.226443519639343, "description": "Kierunek: Katowicka (Mrówka)" },
+        "B": { "lat": 51.752048511432115, "lng": 20.225107779696877, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 17,
       "name": "Katowicka - Mrówka",
       "platforms": {
-        "A": { "lat": 51.75125, "lng": 20.22027, "description": "Terminal (arrival)" },
-        "B": { "lat": 51.75135, "lng": 20.22017, "description": "Terminal (departure)" }
+        "A": { "lat": 51.75124331078189, "lng": 20.220324812725266, "description": "Przystanek końcowy" },
+        "B": { "lat": 51.75124331078189, "lng": 20.220324812725266, "description": "Przystanek początkowy" }
       }
     },
     {
       "id": 18,
       "name": "Aleksandrówka 1",
       "platforms": {
-        "A": { "lat": 51.7420, "lng": 20.4920, "description": "Platform towards Księże Domki" },
-        "B": { "lat": 51.74210, "lng": 20.49190, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+        "A": { "lat": 51.766292709956176, "lng": 20.271972025123905, "description": "Kierunek: Księże Domki" },
+        "B": { "lat": 51.76620198040499, "lng": 20.27171715817809, "description": "Kierunek: Kazimierza Wielkiego / Mszczonowska" }
       }
     },
     {
       "id": 19,
       "name": "Aleksandrówka 2",
       "platforms": {
-        "A": { "lat": 51.7425, "lng": 20.4925, "description": "Platform towards Księże Domki" },
-        "B": { "lat": 51.74260, "lng": 20.49240, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+        "A": { "lat": 51.772084932509756, "lng": 20.282394118205374, "description": "Kierunek: Księże Domki" },
+        "B": { "lat": 51.772891160839016, "lng": 20.283665069801472, "description": "Kierunek: Kazimierza Wielkiego / Mszczonowska" }
       }
     },
     {
       "id": 20,
       "name": "Zamkowa Wola",
       "platforms": {
-        "A": { "lat": 51.7430, "lng": 20.4930, "description": "Platform towards Księże Domki" },
-        "B": { "lat": 51.74310, "lng": 20.49290, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+        "A": { "lat": 51.76762994824947, "lng": 20.266027093885725, "description": "Kierunek: Księże Domki" },
+        "B": { "lat": 51.76770976115733, "lng": 20.26594174652688, "description": "Kierunek: Kazimierza Wielkiego / Mszczonowska" }
       }
     },
     {
       "id": 21,
       "name": "Mszczonowska",
       "platforms": {
-        "A": { "lat": 51.7400, "lng": 20.4900, "description": "Platform towards Księże Domki" },
-        "B": { "lat": 51.74010, "lng": 20.48990, "description": "Terminal (arrival)" }
+        "A": { "lat": 51.77891957954707, "lng": 20.27118669924335, "description": "Kierunek: Księże Domki" },
+        "B": { "lat": 51.77891957954707, "lng": 20.27118669924335, "description": "Przystanek końcowy" }
       }
     },
     {
       "id": 22,
       "name": "Targowa",
       "platforms": {
-        "A": { "lat": 51.7440, "lng": 20.4940, "description": "Platform towards Księże Domki" },
-        "B": { "lat": 51.74410, "lng": 20.49390, "description": "Platform towards Mszczonowska" }
+        "A": { "lat": 51.76439347362884, "lng": 20.25899323989535, "description": "Kierunek: Księże Domki" },
+        "B": { "lat": 51.76458271438761, "lng": 20.260130496392552, "description": "Kierunek: Mszczonowska" }
       }
     },
     {
       "id": 23,
       "name": "Przemysłowa",
       "platforms": {
-        "A": { "lat": 51.7500, "lng": 20.5000, "description": "Platform towards Księże Domki" },
-        "B": { "lat": 51.75010, "lng": 20.49990, "description": "Platform towards Mszczonowska" }
+        "A": { "lat": 51.755415650338655, "lng": 20.250821852682055, "description": "Kierunek: Księże Domki" },
+        "B": { "lat": 51.75545051747013, "lng": 20.25198593126645, "description": "Kierunek: Mszczonowska" }
       }
     },
     {
       "id": 24,
       "name": "Zwolińskiego",
       "platforms": {
-        "A": { "lat": 51.7510, "lng": 20.5010, "description": "Platform towards Księże Domki" },
-        "B": { "lat": 51.75110, "lng": 20.50090, "description": "Platform towards Mszczonowska" }
+        "A": { "lat": 51.75816662918352, "lng": 20.251991728561457, "description": "Kierunek: Księże Domki" },
+        "B": { "lat": 51.75765286547225, "lng": 20.25201428315843, "description": "Kierunek: Mszczonowska" }
       }
     },
     {
       "id": 25,
       "name": "1-Maja",
       "platforms": {
-        "A": { "lat": 51.7520, "lng": 20.5020, "description": "Platform towards Księże Domki" },
-        "B": { "lat": 51.75210, "lng": 20.50190, "description": "Platform towards Mszczonowska" }
+        "A": { "lat": 51.76273992273433, "lng": 20.239238496828335, "description": "Kierunek: Księże Domki" },
+        "B": { "lat": 51.76290045643438, "lng": 20.239565538484463, "description": "Kierunek: Mszczonowska" }
       }
     },
     {
       "id": 26,
       "name": "Księże Domki - Zalew",
       "platforms": {
-        "A": { "lat": 51.7530, "lng": 20.5030, "description": "Platform towards Granica" },
-        "B": { "lat": 51.75310, "lng": 20.50290, "description": "Platform towards Mszczonowska" }
+        "A": { "lat": 51.760113264040136, "lng": 20.234750815546587, "description": "Platform towards Granica" },
+        "B": { "lat": 51.760113264040136, "lng": 20.234750815546587, "description": "Platform towards Mszczonowska" }
       }
     },
     {
       "id": 27,
       "name": "Księże Domki - Granica",
       "platforms": {
-        "A": { "lat": 51.7540, "lng": 20.5040, "description": "Terminal (arrival)" },
-        "B": { "lat": 51.75410, "lng": 20.50390, "description": "Terminal (departure)" }
+        "A": { "lat": 51.75662521326703, "lng": 20.223341071709036, "description": "Terminal (arrival)" },
+        "B": { "lat": 51.75662521326703, "lng": 20.223341071709036, "description": "Terminal (departure)" }
       }
     },
     {
       "id": 28,
       "name": "Mickiewicza",
       "platforms": {
-        "A": { "lat": 51.7522, "lng": 20.5022, "description": "Platform (detour only)" },
-        "B": { "lat": 51.75230, "lng": 20.50210, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+        "A": { "lat": 51.7643683346067, "lng": 20.253151704850303, "description": "Platform (detour only)" },
+        "B": { "lat": 51.7643683346067, "lng": 20.253151704850303, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     },
     {
       "id": 29,
       "name": "Kolejowa",
       "platforms": {
-        "A": { "lat": 51.7523, "lng": 20.5023, "description": "Platform (not used)" },
-        "B": { "lat": 51.75240, "lng": 20.50220, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+        "A": { "lat": 51.76671589930158, "lng": 20.24645253881083, "description": "Platform (not used)" },
+        "B": { "lat": 51.76671589930158, "lng": 20.24645253881083, "description": "Kierunek: Kazimierza Wielkiego" }
       }
     }
   ],
