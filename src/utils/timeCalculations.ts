@@ -1,5 +1,8 @@
 import { isWeekend as dateFnsIsWeekend, format, parse, getYear, getMonth, getDate } from 'date-fns';
-import type { DayType, ServiceStatus } from '@/types';
+import type { DayType, ServiceStatus, NonOperatingDay } from '@/types';
+import schedulesData from '@/assets/data/schedules.json';
+
+const nonOperatingDays: NonOperatingDay[] = schedulesData.metadata.nonOperatingDays;
 
 export function isWeekend(date: Date = new Date()): boolean {
   return dateFnsIsWeekend(date);
@@ -55,76 +58,20 @@ export function formatCurrentTime(use24Hour: boolean): string {
 }
 
 /**
- * Calculate Easter Sunday date for a given year using the Anonymous Gregorian algorithm.
- * This is a computus algorithm that determines the date of Easter.
+ * Check if a date is a non-operating day (no bus service).
+ * Uses the explicit list of non-operating days from schedule data.
  */
-export function calculateEasterDate(year: number): Date {
-  const a = year % 19;
-  const b = Math.floor(year / 100);
-  const c = year % 100;
-  const d = Math.floor(b / 4);
-  const e = b % 4;
-  const f = Math.floor((b + 8) / 25);
-  const g = Math.floor((b - f + 1) / 3);
-  const h = (19 * a + b - d - g + 15) % 30;
-  const i = Math.floor(c / 4);
-  const k = c % 4;
-  const l = (32 + 2 * e + 2 * i - h - k) % 7;
-  const m = Math.floor((a + 11 * h + 22 * l) / 451);
-  const month = Math.floor((h + l - 7 * m + 114) / 31);
-  const day = ((h + l - 7 * m + 114) % 31) + 1;
-
-  return new Date(year, month - 1, day);
-}
-
-/**
- * Check if a date is Easter Sunday.
- */
-export function isEasterSunday(date: Date): boolean {
+export function isNonOperatingDay(date: Date = new Date()): { isNonOperating: boolean; reason?: string } {
   const year = getYear(date);
-  const easter = calculateEasterDate(year);
-
-  return (
-    getYear(date) === getYear(easter) &&
-    getMonth(date) === getMonth(easter) &&
-    getDate(date) === getDate(easter)
-  );
-}
-
-/**
- * Check if a date is a fixed non-operating day (Christmas or New Year).
- */
-export function isFixedNonOperatingDay(date: Date): { isHoliday: boolean; name?: string } {
   const month = getMonth(date) + 1; // getMonth is 0-indexed
   const day = getDate(date);
 
-  // Christmas - December 25
-  if (month === 12 && day === 25) {
-    return { isHoliday: true, name: 'Christmas' };
-  }
+  const holiday = nonOperatingDays.find(
+    h => h.year === year && h.month === month && h.day === day
+  );
 
-  // New Year - January 1
-  if (month === 1 && day === 1) {
-    return { isHoliday: true, name: 'New Year' };
-  }
-
-  return { isHoliday: false };
-}
-
-/**
- * Check if a date is a non-operating day (no bus service).
- * Non-operating days: December 25, January 1, Easter Sunday.
- */
-export function isNonOperatingDay(date: Date = new Date()): { isNonOperating: boolean; reason?: string } {
-  // Check fixed holidays
-  const fixedHoliday = isFixedNonOperatingDay(date);
-  if (fixedHoliday.isHoliday) {
-    return { isNonOperating: true, reason: fixedHoliday.name };
-  }
-
-  // Check Easter Sunday
-  if (isEasterSunday(date)) {
-    return { isNonOperating: true, reason: 'Easter Sunday' };
+  if (holiday) {
+    return { isNonOperating: true, reason: holiday.name };
   }
 
   return { isNonOperating: false };

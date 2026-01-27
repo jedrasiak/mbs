@@ -1,12 +1,13 @@
 import { Box, Typography, Paper, useTheme } from '@mui/material';
-import type { Stop, DayType } from '@/types';
+import type { Stop, DayType, Trip } from '@/types';
 import {
   getStopsForDirection,
-  getTimesForStopInDirection,
+  getTripsForDirection,
   getDirectionById,
+  getAllTimesForStopOnTrip,
 } from '@/utils/scheduleParser';
 import { useSettings } from '@/contexts/SettingsContext';
-import { formatTime, isPastTime, getCurrentTimeString } from '@/utils/timeCalculations';
+import { formatTime, isPastTime } from '@/utils/timeCalculations';
 
 interface TimeTableProps {
   directionId: string;
@@ -17,7 +18,8 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
   const theme = useTheme();
   const { settings } = useSettings();
   const direction = getDirectionById(directionId);
-  const stops = getStopsForDirection(directionId);
+  const trips = getTripsForDirection(directionId, dayType);
+  const stops = getStopsForDirection(directionId, dayType);
 
   if (!direction || stops.length === 0) {
     return (
@@ -29,17 +31,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
     );
   }
 
-  // Get all unique departure times across all stops to determine columns
-  const allTimesSet = new Set<string>();
-  for (const stop of stops) {
-    const times = getTimesForStopInDirection(stop.id, directionId, dayType);
-    times.forEach(t => allTimesSet.add(t));
-  }
-  const allTimes = Array.from(allTimesSet).sort();
-
-  const currentTime = getCurrentTimeString();
-
-  if (allTimes.length === 0) {
+  if (trips.length === 0) {
     return (
       <Paper sx={{ p: 3, textAlign: 'center' }}>
         <Typography color="text.secondary">
@@ -49,8 +41,11 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
     );
   }
 
-  // Find which column index is the "current" one
-  const currentColumnIndex = allTimes.findIndex(time => time >= currentTime);
+  // Find the current trip (first trip that hasn't fully departed)
+  const currentTripIndex = trips.findIndex(trip => {
+    // Check if any stop on this trip is in the future
+    return trip.stops.some(stop => !isPastTime(stop.time));
+  });
 
   return (
     <Box>
@@ -66,11 +61,11 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: `180px repeat(${allTimes.length}, 70px)`,
-            minWidth: 180 + allTimes.length * 70,
+            gridTemplateColumns: `180px repeat(${trips.length}, 70px)`,
+            minWidth: 180 + trips.length * 70,
           }}
         >
-          {/* Header row */}
+          {/* Header row with trip IDs */}
           <Box
             sx={{
               position: 'sticky',
@@ -85,36 +80,34 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
           >
             Stop
           </Box>
-          {allTimes.map((time, index) => {
-            const isCurrentColumn = index === currentColumnIndex;
+          {trips.map((trip: Trip, index: number) => {
+            const isCurrentTrip = index === currentTripIndex;
             return (
               <Box
-                key={`header-${index}`}
+                key={`header-${trip.tripId}`}
                 sx={{
                   position: 'sticky',
                   top: 0,
                   zIndex: 2,
-                  bgcolor: isCurrentColumn ? 'warning.main' : 'primary.main',
-                  color: isCurrentColumn ? 'warning.contrastText' : 'primary.contrastText',
+                  bgcolor: isCurrentTrip ? 'warning.main' : 'primary.main',
+                  color: isCurrentTrip ? 'warning.contrastText' : 'primary.contrastText',
                   p: 1.5,
                   textAlign: 'center',
-                  fontWeight: 500,
-                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
                 }}
               >
-                {formatTime(time, settings.timeFormat === '24h')}
+                {trip.tripId}
               </Box>
             );
           })}
 
-          {/* Data rows */}
+          {/* Data rows - one per stop */}
           {stops.map((stop: Stop, rowIndex: number) => {
-            const stopTimes = getTimesForStopInDirection(stop.id, directionId, dayType);
-            const stopTimesSet = new Set(stopTimes);
             const isEvenRow = rowIndex % 2 === 0;
 
             return (
-              <Box key={stop.id} sx={{ display: 'contents' }}>
+              <Box key={`row-${stop.id}-${rowIndex}`} sx={{ display: 'contents' }}>
                 {/* Stop name cell */}
                 <Box
                   sx={{
@@ -139,23 +132,31 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
                   </Typography>
                 </Box>
 
-                {/* Time cells */}
-                {allTimes.map((columnTime, colIndex) => {
-                  // Find the matching time for this stop at this column
-                  const hasTime = stopTimesSet.has(columnTime);
-                  const stopTime = hasTime ? columnTime : null;
-                  const past = stopTime ? isPastTime(stopTime) : false;
-                  const isCurrentColumn = colIndex === currentColumnIndex;
+                {/* Time cells - one per trip */}
+                {trips.map((trip: Trip, colIndex: number) => {
+                  // Get all times this stop appears on this trip (handles loop routes)
+                  const timesOnTrip = getAllTimesForStopOnTrip(
+                    stop.id,
+                    directionId,
+                    trip.tripId,
+                    dayType
+                  );
+
+                  // For display, use first time if available
+                  const firstTime = timesOnTrip[0];
+                  const hasTime = firstTime !== undefined;
+                  const past = hasTime ? isPastTime(firstTime) : false;
+                  const isCurrentTrip = colIndex === currentTripIndex;
 
                   return (
                     <Box
-                      key={`time-${stop.id}-${colIndex}`}
+                      key={`time-${stop.id}-${trip.tripId}-${colIndex}`}
                       sx={{
                         p: 1.5,
                         textAlign: 'center',
                         borderBottom: '1px solid',
                         borderColor: 'divider',
-                        bgcolor: isCurrentColumn
+                        bgcolor: isCurrentTrip
                           ? 'warning.light'
                           : isEvenRow
                             ? theme.palette.mode === 'dark'
@@ -172,7 +173,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
                       }}
                     >
                       {hasTime
-                        ? formatTime(columnTime, settings.timeFormat === '24h')
+                        ? formatTime(firstTime, settings.timeFormat === '24h')
                         : '—'}
                     </Box>
                   );

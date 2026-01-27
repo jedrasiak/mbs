@@ -15,17 +15,35 @@ export interface Stop {
   };
 }
 
-// Reference to a stop within a route, specifying which platform
-export interface StopInRoute {
+// A stop within a trip, with departure time
+export interface TripStop {
   stopId: number;
   platform: 'A' | 'B';
+  time: string;
+}
+
+// A single trip (one bus run through the route)
+export interface Trip {
+  tripId: string; // Roman numeral: "I", "II", "III", etc.
+  stops: TripStop[];
+}
+
+// Schedule for a day type (weekday/weekend)
+export interface DaySchedule {
+  trips: Trip[];
+}
+
+// Direction schedules by day type
+export interface DirectionSchedules {
+  weekday?: DaySchedule;
+  weekend?: DaySchedule;
 }
 
 // Direction of a line (e.g., "to Mrówka" or "from Mrówka")
 export interface Direction {
   id: string;
   name: string; // Destination name, e.g., "PSB Mrówka"
-  stops: StopInRoute[];
+  schedules: DirectionSchedules;
 }
 
 // Bus line with two directions
@@ -37,30 +55,12 @@ export interface Line {
   directions: Direction[];
 }
 
-// Schedule keyed by direction ID, then stop ID
-export interface DirectionSchedule {
-  [stopId: string]: string[];
-}
-
-export interface Schedule {
-  [directionId: string]: DirectionSchedule;
-}
-
-// Non-operating day definitions
-export interface FixedHoliday {
-  month: number;
+// Explicit non-operating day definition
+export interface NonOperatingDay {
   day: number;
+  month: number;
+  year: number;
   name: string;
-}
-
-export interface VariableHoliday {
-  name: string;
-  note: string;
-}
-
-export interface NonOperatingDays {
-  fixed: FixedHoliday[];
-  variable: VariableHoliday[];
 }
 
 // Schedule metadata
@@ -68,7 +68,7 @@ export interface ScheduleMetadata {
   cityName: string;
   timezone: string;
   lastUpdated: string;
-  nonOperatingDays: NonOperatingDays;
+  nonOperatingDays: NonOperatingDay[];
 }
 
 // Complete schedule data structure
@@ -76,10 +76,6 @@ export interface ScheduleData {
   metadata: ScheduleMetadata;
   lines: Line[];
   stops: Stop[];
-  schedules: {
-    weekday: Schedule;
-    weekend: Schedule;
-  };
 }
 
 // Day type for schedule lookup
