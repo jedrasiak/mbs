@@ -1,4 +1,5 @@
 import { Card, CardContent, Box, Typography, Chip } from '@mui/material';
+import { ArrowForward } from '@mui/icons-material';
 import type { Departure } from '@/types';
 import { useSettings } from '@/contexts/SettingsContext';
 import { formatTime, formatMinutesUntil } from '@/utils/timeCalculations';
@@ -40,7 +41,7 @@ export function DepartureCard({ departure, isNext = false }: DepartureCardProps)
       )}
       <CardContent sx={{ py: 2, '&:last-child': { pb: 2 } }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flex: 1, minWidth: 0 }}>
             <Chip
               label={departure.lineName}
               sx={{
@@ -48,11 +49,25 @@ export function DepartureCard({ departure, isNext = false }: DepartureCardProps)
                 color: 'white',
                 fontWeight: 600,
                 minWidth: 70,
+                flexShrink: 0,
               }}
             />
-            <Typography variant="h6" component="span">
-              {formattedTime}
-            </Typography>
+            <Box sx={{ minWidth: 0, flex: 1 }}>
+              <Typography variant="h6" component="span">
+                {formattedTime}
+              </Typography>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                <ArrowForward sx={{ fontSize: 14, color: 'text.secondary' }} />
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  noWrap
+                  title={departure.destinationName}
+                >
+                  {departure.destinationName}
+                </Typography>
+              </Box>
+            </Box>
           </Box>
           <Typography
             variant="h6"
@@ -60,6 +75,8 @@ export function DepartureCard({ departure, isNext = false }: DepartureCardProps)
             sx={{
               color: isNext ? ACCENT_COLOR : 'text.secondary',
               fontWeight: isNext ? 700 : 500,
+              flexShrink: 0,
+              ml: 1,
             }}
           >
             {timeUntil}

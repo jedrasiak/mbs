@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import { Header, LoadingSpinner } from '@/components/common';
 import { MapFAB, SearchBar, StopBottomSheet } from '@/components/map';
 import { useGeolocation } from '@/hooks/useGeolocation';
-import { getAllStops, getAllLines, getStopById, getLinesForStop } from '@/utils/scheduleParser';
+import { getAllLines, getStopById } from '@/utils/scheduleParser';
 
 // Lazy load the map component
 const BusMap = lazy(() =>
@@ -12,6 +12,7 @@ const BusMap = lazy(() =>
 
 export function MapPage() {
   const [selectedStopId, setSelectedStopId] = useState<number | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<'A' | 'B' | null>(null);
   const [centerOnUser, setCenterOnUser] = useState(false);
 
   const { latitude, longitude, refresh } = useGeolocation({ watch: true });
@@ -21,11 +22,8 @@ export function MapPage() {
       ? { lat: latitude, lng: longitude }
       : null;
 
-  const stops = getAllStops();
   const lines = getAllLines();
-
   const selectedStop = selectedStopId ? getStopById(selectedStopId) : undefined;
-  const selectedStopLines = selectedStopId ? getLinesForStop(selectedStopId) : [];
 
   const handleCenterUser = useCallback(() => {
     refresh();
@@ -34,13 +32,20 @@ export function MapPage() {
     setTimeout(() => setCenterOnUser(false), 100);
   }, [refresh]);
 
-  const handleStopSelect = useCallback((stopId: number | null) => {
+  const handleStopSelect = useCallback((stopId: number, platform: 'A' | 'B') => {
     setSelectedStopId(stopId);
+    setSelectedPlatform(platform);
   }, []);
 
   const handleSearchSelect = useCallback((stopId: number) => {
     setSelectedStopId(stopId);
-    // Could also center map on the stop here
+    // Default to platform A when selecting from search
+    setSelectedPlatform('A');
+  }, []);
+
+  const handleClose = useCallback(() => {
+    setSelectedStopId(null);
+    setSelectedPlatform(null);
   }, []);
 
   return (
@@ -49,10 +54,10 @@ export function MapPage() {
       <Box sx={{ flex: 1, position: 'relative' }}>
         <Suspense fallback={<LoadingSpinner fullScreen />}>
           <BusMap
-            stops={stops}
             lines={lines}
             userLocation={userLocation}
             selectedStopId={selectedStopId}
+            selectedPlatform={selectedPlatform}
             onStopSelect={handleStopSelect}
             centerOnUser={centerOnUser}
           />
@@ -62,12 +67,12 @@ export function MapPage() {
 
         <MapFAB onCenterUser={handleCenterUser} />
 
-        {selectedStop && (
+        {selectedStop && selectedPlatform && (
           <StopBottomSheet
             stop={selectedStop}
-            lines={selectedStopLines}
+            platform={selectedPlatform}
             userLocation={userLocation}
-            onClose={() => setSelectedStopId(null)}
+            onClose={handleClose}
           />
         )}
       </Box>

@@ -1,22 +1,29 @@
 import { useEffect } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { Box } from '@mui/material';
-import type { Stop, Line } from '@/types';
+import type { Line } from '@/types';
 import { StopMarker } from './StopMarker';
 import { RouteLayer } from './RouteLayer';
 import { UserLocationMarker } from './UserLocationMarker';
+import { getAllPlatformMarkers, getMapCenter } from '@/utils/scheduleParser';
 import 'leaflet/dist/leaflet.css';
 
 interface BusMapProps {
-  stops: Stop[];
   lines: Line[];
   userLocation: { lat: number; lng: number } | null;
   selectedStopId: number | null;
-  onStopSelect: (stopId: number | null) => void;
+  selectedPlatform: 'A' | 'B' | null;
+  onStopSelect: (stopId: number, platform: 'A' | 'B') => void;
   centerOnUser?: boolean;
 }
 
-function MapController({ centerOnUser, userLocation }: { centerOnUser: boolean; userLocation: { lat: number; lng: number } | null }) {
+function MapController({
+  centerOnUser,
+  userLocation,
+}: {
+  centerOnUser: boolean;
+  userLocation: { lat: number; lng: number } | null;
+}) {
   const map = useMap();
 
   useEffect(() => {
@@ -29,16 +36,18 @@ function MapController({ centerOnUser, userLocation }: { centerOnUser: boolean; 
 }
 
 export function BusMap({
-  stops,
   lines,
   userLocation,
   selectedStopId,
+  selectedPlatform,
   onStopSelect,
   centerOnUser = false,
 }: BusMapProps) {
-  // Default center (Warsaw area based on sample data)
-  const defaultCenter: [number, number] = [52.232, 21.0];
+  const defaultCenter = getMapCenter();
   const defaultZoom = 13;
+
+  // Get all platform markers
+  const platformMarkers = getAllPlatformMarkers();
 
   return (
     <Box
@@ -66,17 +75,24 @@ export function BusMap({
 
         {/* Route layers */}
         {lines.map(line => (
-          <RouteLayer key={line.id} line={line} stops={stops} />
+          <RouteLayer key={line.id} line={line} />
         ))}
 
-        {/* Stop markers */}
-        {stops.map(stop => (
+        {/* Stop markers - one per platform */}
+        {platformMarkers.map(marker => (
           <StopMarker
-            key={stop.id}
-            stop={stop}
-            lines={lines.filter(line => line.route.includes(stop.id))}
-            isSelected={stop.id === selectedStopId}
-            onClick={() => onStopSelect(stop.id)}
+            key={`${marker.stopId}-${marker.platform}`}
+            stopId={marker.stopId}
+            platform={marker.platform}
+            lat={marker.lat}
+            lng={marker.lng}
+            stopName={marker.stopName}
+            directions={marker.directions}
+            isSelected={
+              marker.stopId === selectedStopId &&
+              marker.platform === selectedPlatform
+            }
+            onClick={() => onStopSelect(marker.stopId, marker.platform)}
           />
         ))}
 

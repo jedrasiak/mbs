@@ -1,27 +1,56 @@
 import { Paper, Box, Typography, Chip, IconButton, Divider, Button } from '@mui/material';
-import { Close, Directions } from '@mui/icons-material';
+import { Close, Directions, ArrowForward } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import type { Stop, Line } from '@/types';
+import type { Stop } from '@/types';
 import { useNextDepartures } from '@/hooks/useNextDepartures';
 import { useSettings } from '@/contexts/SettingsContext';
-import { formatDistance, calculateDistance } from '@/utils/scheduleParser';
-import { formatTime, formatMinutesUntil } from '@/utils/timeCalculations';
+import {
+  formatDistance,
+  calculateDistance,
+  getDirectionsServingPlatform,
+} from '@/utils/scheduleParser';
+import { formatTime, formatMinutesUntil, getServiceStatus } from '@/utils/timeCalculations';
 
 interface StopBottomSheetProps {
   stop: Stop;
-  lines: Line[];
+  platform: 'A' | 'B';
   userLocation: { lat: number; lng: number } | null;
   onClose: () => void;
 }
 
-export function StopBottomSheet({ stop, lines, userLocation, onClose }: StopBottomSheetProps) {
+export function StopBottomSheet({
+  stop,
+  platform,
+  userLocation,
+  onClose,
+}: StopBottomSheetProps) {
   const navigate = useNavigate();
   const { settings } = useSettings();
-  const departures = useNextDepartures(stop.id, 3);
+  const departures = useNextDepartures(stop.id, 5);
+  const serviceStatus = getServiceStatus();
 
+  // Get directions serving this specific platform
+  const directions = getDirectionsServingPlatform(stop.id, platform);
+  const platformInfo = stop.platforms[platform];
+
+  // Calculate distance to this platform
   const distance = userLocation
-    ? calculateDistance(userLocation.lat, userLocation.lng, stop.lat, stop.lng)
+    ? calculateDistance(
+        userLocation.lat,
+        userLocation.lng,
+        platformInfo.lat,
+        platformInfo.lng
+      )
     : null;
+
+  // Filter departures to only those from this platform's directions
+  const platformDirectionIds = new Set(directions.map(d => d.directionId));
+  const platformDepartures = departures.filter(dep =>
+    platformDirectionIds.has(dep.directionId)
+  );
+
+  // Get unique lines
+  const uniqueLines = [...new Map(directions.map(d => [d.lineId, d])).values()];
 
   return (
     <Paper
@@ -57,14 +86,18 @@ export function StopBottomSheet({ stop, lines, userLocation, onClose }: StopBott
             <Typography variant="h6" fontWeight={600}>
               {stop.name}
             </Typography>
-            <Box sx={{ display: 'flex', gap: 1, mt: 0.5, alignItems: 'center' }}>
-              {lines.map(line => (
+            <Typography variant="caption" color="text.secondary">
+              Platform {platform}
+              {platformInfo.description && ` - ${platformInfo.description}`}
+            </Typography>
+            <Box sx={{ display: 'flex', gap: 1, mt: 1, alignItems: 'center', flexWrap: 'wrap' }}>
+              {uniqueLines.map(line => (
                 <Chip
-                  key={line.id}
-                  label={line.name}
+                  key={line.lineId}
+                  label={line.lineName}
                   size="small"
                   sx={{
-                    bgcolor: line.color,
+                    bgcolor: line.lineColor,
                     color: 'white',
                     fontWeight: 500,
                     fontSize: '0.75rem',
@@ -92,27 +125,31 @@ export function StopBottomSheet({ stop, lines, userLocation, onClose }: StopBott
       {/* Departures */}
       <Box sx={{ p: 2 }}>
         <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-          Next Departures
+          Next Departures from Platform {platform}
         </Typography>
 
-        {departures.length === 0 ? (
+        {!serviceStatus.isOperating ? (
+          <Typography variant="body2" color="warning.main">
+            No service today ({serviceStatus.reason})
+          </Typography>
+        ) : platformDepartures.length === 0 ? (
           <Typography variant="body2" color="text.disabled">
-            No more departures today
+            No more departures from this platform today
           </Typography>
         ) : (
-          departures.map((dep, index) => (
+          platformDepartures.slice(0, 4).map((dep, index) => (
             <Box
-              key={`${dep.lineId}-${dep.time}`}
+              key={`${dep.directionId}-${dep.time}`}
               sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 py: 1,
-                borderBottom: index < departures.length - 1 ? '1px solid' : 'none',
+                borderBottom: index < Math.min(platformDepartures.length, 4) - 1 ? '1px solid' : 'none',
                 borderColor: 'divider',
               }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flex: 1, minWidth: 0 }}>
                 <Chip
                   label={dep.lineName}
                   size="small"
@@ -121,16 +158,26 @@ export function StopBottomSheet({ stop, lines, userLocation, onClose }: StopBott
                     color: 'white',
                     fontWeight: 500,
                     minWidth: 60,
+                    flexShrink: 0,
                   }}
                 />
-                <Typography variant="body1">
-                  {formatTime(dep.time, settings.timeFormat === '24h')}
-                </Typography>
+                <Box sx={{ minWidth: 0, flex: 1 }}>
+                  <Typography variant="body1">
+                    {formatTime(dep.time, settings.timeFormat === '24h')}
+                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                    <ArrowForward sx={{ fontSize: 12, color: 'text.secondary' }} />
+                    <Typography variant="caption" color="text.secondary" noWrap>
+                      {dep.destinationName}
+                    </Typography>
+                  </Box>
+                </Box>
               </Box>
               <Typography
                 variant="body2"
                 color={index === 0 ? 'warning.main' : 'text.secondary'}
                 fontWeight={index === 0 ? 600 : 400}
+                sx={{ flexShrink: 0, ml: 1 }}
               >
                 {formatMinutesUntil(dep.minutesUntil)}
               </Typography>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Box, Container } from '@mui/material';
+import { Box, Container, Alert } from '@mui/material';
+import { EventBusy } from '@mui/icons-material';
 import { Header } from '@/components/common';
 import {
   StopSelector,
@@ -10,6 +11,7 @@ import {
 import { useSettings } from '@/contexts/SettingsContext';
 import { useNextDepartures } from '@/hooks/useNextDepartures';
 import { getStopById } from '@/utils/scheduleParser';
+import { getServiceStatus, formatDate, getNextOperatingDay } from '@/utils/timeCalculations';
 
 export function HomePage() {
   const { settings } = useSettings();
@@ -24,6 +26,7 @@ export function HomePage() {
     }
   }, [settings.defaultStopId, selectedStopId]);
 
+  const serviceStatus = getServiceStatus();
   const departures = useNextDepartures(selectedStopId, 4);
   const selectedStop = selectedStopId ? getStopById(selectedStopId) : undefined;
 
@@ -32,6 +35,18 @@ export function HomePage() {
       <Header title="Bus Schedule" />
       <Container maxWidth="sm" sx={{ pt: 3 }}>
         <CurrentTime />
+
+        {/* Non-operating day alert */}
+        {!serviceStatus.isOperating && (
+          <Alert
+            severity="warning"
+            icon={<EventBusy />}
+            sx={{ mb: 2 }}
+          >
+            No bus service today ({serviceStatus.reason}).
+            Next service: {formatDate(getNextOperatingDay())}
+          </Alert>
+        )}
 
         <StopSelector
           value={selectedStopId}
@@ -42,6 +57,7 @@ export function HomePage() {
         <DepartureList
           departures={departures}
           stopName={selectedStop?.name}
+          serviceStatus={serviceStatus}
         />
 
         <MapPreviewCard />

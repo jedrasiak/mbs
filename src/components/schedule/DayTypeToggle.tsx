@@ -1,12 +1,18 @@
-import { ToggleButtonGroup, ToggleButton, Box } from '@mui/material';
+import { ToggleButtonGroup, ToggleButton, Box, Tooltip } from '@mui/material';
+import type { DayType } from '@/types';
+import { doesLineOperateOnDayType, getLineById } from '@/utils/scheduleParser';
 
 interface DayTypeToggleProps {
-  value: 'weekday' | 'weekend';
-  onChange: (value: 'weekday' | 'weekend') => void;
+  value: DayType;
+  onChange: (value: DayType) => void;
+  lineId?: number;
 }
 
-export function DayTypeToggle({ value, onChange }: DayTypeToggleProps) {
-  const handleChange = (_: React.MouseEvent<HTMLElement>, newValue: 'weekday' | 'weekend' | null) => {
+export function DayTypeToggle({ value, onChange, lineId }: DayTypeToggleProps) {
+  const line = lineId ? getLineById(lineId) : undefined;
+  const weekendDisabled = line ? !doesLineOperateOnDayType(line, 'weekend') : false;
+
+  const handleChange = (_: React.MouseEvent<HTMLElement>, newValue: DayType | null) => {
     if (newValue !== null) {
       onChange(newValue);
     }
@@ -24,9 +30,20 @@ export function DayTypeToggle({ value, onChange }: DayTypeToggleProps) {
         <ToggleButton value="weekday" aria-label="Weekday schedule">
           Weekday
         </ToggleButton>
-        <ToggleButton value="weekend" aria-label="Weekend schedule">
-          Weekend
-        </ToggleButton>
+        <Tooltip
+          title={weekendDisabled ? 'This line does not operate on weekends' : ''}
+          arrow
+        >
+          <span>
+            <ToggleButton
+              value="weekend"
+              aria-label="Weekend schedule"
+              disabled={weekendDisabled}
+            >
+              Weekend
+            </ToggleButton>
+          </span>
+        </Tooltip>
       </ToggleButtonGroup>
     </Box>
   );
