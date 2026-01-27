@@ -93,23 +93,57 @@ export function getTripById(
 
 /**
  * Get all unique stops for a direction (union of all trips' stops).
- * Returns stops in the order they appear in the first trip, with any additional
- * stops from other trips appended.
+ * Returns stops sorted chronologically based on their positions in trips.
+ * Uses the longest trip as the base order, then merges additional stops
+ * from other trips in their proper chronological positions.
  */
 export function getStopsForDirection(directionId: string, dayType: DayType = 'weekday'): Stop[] {
   const trips = getTripsForDirection(directionId, dayType);
   if (trips.length === 0) return [];
 
-  // Use the first trip as the base order, but collect all unique stops
+  // Find the longest trip to use as the base order
+  const longestTrip = trips.reduce((longest, current) =>
+    current.stops.length > longest.stops.length ? current : longest
+  );
+
+  // Build the base order from the longest trip (only first occurrence of each stop)
   const stopOrder: number[] = [];
   const seenStops = new Set<number>();
 
+  for (const tripStop of longestTrip.stops) {
+    if (!seenStops.has(tripStop.stopId)) {
+      seenStops.add(tripStop.stopId);
+      stopOrder.push(tripStop.stopId);
+    }
+  }
+
+  // Collect any additional stops from other trips that aren't in the base order
+  // and find their proper insertion position based on neighboring stops
   for (const trip of trips) {
-    for (const tripStop of trip.stops) {
-      if (!seenStops.has(tripStop.stopId)) {
-        seenStops.add(tripStop.stopId);
-        stopOrder.push(tripStop.stopId);
+    if (trip.tripId === longestTrip.tripId) continue;
+
+    for (let i = 0; i < trip.stops.length; i++) {
+      const tripStop = trip.stops[i];
+      if (!tripStop || seenStops.has(tripStop.stopId)) continue;
+
+      // Find the best position to insert this stop
+      // Look for the nearest preceding stop that exists in our order
+      let insertIndex = stopOrder.length; // Default to end
+
+      // Search backward to find a preceding stop that's in our order
+      for (let j = i - 1; j >= 0; j--) {
+        const precedingStop = trip.stops[j];
+        if (!precedingStop) continue;
+        const precedingIndex = stopOrder.indexOf(precedingStop.stopId);
+        if (precedingIndex !== -1) {
+          insertIndex = precedingIndex + 1;
+          break;
+        }
       }
+
+      // Insert the stop at the found position
+      stopOrder.splice(insertIndex, 0, tripStop.stopId);
+      seenStops.add(tripStop.stopId);
     }
   }
 
