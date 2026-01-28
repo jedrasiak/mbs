@@ -1,0 +1,101 @@
+{
+  "app": {
+    "title": "Автобуси | Рава Мазовецька",
+    "name": "Розклад автобусів",
+    "shortName": "Розклад",
+    "description": "Міський розклад автобусів з підтримкою офлайн",
+    "version": "Версія 1.0.0"
+  },
+  "nav": {
+    "home": "Головна",
+    "schedule": "Розклад",
+    "map": "Карта",
+    "settings": "Налаштування",
+    "navigateTo": "Перейти до {{label}}",
+    "goBack": "Назад"
+  },
+  "home": {
+    "selectYourStop": "Виберіть зупинку",
+    "selectStop": "Виберіть зупинку",
+    "departuresFrom": "Відправлення з {{stopName}}",
+    "noServiceToday": "Сьогодні немає рейсів",
+    "nextService": "Наступні рейси: {{date}}",
+    "busesDoNotOperate": "Автобуси не курсують у {{reason}}",
+    "busesNotOperatingToday": "Автобуси сьогодні не курсують",
+    "noMoreBusesToday": "Більше автобусів сьогодні немає",
+    "checkBackTomorrow": "Перевірте розклад завтра",
+    "selectStopToSeeDepartures": "Виберіть зупинку, щоб побачити відправлення",
+    "nextBus": "НАСТУПНИЙ",
+    "viewRouteMap": "Переглянути карту маршруту",
+    "seeAllStops": "Переглянути всі зупинки та вашу локацію",
+    "weekendSchedule": "Розклад на вихідні",
+    "weekdaySchedule": "Розклад на будні",
+    "filterRoute": "Маршрут",
+    "filterDirection": "Напрямок",
+    "allRoutes": "Усі маршрути",
+    "allDirections": "Усі напрямки",
+    "line": "Лінія"
+  },
+  "schedule": {
+    "fullSchedule": "Повний розклад",
+    "selectDirection": "Виберіть напрямок, щоб переглянути розклад",
+    "selectDirectionLabel": "Виберіть напрямок",
+    "weekday": "Будні",
+    "weekend": "Вихідні",
+    "lineNotOperatesWeekends": "Ця лінія не курсує у вихідні",
+    "weekdaysOnly": "(тільки будні)",
+    "to": "До {{destination}}",
+    "stop": "Зупинка",
+    "noScheduleAvailable": "Немає розкладу для цього напрямку у {{dayType}}"
+  },
+  "map": {
+    "routeMap": "Карта маршруту",
+    "searchStops": "Пошук зупинок...",
+    "searchStopsLabel": "Пошук зупинок",
+    "clearSearch": "Очистити",
+    "toggleLayers": "Перемкнути шари",
+    "toggleMapLayers": "Перемкнути шари карти",
+    "myLocation": "Моя локація",
+    "centerOnMyLocation": "Центрувати на моїй локації",
+    "platform": "Платформа {{platform}}",
+    "nextDeparturesFrom": "Наступні відправлення з платформи {{platform}}",
+    "noServiceToday": "Сьогодні немає рейсів ({{reason}})",
+    "noMoreDepartures": "Більше відправлень з цієї платформи сьогодні немає",
+    "viewFullSchedule": "Переглянути повний розклад",
+    "close": "Закрити",
+    "filterRoutes": "Фільтрувати маршрути",
+    "showRoutes": "Показати маршрути",
+    "routes": "Маршрути"
+  },
+  "settings": {
+    "title": "Налаштування",
+    "preferences": "Налаштування",
+    "defaultHomeStop": "Зупинка за замовчуванням",
+    "selectDefaultStop": "Виберіть зупинку за замовчуванням",
+    "timeFormat24h": "24-годинний формат",
+    "toggleTimeFormat": "Перемкнути 24-годинний формат",
+    "darkMode": "Темний режим",
+    "toggleDarkMode": "Перемкнути темний режим",
+    "language": "Мова",
+    "selectLanguage": "Виберіть мову",
+    "favoriteStops": "Улюблені зупинки ({{count}}/3)",
+    "noFavoriteStops": "Немає улюблених зупинок",
+    "removeFavorite": "Видалити {{stopName}} з улюблених",
+    "addFavoriteStop": "Додати улюблену зупинку",
+    "about": "Про додаток",
+    "author": "Автор"
+  },
+  "time": {
+    "departed": "Виїхав",
+    "now": "Зараз",
+    "minute": "{{count}} хв",
+    "hour": "{{count}} год",
+    "hours": "{{count}} год",
+    "hourMinute": "{{hours}} год {{minutes}} хв"
+  },
+  "languages": {
+    "en": "English",
+    "pl": "Polski",
+    "uk": "Українська"
+  }
+}

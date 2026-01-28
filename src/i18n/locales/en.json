@@ -1,0 +1,101 @@
+{
+  "app": {
+    "title": "Autobusy | Rawa Mazowiecka",
+    "name": "Bus Schedule Helper",
+    "shortName": "Bus Schedule",
+    "description": "Municipal bus schedule with offline support",
+    "version": "Version 1.0.0"
+  },
+  "nav": {
+    "home": "Home",
+    "schedule": "Schedule",
+    "map": "Map",
+    "settings": "Settings",
+    "navigateTo": "Navigate to {{label}}",
+    "goBack": "Go back"
+  },
+  "home": {
+    "selectYourStop": "Select your stop",
+    "selectStop": "Select Stop",
+    "departuresFrom": "Departures from {{stopName}}",
+    "noServiceToday": "No bus service today",
+    "nextService": "Next service: {{date}}",
+    "busesDoNotOperate": "Buses do not operate on {{reason}}",
+    "busesNotOperatingToday": "Buses are not operating today",
+    "noMoreBusesToday": "No more buses today",
+    "checkBackTomorrow": "Check back tomorrow for the schedule",
+    "selectStopToSeeDepartures": "Select a stop to see departures",
+    "nextBus": "NEXT BUS",
+    "viewRouteMap": "View Route Map",
+    "seeAllStops": "See all stops and your location",
+    "weekendSchedule": "Weekend Schedule",
+    "weekdaySchedule": "Weekday Schedule",
+    "filterRoute": "Route",
+    "filterDirection": "Direction",
+    "allRoutes": "All routes",
+    "allDirections": "All directions",
+    "line": "Line"
+  },
+  "schedule": {
+    "fullSchedule": "Full Schedule",
+    "selectDirection": "Select a direction to view the schedule",
+    "selectDirectionLabel": "Select direction",
+    "weekday": "Weekday",
+    "weekend": "Weekend",
+    "lineNotOperatesWeekends": "This line does not operate on weekends",
+    "weekdaysOnly": "(weekdays only)",
+    "to": "To {{destination}}",
+    "stop": "Stop",
+    "noScheduleAvailable": "No schedule available for this direction on {{dayType}}s"
+  },
+  "map": {
+    "routeMap": "Route Map",
+    "searchStops": "Search stops...",
+    "searchStopsLabel": "Search stops",
+    "clearSearch": "Clear search",
+    "toggleLayers": "Toggle layers",
+    "toggleMapLayers": "Toggle map layers",
+    "myLocation": "My location",
+    "centerOnMyLocation": "Center on my location",
+    "platform": "Platform {{platform}}",
+    "nextDeparturesFrom": "Next Departures from Platform {{platform}}",
+    "noServiceToday": "No service today ({{reason}})",
+    "noMoreDepartures": "No more departures from this platform today",
+    "viewFullSchedule": "View Full Schedule",
+    "close": "Close",
+    "filterRoutes": "Filter routes",
+    "showRoutes": "Show routes",
+    "routes": "Routes"
+  },
+  "settings": {
+    "title": "Settings",
+    "preferences": "Preferences",
+    "defaultHomeStop": "Default Home Stop",
+    "selectDefaultStop": "Select default stop",
+    "timeFormat24h": "24-hour time format",
+    "toggleTimeFormat": "Toggle 24-hour time format",
+    "darkMode": "Dark mode",
+    "toggleDarkMode": "Toggle dark mode",
+    "language": "Language",
+    "selectLanguage": "Select language",
+    "favoriteStops": "Favorite Stops ({{count}}/3)",
+    "noFavoriteStops": "No favorite stops yet",
+    "removeFavorite": "Remove {{stopName}} from favorites",
+    "addFavoriteStop": "Add favorite stop",
+    "about": "About",
+    "author": "Author"
+  },
+  "time": {
+    "departed": "Departed",
+    "now": "Now",
+    "minute": "{{count}} min",
+    "hour": "{{count}} hr",
+    "hours": "{{count}} hrs",
+    "hourMinute": "{{hours}}h {{minutes}}m"
+  },
+  "languages": {
+    "en": "English",
+    "pl": "Polski",
+    "uk": "Українська"
+  }
+}

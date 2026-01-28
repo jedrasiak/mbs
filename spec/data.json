@@ -1,0 +1,1257 @@
+{
+  "metadata": {
+    "cityName": "Your City Name",
+    "timezone": "Europe/Warsaw",
+    "lastUpdated": "2025-01-27",
+    "nonOperatingDays": [
+        { "day": 25, "month": 12, "year": 2025, "name": "Christmas" },
+        { "day": 1, "month": 1, "year": 2026, "name": "New Year" },
+        { "day": 20, "month": 4, "year": 2025, "name": "Easter Sunday" },
+        { "day": 25, "month": 12, "year": 2026, "name": "Christmas" },
+        { "day": 1, "month": 1, "year": 2027, "name": "New Year" },
+        { "day": 5, "month": 4, "year": 2026, "name": "Easter Sunday" },
+        { "day": 25, "month": 12, "year": 2027, "name": "Christmas" },
+        { "day": 1, "month": 1, "year": 2028, "name": "New Year" },
+        { "day": 28, "month": 3, "year": 2027, "name": "Easter Sunday" },
+        { "day": 25, "month": 12, "year": 2028, "name": "Christmas" },
+        { "day": 1, "month": 1, "year": 2029, "name": "New Year" },
+        { "day": 16, "month": 4, "year": 2028, "name": "Easter Sunday" },
+        { "day": 25, "month": 12, "year": 2029, "name": "Christmas" },
+        { "day": 1, "month": 1, "year": 2030, "name": "New Year" },
+        { "day": 1, "month": 4, "year": 2029, "name": "Easter Sunday" },
+        { "day": 25, "month": 12, "year": 2030, "name": "Christmas" },
+        { "day": 1, "month": 1, "year": 2031, "name": "New Year" },
+        { "day": 21, "month": 4, "year": 2030, "name": "Easter Sunday" }
+    ]
+  },
+  "stops": [
+    {
+      "id": 1,
+      "name": "Kazimierza Wielkiego",
+      "platforms": {
+        "A": { "lat": 51.7500, "lng": 20.5000, "description": "Platform towards Mrówka / Księże Domki" },
+        "B": { "lat": 51.75010, "lng": 20.49990, "description": "Platform towards center / Mszczonowska" }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jerozolimska",
+      "platforms": {
+        "A": { "lat": 51.7510, "lng": 20.5010, "description": "Platform towards Mrówka" },
+        "B": { "lat": 51.75110, "lng": 20.50090, "description": "Platform towards Kazimierza Wielkiego" }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Plac Piłsudskiego",
+      "platforms": {
+        "A": { "lat": 51.7520, "lng": 20.5020, "description": "Platform towards Mrówka" },
+        "B": { "lat": 51.75210, "lng": 20.50190, "description": "Platform towards Kazimierza Wielkiego" }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Miła",
+      "platforms": {
+        "A": { "lat": 51.7515, "lng": 20.5015, "description": "Platform towards Mrówka" },
+        "B": { "lat": 51.75160, "lng": 20.50140, "description": "Platform towards Kazimierza Wielkiego" }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Sadowa - Willowa",
+      "platforms": {
+        "A": { "lat": 51.7516, "lng": 20.5016, "description": "Platform towards Mrówka (detour)" },
+        "B": { "lat": 51.75170, "lng": 20.50150, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Willowa",
+      "platforms": {
+        "A": { "lat": 51.7517, "lng": 20.5017, "description": "Platform towards Mrówka (detour)" },
+        "B": { "lat": 51.75180, "lng": 20.50160, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Ogrodowa",
+      "platforms": {
+        "A": { "lat": 51.7518, "lng": 20.5018, "description": "Platform towards Mrówka (detour)" },
+        "B": { "lat": 51.75190, "lng": 20.50170, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Sadowa - Ogrodowa",
+      "platforms": {
+        "A": { "lat": 51.7519, "lng": 20.5019, "description": "Platform towards Mrówka (detour)" },
+        "B": { "lat": 51.75200, "lng": 20.50180, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+      }
+    },
+    {
+      "id": 9,
+      "name": "Kościuszki",
+      "platforms": {
+        "A": { "lat": 51.7530, "lng": 20.5030, "description": "Platform towards Mrówka" },
+        "B": { "lat": 51.75310, "lng": 20.50290, "description": "Platform towards Kazimierza Wielkiego" }
+      }
+    },
+    {
+      "id": 10,
+      "name": "Kościuszki - Liceum",
+      "platforms": {
+        "A": { "lat": 51.7540, "lng": 20.5040, "description": "Platform towards Mrówka / Księże Domki" },
+        "B": { "lat": 51.75410, "lng": 20.50390, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+      }
+    },
+    {
+      "id": 11,
+      "name": "Kościuszki - Szkoła",
+      "platforms": {
+        "A": { "lat": 51.7545, "lng": 20.5045, "description": "Platform towards Księże Domki" },
+        "B": { "lat": 51.75460, "lng": 20.50440, "description": "Platform towards Mrówka / Mszczonowska" }
+      }
+    },
+    {
+      "id": 12,
+      "name": "Tomaszowska - Cmentarz",
+      "platforms": {
+        "A": { "lat": 51.7550, "lng": 20.5050, "description": "Platform towards Mrówka / Księże Domki" },
+        "B": { "lat": 51.75510, "lng": 20.50490, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+      }
+    },
+    {
+      "id": 13,
+      "name": "Tomaszowska - Adar",
+      "platforms": {
+        "A": { "lat": 51.7560, "lng": 20.5060, "description": "Platform towards Mrówka / Księże Domki" },
+        "B": { "lat": 51.75610, "lng": 20.50590, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+      }
+    },
+    {
+      "id": 14,
+      "name": "Katowicka - Orzeszkowej",
+      "platforms": {
+        "A": { "lat": 51.75233, "lng": 20.5070, "description": "Platform towards Mrówka" },
+        "B": { "lat": 51.75243, "lng": 20.50690, "description": "Platform towards Kazimierza Wielkiego" }
+      }
+    },
+    {
+      "id": 15,
+      "name": "Katowicka - Aquarium",
+      "platforms": {
+        "A": { "lat": 51.75329, "lng": 20.23370, "description": "Platform towards Mrówka" },
+        "B": { "lat": 51.75339, "lng": 20.23360, "description": "Platform towards Kazimierza Wielkiego" }
+      }
+    },
+    {
+      "id": 16,
+      "name": "Katowicka - Osiedle",
+      "platforms": {
+        "A": { "lat": 51.75238, "lng": 20.22632, "description": "Platform towards Mrówka" },
+        "B": { "lat": 51.75248, "lng": 20.22622, "description": "Platform towards Kazimierza Wielkiego" }
+      }
+    },
+    {
+      "id": 17,
+      "name": "Katowicka - Mrówka",
+      "platforms": {
+        "A": { "lat": 51.75125, "lng": 20.22027, "description": "Terminal (arrival)" },
+        "B": { "lat": 51.75135, "lng": 20.22017, "description": "Terminal (departure)" }
+      }
+    },
+    {
+      "id": 18,
+      "name": "Aleksandrówka 1",
+      "platforms": {
+        "A": { "lat": 51.7420, "lng": 20.4920, "description": "Platform towards Księże Domki" },
+        "B": { "lat": 51.74210, "lng": 20.49190, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+      }
+    },
+    {
+      "id": 19,
+      "name": "Aleksandrówka 2",
+      "platforms": {
+        "A": { "lat": 51.7425, "lng": 20.4925, "description": "Platform towards Księże Domki" },
+        "B": { "lat": 51.74260, "lng": 20.49240, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+      }
+    },
+    {
+      "id": 20,
+      "name": "Zamkowa Wola",
+      "platforms": {
+        "A": { "lat": 51.7430, "lng": 20.4930, "description": "Platform towards Księże Domki" },
+        "B": { "lat": 51.74310, "lng": 20.49290, "description": "Platform towards Kazimierza Wielkiego / Mszczonowska" }
+      }
+    },
+    {
+      "id": 21,
+      "name": "Mszczonowska",
+      "platforms": {
+        "A": { "lat": 51.7400, "lng": 20.4900, "description": "Platform towards Księże Domki" },
+        "B": { "lat": 51.74010, "lng": 20.48990, "description": "Terminal (arrival)" }
+      }
+    },
+    {
+      "id": 22,
+      "name": "Targowa",
+      "platforms": {
+        "A": { "lat": 51.7440, "lng": 20.4940, "description": "Platform towards Księże Domki" },
+        "B": { "lat": 51.74410, "lng": 20.49390, "description": "Platform towards Mszczonowska" }
+      }
+    },
+    {
+      "id": 23,
+      "name": "Przemysłowa",
+      "platforms": {
+        "A": { "lat": 51.7500, "lng": 20.5000, "description": "Platform towards Księże Domki" },
+        "B": { "lat": 51.75010, "lng": 20.49990, "description": "Platform towards Mszczonowska" }
+      }
+    },
+    {
+      "id": 24,
+      "name": "Zwolińskiego",
+      "platforms": {
+        "A": { "lat": 51.7510, "lng": 20.5010, "description": "Platform towards Księże Domki" },
+        "B": { "lat": 51.75110, "lng": 20.50090, "description": "Platform towards Mszczonowska" }
+      }
+    },
+    {
+      "id": 25,
+      "name": "1-Maja",
+      "platforms": {
+        "A": { "lat": 51.7520, "lng": 20.5020, "description": "Platform towards Księże Domki" },
+        "B": { "lat": 51.75210, "lng": 20.50190, "description": "Platform towards Mszczonowska" }
+      }
+    },
+    {
+      "id": 26,
+      "name": "Księże Domki - Zalew",
+      "platforms": {
+        "A": { "lat": 51.7530, "lng": 20.5030, "description": "Platform towards Granica" },
+        "B": { "lat": 51.75310, "lng": 20.50290, "description": "Platform towards Mszczonowska" }
+      }
+    },
+    {
+      "id": 27,
+      "name": "Księże Domki - Granica",
+      "platforms": {
+        "A": { "lat": 51.7540, "lng": 20.5040, "description": "Terminal (arrival)" },
+        "B": { "lat": 51.75410, "lng": 20.50390, "description": "Terminal (departure)" }
+      }
+    },
+    {
+      "id": 28,
+      "name": "Mickiewicza",
+      "platforms": {
+        "A": { "lat": 51.7522, "lng": 20.5022, "description": "Platform (detour only)" },
+        "B": { "lat": 51.75230, "lng": 20.50210, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+      }
+    },
+    {
+      "id": 29,
+      "name": "Kolejowa",
+      "platforms": {
+        "A": { "lat": 51.7523, "lng": 20.5023, "description": "Platform (not used)" },
+        "B": { "lat": 51.75240, "lng": 20.50220, "description": "Platform towards Kazimierza Wielkiego (detour)" }
+      }
+    }
+  ],
+  "lines": [
+    {
+      "id": 1,
+      "name": "Linia 1",
+      "color": "#1976D2",
+      "directions": [
+        {
+          "id": "1-to-mrowka",
+          "name": "PSB Mrówka",
+          "schedules": {
+            "weekday": {
+              "trips": [
+                {
+                  "tripId": "I",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "06:00" },
+                    { "stopId": 2, "platform": "A", "time": "06:03" },
+                    { "stopId": 3, "platform": "A", "time": "06:05" },
+                    { "stopId": 9, "platform": "A", "time": "06:07" },
+                    { "stopId": 10, "platform": "A", "time": "06:08" },
+                    { "stopId": 12, "platform": "A", "time": "06:10" },
+                    { "stopId": 13, "platform": "A", "time": "06:12" },
+                    { "stopId": 14, "platform": "A", "time": "06:13" },
+                    { "stopId": 15, "platform": "A", "time": "06:14" },
+                    { "stopId": 16, "platform": "A", "time": "06:15" },
+                    { "stopId": 17, "platform": "A", "time": "06:16" }
+                  ]
+                },
+                {
+                  "tripId": "II",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "06:33" },
+                    { "stopId": 2, "platform": "A", "time": "06:36" },
+                    { "stopId": 3, "platform": "A", "time": "06:38" },
+                    { "stopId": 9, "platform": "A", "time": "06:40" },
+                    { "stopId": 10, "platform": "A", "time": "06:41" },
+                    { "stopId": 12, "platform": "A", "time": "06:43" },
+                    { "stopId": 13, "platform": "A", "time": "06:45" },
+                    { "stopId": 14, "platform": "A", "time": "06:46" },
+                    { "stopId": 15, "platform": "A", "time": "06:47" },
+                    { "stopId": 16, "platform": "A", "time": "06:48" },
+                    { "stopId": 17, "platform": "A", "time": "06:49" }
+                  ]
+                },
+                {
+                  "tripId": "III",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "07:06" },
+                    { "stopId": 2, "platform": "A", "time": "07:09" },
+                    { "stopId": 3, "platform": "A", "time": "07:11" },
+                    { "stopId": 9, "platform": "A", "time": "07:13" },
+                    { "stopId": 10, "platform": "A", "time": "07:14" },
+                    { "stopId": 12, "platform": "A", "time": "07:16" },
+                    { "stopId": 13, "platform": "A", "time": "07:18" },
+                    { "stopId": 14, "platform": "A", "time": "07:19" },
+                    { "stopId": 15, "platform": "A", "time": "07:20" },
+                    { "stopId": 16, "platform": "A", "time": "07:21" },
+                    { "stopId": 17, "platform": "A", "time": "07:22" }
+                  ]
+                },
+                {
+                  "tripId": "IV",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "08:00" },
+                    { "stopId": 2, "platform": "A", "time": "08:03" },
+                    { "stopId": 3, "platform": "A", "time": "08:05" },
+                    { "stopId": 4, "platform": "A", "time": "08:07" },
+                    { "stopId": 5, "platform": "A", "time": "08:11" },
+                    { "stopId": 6, "platform": "A", "time": "08:12" },
+                    { "stopId": 7, "platform": "A", "time": "08:14" },
+                    { "stopId": 8, "platform": "A", "time": "08:15" },
+                    { "stopId": 3, "platform": "A", "time": "08:19" },
+                    { "stopId": 9, "platform": "A", "time": "08:21" },
+                    { "stopId": 10, "platform": "A", "time": "08:22" },
+                    { "stopId": 12, "platform": "A", "time": "08:24" },
+                    { "stopId": 13, "platform": "A", "time": "08:26" },
+                    { "stopId": 14, "platform": "A", "time": "08:27" },
+                    { "stopId": 15, "platform": "A", "time": "08:28" },
+                    { "stopId": 16, "platform": "A", "time": "08:29" },
+                    { "stopId": 17, "platform": "A", "time": "08:30" }
+                  ]
+                },
+                {
+                  "tripId": "V",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "09:10" },
+                    { "stopId": 2, "platform": "A", "time": "09:13" },
+                    { "stopId": 3, "platform": "A", "time": "09:15" },
+                    { "stopId": 9, "platform": "A", "time": "09:17" },
+                    { "stopId": 10, "platform": "A", "time": "09:18" },
+                    { "stopId": 12, "platform": "A", "time": "09:20" },
+                    { "stopId": 13, "platform": "A", "time": "09:22" },
+                    { "stopId": 14, "platform": "A", "time": "09:23" },
+                    { "stopId": 15, "platform": "A", "time": "09:24" },
+                    { "stopId": 16, "platform": "A", "time": "09:25" },
+                    { "stopId": 17, "platform": "A", "time": "09:26" }
+                  ]
+                },
+                {
+                  "tripId": "VI",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "11:34" },
+                    { "stopId": 2, "platform": "A", "time": "11:37" },
+                    { "stopId": 3, "platform": "A", "time": "11:39" },
+                    { "stopId": 9, "platform": "A", "time": "11:41" },
+                    { "stopId": 10, "platform": "A", "time": "11:42" },
+                    { "stopId": 12, "platform": "A", "time": "11:44" },
+                    { "stopId": 13, "platform": "A", "time": "11:46" },
+                    { "stopId": 14, "platform": "A", "time": "11:47" },
+                    { "stopId": 15, "platform": "A", "time": "11:48" },
+                    { "stopId": 16, "platform": "A", "time": "11:49" },
+                    { "stopId": 17, "platform": "A", "time": "11:50" }
+                  ]
+                },
+                {
+                  "tripId": "VII",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "12:27" },
+                    { "stopId": 2, "platform": "A", "time": "12:30" },
+                    { "stopId": 3, "platform": "A", "time": "12:32" },
+                    { "stopId": 9, "platform": "A", "time": "12:34" },
+                    { "stopId": 10, "platform": "A", "time": "12:35" },
+                    { "stopId": 12, "platform": "A", "time": "12:37" },
+                    { "stopId": 13, "platform": "A", "time": "12:39" },
+                    { "stopId": 14, "platform": "A", "time": "12:40" },
+                    { "stopId": 15, "platform": "A", "time": "12:41" },
+                    { "stopId": 16, "platform": "A", "time": "12:42" },
+                    { "stopId": 17, "platform": "A", "time": "12:43" }
+                  ]
+                },
+                {
+                  "tripId": "VIII",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "13:35" },
+                    { "stopId": 2, "platform": "A", "time": "13:38" },
+                    { "stopId": 3, "platform": "A", "time": "13:40" },
+                    { "stopId": 9, "platform": "A", "time": "13:42" },
+                    { "stopId": 10, "platform": "A", "time": "13:43" },
+                    { "stopId": 12, "platform": "A", "time": "13:45" },
+                    { "stopId": 13, "platform": "A", "time": "13:47" },
+                    { "stopId": 14, "platform": "A", "time": "13:48" },
+                    { "stopId": 15, "platform": "A", "time": "13:49" },
+                    { "stopId": 16, "platform": "A", "time": "13:50" },
+                    { "stopId": 17, "platform": "A", "time": "13:51" }
+                  ]
+                },
+                {
+                  "tripId": "IX",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "14:25" },
+                    { "stopId": 2, "platform": "A", "time": "14:28" },
+                    { "stopId": 3, "platform": "A", "time": "14:30" },
+                    { "stopId": 4, "platform": "A", "time": "14:32" },
+                    { "stopId": 5, "platform": "A", "time": "14:36" },
+                    { "stopId": 6, "platform": "A", "time": "14:37" },
+                    { "stopId": 7, "platform": "A", "time": "14:39" },
+                    { "stopId": 8, "platform": "A", "time": "14:40" },
+                    { "stopId": 3, "platform": "A", "time": "14:44" },
+                    { "stopId": 9, "platform": "A", "time": "14:46" },
+                    { "stopId": 10, "platform": "A", "time": "14:47" },
+                    { "stopId": 12, "platform": "A", "time": "14:49" },
+                    { "stopId": 13, "platform": "A", "time": "14:51" },
+                    { "stopId": 14, "platform": "A", "time": "14:52" },
+                    { "stopId": 15, "platform": "A", "time": "14:53" },
+                    { "stopId": 16, "platform": "A", "time": "14:54" },
+                    { "stopId": 17, "platform": "A", "time": "14:55" }
+                  ]
+                },
+                {
+                  "tripId": "X",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "15:27" },
+                    { "stopId": 2, "platform": "A", "time": "15:30" },
+                    { "stopId": 3, "platform": "A", "time": "15:32" },
+                    { "stopId": 9, "platform": "A", "time": "15:34" },
+                    { "stopId": 10, "platform": "A", "time": "15:35" },
+                    { "stopId": 12, "platform": "A", "time": "15:37" },
+                    { "stopId": 13, "platform": "A", "time": "15:39" },
+                    { "stopId": 14, "platform": "A", "time": "15:40" },
+                    { "stopId": 15, "platform": "A", "time": "15:41" },
+                    { "stopId": 16, "platform": "A", "time": "15:42" },
+                    { "stopId": 17, "platform": "A", "time": "15:43" }
+                  ]
+                },
+                {
+                  "tripId": "XI",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "17:05" },
+                    { "stopId": 2, "platform": "A", "time": "17:08" },
+                    { "stopId": 3, "platform": "A", "time": "17:10" },
+                    { "stopId": 4, "platform": "A", "time": "17:12" },
+                    { "stopId": 5, "platform": "A", "time": "17:16" },
+                    { "stopId": 6, "platform": "A", "time": "17:17" },
+                    { "stopId": 7, "platform": "A", "time": "17:19" },
+                    { "stopId": 8, "platform": "A", "time": "17:20" },
+                    { "stopId": 3, "platform": "A", "time": "17:24" },
+                    { "stopId": 9, "platform": "A", "time": "17:26" },
+                    { "stopId": 10, "platform": "A", "time": "17:27" },
+                    { "stopId": 12, "platform": "A", "time": "17:29" },
+                    { "stopId": 13, "platform": "A", "time": "17:31" },
+                    { "stopId": 14, "platform": "A", "time": "17:32" },
+                    { "stopId": 15, "platform": "A", "time": "17:33" },
+                    { "stopId": 16, "platform": "A", "time": "17:34" },
+                    { "stopId": 17, "platform": "A", "time": "17:35" }
+                  ]
+                },
+                {
+                  "tripId": "XII",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "18:16" },
+                    { "stopId": 2, "platform": "A", "time": "18:19" },
+                    { "stopId": 3, "platform": "A", "time": "18:21" },
+                    { "stopId": 9, "platform": "A", "time": "18:23" },
+                    { "stopId": 10, "platform": "A", "time": "18:24" },
+                    { "stopId": 12, "platform": "A", "time": "18:26" },
+                    { "stopId": 13, "platform": "A", "time": "18:28" },
+                    { "stopId": 14, "platform": "A", "time": "18:29" },
+                    { "stopId": 15, "platform": "A", "time": "18:30" },
+                    { "stopId": 16, "platform": "A", "time": "18:31" },
+                    { "stopId": 17, "platform": "A", "time": "18:32" }
+                  ]
+                }
+              ]
+            },
+            "weekend": {
+              "trips": [
+                {
+                  "tripId": "I",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "07:45" },
+                    { "stopId": 2, "platform": "A", "time": "07:48" },
+                    { "stopId": 3, "platform": "A", "time": "07:50" },
+                    { "stopId": 4, "platform": "A", "time": "07:52" },
+                    { "stopId": 5, "platform": "A", "time": "07:56" },
+                    { "stopId": 6, "platform": "A", "time": "07:57" },
+                    { "stopId": 7, "platform": "A", "time": "07:58" },
+                    { "stopId": 8, "platform": "A", "time": "07:59" },
+                    { "stopId": 3, "platform": "A", "time": "08:02" },
+                    { "stopId": 9, "platform": "A", "time": "08:03" },
+                    { "stopId": 10, "platform": "A", "time": "08:04" },
+                    { "stopId": 12, "platform": "A", "time": "08:05" },
+                    { "stopId": 13, "platform": "A", "time": "08:08" },
+                    { "stopId": 14, "platform": "A", "time": "08:10" },
+                    { "stopId": 15, "platform": "A", "time": "08:11" },
+                    { "stopId": 16, "platform": "A", "time": "08:12" },
+                    { "stopId": 17, "platform": "A", "time": "08:13" }
+                  ]
+                },
+                {
+                  "tripId": "II",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "09:34" },
+                    { "stopId": 21, "platform": "A", "time": "09:39" },
+                    { "stopId": 18, "platform": "A", "time": "09:44" },
+                    { "stopId": 19, "platform": "A", "time": "09:45" },
+                    { "stopId": 20, "platform": "A", "time": "09:47" },
+                    { "stopId": 2, "platform": "A", "time": "09:49" },
+                    { "stopId": 3, "platform": "A", "time": "09:51" },
+                    { "stopId": 4, "platform": "A", "time": "09:53" },
+                    { "stopId": 5, "platform": "A", "time": "09:57" },
+                    { "stopId": 6, "platform": "A", "time": "09:58" },
+                    { "stopId": 7, "platform": "A", "time": "09:59" },
+                    { "stopId": 8, "platform": "A", "time": "10:00" },
+                    { "stopId": 3, "platform": "A", "time": "10:03" },
+                    { "stopId": 9, "platform": "A", "time": "10:04" },
+                    { "stopId": 10, "platform": "A", "time": "10:06" },
+                    { "stopId": 12, "platform": "A", "time": "10:08" },
+                    { "stopId": 13, "platform": "A", "time": "10:10" },
+                    { "stopId": 14, "platform": "A", "time": "10:12" },
+                    { "stopId": 15, "platform": "A", "time": "10:13" },
+                    { "stopId": 16, "platform": "A", "time": "10:14" },
+                    { "stopId": 17, "platform": "A", "time": "10:15" }
+                  ]
+                },
+                {
+                  "tripId": "III",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "10:42" },
+                    { "stopId": 2, "platform": "A", "time": "10:45" },
+                    { "stopId": 3, "platform": "A", "time": "10:47" },
+                    { "stopId": 9, "platform": "A", "time": "10:48" },
+                    { "stopId": 10, "platform": "A", "time": "10:50" },
+                    { "stopId": 12, "platform": "A", "time": "10:52" },
+                    { "stopId": 13, "platform": "A", "time": "10:54" },
+                    { "stopId": 14, "platform": "A", "time": "10:56" },
+                    { "stopId": 15, "platform": "A", "time": "10:57" },
+                    { "stopId": 16, "platform": "A", "time": "10:58" },
+                    { "stopId": 17, "platform": "A", "time": "10:59" }
+                  ]
+                },
+                {
+                  "tripId": "IV",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "12:30" },
+                    { "stopId": 2, "platform": "A", "time": "12:33" },
+                    { "stopId": 3, "platform": "A", "time": "12:35" },
+                    { "stopId": 4, "platform": "A", "time": "12:37" },
+                    { "stopId": 5, "platform": "A", "time": "12:41" },
+                    { "stopId": 6, "platform": "A", "time": "12:42" },
+                    { "stopId": 7, "platform": "A", "time": "12:43" },
+                    { "stopId": 8, "platform": "A", "time": "12:44" },
+                    { "stopId": 3, "platform": "A", "time": "12:47" },
+                    { "stopId": 9, "platform": "A", "time": "12:48" },
+                    { "stopId": 10, "platform": "A", "time": "12:50" },
+                    { "stopId": 12, "platform": "A", "time": "12:52" },
+                    { "stopId": 13, "platform": "A", "time": "12:54" },
+                    { "stopId": 14, "platform": "A", "time": "12:56" },
+                    { "stopId": 15, "platform": "A", "time": "12:57" },
+                    { "stopId": 16, "platform": "A", "time": "12:58" },
+                    { "stopId": 17, "platform": "A", "time": "12:59" }
+                  ]
+                },
+                {
+                  "tripId": "V",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "13:44" },
+                    { "stopId": 2, "platform": "A", "time": "13:47" },
+                    { "stopId": 3, "platform": "A", "time": "13:49" },
+                    { "stopId": 9, "platform": "A", "time": "13:50" },
+                    { "stopId": 10, "platform": "A", "time": "13:52" },
+                    { "stopId": 12, "platform": "A", "time": "13:54" },
+                    { "stopId": 13, "platform": "A", "time": "13:56" },
+                    { "stopId": 14, "platform": "A", "time": "13:58" },
+                    { "stopId": 15, "platform": "A", "time": "13:59" },
+                    { "stopId": 16, "platform": "A", "time": "14:00" },
+                    { "stopId": 17, "platform": "A", "time": "14:01" }
+                  ]
+                },
+                {
+                  "tripId": "VI",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "15:28" },
+                    { "stopId": 2, "platform": "A", "time": "15:31" },
+                    { "stopId": 3, "platform": "A", "time": "15:33" },
+                    { "stopId": 4, "platform": "A", "time": "15:35" },
+                    { "stopId": 5, "platform": "A", "time": "15:39" },
+                    { "stopId": 6, "platform": "A", "time": "15:40" },
+                    { "stopId": 7, "platform": "A", "time": "15:41" },
+                    { "stopId": 8, "platform": "A", "time": "15:42" },
+                    { "stopId": 3, "platform": "A", "time": "15:45" },
+                    { "stopId": 9, "platform": "A", "time": "15:46" },
+                    { "stopId": 10, "platform": "A", "time": "15:48" },
+                    { "stopId": 12, "platform": "A", "time": "15:50" },
+                    { "stopId": 13, "platform": "A", "time": "15:52" },
+                    { "stopId": 14, "platform": "A", "time": "15:54" },
+                    { "stopId": 15, "platform": "A", "time": "15:55" },
+                    { "stopId": 16, "platform": "A", "time": "15:56" },
+                    { "stopId": 17, "platform": "A", "time": "15:57" }
+                  ]
+                },
+                {
+                  "tripId": "VII",
+                  "stops": [
+                    { "stopId": 1, "platform": "A", "time": "16:15" },
+                    { "stopId": 2, "platform": "A", "time": "16:18" },
+                    { "stopId": 3, "platform": "A", "time": "16:20" },
+                    { "stopId": 9, "platform": "A", "time": "16:21" },
+                    { "stopId": 10, "platform": "A", "time": "16:23" },
+                    { "stopId": 12, "platform": "A", "time": "16:25" },
+                    { "stopId": 13, "platform": "A", "time": "16:27" },
+                    { "stopId": 14, "platform": "A", "time": "16:29" },
+                    { "stopId": 15, "platform": "A", "time": "16:30" },
+                    { "stopId": 16, "platform": "A", "time": "16:31" },
+                    { "stopId": 17, "platform": "A", "time": "16:32" }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "1-from-mrowka",
+          "name": "Os. Zamkowa Wola",
+          "schedules": {
+            "weekday": {
+              "trips": [
+                {
+                  "tripId": "I",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "06:16" },
+                    { "stopId": 16, "platform": "B", "time": "06:17" },
+                    { "stopId": 15, "platform": "B", "time": "06:19" },
+                    { "stopId": 14, "platform": "B", "time": "06:20" },
+                    { "stopId": 13, "platform": "B", "time": "06:21" },
+                    { "stopId": 12, "platform": "B", "time": "06:23" },
+                    { "stopId": 11, "platform": "B", "time": "06:25" },
+                    { "stopId": 28, "platform": "B", "time": "06:27" },
+                    { "stopId": 4, "platform": "B", "time": "06:29" },
+                    { "stopId": 2, "platform": "B", "time": "06:31" },
+                    { "stopId": 1, "platform": "B", "time": "06:33" }
+                  ]
+                },
+                {
+                  "tripId": "II",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "06:49" },
+                    { "stopId": 16, "platform": "B", "time": "06:50" },
+                    { "stopId": 15, "platform": "B", "time": "06:52" },
+                    { "stopId": 14, "platform": "B", "time": "06:53" },
+                    { "stopId": 13, "platform": "B", "time": "06:54" },
+                    { "stopId": 12, "platform": "B", "time": "06:56" },
+                    { "stopId": 11, "platform": "B", "time": "06:58" },
+                    { "stopId": 28, "platform": "B", "time": "07:00" },
+                    { "stopId": 4, "platform": "B", "time": "07:02" },
+                    { "stopId": 2, "platform": "B", "time": "07:04" },
+                    { "stopId": 1, "platform": "B", "time": "07:06" }
+                  ]
+                },
+                {
+                  "tripId": "III",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "07:23" },
+                    { "stopId": 16, "platform": "B", "time": "07:24" },
+                    { "stopId": 15, "platform": "B", "time": "07:26" },
+                    { "stopId": 14, "platform": "B", "time": "07:27" },
+                    { "stopId": 13, "platform": "B", "time": "07:28" },
+                    { "stopId": 12, "platform": "B", "time": "07:30" },
+                    { "stopId": 11, "platform": "B", "time": "07:32" },
+                    { "stopId": 28, "platform": "B", "time": "07:34" },
+                    { "stopId": 4, "platform": "B", "time": "07:36" },
+                    { "stopId": 5, "platform": "B", "time": "07:40" },
+                    { "stopId": 6, "platform": "B", "time": "07:41" },
+                    { "stopId": 7, "platform": "B", "time": "07:42" },
+                    { "stopId": 8, "platform": "B", "time": "07:43" },
+                    { "stopId": 29, "platform": "B", "time": "07:46" },
+                    { "stopId": 28, "platform": "B", "time": "07:49" },
+                    { "stopId": 4, "platform": "B", "time": "07:51" },
+                    { "stopId": 2, "platform": "B", "time": "07:53" },
+                    { "stopId": 1, "platform": "B", "time": "07:55" }
+                  ]
+                },
+                {
+                  "tripId": "IV",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "08:30" },
+                    { "stopId": 16, "platform": "B", "time": "08:31" },
+                    { "stopId": 15, "platform": "B", "time": "08:33" },
+                    { "stopId": 14, "platform": "B", "time": "08:34" },
+                    { "stopId": 13, "platform": "B", "time": "08:35" },
+                    { "stopId": 12, "platform": "B", "time": "08:37" },
+                    { "stopId": 11, "platform": "B", "time": "08:39" },
+                    { "stopId": 28, "platform": "B", "time": "08:41" },
+                    { "stopId": 4, "platform": "B", "time": "08:43" },
+                    { "stopId": 2, "platform": "B", "time": "08:45" },
+                    { "stopId": 1, "platform": "B", "time": "08:47" }
+                  ]
+                },
+                {
+                  "tripId": "V",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "09:27" },
+                    { "stopId": 16, "platform": "B", "time": "09:28" },
+                    { "stopId": 15, "platform": "B", "time": "09:30" },
+                    { "stopId": 14, "platform": "B", "time": "09:31" },
+                    { "stopId": 13, "platform": "B", "time": "09:32" },
+                    { "stopId": 12, "platform": "B", "time": "09:34" },
+                    { "stopId": 11, "platform": "B", "time": "09:36" },
+                    { "stopId": 28, "platform": "B", "time": "09:38" },
+                    { "stopId": 4, "platform": "B", "time": "09:40" },
+                    { "stopId": 5, "platform": "B", "time": "09:44" },
+                    { "stopId": 6, "platform": "B", "time": "09:45" },
+                    { "stopId": 7, "platform": "B", "time": "09:46" },
+                    { "stopId": 8, "platform": "B", "time": "09:47" },
+                    { "stopId": 29, "platform": "B", "time": "09:50" },
+                    { "stopId": 28, "platform": "B", "time": "09:53" },
+                    { "stopId": 4, "platform": "B", "time": "09:55" },
+                    { "stopId": 2, "platform": "B", "time": "09:57" },
+                    { "stopId": 1, "platform": "B", "time": "09:59" }
+                  ]
+                },
+                {
+                  "tripId": "VI",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "11:51" },
+                    { "stopId": 16, "platform": "B", "time": "11:52" },
+                    { "stopId": 15, "platform": "B", "time": "11:54" },
+                    { "stopId": 14, "platform": "B", "time": "11:55" },
+                    { "stopId": 13, "platform": "B", "time": "11:56" },
+                    { "stopId": 12, "platform": "B", "time": "11:58" },
+                    { "stopId": 11, "platform": "B", "time": "12:00" },
+                    { "stopId": 28, "platform": "B", "time": "12:02" },
+                    { "stopId": 4, "platform": "B", "time": "12:04" },
+                    { "stopId": 5, "platform": "B", "time": "12:08" },
+                    { "stopId": 6, "platform": "B", "time": "12:09" },
+                    { "stopId": 7, "platform": "B", "time": "12:10" },
+                    { "stopId": 8, "platform": "B", "time": "12:11" },
+                    { "stopId": 29, "platform": "B", "time": "12:14" },
+                    { "stopId": 28, "platform": "B", "time": "12:17" },
+                    { "stopId": 4, "platform": "B", "time": "12:19" },
+                    { "stopId": 2, "platform": "B", "time": "12:21" },
+                    { "stopId": 1, "platform": "B", "time": "12:23" }
+                  ]
+                },
+                {
+                  "tripId": "VII",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "13:18" },
+                    { "stopId": 16, "platform": "B", "time": "13:19" },
+                    { "stopId": 15, "platform": "B", "time": "13:21" },
+                    { "stopId": 14, "platform": "B", "time": "13:22" },
+                    { "stopId": 13, "platform": "B", "time": "13:23" },
+                    { "stopId": 12, "platform": "B", "time": "13:25" },
+                    { "stopId": 11, "platform": "B", "time": "13:27" },
+                    { "stopId": 28, "platform": "B", "time": "13:29" },
+                    { "stopId": 4, "platform": "B", "time": "13:31" },
+                    { "stopId": 2, "platform": "B", "time": "13:33" },
+                    { "stopId": 1, "platform": "B", "time": "13:35" }
+                  ]
+                },
+                {
+                  "tripId": "VIII",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "14:08" },
+                    { "stopId": 16, "platform": "B", "time": "14:09" },
+                    { "stopId": 15, "platform": "B", "time": "14:11" },
+                    { "stopId": 14, "platform": "B", "time": "14:12" },
+                    { "stopId": 13, "platform": "B", "time": "14:13" },
+                    { "stopId": 12, "platform": "B", "time": "14:15" },
+                    { "stopId": 11, "platform": "B", "time": "14:17" },
+                    { "stopId": 28, "platform": "B", "time": "14:19" },
+                    { "stopId": 4, "platform": "B", "time": "14:21" },
+                    { "stopId": 2, "platform": "B", "time": "14:23" },
+                    { "stopId": 1, "platform": "B", "time": "14:25" }
+                  ]
+                },
+                {
+                  "tripId": "IX",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "15:09" },
+                    { "stopId": 16, "platform": "B", "time": "15:10" },
+                    { "stopId": 15, "platform": "B", "time": "15:12" },
+                    { "stopId": 14, "platform": "B", "time": "15:13" },
+                    { "stopId": 13, "platform": "B", "time": "15:14" },
+                    { "stopId": 12, "platform": "B", "time": "15:16" },
+                    { "stopId": 11, "platform": "B", "time": "15:18" },
+                    { "stopId": 28, "platform": "B", "time": "15:20" },
+                    { "stopId": 4, "platform": "B", "time": "15:22" },
+                    { "stopId": 2, "platform": "B", "time": "15:24" },
+                    { "stopId": 1, "platform": "B", "time": "15:26" }
+                  ]
+                },
+                {
+                  "tripId": "X",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "16:02" },
+                    { "stopId": 16, "platform": "B", "time": "16:03" },
+                    { "stopId": 15, "platform": "B", "time": "16:05" },
+                    { "stopId": 14, "platform": "B", "time": "16:06" },
+                    { "stopId": 13, "platform": "B", "time": "16:07" },
+                    { "stopId": 12, "platform": "B", "time": "16:09" },
+                    { "stopId": 11, "platform": "B", "time": "16:11" },
+                    { "stopId": 28, "platform": "B", "time": "16:13" },
+                    { "stopId": 4, "platform": "B", "time": "16:15" },
+                    { "stopId": 5, "platform": "B", "time": "16:19" },
+                    { "stopId": 6, "platform": "B", "time": "16:20" },
+                    { "stopId": 7, "platform": "B", "time": "16:21" },
+                    { "stopId": 8, "platform": "B", "time": "16:22" },
+                    { "stopId": 29, "platform": "B", "time": "16:25" },
+                    { "stopId": 28, "platform": "B", "time": "16:28" },
+                    { "stopId": 4, "platform": "B", "time": "16:30" },
+                    { "stopId": 2, "platform": "B", "time": "16:32" },
+                    { "stopId": 1, "platform": "B", "time": "16:34" }
+                  ]
+                },
+                {
+                  "tripId": "XI",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "17:35" },
+                    { "stopId": 16, "platform": "B", "time": "17:36" },
+                    { "stopId": 15, "platform": "B", "time": "17:38" },
+                    { "stopId": 14, "platform": "B", "time": "17:39" },
+                    { "stopId": 13, "platform": "B", "time": "17:40" },
+                    { "stopId": 12, "platform": "B", "time": "17:42" },
+                    { "stopId": 11, "platform": "B", "time": "17:44" },
+                    { "stopId": 28, "platform": "B", "time": "17:46" },
+                    { "stopId": 4, "platform": "B", "time": "17:48" },
+                    { "stopId": 2, "platform": "B", "time": "17:50" },
+                    { "stopId": 1, "platform": "B", "time": "17:52" }
+                  ]
+                },
+                {
+                  "tripId": "XII",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "18:32" },
+                    { "stopId": 16, "platform": "B", "time": "18:33" },
+                    { "stopId": 15, "platform": "B", "time": "18:35" },
+                    { "stopId": 14, "platform": "B", "time": "18:36" },
+                    { "stopId": 13, "platform": "B", "time": "18:37" },
+                    { "stopId": 12, "platform": "B", "time": "18:39" },
+                    { "stopId": 11, "platform": "B", "time": "18:41" },
+                    { "stopId": 28, "platform": "B", "time": "18:43" },
+                    { "stopId": 4, "platform": "B", "time": "18:45" },
+                    { "stopId": 5, "platform": "B", "time": "18:49" },
+                    { "stopId": 6, "platform": "B", "time": "18:50" },
+                    { "stopId": 7, "platform": "B", "time": "18:51" },
+                    { "stopId": 8, "platform": "B", "time": "18:52" },
+                    { "stopId": 29, "platform": "B", "time": "18:55" },
+                    { "stopId": 28, "platform": "B", "time": "18:58" },
+                    { "stopId": 4, "platform": "B", "time": "19:00" },
+                    { "stopId": 2, "platform": "B", "time": "19:02" },
+                    { "stopId": 1, "platform": "B", "time": "19:04" }
+                  ]
+                }
+              ]
+            },
+            "weekend": {
+              "trips": [
+                {
+                  "tripId": "I",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "08:14" },
+                    { "stopId": 16, "platform": "B", "time": "08:15" },
+                    { "stopId": 15, "platform": "B", "time": "08:16" },
+                    { "stopId": 14, "platform": "B", "time": "08:18" },
+                    { "stopId": 13, "platform": "B", "time": "08:19" },
+                    { "stopId": 12, "platform": "B", "time": "08:21" },
+                    { "stopId": 11, "platform": "B", "time": "08:23" },
+                    { "stopId": 28, "platform": "B", "time": "08:25" },
+                    { "stopId": 4, "platform": "B", "time": "08:27" },
+                    { "stopId": 5, "platform": "B", "time": "08:30" },
+                    { "stopId": 6, "platform": "B", "time": "08:31" },
+                    { "stopId": 7, "platform": "B", "time": "08:32" },
+                    { "stopId": 8, "platform": "B", "time": "08:33" },
+                    { "stopId": 29, "platform": "B", "time": "08:36" },
+                    { "stopId": 28, "platform": "B", "time": "08:39" },
+                    { "stopId": 4, "platform": "B", "time": "08:41" },
+                    { "stopId": 2, "platform": "B", "time": "08:43" },
+                    { "stopId": 1, "platform": "B", "time": "08:45" }
+                  ]
+                },
+                {
+                  "tripId": "II",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "10:16" },
+                    { "stopId": 16, "platform": "B", "time": "10:17" },
+                    { "stopId": 15, "platform": "B", "time": "10:18" },
+                    { "stopId": 14, "platform": "B", "time": "10:20" },
+                    { "stopId": 13, "platform": "B", "time": "10:21" },
+                    { "stopId": 12, "platform": "B", "time": "10:23" },
+                    { "stopId": 11, "platform": "B", "time": "10:25" },
+                    { "stopId": 28, "platform": "B", "time": "10:27" },
+                    { "stopId": 4, "platform": "B", "time": "10:29" },
+                    { "stopId": 2, "platform": "B", "time": "10:31" },
+                    { "stopId": 1, "platform": "B", "time": "10:33" }
+                  ]
+                },
+                {
+                  "tripId": "III",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "11:00" },
+                    { "stopId": 16, "platform": "B", "time": "11:01" },
+                    { "stopId": 15, "platform": "B", "time": "11:02" },
+                    { "stopId": 14, "platform": "B", "time": "11:04" },
+                    { "stopId": 13, "platform": "B", "time": "11:05" },
+                    { "stopId": 12, "platform": "B", "time": "11:07" },
+                    { "stopId": 11, "platform": "B", "time": "11:09" },
+                    { "stopId": 28, "platform": "B", "time": "11:11" },
+                    { "stopId": 4, "platform": "B", "time": "11:13" },
+                    { "stopId": 5, "platform": "B", "time": "11:16" },
+                    { "stopId": 6, "platform": "B", "time": "11:17" },
+                    { "stopId": 7, "platform": "B", "time": "11:18" },
+                    { "stopId": 8, "platform": "B", "time": "11:19" },
+                    { "stopId": 29, "platform": "B", "time": "11:22" },
+                    { "stopId": 28, "platform": "B", "time": "11:25" },
+                    { "stopId": 4, "platform": "B", "time": "11:27" },
+                    { "stopId": 2, "platform": "B", "time": "11:29" },
+                    { "stopId": 20, "platform": "B", "time": "11:31" },
+                    { "stopId": 19, "platform": "B", "time": "11:33" },
+                    { "stopId": 18, "platform": "B", "time": "11:34" },
+                    { "stopId": 21, "platform": "B", "time": "11:38" },
+                    { "stopId": 1, "platform": "B", "time": "11:43" }
+                  ]
+                },
+                {
+                  "tripId": "IV",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "13:00" },
+                    { "stopId": 16, "platform": "B", "time": "13:01" },
+                    { "stopId": 15, "platform": "B", "time": "13:02" },
+                    { "stopId": 14, "platform": "B", "time": "13:04" },
+                    { "stopId": 13, "platform": "B", "time": "13:05" },
+                    { "stopId": 12, "platform": "B", "time": "13:07" },
+                    { "stopId": 11, "platform": "B", "time": "13:09" },
+                    { "stopId": 28, "platform": "B", "time": "13:11" },
+                    { "stopId": 4, "platform": "B", "time": "13:13" },
+                    { "stopId": 2, "platform": "B", "time": "13:15" },
+                    { "stopId": 1, "platform": "B", "time": "13:17" }
+                  ]
+                },
+                {
+                  "tripId": "V",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "14:02" },
+                    { "stopId": 16, "platform": "B", "time": "14:03" },
+                    { "stopId": 15, "platform": "B", "time": "14:04" },
+                    { "stopId": 14, "platform": "B", "time": "14:06" },
+                    { "stopId": 13, "platform": "B", "time": "14:07" },
+                    { "stopId": 12, "platform": "B", "time": "14:09" },
+                    { "stopId": 11, "platform": "B", "time": "14:11" },
+                    { "stopId": 28, "platform": "B", "time": "14:13" },
+                    { "stopId": 4, "platform": "B", "time": "14:15" },
+                    { "stopId": 5, "platform": "B", "time": "14:18" },
+                    { "stopId": 6, "platform": "B", "time": "14:19" },
+                    { "stopId": 7, "platform": "B", "time": "14:20" },
+                    { "stopId": 8, "platform": "B", "time": "14:21" },
+                    { "stopId": 29, "platform": "B", "time": "14:24" },
+                    { "stopId": 28, "platform": "B", "time": "14:27" },
+                    { "stopId": 4, "platform": "B", "time": "14:29" },
+                    { "stopId": 2, "platform": "B", "time": "14:31" },
+                    { "stopId": 1, "platform": "B", "time": "14:33" }
+                  ]
+                },
+                {
+                  "tripId": "VI",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "15:58" },
+                    { "stopId": 16, "platform": "B", "time": "15:59" },
+                    { "stopId": 15, "platform": "B", "time": "16:00" },
+                    { "stopId": 14, "platform": "B", "time": "16:02" },
+                    { "stopId": 13, "platform": "B", "time": "16:03" },
+                    { "stopId": 12, "platform": "B", "time": "16:05" },
+                    { "stopId": 11, "platform": "B", "time": "16:07" },
+                    { "stopId": 28, "platform": "B", "time": "16:09" },
+                    { "stopId": 4, "platform": "B", "time": "16:11" },
+                    { "stopId": 2, "platform": "B", "time": "16:13" },
+                    { "stopId": 1, "platform": "B", "time": "16:15" }
+                  ]
+                },
+                {
+                  "tripId": "VII",
+                  "stops": [
+                    { "stopId": 17, "platform": "B", "time": "16:33" },
+                    { "stopId": 16, "platform": "B", "time": "16:34" },
+                    { "stopId": 15, "platform": "B", "time": "16:35" },
+                    { "stopId": 14, "platform": "B", "time": "16:37" },
+                    { "stopId": 13, "platform": "B", "time": "16:38" },
+                    { "stopId": 12, "platform": "B", "time": "16:40" },
+                    { "stopId": 11, "platform": "B", "time": "16:42" },
+                    { "stopId": 28, "platform": "B", "time": "16:44" },
+                    { "stopId": 4, "platform": "B", "time": "16:46" },
+                    { "stopId": 5, "platform": "B", "time": "16:49" },
+                    { "stopId": 6, "platform": "B", "time": "16:50" },
+                    { "stopId": 7, "platform": "B", "time": "16:51" },
+                    { "stopId": 8, "platform": "B", "time": "16:52" },
+                    { "stopId": 29, "platform": "B", "time": "16:55" },
+                    { "stopId": 28, "platform": "B", "time": "16:58" },
+                    { "stopId": 4, "platform": "B", "time": "17:00" },
+                    { "stopId": 2, "platform": "B", "time": "17:02" },
+                    { "stopId": 1, "platform": "B", "time": "17:04" }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Linia 2",
+      "color": "#388E3C",
+      "operatingDays": ["weekday"],
+      "directions": [
+        {
+          "id": "2-to-domki",
+          "name": "Księże Domki",
+          "schedules": {
+            "weekday": {
+              "trips": [
+                {
+                  "tripId": "I",
+                  "stops": [
+                    { "stopId": 21, "platform": "A", "time": "06:40" },
+                    { "stopId": 1, "platform": "A", "time": "06:44" },
+                    { "stopId": 18, "platform": "A", "time": "06:49" },
+                    { "stopId": 19, "platform": "A", "time": "06:50" },
+                    { "stopId": 20, "platform": "A", "time": "06:52" },
+                    { "stopId": 22, "platform": "A", "time": "06:54" },
+                    { "stopId": 10, "platform": "A", "time": "06:58" },
+                    { "stopId": 12, "platform": "A", "time": "06:59" },
+                    { "stopId": 13, "platform": "A", "time": "07:00" },
+                    { "stopId": 13, "platform": "A", "time": "07:02" },
+                    { "stopId": 23, "platform": "A", "time": "07:05" },
+                    { "stopId": 24, "platform": "A", "time": "07:06" },
+                    { "stopId": 11, "platform": "A", "time": "07:09" },
+                    { "stopId": 25, "platform": "A", "time": "07:11" },
+                    { "stopId": 26, "platform": "A", "time": "07:12" },
+                    { "stopId": 27, "platform": "A", "time": "07:13" }
+                  ]
+                },
+                {
+                  "tripId": "II",
+                  "stops": [
+                    { "stopId": 21, "platform": "A", "time": "07:47" },
+                    { "stopId": 1, "platform": "A", "time": "07:51" },
+                    { "stopId": 18, "platform": "A", "time": "07:56" },
+                    { "stopId": 19, "platform": "A", "time": "07:57" },
+                    { "stopId": 20, "platform": "A", "time": "07:59" },
+                    { "stopId": 22, "platform": "A", "time": "08:01" },
+                    { "stopId": 10, "platform": "A", "time": "08:05" },
+                    { "stopId": 12, "platform": "A", "time": "08:06" },
+                    { "stopId": 13, "platform": "A", "time": "08:07" },
+                    { "stopId": 13, "platform": "A", "time": "08:09" },
+                    { "stopId": 23, "platform": "A", "time": "08:12" },
+                    { "stopId": 24, "platform": "A", "time": "08:13" },
+                    { "stopId": 11, "platform": "A", "time": "08:16" },
+                    { "stopId": 25, "platform": "A", "time": "08:18" },
+                    { "stopId": 26, "platform": "A", "time": "08:19" },
+                    { "stopId": 27, "platform": "A", "time": "08:20" }
+                  ]
+                },
+                {
+                  "tripId": "III",
+                  "stops": [
+                    { "stopId": 21, "platform": "A", "time": "12:39" },
+                    { "stopId": 1, "platform": "A", "time": "12:43" },
+                    { "stopId": 18, "platform": "A", "time": "12:48" },
+                    { "stopId": 19, "platform": "A", "time": "12:49" },
+                    { "stopId": 20, "platform": "A", "time": "12:51" },
+                    { "stopId": 22, "platform": "A", "time": "12:53" },
+                    { "stopId": 10, "platform": "A", "time": "12:57" },
+                    { "stopId": 12, "platform": "A", "time": "12:58" },
+                    { "stopId": 13, "platform": "A", "time": "12:59" },
+                    { "stopId": 13, "platform": "A", "time": "13:01" },
+                    { "stopId": 23, "platform": "A", "time": "13:04" },
+                    { "stopId": 24, "platform": "A", "time": "13:05" },
+                    { "stopId": 11, "platform": "A", "time": "13:08" },
+                    { "stopId": 25, "platform": "A", "time": "13:10" },
+                    { "stopId": 26, "platform": "A", "time": "13:11" },
+                    { "stopId": 27, "platform": "A", "time": "13:12" }
+                  ]
+                },
+                {
+                  "tripId": "IV",
+                  "stops": [
+                    { "stopId": 21, "platform": "A", "time": "14:18" },
+                    { "stopId": 1, "platform": "A", "time": "14:22" },
+                    { "stopId": 18, "platform": "A", "time": "14:27" },
+                    { "stopId": 19, "platform": "A", "time": "14:28" },
+                    { "stopId": 20, "platform": "A", "time": "14:30" },
+                    { "stopId": 22, "platform": "A", "time": "14:32" },
+                    { "stopId": 10, "platform": "A", "time": "14:36" },
+                    { "stopId": 12, "platform": "A", "time": "14:37" },
+                    { "stopId": 13, "platform": "A", "time": "14:38" },
+                    { "stopId": 13, "platform": "A", "time": "14:40" },
+                    { "stopId": 23, "platform": "A", "time": "14:43" },
+                    { "stopId": 24, "platform": "A", "time": "14:44" },
+                    { "stopId": 11, "platform": "A", "time": "14:47" },
+                    { "stopId": 25, "platform": "A", "time": "14:49" },
+                    { "stopId": 26, "platform": "A", "time": "14:50" },
+                    { "stopId": 27, "platform": "A", "time": "14:51" }
+                  ]
+                },
+                {
+                  "tripId": "V",
+                  "stops": [
+                    { "stopId": 21, "platform": "A", "time": "15:29" },
+                    { "stopId": 1, "platform": "A", "time": "15:33" },
+                    { "stopId": 18, "platform": "A", "time": "15:38" },
+                    { "stopId": 19, "platform": "A", "time": "15:39" },
+                    { "stopId": 20, "platform": "A", "time": "15:41" },
+                    { "stopId": 22, "platform": "A", "time": "15:43" },
+                    { "stopId": 10, "platform": "A", "time": "15:47" },
+                    { "stopId": 12, "platform": "A", "time": "15:48" },
+                    { "stopId": 13, "platform": "A", "time": "15:49" },
+                    { "stopId": 13, "platform": "A", "time": "15:51" },
+                    { "stopId": 23, "platform": "A", "time": "15:54" },
+                    { "stopId": 24, "platform": "A", "time": "15:55" },
+                    { "stopId": 11, "platform": "A", "time": "15:58" },
+                    { "stopId": 25, "platform": "A", "time": "16:00" },
+                    { "stopId": 26, "platform": "A", "time": "16:01" },
+                    { "stopId": 27, "platform": "A", "time": "16:02" }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "2-from-domki",
+          "name": "Mszczonowska",
+          "schedules": {
+            "weekday": {
+              "trips": [
+                {
+                  "tripId": "I",
+                  "stops": [
+                    { "stopId": 27, "platform": "B", "time": "07:14" },
+                    { "stopId": 26, "platform": "B", "time": "07:15" },
+                    { "stopId": 25, "platform": "B", "time": "07:16" },
+                    { "stopId": 11, "platform": "B", "time": "07:18" },
+                    { "stopId": 12, "platform": "B", "time": "07:19" },
+                    { "stopId": 13, "platform": "B", "time": "07:20" },
+                    { "stopId": 13, "platform": "B", "time": "07:22" },
+                    { "stopId": 23, "platform": "B", "time": "07:25" },
+                    { "stopId": 24, "platform": "B", "time": "07:26" },
+                    { "stopId": 11, "platform": "B", "time": "07:29" },
+                    { "stopId": 22, "platform": "B", "time": "07:33" },
+                    { "stopId": 20, "platform": "B", "time": "07:35" },
+                    { "stopId": 19, "platform": "B", "time": "07:37" },
+                    { "stopId": 18, "platform": "B", "time": "07:38" },
+                    { "stopId": 1, "platform": "B", "time": "07:43" },
+                    { "stopId": 21, "platform": "B", "time": "07:47" }
+                  ]
+                },
+                {
+                  "tripId": "II",
+                  "stops": [
+                    { "stopId": 27, "platform": "B", "time": "08:21" },
+                    { "stopId": 26, "platform": "B", "time": "08:22" },
+                    { "stopId": 25, "platform": "B", "time": "08:23" },
+                    { "stopId": 11, "platform": "B", "time": "08:25" },
+                    { "stopId": 12, "platform": "B", "time": "08:26" },
+                    { "stopId": 13, "platform": "B", "time": "08:27" },
+                    { "stopId": 13, "platform": "B", "time": "08:29" },
+                    { "stopId": 23, "platform": "B", "time": "08:32" },
+                    { "stopId": 24, "platform": "B", "time": "08:33" },
+                    { "stopId": 11, "platform": "B", "time": "08:36" },
+                    { "stopId": 22, "platform": "B", "time": "08:40" },
+                    { "stopId": 20, "platform": "B", "time": "08:42" },
+                    { "stopId": 19, "platform": "B", "time": "08:44" },
+                    { "stopId": 18, "platform": "B", "time": "08:45" },
+                    { "stopId": 1, "platform": "B", "time": "08:50" },
+                    { "stopId": 21, "platform": "B", "time": "08:54" }
+                  ]
+                },
+                {
+                  "tripId": "III",
+                  "stops": [
+                    { "stopId": 27, "platform": "B", "time": "13:22" },
+                    { "stopId": 26, "platform": "B", "time": "13:23" },
+                    { "stopId": 25, "platform": "B", "time": "13:24" },
+                    { "stopId": 11, "platform": "B", "time": "13:26" },
+                    { "stopId": 12, "platform": "B", "time": "13:27" },
+                    { "stopId": 13, "platform": "B", "time": "13:28" },
+                    { "stopId": 13, "platform": "B", "time": "13:30" },
+                    { "stopId": 23, "platform": "B", "time": "13:33" },
+                    { "stopId": 24, "platform": "B", "time": "13:34" },
+                    { "stopId": 11, "platform": "B", "time": "13:37" },
+                    { "stopId": 22, "platform": "B", "time": "13:41" },
+                    { "stopId": 20, "platform": "B", "time": "13:43" },
+                    { "stopId": 19, "platform": "B", "time": "13:45" },
+                    { "stopId": 18, "platform": "B", "time": "13:46" },
+                    { "stopId": 1, "platform": "B", "time": "13:51" },
+                    { "stopId": 21, "platform": "B", "time": "13:55" }
+                  ]
+                },
+                {
+                  "tripId": "IV",
+                  "stops": [
+                    { "stopId": 27, "platform": "B", "time": "14:51" },
+                    { "stopId": 26, "platform": "B", "time": "14:52" },
+                    { "stopId": 25, "platform": "B", "time": "14:53" },
+                    { "stopId": 11, "platform": "B", "time": "14:55" },
+                    { "stopId": 12, "platform": "B", "time": "14:56" },
+                    { "stopId": 13, "platform": "B", "time": "14:57" },
+                    { "stopId": 13, "platform": "B", "time": "14:59" },
+                    { "stopId": 23, "platform": "B", "time": "15:02" },
+                    { "stopId": 24, "platform": "B", "time": "15:03" },
+                    { "stopId": 11, "platform": "B", "time": "15:06" },
+                    { "stopId": 22, "platform": "B", "time": "15:10" },
+                    { "stopId": 20, "platform": "B", "time": "15:12" },
+                    { "stopId": 19, "platform": "B", "time": "15:14" },
+                    { "stopId": 18, "platform": "B", "time": "15:15" },
+                    { "stopId": 1, "platform": "B", "time": "15:20" },
+                    { "stopId": 21, "platform": "B", "time": "15:24" }
+                  ]
+                },
+                {
+                  "tripId": "V",
+                  "stops": [
+                    { "stopId": 27, "platform": "B", "time": "16:17" },
+                    { "stopId": 26, "platform": "B", "time": "16:18" },
+                    { "stopId": 25, "platform": "B", "time": "16:19" },
+                    { "stopId": 11, "platform": "B", "time": "16:21" },
+                    { "stopId": 12, "platform": "B", "time": "16:22" },
+                    { "stopId": 13, "platform": "B", "time": "16:23" },
+                    { "stopId": 13, "platform": "B", "time": "16:25" },
+                    { "stopId": 23, "platform": "B", "time": "16:28" },
+                    { "stopId": 24, "platform": "B", "time": "16:29" },
+                    { "stopId": 11, "platform": "B", "time": "16:32" },
+                    { "stopId": 22, "platform": "B", "time": "16:36" },
+                    { "stopId": 20, "platform": "B", "time": "16:38" },
+                    { "stopId": 19, "platform": "B", "time": "16:40" },
+                    { "stopId": 18, "platform": "B", "time": "16:41" },
+                    { "stopId": 1, "platform": "B", "time": "16:46" },
+                    { "stopId": 21, "platform": "B", "time": "16:50" }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

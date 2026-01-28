@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Full Line Schedule</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c19d2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111121",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a1a2e",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="relative flex h-full max-h-screen min-h-screen w-full flex-col group/design-root">
+<!-- Top App Bar -->
+<header class="flex items-center bg-surface-light dark:bg-surface-dark px-4 py-3 justify-between shadow-sm z-20">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full active:bg-slate-100 dark:active:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Full Line Schedule</h2>
+<button class="flex w-10 items-center justify-center text-primary font-bold text-sm">Help</button>
+</header>
+<!-- Main Content Area with Scrolling -->
+<main class="flex-1 flex flex-col overflow-hidden relative">
+<!-- Sticky Controls Container -->
+<div class="bg-surface-light dark:bg-surface-dark z-10 shadow-sm border-b border-slate-200 dark:border-slate-800">
+<!-- Tabs -->
+<div class="flex px-4 pt-2">
+<button class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-3 pt-2 flex-1 transition-colors">
+<span class="text-sm font-bold leading-normal tracking-wide">Line 1 (Red)</span>
+</button>
+<button class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 flex-1 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
+<span class="text-sm font-bold leading-normal tracking-wide">Line 2 (Blue)</span>
+</button>
+</div>
+<!-- Segmented Button -->
+<div class="flex px-4 py-3 justify-center">
+<div class="flex w-full max-w-sm h-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-surface-light has-[:checked]:shadow-sm has-[:checked]:text-primary text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal transition-all">
+<span class="truncate">Weekday</span>
+<input checked="" class="invisible w-0 h-0 absolute" name="day-selector" type="radio" value="Weekday"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-surface-light has-[:checked]:shadow-sm has-[:checked]:text-primary text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal transition-all">
+<span class="truncate">Weekend</span>
+<input class="invisible w-0 h-0 absolute" name="day-selector" type="radio" value="Weekend"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Scrollable Timetable Grid -->
+<div class="flex-1 overflow-auto bg-surface-light dark:bg-surface-dark relative w-full">
+<!-- Grid Container -->
+<div class="min-w-full inline-block align-middle">
+<div class="border-b border-slate-200 dark:border-slate-800">
+<!-- Table Header (Sticky Top) -->
+<div class="sticky top-0 z-20 flex bg-surface-light dark:bg-surface-dark border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="sticky left-0 z-30 w-32 shrink-0 bg-surface-light dark:bg-surface-dark border-r border-slate-200 dark:border-slate-800 p-3 flex items-end">
+<span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Stop Name</span>
+</div>
+<!-- Time Headers (Trip IDs or Direction) -->
+<div class="flex grow">
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-xs text-slate-400 font-medium">#101</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-xs text-slate-400 font-medium">#103</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-xs text-slate-400 font-medium">#105</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-xs text-slate-400 font-medium">#107</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-xs text-slate-400 font-medium">#109</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-xs text-slate-400 font-medium">#111</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-xs text-slate-400 font-medium">#113</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-xs text-slate-400 font-medium">#115</div>
+</div>
+</div>
+<!-- Table Rows -->
+<!-- Row 1 -->
+<div class="flex w-max min-w-full hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<div class="sticky left-0 z-10 w-32 shrink-0 bg-surface-light dark:bg-surface-dark border-r border-slate-200 dark:border-slate-800 p-3 flex items-center shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)]">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">Central Station</span>
+</div>
+<div class="flex grow">
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">06:00</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">06:30</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:00</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:30</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-bold bg-primary/5 rounded-sm">08:00</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">08:30</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:00</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:30</div>
+</div>
+</div>
+<!-- Row 2 (Zebra) -->
+<div class="flex w-max min-w-full bg-slate-50 dark:bg-slate-800/30">
+<div class="sticky left-0 z-10 w-32 shrink-0 bg-slate-50 dark:bg-slate-800/30 border-r border-slate-200 dark:border-slate-800 p-3 flex items-center shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)]">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">5th &amp; Main</span>
+</div>
+<div class="flex grow">
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">06:15</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">06:45</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:15</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:45</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-bold bg-primary/5 rounded-sm">08:15</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">08:45</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:15</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:45</div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex w-max min-w-full hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<div class="sticky left-0 z-10 w-32 shrink-0 bg-surface-light dark:bg-surface-dark border-r border-slate-200 dark:border-slate-800 p-3 flex items-center shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)]">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">City Hospital</span>
+</div>
+<div class="flex grow">
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">06:25</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">06:55</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:25</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:55</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-bold bg-primary/5 rounded-sm">08:25</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">08:55</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:25</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:55</div>
+</div>
+</div>
+<!-- Row 4 (Zebra) -->
+<div class="flex w-max min-w-full bg-slate-50 dark:bg-slate-800/30">
+<div class="sticky left-0 z-10 w-32 shrink-0 bg-slate-50 dark:bg-slate-800/30 border-r border-slate-200 dark:border-slate-800 p-3 flex items-center shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)]">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">University Ave</span>
+</div>
+<div class="flex grow">
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">06:35</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:05</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:35</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">08:05</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-bold bg-primary/5 rounded-sm">08:35</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:05</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:35</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">10:05</div>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="flex w-max min-w-full hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<div class="sticky left-0 z-10 w-32 shrink-0 bg-surface-light dark:bg-surface-dark border-r border-slate-200 dark:border-slate-800 p-3 flex items-center shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)]">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">North Park</span>
+</div>
+<div class="flex grow">
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">06:45</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:15</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:45</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">08:15</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-bold bg-primary/5 rounded-sm">08:45</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:15</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:45</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">10:15</div>
+</div>
+</div>
+<!-- Row 6 (Zebra) -->
+<div class="flex w-max min-w-full bg-slate-50 dark:bg-slate-800/30">
+<div class="sticky left-0 z-10 w-32 shrink-0 bg-slate-50 dark:bg-slate-800/30 border-r border-slate-200 dark:border-slate-800 p-3 flex items-center shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)]">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">Zoo Entrance</span>
+</div>
+<div class="flex grow">
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">06:55</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:25</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:55</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">08:25</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-bold bg-primary/5 rounded-sm">08:55</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:25</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:55</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">10:25</div>
+</div>
+</div>
+<!-- Row 7 -->
+<div class="flex w-max min-w-full hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<div class="sticky left-0 z-10 w-32 shrink-0 bg-surface-light dark:bg-surface-dark border-r border-slate-200 dark:border-slate-800 p-3 flex items-center shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)]">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">River Road</span>
+</div>
+<div class="flex grow">
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:05</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:35</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">08:05</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">08:35</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-bold bg-primary/5 rounded-sm">09:05</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:35</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">10:05</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">10:35</div>
+</div>
+</div>
+<!-- Row 8 (Zebra) -->
+<div class="flex w-max min-w-full bg-slate-50 dark:bg-slate-800/30">
+<div class="sticky left-0 z-10 w-32 shrink-0 bg-slate-50 dark:bg-slate-800/30 border-r border-slate-200 dark:border-slate-800 p-3 flex items-center shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)]">
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">Terminal B</span>
+</div>
+<div class="flex grow">
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:20</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">07:50</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">08:20</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-300 dark:text-slate-600 font-normal">08:50</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-bold bg-primary/5 rounded-sm">09:20</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">09:50</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">10:20</div>
+<div class="flex h-12 min-w-[3rem] w-12 items-center justify-center text-sm text-slate-900 dark:text-slate-100 font-normal">10:50</div>
+</div>
+</div>
+</div>
+<!-- Bottom spacing for nav bar overlap if needed -->
+<div class="h-24 w-full bg-surface-light dark:bg-surface-dark"></div>
+</div>
+</div>
+<!-- Floating Action Button for Alerts (Optional but modern) -->
+<button class="absolute bottom-6 right-4 z-40 flex items-center justify-center size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/40 hover:bg-blue-700 transition-colors">
+<span class="material-symbols-outlined text-2xl">notifications_active</span>
+</button>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="border-t border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark px-4 pb-4 pt-2 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-50">
+<div class="flex justify-between items-center max-w-lg mx-auto">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">schedule</span>
+<span class="text-xs font-medium leading-none">Real-time</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl font-variation-settings-fill">calendar_month</span>
+<span class="text-xs font-bold leading-none">Schedule</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">map</span>
+<span class="text-xs font-medium leading-none">Map</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="text-xs font-medium leading-none">Settings</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,101 @@
+{
+  "app": {
+    "title": "Autobusy | Rawa Mazowiecka",
+    "name": "Rozkład Autobusów",
+    "shortName": "Rozkład",
+    "description": "Miejski rozkład autobusów z obsługą offline",
+    "version": "Wersja 1.0.0"
+  },
+  "nav": {
+    "home": "Start",
+    "schedule": "Rozkład",
+    "map": "Mapa",
+    "settings": "Ustawienia",
+    "navigateTo": "Przejdź do {{label}}",
+    "goBack": "Wróć"
+  },
+  "home": {
+    "selectYourStop": "Wybierz przystanek",
+    "selectStop": "Wybierz przystanek",
+    "departuresFrom": "Odjazdy z {{stopName}}",
+    "noServiceToday": "Brak kursów dzisiaj",
+    "nextService": "Następne kursy: {{date}}",
+    "busesDoNotOperate": "Autobusy nie kursują w {{reason}}",
+    "busesNotOperatingToday": "Autobusy dzisiaj nie kursują",
+    "noMoreBusesToday": "Brak więcej autobusów dzisiaj",
+    "checkBackTomorrow": "Sprawdź rozkład jutro",
+    "selectStopToSeeDepartures": "Wybierz przystanek, aby zobaczyć odjazdy",
+    "nextBus": "NASTĘPNY",
+    "viewRouteMap": "Zobacz mapę trasy",
+    "seeAllStops": "Zobacz wszystkie przystanki i swoją lokalizację",
+    "weekendSchedule": "Rozkład weekendowy",
+    "weekdaySchedule": "Rozkład dzienny",
+    "filterRoute": "Linia",
+    "filterDirection": "Kierunek",
+    "allRoutes": "Wszystkie linie",
+    "allDirections": "Wszystkie kierunki",
+    "line": "Linia"
+  },
+  "schedule": {
+    "fullSchedule": "Pełny rozkład",
+    "selectDirection": "Wybierz kierunek, aby zobaczyć rozkład",
+    "selectDirectionLabel": "Wybierz kierunek",
+    "weekday": "Dzień roboczy",
+    "weekend": "Weekend",
+    "lineNotOperatesWeekends": "Ta linia nie kursuje w weekendy",
+    "weekdaysOnly": "(tylko dni robocze)",
+    "to": "Do {{destination}}",
+    "stop": "Przystanek",
+    "noScheduleAvailable": "Brak rozkładu dla tego kierunku w {{dayType}}"
+  },
+  "map": {
+    "routeMap": "Mapa trasy",
+    "searchStops": "Szukaj przystanków...",
+    "searchStopsLabel": "Szukaj przystanków",
+    "clearSearch": "Wyczyść",
+    "toggleLayers": "Przełącz warstwy",
+    "toggleMapLayers": "Przełącz warstwy mapy",
+    "myLocation": "Moja lokalizacja",
+    "centerOnMyLocation": "Wyśrodkuj na mojej lokalizacji",
+    "platform": "Peron {{platform}}",
+    "nextDeparturesFrom": "Następne odjazdy z peronu {{platform}}",
+    "noServiceToday": "Brak kursów dzisiaj ({{reason}})",
+    "noMoreDepartures": "Brak więcej odjazdów z tego peronu dzisiaj",
+    "viewFullSchedule": "Zobacz pełny rozkład",
+    "close": "Zamknij",
+    "filterRoutes": "Filtruj trasy",
+    "showRoutes": "Pokaż trasy",
+    "routes": "Trasy"
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "preferences": "Preferencje",
+    "defaultHomeStop": "Domyślny przystanek",
+    "selectDefaultStop": "Wybierz domyślny przystanek",
+    "timeFormat24h": "Format 24-godzinny",
+    "toggleTimeFormat": "Przełącz format 24-godzinny",
+    "darkMode": "Tryb ciemny",
+    "toggleDarkMode": "Przełącz tryb ciemny",
+    "language": "Język",
+    "selectLanguage": "Wybierz język",
+    "favoriteStops": "Ulubione przystanki ({{count}}/3)",
+    "noFavoriteStops": "Brak ulubionych przystanków",
+    "removeFavorite": "Usuń {{stopName}} z ulubionych",
+    "addFavoriteStop": "Dodaj ulubiony przystanek",
+    "about": "O aplikacji",
+    "author": "Autor"
+  },
+  "time": {
+    "departed": "Odjechał",
+    "now": "Teraz",
+    "minute": "{{count}} min",
+    "hour": "{{count}} godz.",
+    "hours": "{{count}} godz.",
+    "hourMinute": "{{hours}} godz. {{minutes}} min"
+  },
+  "languages": {
+    "en": "English",
+    "pl": "Polski",
+    "uk": "Українська"
+  }
+}
