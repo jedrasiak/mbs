@@ -26,7 +26,8 @@ export function usePWAInstall(): PWAInstallState {
     }
 
     const handleBeforeInstallPrompt = (e: Event) => {
-      e.preventDefault();
+      // Don't prevent default - let Chrome show its mini-infobar
+      // We still capture the event so our Settings button works as backup
       setInstallPrompt(e as BeforeInstallPromptEvent);
     };
 
