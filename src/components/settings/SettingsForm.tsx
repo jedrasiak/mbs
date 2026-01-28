@@ -14,6 +14,7 @@ import {
   Select,
   MenuItem,
   Link,
+  Button,
   type SelectChangeEvent,
 } from '@mui/material';
 import {
@@ -25,6 +26,8 @@ import {
   Close,
   Language,
   Person,
+  GetApp,
+  CheckCircle,
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { useSettings } from '@/contexts/SettingsContext';
@@ -33,11 +36,13 @@ import { StopSelector } from '@/components/home/StopSelector';
 import { getStopById } from '@/utils/scheduleParser';
 import { setLanguage, supportedLanguages, detectBrowserLanguage, type SupportedLanguage } from '@/i18n';
 import type { Language as LanguageType } from '@/types';
+import { usePWAInstall } from '@/hooks/usePWAInstall';
 
 export function SettingsForm() {
   const { t } = useTranslation();
   const { settings, updateSettings } = useSettings();
   const { toggleDarkMode } = useTheme();
+  const { isInstallable, isInstalled, install } = usePWAInstall();
 
   const handleAddFavorite = (stopId: number | null) => {
     if (stopId === null) return;
@@ -198,6 +203,36 @@ export function SettingsForm() {
       </List>
 
       <Divider />
+
+      {/* App */}
+      {(isInstallable || isInstalled) && (
+        <>
+          <List
+            subheader={<ListSubheader component="div">{t('settings.app')}</ListSubheader>}
+          >
+            <ListItem>
+              <ListItemIcon>
+                {isInstalled ? <CheckCircle color="success" /> : <GetApp />}
+              </ListItemIcon>
+              <ListItemText
+                primary={isInstalled ? t('settings.appInstalled') : t('settings.installApp')}
+                secondary={isInstalled ? t('settings.appInstalledDescription') : t('settings.installAppDescription')}
+              />
+              {isInstallable && (
+                <Button
+                  variant="contained"
+                  size="small"
+                  onClick={install}
+                  startIcon={<GetApp />}
+                >
+                  {t('settings.install')}
+                </Button>
+              )}
+            </ListItem>
+          </List>
+          <Divider />
+        </>
+      )}
 
       {/* About */}
       <List
