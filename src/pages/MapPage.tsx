@@ -5,7 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { Header, LoadingSpinner } from '@/components/common';
 import { MapFAB, SearchBar, StopBottomSheet } from '@/components/map';
 import { useGeolocation } from '@/hooks/useGeolocation';
-import { getStopById } from '@/utils/scheduleParser';
+import { getStopById, getFirstAvailablePlatform } from '@/utils/scheduleParser';
+import type { PlatformId } from '@/types';
 
 // Lazy load the map component
 const BusMap = lazy(() =>
@@ -16,7 +17,7 @@ export function MapPage() {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const [selectedStopId, setSelectedStopId] = useState<number | null>(null);
-  const [selectedPlatform, setSelectedPlatform] = useState<'A' | 'B' | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<PlatformId | null>(null);
   const [centerOnUser, setCenterOnUser] = useState(false);
 
   const { latitude, longitude, refresh } = useGeolocation({ watch: true });
@@ -40,15 +41,17 @@ export function MapPage() {
     setTimeout(() => setCenterOnUser(false), 100);
   }, [refresh]);
 
-  const handleStopSelect = useCallback((stopId: number, platform: 'A' | 'B') => {
+  const handleStopSelect = useCallback((stopId: number, platform: PlatformId) => {
     setSelectedStopId(stopId);
     setSelectedPlatform(platform);
   }, []);
 
   const handleSearchSelect = useCallback((stopId: number) => {
     setSelectedStopId(stopId);
-    // Default to platform A when selecting from search
-    setSelectedPlatform('A');
+    // Find the first available platform for this stop
+    const stop = getStopById(stopId);
+    const platform = stop ? getFirstAvailablePlatform(stop) : null;
+    setSelectedPlatform(platform);
   }, []);
 
   const handleClose = useCallback(() => {

@@ -5,20 +5,24 @@ export interface Platform {
   description?: string;
 }
 
-// Stop with two platforms (A and B)
+// Platform identifier type
+export type PlatformId = 'A' | 'B';
+
+// Stop with optional platforms (A and/or B)
+// Some stops may only have one platform if buses only go in one direction
 export interface Stop {
   id: number;
   name: string;
   platforms: {
-    A: Platform;
-    B: Platform;
+    A?: Platform;
+    B?: Platform;
   };
 }
 
 // A stop within a trip, with departure time
 export interface TripStop {
   stopId: number;
-  platform: 'A' | 'B';
+  platform: PlatformId;
   time: string;
 }
 

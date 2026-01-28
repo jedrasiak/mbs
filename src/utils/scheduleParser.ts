@@ -8,6 +8,7 @@ import type {
   Platform,
   DirectionInfo,
   Trip,
+  PlatformId,
 } from '@/types';
 import { getDayType, getMinutesUntil, isPastTime, getServiceStatus } from './timeCalculations';
 import schedulesData from '@/assets/data/schedules.json';
@@ -219,6 +220,30 @@ export function getOperatingLines(date: Date = new Date()): Line[] {
 // ==========================================
 
 /**
+ * Get the first available platform for a stop.
+ * Returns 'A' if available, otherwise 'B', or null if no platforms exist.
+ */
+export function getFirstAvailablePlatform(stop: Stop): PlatformId | null {
+  if (stop.platforms.A) return 'A';
+  if (stop.platforms.B) return 'B';
+  return null;
+}
+
+/**
+ * Check if a stop has a specific platform.
+ */
+export function hasPlaftorm(stop: Stop, platform: PlatformId): boolean {
+  return stop.platforms[platform] !== undefined;
+}
+
+/**
+ * Get platform coordinates safely, returning null if platform doesn't exist.
+ */
+export function getPlatformCoordinates(stop: Stop, platform: PlatformId): Platform | null {
+  return stop.platforms[platform] ?? null;
+}
+
+/**
  * Get the platform coordinates for a stop in a specific direction.
  * Uses the first trip to determine the platform.
  */
@@ -236,7 +261,7 @@ export function getStopCoordinates(
     if (tripStop) {
       const stop = getStopById(stopId);
       if (!stop) return null;
-      return stop.platforms[tripStop.platform];
+      return getPlatformCoordinates(stop, tripStop.platform);
     }
   }
 
@@ -259,7 +284,8 @@ export function getRouteCoordinates(directionId: string, dayType: DayType = 'wee
     .map(tripStop => {
       const stop = getStopById(tripStop.stopId);
       if (!stop) return null;
-      const platform = stop.platforms[tripStop.platform];
+      const platform = getPlatformCoordinates(stop, tripStop.platform);
+      if (!platform) return null;
       return [platform.lat, platform.lng] as [number, number];
     })
     .filter((coord): coord is [number, number] => coord !== null);
@@ -315,7 +341,7 @@ export function getDirectionsServingStop(stopId: number, dayType: DayType = 'wee
  */
 export function getDirectionsServingPlatform(
   stopId: number,
-  platform: 'A' | 'B',
+  platform: PlatformId,
   dayType: DayType = 'weekday'
 ): DirectionInfo[] {
   const result: DirectionInfo[] = [];
@@ -562,17 +588,26 @@ export function formatDistance(meters: number): string {
 
 /**
  * Calculate distance to a stop's platform from user location.
+ * Falls back to first available platform if requested platform doesn't exist.
  */
 export function calculateDistanceToStop(
   userLat: number,
   userLng: number,
   stopId: number,
-  platform: 'A' | 'B' = 'A'
+  platform: PlatformId = 'A'
 ): number | null {
   const stop = getStopById(stopId);
   if (!stop) return null;
 
-  const platformCoords = stop.platforms[platform];
+  // Try requested platform first, then fall back to first available
+  let platformCoords = getPlatformCoordinates(stop, platform);
+  if (!platformCoords) {
+    const fallbackPlatform = getFirstAvailablePlatform(stop);
+    if (!fallbackPlatform) return null;
+    platformCoords = getPlatformCoordinates(stop, fallbackPlatform);
+  }
+  if (!platformCoords) return null;
+
   return calculateDistance(userLat, userLng, platformCoords.lat, platformCoords.lng);
 }
 
@@ -586,7 +621,7 @@ export function calculateDistanceToStop(
  */
 export function getAllPlatformMarkers(dayType: DayType = 'weekday'): Array<{
   stopId: number;
-  platform: 'A' | 'B';
+  platform: PlatformId;
   lat: number;
   lng: number;
   stopName: string;
@@ -594,7 +629,7 @@ export function getAllPlatformMarkers(dayType: DayType = 'weekday'): Array<{
 }> {
   const markers: Array<{
     stopId: number;
-    platform: 'A' | 'B';
+    platform: PlatformId;
     lat: number;
     lng: number;
     stopName: string;
@@ -617,7 +652,9 @@ export function getAllPlatformMarkers(dayType: DayType = 'weekday'): Array<{
           const stop = getStopById(tripStop.stopId);
           if (!stop) continue;
 
-          const platform = stop.platforms[tripStop.platform];
+          const platform = getPlatformCoordinates(stop, tripStop.platform);
+          if (!platform) continue; // Skip if platform doesn't exist
+
           const directions = getDirectionsServingPlatform(
             tripStop.stopId,
             tripStop.platform,
@@ -642,6 +679,7 @@ export function getAllPlatformMarkers(dayType: DayType = 'weekday'): Array<{
 
 /**
  * Get the center point for the map based on all stops.
+ * Uses first available platform from each stop.
  */
 export function getMapCenter(): [number, number] {
   if (data.stops.length === 0) {
@@ -653,9 +691,19 @@ export function getMapCenter(): [number, number] {
   let count = 0;
 
   for (const stop of data.stops) {
-    totalLat += stop.platforms.A.lat;
-    totalLng += stop.platforms.A.lng;
+    const platformId = getFirstAvailablePlatform(stop);
+    if (!platformId) continue;
+
+    const platform = getPlatformCoordinates(stop, platformId);
+    if (!platform) continue;
+
+    totalLat += platform.lat;
+    totalLng += platform.lng;
     count++;
+  }
+
+  if (count === 0) {
+    return [51.75, 20.5]; // Default center if no valid platforms
   }
 
   return [totalLat / count, totalLng / count];

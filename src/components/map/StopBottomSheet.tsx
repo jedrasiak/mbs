@@ -2,7 +2,7 @@ import { Paper, Box, Typography, Chip, IconButton, Divider, Button } from '@mui/
 import { Close, Directions, ArrowForward } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import type { Stop } from '@/types';
+import type { Stop, PlatformId } from '@/types';
 import { useNextDepartures } from '@/hooks/useNextDepartures';
 import { useSettings } from '@/contexts/SettingsContext';
 import { useLocalizedTime } from '@/hooks/useLocalizedTime';
@@ -10,12 +10,13 @@ import {
   formatDistance,
   calculateDistance,
   getDirectionsServingPlatform,
+  getPlatformCoordinates,
 } from '@/utils/scheduleParser';
 import { formatTime, getServiceStatus } from '@/utils/timeCalculations';
 
 interface StopBottomSheetProps {
   stop: Stop;
-  platform: 'A' | 'B';
+  platform: PlatformId;
   userLocation: { lat: number; lng: number } | null;
   onClose: () => void;
 }
@@ -35,10 +36,10 @@ export function StopBottomSheet({
 
   // Get directions serving this specific platform
   const directions = getDirectionsServingPlatform(stop.id, platform);
-  const platformInfo = stop.platforms[platform];
+  const platformInfo = getPlatformCoordinates(stop, platform);
 
   // Calculate distance to this platform
-  const distance = userLocation
+  const distance = userLocation && platformInfo
     ? calculateDistance(
         userLocation.lat,
         userLocation.lng,
@@ -92,7 +93,7 @@ export function StopBottomSheet({
             </Typography>
             <Typography variant="caption" color="text.secondary">
               {t('map.platform', { platform })}
-              {platformInfo.description && ` - ${platformInfo.description}`}
+              {platformInfo?.description && ` - ${platformInfo.description}`}
             </Typography>
             <Box sx={{ display: 'flex', gap: 1, mt: 1, alignItems: 'center', flexWrap: 'wrap' }}>
               {uniqueLines.map(line => (

@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { Box } from '@mui/material';
-import type { DayType } from '@/types';
+import type { DayType, PlatformId } from '@/types';
 import { StopMarker } from './StopMarker';
 import { RouteLayer } from './RouteLayer';
 import { UserLocationMarker } from './UserLocationMarker';
@@ -11,6 +11,7 @@ import {
   getTripById,
   getStopById,
   getLineForDirection,
+  getPlatformCoordinates,
 } from '@/utils/scheduleParser';
 import 'leaflet/dist/leaflet.css';
 
@@ -20,8 +21,8 @@ interface BusMapProps {
   dayType: DayType | null;
   userLocation: { lat: number; lng: number } | null;
   selectedStopId: number | null;
-  selectedPlatform: 'A' | 'B' | null;
-  onStopSelect: (stopId: number, platform: 'A' | 'B') => void;
+  selectedPlatform: PlatformId | null;
+  onStopSelect: (stopId: number, platform: PlatformId) => void;
   centerOnUser?: boolean;
 }
 
@@ -86,7 +87,8 @@ export function BusMap({
       .map(ts => {
         const stop = getStopById(ts.stopId);
         if (!stop) return null;
-        const platform = stop.platforms[ts.platform];
+        const platform = getPlatformCoordinates(stop, ts.platform);
+        if (!platform) return null;
         return [platform.lat, platform.lng] as [number, number];
       })
       .filter((coord): coord is [number, number] => coord !== null);

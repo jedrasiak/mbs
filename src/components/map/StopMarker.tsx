@@ -1,10 +1,10 @@
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import type { DirectionInfo } from '@/types';
+import type { DirectionInfo, PlatformId } from '@/types';
 
 interface StopMarkerProps {
   stopId: number;
-  platform: 'A' | 'B';
+  platform: PlatformId;
   lat: number;
   lng: number;
   stopName: string;
