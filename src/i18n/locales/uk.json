@@ -83,7 +83,13 @@
     "removeFavorite": "Видалити {{stopName}} з улюблених",
     "addFavoriteStop": "Додати улюблену зупинку",
     "about": "Про додаток",
-    "author": "Автор"
+    "author": "Автор",
+    "app": "Додаток",
+    "installApp": "Встановити додаток",
+    "installAppDescription": "Додайте на головний екран для швидкого доступу",
+    "install": "Встановити",
+    "appInstalled": "Додаток встановлено",
+    "appInstalledDescription": "Ви використовуєте встановлену версію"
   },
   "time": {
     "departed": "Виїхав",

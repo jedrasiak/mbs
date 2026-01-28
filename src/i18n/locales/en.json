@@ -83,7 +83,13 @@
     "removeFavorite": "Remove {{stopName}} from favorites",
     "addFavoriteStop": "Add favorite stop",
     "about": "About",
-    "author": "Author"
+    "author": "Author",
+    "app": "App",
+    "installApp": "Install App",
+    "installAppDescription": "Add to your home screen for quick access",
+    "install": "Install",
+    "appInstalled": "App Installed",
+    "appInstalledDescription": "You're using the installed version"
   },
   "time": {
     "departed": "Departed",
