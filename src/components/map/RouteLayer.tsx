@@ -4,15 +4,32 @@ import { getRouteCoordinates } from '@/utils/scheduleParser';
 
 interface RouteLayerProps {
   line: Line;
-  selectedDirectionId?: string | null;
+  visibleDirectionIds: string[];
+  customCoordinates?: [number, number][];
 }
 
-export function RouteLayer({ line, selectedDirectionId }: RouteLayerProps) {
-  // If a specific direction is selected, only show that route
-  // Otherwise, show all directions (both routes)
-  const directionsToShow = selectedDirectionId
-    ? line.directions.filter(d => d.id === selectedDirectionId)
-    : line.directions;
+export function RouteLayer({ line, visibleDirectionIds, customCoordinates }: RouteLayerProps) {
+  // If custom coordinates are provided (for specific trip), render single polyline
+  if (customCoordinates && customCoordinates.length >= 2) {
+    return (
+      <Polyline
+        positions={customCoordinates}
+        pathOptions={{
+          color: line.color,
+          weight: 4,
+          opacity: 0.9,
+        }}
+      />
+    );
+  }
+
+  // Filter directions based on visibility
+  const directionsToShow = line.directions.filter(d =>
+    visibleDirectionIds.includes(d.id)
+  );
+
+  // Check if both directions of this line are visible
+  const bothVisible = directionsToShow.length === 2;
 
   return (
     <>
@@ -30,9 +47,9 @@ export function RouteLayer({ line, selectedDirectionId }: RouteLayerProps) {
             pathOptions={{
               color: line.color,
               weight: 4,
-              opacity: selectedDirectionId ? 0.9 : 0.6,
-              // Slightly offset the second direction if showing both
-              dashArray: !selectedDirectionId && index === 1 ? '10, 10' : undefined,
+              opacity: bothVisible ? 0.7 : 0.9,
+              // Use dashed line for second direction when both are visible
+              dashArray: bothVisible && index === 1 ? '10, 10' : undefined,
             }}
           />
         );

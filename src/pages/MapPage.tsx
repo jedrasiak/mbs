@@ -1,10 +1,11 @@
 import { useState, useCallback, Suspense, lazy } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Header, LoadingSpinner } from '@/components/common';
 import { MapFAB, SearchBar, StopBottomSheet } from '@/components/map';
 import { useGeolocation } from '@/hooks/useGeolocation';
-import { getAllLines, getStopById } from '@/utils/scheduleParser';
+import { getStopById } from '@/utils/scheduleParser';
 
 // Lazy load the map component
 const BusMap = lazy(() =>
@@ -13,6 +14,7 @@ const BusMap = lazy(() =>
 
 export function MapPage() {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
   const [selectedStopId, setSelectedStopId] = useState<number | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<'A' | 'B' | null>(null);
   const [centerOnUser, setCenterOnUser] = useState(false);
@@ -24,8 +26,12 @@ export function MapPage() {
       ? { lat: latitude, lng: longitude }
       : null;
 
-  const lines = getAllLines();
   const selectedStop = selectedStopId ? getStopById(selectedStopId) : undefined;
+
+  // Get route parameters from URL
+  const directionId = searchParams.get('direction');
+  const tripId = searchParams.get('trip');
+  const dayType = searchParams.get('dayType') as 'weekday' | 'weekend' | null;
 
   const handleCenterUser = useCallback(() => {
     refresh();
@@ -56,7 +62,9 @@ export function MapPage() {
       <Box sx={{ flex: 1, position: 'relative' }}>
         <Suspense fallback={<LoadingSpinner fullScreen />}>
           <BusMap
-            lines={lines}
+            directionId={directionId}
+            tripId={tripId}
+            dayType={dayType}
             userLocation={userLocation}
             selectedStopId={selectedStopId}
             selectedPlatform={selectedPlatform}

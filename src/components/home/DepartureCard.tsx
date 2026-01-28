@@ -1,9 +1,10 @@
-import { Card, CardContent, Box, Typography, Chip } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Card, CardContent, Box, Typography, Chip, CardActionArea } from '@mui/material';
 import { ArrowForward } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import type { Departure } from '@/types';
 import { useSettings } from '@/contexts/SettingsContext';
-import { formatTime } from '@/utils/timeCalculations';
+import { formatTime, getDayType } from '@/utils/timeCalculations';
 import { useLocalizedTime } from '@/hooks/useLocalizedTime';
 import { ACCENT_COLOR } from '@/theme/theme';
 
@@ -14,10 +15,16 @@ interface DepartureCardProps {
 
 export function DepartureCard({ departure, isNext = false }: DepartureCardProps) {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { settings } = useSettings();
   const { formatMinutesUntil } = useLocalizedTime();
   const formattedTime = formatTime(departure.time, settings.timeFormat === '24h');
   const timeUntil = formatMinutesUntil(departure.minutesUntil);
+
+  const handleClick = () => {
+    const dayType = getDayType() ?? 'weekday';
+    navigate(`/map?direction=${departure.directionId}&dayType=${dayType}`);
+  };
 
   return (
     <Card
@@ -28,6 +35,7 @@ export function DepartureCard({ departure, isNext = false }: DepartureCardProps)
         overflow: 'visible',
       }}
     >
+      <CardActionArea onClick={handleClick}>
       {isNext && (
         <Chip
           label={t('home.nextBus')}
@@ -87,6 +95,7 @@ export function DepartureCard({ departure, isNext = false }: DepartureCardProps)
           </Typography>
         </Box>
       </CardContent>
+      </CardActionArea>
     </Card>
   );
 }

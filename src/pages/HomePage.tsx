@@ -7,7 +7,6 @@ import {
   StopSelector,
   CurrentTime,
   DepartureList,
-  MapPreviewCard,
 } from '@/components/home';
 import { useSettings } from '@/contexts/SettingsContext';
 import { useNextDepartures } from '@/hooks/useNextDepartures';
@@ -63,8 +62,6 @@ export function HomePage() {
           stopName={selectedStop?.name}
           serviceStatus={serviceStatus}
         />
-
-        <MapPreviewCard />
       </Container>
     </Box>
   );

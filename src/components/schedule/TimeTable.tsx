@@ -1,4 +1,5 @@
-import { Box, Typography, Paper, useTheme } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Box, Typography, Paper, useTheme, ButtonBase } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import type { Stop, DayType, Trip } from '@/types';
 import {
@@ -17,11 +18,16 @@ interface TimeTableProps {
 
 export function TimeTable({ directionId, dayType }: TimeTableProps) {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const theme = useTheme();
   const { settings } = useSettings();
   const direction = getDirectionById(directionId);
   const trips = getTripsForDirection(directionId, dayType);
   const stops = getStopsForDirection(directionId, dayType);
+
+  const handleTripClick = (tripId: string) => {
+    navigate(`/map?direction=${directionId}&trip=${tripId}&dayType=${dayType}`);
+  };
 
   if (!direction || stops.length === 0) {
     return (
@@ -85,8 +91,9 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
           {trips.map((trip: Trip, index: number) => {
             const isCurrentTrip = index === currentTripIndex;
             return (
-              <Box
+              <ButtonBase
                 key={`header-${trip.tripId}`}
+                onClick={() => handleTripClick(trip.tripId)}
                 sx={{
                   position: 'sticky',
                   top: 0,
@@ -97,10 +104,13 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
                   textAlign: 'center',
                   fontWeight: 600,
                   fontSize: '0.95rem',
+                  '&:hover': {
+                    bgcolor: isCurrentTrip ? 'warning.dark' : 'primary.dark',
+                  },
                 }}
               >
                 {trip.tripId}
-              </Box>
+              </ButtonBase>
             );
           })}
 

@@ -1,15 +1,23 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { Box } from '@mui/material';
-import type { Line } from '@/types';
+import type { DayType } from '@/types';
 import { StopMarker } from './StopMarker';
 import { RouteLayer } from './RouteLayer';
 import { UserLocationMarker } from './UserLocationMarker';
-import { getAllPlatformMarkers, getMapCenter } from '@/utils/scheduleParser';
+import {
+  getAllPlatformMarkers,
+  getMapCenter,
+  getTripById,
+  getStopById,
+  getLineForDirection,
+} from '@/utils/scheduleParser';
 import 'leaflet/dist/leaflet.css';
 
 interface BusMapProps {
-  lines: Line[];
+  directionId: string | null;
+  tripId: string | null;
+  dayType: DayType | null;
   userLocation: { lat: number; lng: number } | null;
   selectedStopId: number | null;
   selectedPlatform: 'A' | 'B' | null;
@@ -36,7 +44,9 @@ function MapController({
 }
 
 export function BusMap({
-  lines,
+  directionId,
+  tripId,
+  dayType,
   userLocation,
   selectedStopId,
   selectedPlatform,
@@ -46,8 +56,68 @@ export function BusMap({
   const defaultCenter = getMapCenter();
   const defaultZoom = 13;
 
-  // Get all platform markers
-  const platformMarkers = getAllPlatformMarkers();
+  // Determine if we're showing a specific route or just stops
+  const showRoute = directionId !== null;
+
+  // Get the line for the selected direction
+  const routeLine = useMemo(() => {
+    if (!directionId) return null;
+    return getLineForDirection(directionId);
+  }, [directionId]);
+
+  // Get trip-specific stops and coordinates if tripId is provided
+  const { tripStops, tripCoordinates } = useMemo(() => {
+    if (!directionId || !tripId || !dayType) {
+      return { tripStops: null, tripCoordinates: null };
+    }
+    const trip = getTripById(directionId, tripId, dayType);
+    if (!trip) {
+      return { tripStops: null, tripCoordinates: null };
+    }
+
+    const stops = trip.stops.map(ts => ({
+      stopId: ts.stopId,
+      platform: ts.platform,
+      stop: getStopById(ts.stopId),
+    })).filter(s => s.stop !== undefined);
+
+    // Calculate coordinates for this specific trip
+    const coordinates: [number, number][] = trip.stops
+      .map(ts => {
+        const stop = getStopById(ts.stopId);
+        if (!stop) return null;
+        const platform = stop.platforms[ts.platform];
+        return [platform.lat, platform.lng] as [number, number];
+      })
+      .filter((coord): coord is [number, number] => coord !== null);
+
+    return { tripStops: stops, tripCoordinates: coordinates };
+  }, [directionId, tripId, dayType]);
+
+  // Get platform markers based on mode
+  const platformMarkers = useMemo(() => {
+    const allMarkers = getAllPlatformMarkers();
+
+    if (tripStops) {
+      // Show only stops from the specific trip
+      return tripStops.map(ts => {
+        const marker = allMarkers.find(
+          m => m.stopId === ts.stopId && m.platform === ts.platform
+        );
+        return marker;
+      }).filter((m): m is NonNullable<typeof m> => m !== undefined);
+    }
+
+    if (directionId) {
+      // Show stops for the direction (all platforms used by this direction)
+      return allMarkers.filter(marker =>
+        marker.directions.some(dir => dir.directionId === directionId)
+      );
+    }
+
+    // Default: show all stops
+    return allMarkers;
+  }, [tripStops, directionId]);
 
   return (
     <Box
@@ -73,12 +143,16 @@ export function BusMap({
 
         <MapController centerOnUser={centerOnUser} userLocation={userLocation} />
 
-        {/* Route layers */}
-        {lines.map(line => (
-          <RouteLayer key={line.id} line={line} />
-        ))}
+        {/* Route layer - only show if direction is specified */}
+        {showRoute && routeLine && directionId && (
+          <RouteLayer
+            line={routeLine}
+            visibleDirectionIds={[directionId]}
+            customCoordinates={tripCoordinates ?? undefined}
+          />
+        )}
 
-        {/* Stop markers - one per platform */}
+        {/* Stop markers */}
         {platformMarkers.map(marker => (
           <StopMarker
             key={`${marker.stopId}-${marker.platform}`}

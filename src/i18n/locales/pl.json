@@ -56,7 +56,10 @@
     "noServiceToday": "Brak kursów dzisiaj ({{reason}})",
     "noMoreDepartures": "Brak więcej odjazdów z tego peronu dzisiaj",
     "viewFullSchedule": "Zobacz pełny rozkład",
-    "close": "Zamknij"
+    "close": "Zamknij",
+    "filterRoutes": "Filtruj trasy",
+    "showRoutes": "Pokaż trasy",
+    "routes": "Trasy"
   },
   "settings": {
     "title": "Ustawienia",

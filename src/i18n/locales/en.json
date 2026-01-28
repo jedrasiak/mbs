@@ -56,7 +56,10 @@
     "noServiceToday": "No service today ({{reason}})",
     "noMoreDepartures": "No more departures from this platform today",
     "viewFullSchedule": "View Full Schedule",
-    "close": "Close"
+    "close": "Close",
+    "filterRoutes": "Filter routes",
+    "showRoutes": "Show routes",
+    "routes": "Routes"
   },
   "settings": {
     "title": "Settings",
