@@ -21,7 +21,7 @@ function LanguageSync() {
 
 function AppContent() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <LanguageSync />
       <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
         <Routes>
