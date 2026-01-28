@@ -36,13 +36,13 @@ import { StopSelector } from '@/components/home/StopSelector';
 import { getStopById } from '@/utils/scheduleParser';
 import { setLanguage, supportedLanguages, detectBrowserLanguage, type SupportedLanguage } from '@/i18n';
 import type { Language as LanguageType } from '@/types';
-import { usePWAInstall } from '@/hooks/usePWAInstall';
+import { usePWA } from '@/contexts/PWAContext';
 
 export function SettingsForm() {
   const { t } = useTranslation();
   const { settings, updateSettings } = useSettings();
   const { toggleDarkMode } = useTheme();
-  const { isInstallable, isInstalled, install } = usePWAInstall();
+  const { isInstallable, isInstalled, install } = usePWA();
 
   const handleAddFavorite = (stopId: number | null) => {
     if (stopId === null) return;

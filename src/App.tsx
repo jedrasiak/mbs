@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
+import { PWAProvider } from '@/contexts/PWAContext';
 import { BottomNav } from '@/components/common';
 import { HomePage, SchedulePage, MapPage, SettingsPage } from '@/pages';
 import { setLanguage } from '@/i18n';
@@ -38,10 +39,12 @@ function AppContent() {
 
 export default function App() {
   return (
-    <SettingsProvider>
-      <ThemeProvider>
-        <AppContent />
-      </ThemeProvider>
-    </SettingsProvider>
+    <PWAProvider>
+      <SettingsProvider>
+        <ThemeProvider>
+          <AppContent />
+        </ThemeProvider>
+      </SettingsProvider>
+    </PWAProvider>
   );
 }

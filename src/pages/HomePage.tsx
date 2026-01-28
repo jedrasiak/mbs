@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { Box, Container, Alert } from '@mui/material';
 import { EventBusy } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import { Header } from '@/components/common';
+import { Header, InstallBanner } from '@/components/common';
 import {
   StopSelector,
   CurrentTime,
@@ -58,6 +58,8 @@ export function HomePage() {
       <Header title={t('app.title')} />
       <Container maxWidth="sm" sx={{ pt: 3 }}>
         <CurrentTime />
+
+        <InstallBanner />
 
         {/* Non-operating day alert */}
         {!serviceStatus.isOperating && (
