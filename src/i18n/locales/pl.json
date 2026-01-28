@@ -83,7 +83,13 @@
     "removeFavorite": "Usuń {{stopName}} z ulubionych",
     "addFavoriteStop": "Dodaj ulubiony przystanek",
     "about": "O aplikacji",
-    "author": "Autor"
+    "author": "Autor",
+    "app": "Aplikacja",
+    "installApp": "Zainstaluj aplikację",
+    "installAppDescription": "Dodaj do ekranu głównego dla szybkiego dostępu",
+    "install": "Zainstaluj",
+    "appInstalled": "Aplikacja zainstalowana",
+    "appInstalledDescription": "Używasz zainstalowanej wersji"
   },
   "time": {
     "departed": "Odjechał",
