@@ -4,7 +4,7 @@
     "name": "Bus Schedule Helper",
     "shortName": "Bus Schedule",
     "description": "Municipal bus schedule with offline support",
-    "version": "Version 1.0.0"
+    "version": "Version 1.1.0"
   },
   "nav": {
     "home": "Home",

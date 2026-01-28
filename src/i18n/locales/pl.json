@@ -4,7 +4,7 @@
     "name": "Rozkład Autobusów",
     "shortName": "Rozkład",
     "description": "Miejski rozkład autobusów z obsługą offline",
-    "version": "Wersja 1.0.0"
+    "version": "Wersja 1.1.0"
   },
   "nav": {
     "home": "Start",
