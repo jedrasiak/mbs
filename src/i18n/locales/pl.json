@@ -83,7 +83,7 @@
     "removeFavorite": "Usuń {{stopName}} z ulubionych",
     "addFavoriteStop": "Dodaj ulubiony przystanek",
     "about": "O aplikacji",
-    "disclaimer": "Ta aplikacja udostępnia informacje o rozkładzie miejskich autobusów. Dane mogą nie odzwierciedlać warunków w czasie rzeczywistym. Zawsze weryfikuj z oficjalnymi źródłami."
+    "author": "Autor"
   },
   "time": {
     "departed": "Odjechał",

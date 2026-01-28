@@ -83,7 +83,7 @@
     "removeFavorite": "Remove {{stopName}} from favorites",
     "addFavoriteStop": "Add favorite stop",
     "about": "About",
-    "disclaimer": "This app provides municipal bus schedule information. Data may not reflect real-time conditions. Always verify with official sources."
+    "author": "Author"
   },
   "time": {
     "departed": "Departed",

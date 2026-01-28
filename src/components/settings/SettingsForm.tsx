@@ -10,10 +10,10 @@ import {
   Chip,
   IconButton,
   Typography,
-  Paper,
   FormControl,
   Select,
   MenuItem,
+  Link,
   type SelectChangeEvent,
 } from '@mui/material';
 import {
@@ -24,6 +24,7 @@ import {
   Info,
   Close,
   Language,
+  Person,
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { useSettings } from '@/contexts/SettingsContext';
@@ -211,13 +212,25 @@ export function SettingsForm() {
             secondary={t('app.version')}
           />
         </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <Person />
+          </ListItemIcon>
+          <ListItemText
+            primary={
+              <Link
+                href="https://www.jedrasiak.eu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="hover"
+              >
+                Łukasz Jędrasiak
+              </Link>
+            }
+            secondary={t('settings.author')}
+          />
+        </ListItem>
       </List>
-
-      <Paper sx={{ m: 2, p: 2 }} variant="outlined">
-        <Typography variant="caption" color="text.secondary">
-          {t('settings.disclaimer')}
-        </Typography>
-      </Paper>
     </Box>
   );
 }
