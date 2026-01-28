@@ -29,7 +29,12 @@
     "viewRouteMap": "View Route Map",
     "seeAllStops": "See all stops and your location",
     "weekendSchedule": "Weekend Schedule",
-    "weekdaySchedule": "Weekday Schedule"
+    "weekdaySchedule": "Weekday Schedule",
+    "filterRoute": "Route",
+    "filterDirection": "Direction",
+    "allRoutes": "All routes",
+    "allDirections": "All directions",
+    "line": "Line"
   },
   "schedule": {
     "fullSchedule": "Full Schedule",

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Box, Container, Alert } from '@mui/material';
 import { EventBusy } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +7,8 @@ import {
   StopSelector,
   CurrentTime,
   DepartureList,
+  DepartureFilters,
+  FILTER_ALL_VALUE,
 } from '@/components/home';
 import { useSettings } from '@/contexts/SettingsContext';
 import { useNextDepartures } from '@/hooks/useNextDepartures';
@@ -21,11 +23,35 @@ export function HomePage() {
   const [selectedStopId, setSelectedStopId] = useState<number | null>(
     settings.defaultStopId
   );
+  const [selectedRoute, setSelectedRoute] = useState<string>(FILTER_ALL_VALUE);
+  const [selectedDirection, setSelectedDirection] = useState<string>(FILTER_ALL_VALUE);
 
   const serviceStatus = getServiceStatus();
   // Get all remaining departures for the day (use large limit)
   const departures = useNextDepartures(selectedStopId, 100);
   const selectedStop = selectedStopId ? getStopById(selectedStopId) : undefined;
+
+  // Filter departures based on selected route and direction
+  const filteredDepartures = useMemo(() => {
+    let result = departures;
+
+    if (selectedRoute !== FILTER_ALL_VALUE) {
+      result = result.filter((d) => String(d.lineId) === selectedRoute);
+    }
+
+    if (selectedDirection !== FILTER_ALL_VALUE) {
+      result = result.filter((d) => d.destinationName === selectedDirection);
+    }
+
+    return result;
+  }, [departures, selectedRoute, selectedDirection]);
+
+  // Reset filters when stop changes
+  const handleStopChange = (stopId: number | null) => {
+    setSelectedStopId(stopId);
+    setSelectedRoute(FILTER_ALL_VALUE);
+    setSelectedDirection(FILTER_ALL_VALUE);
+  };
 
   return (
     <Box sx={{ pb: 10 }}>
@@ -47,12 +73,22 @@ export function HomePage() {
 
         <StopSelector
           value={selectedStopId}
-          onChange={setSelectedStopId}
+          onChange={handleStopChange}
           label={t('home.selectYourStop')}
         />
 
+        {selectedStopId && departures.length > 0 && (
+          <DepartureFilters
+            departures={departures}
+            selectedRoute={selectedRoute}
+            selectedDirection={selectedDirection}
+            onRouteChange={setSelectedRoute}
+            onDirectionChange={setSelectedDirection}
+          />
+        )}
+
         <DepartureList
-          departures={departures}
+          departures={filteredDepartures}
           stopId={selectedStopId}
           stopName={selectedStop?.name}
           serviceStatus={serviceStatus}

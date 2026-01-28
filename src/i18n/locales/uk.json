@@ -29,7 +29,12 @@
     "viewRouteMap": "Переглянути карту маршруту",
     "seeAllStops": "Переглянути всі зупинки та вашу локацію",
     "weekendSchedule": "Розклад на вихідні",
-    "weekdaySchedule": "Розклад на будні"
+    "weekdaySchedule": "Розклад на будні",
+    "filterRoute": "Маршрут",
+    "filterDirection": "Напрямок",
+    "allRoutes": "Усі маршрути",
+    "allDirections": "Усі напрямки",
+    "line": "Лінія"
   },
   "schedule": {
     "fullSchedule": "Повний розклад",

@@ -29,7 +29,12 @@
     "viewRouteMap": "Zobacz mapę trasy",
     "seeAllStops": "Zobacz wszystkie przystanki i swoją lokalizację",
     "weekendSchedule": "Rozkład weekendowy",
-    "weekdaySchedule": "Rozkład dzienny"
+    "weekdaySchedule": "Rozkład dzienny",
+    "filterRoute": "Linia",
+    "filterDirection": "Kierunek",
+    "allRoutes": "Wszystkie linie",
+    "allDirections": "Wszystkie kierunki",
+    "line": "Linia"
   },
   "schedule": {
     "fullSchedule": "Pełny rozkład",
