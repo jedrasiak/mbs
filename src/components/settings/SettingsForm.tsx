@@ -2,6 +2,7 @@ import {
   Box,
   List,
   ListItem,
+  ListItemButton,
   ListItemIcon,
   ListItemText,
   ListSubheader,
@@ -14,7 +15,6 @@ import {
   Select,
   MenuItem,
   Link,
-  Button,
   type SelectChangeEvent,
 } from '@mui/material';
 import {
@@ -210,25 +210,27 @@ export function SettingsForm() {
           <List
             subheader={<ListSubheader component="div">{t('settings.app')}</ListSubheader>}
           >
-            <ListItem>
-              <ListItemIcon>
-                {isInstalled ? <CheckCircle color="success" /> : <GetApp />}
-              </ListItemIcon>
-              <ListItemText
-                primary={isInstalled ? t('settings.appInstalled') : t('settings.installApp')}
-                secondary={isInstalled ? t('settings.appInstalledDescription') : t('settings.installAppDescription')}
-              />
-              {isInstallable && (
-                <Button
-                  variant="contained"
-                  size="small"
-                  onClick={install}
-                  startIcon={<GetApp />}
-                >
-                  {t('settings.install')}
-                </Button>
-              )}
-            </ListItem>
+            {isInstallable ? (
+              <ListItemButton onClick={install}>
+                <ListItemIcon>
+                  <GetApp />
+                </ListItemIcon>
+                <ListItemText
+                  primary={t('settings.installApp')}
+                  secondary={t('settings.installAppDescription')}
+                />
+              </ListItemButton>
+            ) : (
+              <ListItem>
+                <ListItemIcon>
+                  <CheckCircle color="success" />
+                </ListItemIcon>
+                <ListItemText
+                  primary={t('settings.appInstalled')}
+                  secondary={t('settings.appInstalledDescription')}
+                />
+              </ListItem>
+            )}
           </List>
           <Divider />
         </>
