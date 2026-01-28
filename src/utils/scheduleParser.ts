@@ -92,6 +92,21 @@ export function getTripById(
 }
 
 /**
+ * Find the trip that contains a specific stop at a specific time.
+ */
+export function getTripByStopAndTime(
+  directionId: string,
+  stopId: number,
+  time: string,
+  dayType: DayType
+): Trip | undefined {
+  const trips = getTripsForDirection(directionId, dayType);
+  return trips.find(trip =>
+    trip.stops.some(s => s.stopId === stopId && s.time === time)
+  );
+}
+
+/**
  * Get all unique stops for a direction (union of all trips' stops).
  * Returns stops sorted chronologically based on their positions in trips.
  * Uses the longest trip as the base order, then merges additional stops

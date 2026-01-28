@@ -5,15 +5,17 @@ import { useTranslation } from 'react-i18next';
 import type { Departure } from '@/types';
 import { useSettings } from '@/contexts/SettingsContext';
 import { formatTime, getDayType } from '@/utils/timeCalculations';
+import { getTripByStopAndTime } from '@/utils/scheduleParser';
 import { useLocalizedTime } from '@/hooks/useLocalizedTime';
 import { ACCENT_COLOR } from '@/theme/theme';
 
 interface DepartureCardProps {
   departure: Departure;
+  stopId: number;
   isNext?: boolean;
 }
 
-export function DepartureCard({ departure, isNext = false }: DepartureCardProps) {
+export function DepartureCard({ departure, stopId, isNext = false }: DepartureCardProps) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { settings } = useSettings();
@@ -23,7 +25,10 @@ export function DepartureCard({ departure, isNext = false }: DepartureCardProps)
 
   const handleClick = () => {
     const dayType = getDayType() ?? 'weekday';
-    navigate(`/map?direction=${departure.directionId}&dayType=${dayType}`);
+    // Find the specific trip for this departure
+    const trip = getTripByStopAndTime(departure.directionId, stopId, departure.time, dayType);
+    const tripParam = trip ? `&trip=${trip.tripId}` : '';
+    navigate(`/map?direction=${departure.directionId}${tripParam}&dayType=${dayType}`);
   };
 
   return (

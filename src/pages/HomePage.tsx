@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Box, Container, Alert } from '@mui/material';
 import { EventBusy } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
@@ -22,15 +22,9 @@ export function HomePage() {
     settings.defaultStopId
   );
 
-  // Sync with settings when default stop changes
-  useEffect(() => {
-    if (settings.defaultStopId && !selectedStopId) {
-      setSelectedStopId(settings.defaultStopId);
-    }
-  }, [settings.defaultStopId, selectedStopId]);
-
   const serviceStatus = getServiceStatus();
-  const departures = useNextDepartures(selectedStopId, 4);
+  // Get all remaining departures for the day (use large limit)
+  const departures = useNextDepartures(selectedStopId, 100);
   const selectedStop = selectedStopId ? getStopById(selectedStopId) : undefined;
 
   return (
@@ -59,6 +53,7 @@ export function HomePage() {
 
         <DepartureList
           departures={departures}
+          stopId={selectedStopId}
           stopName={selectedStop?.name}
           serviceStatus={serviceStatus}
         />

@@ -8,14 +8,33 @@ import { useLocalizedDate } from '@/hooks/useLocalizedDate';
 
 interface DepartureListProps {
   departures: Departure[];
+  stopId: number | null;
   stopName?: string;
   serviceStatus?: ServiceStatus;
 }
 
-export function DepartureList({ departures, stopName, serviceStatus }: DepartureListProps) {
+export function DepartureList({ departures, stopId, stopName, serviceStatus }: DepartureListProps) {
   const { t } = useTranslation();
   const { formatDate } = useLocalizedDate();
   const status = serviceStatus ?? getServiceStatus();
+
+  // No stop selected
+  if (stopId === null) {
+    return (
+      <Paper
+        sx={{
+          p: 4,
+          textAlign: 'center',
+          bgcolor: 'background.paper',
+        }}
+      >
+        <Schedule sx={{ fontSize: 48, color: 'text.disabled', mb: 2 }} />
+        <Typography variant="h6" color="text.secondary">
+          {t('home.selectStopToSeeDepartures')}
+        </Typography>
+      </Paper>
+    );
+  }
 
   // Non-operating day
   if (!status.isOperating) {
@@ -75,6 +94,7 @@ export function DepartureList({ departures, stopName, serviceStatus }: Departure
         <DepartureCard
           key={`${departure.directionId}-${departure.time}`}
           departure={departure}
+          stopId={stopId!}
           isNext={index === 0}
         />
       ))}
