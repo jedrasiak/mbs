@@ -56,10 +56,9 @@ export function HomePage() {
   return (
     <Box sx={{ pb: 10 }}>
       <Header title={t('app.title')} />
+      <InstallBanner />
       <Container maxWidth="sm" sx={{ pt: 3 }}>
         <CurrentTime />
-
-        <InstallBanner />
 
         {/* Non-operating day alert */}
         {!serviceStatus.isOperating && (

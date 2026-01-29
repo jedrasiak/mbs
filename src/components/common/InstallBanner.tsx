@@ -1,4 +1,4 @@
-import { Alert, AlertTitle, Button, IconButton } from '@mui/material';
+import { Box, Typography, IconButton } from '@mui/material';
 import { GetApp, Close } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { usePWA } from '@/contexts/PWAContext';
@@ -12,28 +12,37 @@ export function InstallBanner() {
   }
 
   return (
-    <Alert
-      severity="info"
-      icon={<GetApp />}
-      sx={{ mb: 2 }}
-      action={
-        <>
-          <Button color="inherit" size="small" onClick={install}>
-            {t('settings.install')}
-          </Button>
-          <IconButton
-            aria-label={t('map.close')}
-            color="inherit"
-            size="small"
-            onClick={dismissInstallBanner}
-          >
-            <Close fontSize="small" />
-          </IconButton>
-        </>
-      }
+    <Box
+      onClick={install}
+      sx={{
+        py: 1,
+        px: 2,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1.5,
+        bgcolor: 'rgba(16, 185, 129, 0.9)',
+        color: '#fff',
+        cursor: 'pointer',
+        '&:hover': {
+          bgcolor: 'rgba(16, 185, 129, 1)',
+        },
+      }}
     >
-      <AlertTitle>{t('settings.installApp')}</AlertTitle>
-      {t('settings.installAppDescription')}
-    </Alert>
+      <GetApp fontSize="small" />
+      <Typography variant="body2" sx={{ flex: 1 }}>
+        {t('settings.installApp')}
+      </Typography>
+      <IconButton
+        aria-label={t('map.close')}
+        size="small"
+        onClick={(e) => {
+          e.stopPropagation();
+          dismissInstallBanner();
+        }}
+        sx={{ color: 'inherit' }}
+      >
+        <Close fontSize="small" />
+      </IconButton>
+    </Box>
   );
 }
