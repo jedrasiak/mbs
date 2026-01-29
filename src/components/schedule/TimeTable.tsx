@@ -69,8 +69,11 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: `180px repeat(${trips.length}, 70px)`,
-            minWidth: 180 + trips.length * 70,
+            gridTemplateColumns: {
+              xs: `180px repeat(${trips.length}, 70px)`,
+              md: `minmax(180px, 1fr) repeat(${trips.length}, minmax(70px, 1fr))`,
+            },
+            minWidth: { xs: 180 + trips.length * 70, md: 'auto' },
           }}
         >
           {/* Header row with trip IDs */}
