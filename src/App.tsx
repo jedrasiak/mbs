@@ -7,6 +7,7 @@ import { PWAProvider } from '@/contexts/PWAContext';
 import { BottomNav } from '@/components/common';
 import { HomePage, SchedulePage, MapPage, SettingsPage } from '@/pages';
 import { setLanguage } from '@/i18n';
+import '@/hooks/usePlausible';
 
 function LanguageSync() {
   const { settings } = useSettings();
