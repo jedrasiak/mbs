@@ -6,6 +6,7 @@ import { Header, LoadingSpinner } from '@/components/common';
 import { MapFAB, SearchBar, StopBottomSheet } from '@/components/map';
 import { useGeolocation } from '@/hooks/useGeolocation';
 import { getStopById, getFirstAvailablePlatform } from '@/utils/scheduleParser';
+import { getServiceStatus } from '@/utils/timeCalculations';
 import type { PlatformId } from '@/types';
 
 // Lazy load the map component
@@ -32,7 +33,9 @@ export function MapPage() {
   // Get route parameters from URL
   const directionId = searchParams.get('direction');
   const tripId = searchParams.get('trip');
-  const dayType = searchParams.get('dayType') as 'weekday' | 'weekend' | null;
+  const urlDayType = searchParams.get('dayType') as 'weekday' | 'weekend' | null;
+  // Use URL dayType if provided, otherwise use current day type
+  const dayType = urlDayType ?? getServiceStatus().dayType;
 
   const handleCenterUser = useCallback(() => {
     refresh();

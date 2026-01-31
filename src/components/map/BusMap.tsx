@@ -98,7 +98,7 @@ export function BusMap({
 
   // Get platform markers based on mode
   const platformMarkers = useMemo(() => {
-    const allMarkers = getAllPlatformMarkers();
+    const allMarkers = getAllPlatformMarkers(dayType ?? 'weekday');
 
     if (tripStops) {
       // Show only stops from the specific trip
@@ -119,7 +119,7 @@ export function BusMap({
 
     // Default: show all stops
     return allMarkers;
-  }, [tripStops, directionId]);
+  }, [tripStops, directionId, dayType]);
 
   return (
     <Box

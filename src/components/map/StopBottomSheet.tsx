@@ -35,7 +35,7 @@ export function StopBottomSheet({
   const serviceStatus = getServiceStatus();
 
   // Get directions serving this specific platform
-  const directions = getDirectionsServingPlatform(stop.id, platform);
+  const directions = getDirectionsServingPlatform(stop.id, platform, serviceStatus.dayType ?? 'weekday');
   const platformInfo = getPlatformCoordinates(stop, platform);
 
   // Calculate distance to this platform
