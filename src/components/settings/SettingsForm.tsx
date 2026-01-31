@@ -37,6 +37,7 @@ import { getStopById } from '@/utils/scheduleParser';
 import { setLanguage, supportedLanguages, detectBrowserLanguage, type SupportedLanguage } from '@/i18n';
 import type { Language as LanguageType } from '@/types';
 import { usePWA } from '@/contexts/PWAContext';
+import { trackEvent } from '@/hooks/usePlausible';
 
 export function SettingsForm() {
   const { t } = useTranslation();
@@ -73,6 +74,11 @@ export function SettingsForm() {
   };
 
   const currentLanguageValue = settings.language ?? 'auto';
+
+  const handleInstall = () => {
+    trackEvent('App Install', { props: { source: 'settings' } });
+    install();
+  };
 
   return (
     <Box>
@@ -211,7 +217,7 @@ export function SettingsForm() {
             subheader={<ListSubheader component="div">{t('settings.app')}</ListSubheader>}
           >
             {isInstallable ? (
-              <ListItemButton onClick={install}>
+              <ListItemButton onClick={handleInstall}>
                 <ListItemIcon>
                   <GetApp />
                 </ListItemIcon>
