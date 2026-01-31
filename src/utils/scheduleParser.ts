@@ -369,6 +369,31 @@ export function getDirectionsServingPlatform(
 }
 
 /**
+ * Get all directions serving a platform regardless of day type.
+ * Useful for displaying all lines that ever serve a stop.
+ */
+export function getAllDirectionsServingPlatform(
+  stopId: number,
+  platform: PlatformId
+): DirectionInfo[] {
+  const weekdayDirs = getDirectionsServingPlatform(stopId, platform, 'weekday');
+  const weekendDirs = getDirectionsServingPlatform(stopId, platform, 'weekend');
+
+  // Merge and deduplicate by directionId
+  const seen = new Set<string>();
+  const result: DirectionInfo[] = [];
+
+  for (const dir of [...weekdayDirs, ...weekendDirs]) {
+    if (!seen.has(dir.directionId)) {
+      seen.add(dir.directionId);
+      result.push(dir);
+    }
+  }
+
+  return result;
+}
+
+/**
  * Get lines that serve a stop (for backward compatibility and map display).
  */
 export function getLinesForStop(stopId: number, dayType: DayType = 'weekday'): Line[] {
