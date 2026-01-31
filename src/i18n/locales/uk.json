@@ -89,7 +89,8 @@
     "installAppDescription": "Додайте на головний екран для швидкого доступу",
     "install": "Встановити",
     "appInstalled": "Додаток встановлено",
-    "appInstalledDescription": "Ви використовуєте встановлену версію"
+    "appInstalledDescription": "Ви використовуєте встановлену версію",
+    "scheduleUpdated": "Розклад оновлено"
   },
   "time": {
     "departed": "Виїхав",

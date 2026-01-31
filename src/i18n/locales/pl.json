@@ -89,7 +89,8 @@
     "installAppDescription": "Dodaj do ekranu głównego dla szybkiego dostępu",
     "install": "Zainstaluj",
     "appInstalled": "Aplikacja zainstalowana",
-    "appInstalledDescription": "Używasz zainstalowanej wersji"
+    "appInstalledDescription": "Używasz zainstalowanej wersji",
+    "scheduleUpdated": "Rozkład zaktualizowany"
   },
   "time": {
     "departed": "Odjechał",
