@@ -733,3 +733,236 @@ export function getMapCenter(): [number, number] {
 
   return [totalLat / count, totalLng / count];
 }
+
+// ==========================================
+// Shape Functions (Road-following routes)
+// ==========================================
+
+import shapesData from '@/assets/data/shapes.json';
+
+interface ShapeSegment {
+  description?: string;
+  coordinates: [number, number][];
+}
+
+interface TripShape {
+  description?: string;
+  segments: string[];
+  tripIds: {
+    weekday?: string[];
+    weekend?: string[];
+  };
+}
+
+interface ShapesData {
+  metadata: {
+    description: string;
+    lastUpdated: string;
+  };
+  segments: Record<string, ShapeSegment>;
+  tripShapes: Record<string, TripShape>;
+}
+
+const shapes = shapesData as unknown as ShapesData;
+
+/**
+ * Parse a segment key to extract stop IDs and platforms.
+ * Format: "fromStopId-fromPlatform_toStopId-toPlatform" (e.g., "1-A_2-A")
+ */
+function parseSegmentKey(segmentKey: string): {
+  fromStopId: number;
+  fromPlatform: PlatformId;
+  toStopId: number;
+  toPlatform: PlatformId;
+} | null {
+  const match = segmentKey.match(/^(\d+)-([AB])_(\d+)-([AB])$/);
+  if (!match || match.length < 5) return null;
+
+  const [, fromStop, fromPlat, toStop, toPlat] = match;
+  if (!fromStop || !fromPlat || !toStop || !toPlat) return null;
+
+  return {
+    fromStopId: parseInt(fromStop, 10),
+    fromPlatform: fromPlat as PlatformId,
+    toStopId: parseInt(toStop, 10),
+    toPlatform: toPlat as PlatformId,
+  };
+}
+
+/**
+ * Get coordinates for a single segment, including start and end stop coordinates.
+ * The segment's coordinates array contains only the middle points (road path).
+ * Start/end coordinates are fetched from the actual stop data.
+ */
+function getSegmentCoordinates(segmentKey: string): [number, number][] {
+  const parsed = parseSegmentKey(segmentKey);
+  if (!parsed) {
+    console.warn(`Invalid segment key format: ${segmentKey}`);
+    return [];
+  }
+
+  const segment = shapes.segments[segmentKey];
+  const coordinates: [number, number][] = [];
+
+  // Get start stop coordinates
+  const fromStop = getStopById(parsed.fromStopId);
+  if (fromStop) {
+    const fromPlatform = getPlatformCoordinates(fromStop, parsed.fromPlatform);
+    if (fromPlatform) {
+      coordinates.push([fromPlatform.lat, fromPlatform.lng]);
+    }
+  }
+
+  // Add middle points from shape (if segment exists)
+  if (segment) {
+    for (const coord of segment.coordinates) {
+      coordinates.push(coord);
+    }
+  }
+
+  // Get end stop coordinates
+  const toStop = getStopById(parsed.toStopId);
+  if (toStop) {
+    const toPlatform = getPlatformCoordinates(toStop, parsed.toPlatform);
+    if (toPlatform) {
+      coordinates.push([toPlatform.lat, toPlatform.lng]);
+    }
+  }
+
+  return coordinates;
+}
+
+/**
+ * Find the shape pattern key for a specific trip.
+ * Returns the tripShapes key (e.g., "1-to-mrowka-standard") or null if not found.
+ */
+export function getShapePatternForTrip(
+  directionId: string,
+  tripId: string,
+  dayType: DayType
+): string | null {
+  for (const [patternKey, tripShape] of Object.entries(shapes.tripShapes)) {
+    // Skip comment entries
+    if (patternKey.startsWith('comment')) continue;
+
+    const tripIdsForDayType = tripShape.tripIds[dayType];
+    if (tripIdsForDayType?.includes(tripId)) {
+      // Verify this pattern is for the correct direction
+      if (patternKey.startsWith(directionId.replace(/-/g, '-'))) {
+        return patternKey;
+      }
+      // Also check if direction matches the pattern naming convention
+      // e.g., "1-to-mrowka" matches "1-to-mrowka-standard"
+      const directionPrefix = directionId;
+      if (patternKey.startsWith(directionPrefix)) {
+        return patternKey;
+      }
+    }
+  }
+  return null;
+}
+
+/**
+ * Get the full coordinates for a shape pattern by joining all its segments.
+ * Stop coordinates are automatically fetched from stop data.
+ * Segment coordinates contain only the middle points (road path between stops).
+ * Returns an array of [lat, lng] tuples suitable for Leaflet Polyline.
+ */
+export function getShapeCoordinates(shapePatternKey: string): [number, number][] {
+  const tripShape = shapes.tripShapes[shapePatternKey];
+  if (!tripShape) return [];
+
+  const coordinates: [number, number][] = [];
+
+  for (const segmentKey of tripShape.segments) {
+    const segmentCoords = getSegmentCoordinates(segmentKey);
+
+    // Add segment coordinates, avoiding duplicate points at segment boundaries
+    for (let i = 0; i < segmentCoords.length; i++) {
+      const coord = segmentCoords[i];
+      if (!coord) continue;
+
+      // Skip the first point if it matches the last point we added (segment boundary)
+      if (i === 0 && coordinates.length > 0) {
+        const lastCoord = coordinates[coordinates.length - 1];
+        if (lastCoord &&
+            Math.abs(lastCoord[0] - coord[0]) < 0.000001 &&
+            Math.abs(lastCoord[1] - coord[1]) < 0.000001) {
+          continue;
+        }
+      }
+
+      coordinates.push(coord);
+    }
+  }
+
+  return coordinates;
+}
+
+/**
+ * Get route coordinates for a specific trip, using shapes if available.
+ * Falls back to straight lines between stops if no shape is defined.
+ */
+export function getTripRouteCoordinates(
+  directionId: string,
+  tripId: string,
+  dayType: DayType
+): [number, number][] {
+  // Try to find a shape pattern for this trip
+  const shapePattern = getShapePatternForTrip(directionId, tripId, dayType);
+
+  if (shapePattern) {
+    const shapeCoords = getShapeCoordinates(shapePattern);
+    if (shapeCoords.length > 0) {
+      return shapeCoords;
+    }
+  }
+
+  // Fall back to stop-to-stop straight lines
+  const trip = getTripById(directionId, tripId, dayType);
+  if (!trip) return [];
+
+  return trip.stops
+    .map(tripStop => {
+      const stop = getStopById(tripStop.stopId);
+      if (!stop) return null;
+      const platform = getPlatformCoordinates(stop, tripStop.platform);
+      if (!platform) return null;
+      return [platform.lat, platform.lng] as [number, number];
+    })
+    .filter((coord): coord is [number, number] => coord !== null);
+}
+
+/**
+ * Check if a shape is defined for a specific trip.
+ */
+export function hasShapeForTrip(
+  directionId: string,
+  tripId: string,
+  dayType: DayType
+): boolean {
+  return getShapePatternForTrip(directionId, tripId, dayType) !== null;
+}
+
+/**
+ * Get all available shape patterns for a direction.
+ */
+export function getShapePatternsForDirection(directionId: string): string[] {
+  return Object.keys(shapes.tripShapes).filter(
+    key => !key.startsWith('comment') && key.startsWith(directionId)
+  );
+}
+
+/**
+ * Get segment data for debugging/visualization.
+ */
+export function getSegment(segmentKey: string): ShapeSegment | null {
+  return shapes.segments[segmentKey] ?? null;
+}
+
+/**
+ * Get all segment keys.
+ */
+export function getAllSegmentKeys(): string[] {
+  return Object.keys(shapes.segments).filter(key => !key.startsWith('comment'));
+}

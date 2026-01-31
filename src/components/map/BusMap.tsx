@@ -11,7 +11,7 @@ import {
   getTripById,
   getStopById,
   getLineForDirection,
-  getPlatformCoordinates,
+  getTripRouteCoordinates,
 } from '@/utils/scheduleParser';
 import 'leaflet/dist/leaflet.css';
 
@@ -82,16 +82,8 @@ export function BusMap({
       stop: getStopById(ts.stopId),
     })).filter(s => s.stop !== undefined);
 
-    // Calculate coordinates for this specific trip
-    const coordinates: [number, number][] = trip.stops
-      .map(ts => {
-        const stop = getStopById(ts.stopId);
-        if (!stop) return null;
-        const platform = getPlatformCoordinates(stop, ts.platform);
-        if (!platform) return null;
-        return [platform.lat, platform.lng] as [number, number];
-      })
-      .filter((coord): coord is [number, number] => coord !== null);
+    // Get route coordinates (uses shapes if available, falls back to stop-to-stop)
+    const coordinates = getTripRouteCoordinates(directionId, tripId, dayType);
 
     return { tripStops: stops, tripCoordinates: coordinates };
   }, [directionId, tripId, dayType]);

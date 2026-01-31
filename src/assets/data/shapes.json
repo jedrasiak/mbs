@@ -1,0 +1,314 @@
+{
+  "metadata": {
+    "description": "Route shapes for map display. Segment coordinates contain ONLY middle points (road path). Start/end stop coordinates are auto-fetched from schedules.json.",
+    "lastUpdated": "2025-02-01"
+  },
+  "segments": {
+    "comment": "Key format: 'fromStopId-fromPlatform_toStopId-toPlatform'. Coordinates are MIDDLE POINTS ONLY - stop coords are auto-added.",
+
+    "1-A_2-A": {
+      "description": "Kazimierza Wielkiego → Jerozolimska",
+      "coordinates": [
+        [51.77181703107977, 20.260971754473566],
+        [51.77069942686604, 20.26120726760655],
+        [51.770534657526866, 20.26138184113664],
+        [51.770395162895696, 20.261798198047284],
+        [51.7683802060464, 20.260598636137928]
+      ]
+    },
+    "2-A_3-A": {
+      "description": "Jerozolimska → Plac Piłsudskiego",
+      "coordinates": [
+        [51.76679975128608, 20.25902186963293],
+        [51.76652671379366, 20.258077846439328],
+        [51.76630167693862, 20.256840242182243],
+        [51.76604505459447, 20.25423744560033]
+      ]
+    },
+    "3-A_9-A": {
+      "description": "Plac Piłsudskiego → Kościuszki (direct)",
+      "coordinates": [
+        [51.76452179896609, 20.254575099150372],
+        [51.764525118976806, 20.253722156709433]
+      ]
+    },
+    "3-A_4-A": {
+      "description": "Plac Piłsudskiego → Miła (for Sadowa loop)",
+      "coordinates": [
+        [51.76451690723377, 20.25472434711193],
+        [51.764659288070284, 20.256542247773094]
+      ]
+    },
+    "4-A_5-A": {
+      "description": "Miła → Sadowa (Willowa)",
+      "coordinates": [
+        [51.76617798907211, 20.256100177666735],
+        [51.76602573883939, 20.253518308844903],
+        [51.76613197552511, 20.25308379097038],
+        [51.76716113045735, 20.25256344241549],
+        [51.76841932348624, 20.24918922349552],
+        [51.768890721878, 20.248534764473337],
+        [51.769295722188325, 20.24719365997157],
+        [51.7691562962673, 20.244093026355866]
+      ]
+    },
+    "5-A_6-A": {
+      "description": "Sadowa (Willowa) → Willowa",
+      "coordinates": [
+        [51.770381237884465, 20.244205679120864]
+      ]
+    },
+    "6-A_7-A": {
+      "description": "Willowa → Ogrodowa",
+      "coordinates": [
+        [51.770666720856816, 20.239425982697373]
+      ]
+    },
+    "7-A_8-A": {
+      "description": "Ogrodowa → Sadowa (Ogrodowa)",
+      "coordinates": [
+        [51.76830977247734, 20.240010704173233]
+      ]
+    },
+    "8-A_3-A": {
+      "description": "Sadowa (Ogrodowa) → Plac Piłsudskiego (return from loop)",
+      "coordinates": [
+        [51.76913559915231, 20.244062751634925],
+        [51.769243577686275, 20.247195948387866],
+        [51.76705914073312, 20.252539849450436],
+        [51.766045022204466, 20.25308607259062]
+      ]
+    },
+    "9-A_10-A": {
+      "description": "Kościuszki → Kościuszki (Liceum)",
+      "coordinates": [
+        [51.76310731157282, 20.248757936091007]
+      ]
+    },
+    "10-A_12-A": {
+      "description": "Kościuszki (Liceum) → Tomaszowska (Cmentarz)",
+      "coordinates": []
+    },
+    "12-A_13-A": {
+      "description": "Tomaszowska (Cmentarz) → Tomaszowska (Adar)",
+      "coordinates": []
+    },
+    "13-A_14-A": {
+      "description": "Tomaszowska (Adar) → Orzeszkowej",
+      "coordinates": [
+        [51.75008422691295, 20.24004222219344]
+      ]
+    },
+    "14-A_15-A": {
+      "description": "Orzeszkowej → Katowicka (Aquarium)",
+      "coordinates": [
+        [51.75101233650734, 20.237228905014376],
+        [51.752761869950525, 20.2377520161404],
+        [51.75322787420911, 20.23409023821037]
+      ]
+    },
+    "15-A_16-A": {
+      "description": "Katowicka (Aquarium) → Katowicka (Osiedle)",
+      "coordinates": [
+        [51.75322787420911, 20.23409023821037],
+        [51.75333845078567, 20.2314683031256]
+      ]
+    },
+    "16-A_17-A": {
+      "description": "Katowicka (Osiedle) → Katowicka (Mrówka)",
+      "coordinates": [
+        [51.75143670323753, 20.222113023022406]
+      ]
+    },
+
+    "comment_return": "Return direction segments (from Mrówka)",
+
+    "17-A_16-B": {
+      "description": "Katowicka (Mrówka) → Katowicka (Osiedle) B",
+      "coordinates": []
+    },
+    "16-B_15-A": {
+      "description": "Katowicka (Osiedle) B → Katowicka (Aquarium)",
+      "coordinates": []
+    },
+    "15-A_14-B": {
+      "description": "Katowicka (Aquarium) → Orzeszkowej B",
+      "coordinates": []
+    },
+    "14-B_13-B": {
+      "description": "Orzeszkowej B → Tomaszowska (Adar) B",
+      "coordinates": []
+    },
+    "13-B_12-B": {
+      "description": "Tomaszowska (Adar) B → Tomaszowska (Cmentarz) B",
+      "coordinates": []
+    },
+    "12-B_11-B": {
+      "description": "Tomaszowska (Cmentarz) B → Kościuszki (Szkoła) B",
+      "coordinates": []
+    },
+    "11-B_28-B": {
+      "description": "Kościuszki (Szkoła) B → Mickiewicza B",
+      "coordinates": []
+    },
+    "28-B_4-A": {
+      "description": "Mickiewicza B → Miła",
+      "coordinates": []
+    },
+    "4-A_2-B": {
+      "description": "Miła → Jerozolimska B",
+      "coordinates": []
+    },
+    "2-B_1-B": {
+      "description": "Jerozolimska B → Kazimierza Wielkiego B",
+      "coordinates": []
+    },
+
+    "comment_mszczonow": "Via Mszczonowska/Aleksandrówka segments",
+
+    "1-A_21-A": {
+      "description": "Kazimierza Wielkiego → Mszczonowska",
+      "coordinates": []
+    },
+    "21-A_18-A": {
+      "description": "Mszczonowska → Aleksandrówka 1",
+      "coordinates": []
+    },
+    "18-A_19-A": {
+      "description": "Aleksandrówka 1 → Aleksandrówka 2",
+      "coordinates": []
+    },
+    "19-A_20-A": {
+      "description": "Aleksandrówka 2 → Zamkowa Wola",
+      "coordinates": []
+    },
+    "20-A_2-A": {
+      "description": "Zamkowa Wola → Jerozolimska",
+      "coordinates": []
+    }
+  },
+
+  "tripShapes": {
+    "comment": "Maps trip patterns to their segment sequences. Key: 'lineId-directionId-pattern'",
+
+    "1-to-mrowka-standard": {
+      "description": "Line 1 standard route to Mrówka",
+      "segments": [
+        "1-A_2-A",
+        "2-A_3-A",
+        "3-A_9-A",
+        "9-A_10-A",
+        "10-A_12-A",
+        "12-A_13-A",
+        "13-A_14-A",
+        "14-A_15-A",
+        "15-A_16-A",
+        "16-A_17-A"
+      ],
+      "tripIds": {
+        "weekday": ["I", "II", "III", "V", "VI", "VII", "VIII", "X", "XII"],
+        "weekend": ["III", "V", "VII"]
+      }
+    },
+    "1-to-mrowka-sadowa-loop": {
+      "description": "Line 1 to Mrówka via Sadowa/Willowa/Ogrodowa loop",
+      "segments": [
+        "1-A_2-A",
+        "2-A_3-A",
+        "3-A_4-A",
+        "4-A_5-A",
+        "5-A_6-A",
+        "6-A_7-A",
+        "7-A_8-A",
+        "8-A_3-A",
+        "3-A_9-A",
+        "9-A_10-A",
+        "10-A_12-A",
+        "12-A_13-A",
+        "13-A_14-A",
+        "14-A_15-A",
+        "15-A_16-A",
+        "16-A_17-A"
+      ],
+      "tripIds": {
+        "weekday": ["IV", "IX", "XI"],
+        "weekend": ["I", "IV", "VI"]
+      }
+    },
+    "1-to-mrowka-via-mszczonow": {
+      "description": "Line 1 to Mrówka via Mszczonowska and Aleksandrówka (weekend trip II)",
+      "segments": [
+        "1-A_21-A",
+        "21-A_18-A",
+        "18-A_19-A",
+        "19-A_20-A",
+        "20-A_2-A",
+        "2-A_3-A",
+        "3-A_4-A",
+        "4-A_5-A",
+        "5-A_6-A",
+        "6-A_7-A",
+        "7-A_8-A",
+        "8-A_3-A",
+        "3-A_9-A",
+        "9-A_10-A",
+        "10-A_12-A",
+        "12-A_13-A",
+        "13-A_14-A",
+        "14-A_15-A",
+        "15-A_16-A",
+        "16-A_17-A"
+      ],
+      "tripIds": {
+        "weekend": ["II"]
+      }
+    },
+
+    "1-from-mrowka-standard": {
+      "description": "Line 1 standard route from Mrówka",
+      "segments": [
+        "17-A_16-B",
+        "16-B_15-A",
+        "15-A_14-B",
+        "14-B_13-B",
+        "13-B_12-B",
+        "12-B_11-B",
+        "11-B_28-B",
+        "28-B_4-A",
+        "4-A_2-B",
+        "2-B_1-B"
+      ],
+      "tripIds": {
+        "weekday": ["I", "II", "IV", "VII", "VIII", "IX", "XI"],
+        "weekend": ["II", "IV", "VI"]
+      }
+    },
+    "1-from-mrowka-sadowa-loop": {
+      "description": "Line 1 from Mrówka via Sadowa/Willowa/Ogrodowa loop",
+      "comment": "TODO: Add segments for Sadowa loop in return direction",
+      "segments": [
+        "17-A_16-B",
+        "16-B_15-A",
+        "15-A_14-B",
+        "14-B_13-B",
+        "13-B_12-B",
+        "12-B_11-B",
+        "11-B_28-B",
+        "28-B_4-A",
+        "4-A_5-A",
+        "5-A_6-A",
+        "6-A_7-A",
+        "7-A_8-A",
+        "8-A_29-A",
+        "29-A_28-B",
+        "28-B_4-A",
+        "4-A_2-B",
+        "2-B_1-B"
+      ],
+      "tripIds": {
+        "weekday": ["III", "V", "VI", "X", "XII"],
+        "weekend": ["I", "III", "V", "VII"]
+      }
+    }
+  }
+}
