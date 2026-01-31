@@ -89,7 +89,8 @@
     "installAppDescription": "Add to your home screen for quick access",
     "install": "Install",
     "appInstalled": "App Installed",
-    "appInstalledDescription": "You're using the installed version"
+    "appInstalledDescription": "You're using the installed version",
+    "scheduleUpdated": "Schedule last updated"
   },
   "time": {
     "departed": "Departed",

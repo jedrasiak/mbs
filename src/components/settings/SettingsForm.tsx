@@ -28,15 +28,17 @@ import {
   Person,
   GetApp,
   CheckCircle,
+  Update,
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { useSettings } from '@/contexts/SettingsContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { StopSelector } from '@/components/home/StopSelector';
-import { getStopById } from '@/utils/scheduleParser';
+import { getStopById, getMetadata } from '@/utils/scheduleParser';
 import { setLanguage, supportedLanguages, detectBrowserLanguage, type SupportedLanguage } from '@/i18n';
 import type { Language as LanguageType } from '@/types';
 import { usePWA } from '@/contexts/PWAContext';
+import { trackEvent } from '@/hooks/usePlausible';
 
 export function SettingsForm() {
   const { t } = useTranslation();
@@ -73,6 +75,11 @@ export function SettingsForm() {
   };
 
   const currentLanguageValue = settings.language ?? 'auto';
+
+  const handleInstall = () => {
+    trackEvent('App Install', { props: { source: 'settings' } });
+    install();
+  };
 
   return (
     <Box>
@@ -211,7 +218,7 @@ export function SettingsForm() {
             subheader={<ListSubheader component="div">{t('settings.app')}</ListSubheader>}
           >
             {isInstallable ? (
-              <ListItemButton onClick={install}>
+              <ListItemButton onClick={handleInstall}>
                 <ListItemIcon>
                   <GetApp />
                 </ListItemIcon>
@@ -265,6 +272,15 @@ export function SettingsForm() {
               </Link>
             }
             secondary={t('settings.author')}
+          />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <Update />
+          </ListItemIcon>
+          <ListItemText
+            primary={getMetadata().lastUpdated}
+            secondary={t('settings.scheduleUpdated')}
           />
         </ListItem>
       </List>

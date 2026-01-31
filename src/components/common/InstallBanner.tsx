@@ -2,6 +2,7 @@ import { Box, Typography, IconButton } from '@mui/material';
 import { GetApp, Close } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { usePWA } from '@/contexts/PWAContext';
+import { trackEvent } from '@/hooks/usePlausible';
 
 export function InstallBanner() {
   const { t } = useTranslation();
@@ -11,9 +12,14 @@ export function InstallBanner() {
     return null;
   }
 
+  const handleInstall = () => {
+    trackEvent('App Install', { props: { source: 'home_banner' } });
+    install();
+  };
+
   return (
     <Box
-      onClick={install}
+      onClick={handleInstall}
       sx={{
         py: 1,
         px: 2,
