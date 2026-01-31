@@ -9,7 +9,7 @@ import { useLocalizedTime } from '@/hooks/useLocalizedTime';
 import {
   formatDistance,
   calculateDistance,
-  getDirectionsServingPlatform,
+  getAllDirectionsServingPlatform,
   getPlatformCoordinates,
 } from '@/utils/scheduleParser';
 import { formatTime, getServiceStatus } from '@/utils/timeCalculations';
@@ -34,8 +34,8 @@ export function StopBottomSheet({
   const departures = useNextDepartures(stop.id, 5);
   const serviceStatus = getServiceStatus();
 
-  // Get directions serving this specific platform
-  const directions = getDirectionsServingPlatform(stop.id, platform, serviceStatus.dayType ?? 'weekday');
+  // Get all directions serving this platform (regardless of day type)
+  const directions = getAllDirectionsServingPlatform(stop.id, platform);
   const platformInfo = getPlatformCoordinates(stop, platform);
 
   // Calculate distance to this platform

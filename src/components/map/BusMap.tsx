@@ -100,21 +100,33 @@ export function BusMap({
   const platformMarkers = useMemo(() => {
     const allMarkers = getAllPlatformMarkers(dayType ?? 'weekday');
 
-    if (tripStops) {
-      // Show only stops from the specific trip
+    if (tripStops && directionId) {
+      // Show only stops from the specific trip with direction's line color
       return tripStops.map(ts => {
         const marker = allMarkers.find(
           m => m.stopId === ts.stopId && m.platform === ts.platform
         );
-        return marker;
+        if (!marker) return undefined;
+        // Override directions to only include the viewed direction (for correct color)
+        const tripDirection = marker.directions.find(d => d.directionId === directionId);
+        return {
+          ...marker,
+          directions: tripDirection ? [tripDirection] : marker.directions,
+        };
       }).filter((m): m is NonNullable<typeof m> => m !== undefined);
     }
 
     if (directionId) {
-      // Show stops for the direction (all platforms used by this direction)
-      return allMarkers.filter(marker =>
-        marker.directions.some(dir => dir.directionId === directionId)
-      );
+      // Show stops for the direction with direction's line color
+      return allMarkers
+        .filter(marker => marker.directions.some(dir => dir.directionId === directionId))
+        .map(marker => {
+          const tripDirection = marker.directions.find(d => d.directionId === directionId);
+          return {
+            ...marker,
+            directions: tripDirection ? [tripDirection] : marker.directions,
+          };
+        });
     }
 
     // Default: show all stops
