@@ -1,13 +1,13 @@
 import { Autocomplete, TextField, Box } from '@mui/material';
 import { Favorite, Star } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import type { Stop } from '@/types';
+import type { Stop, StopId } from '@/types';
 import { getAllStops } from '@/utils/scheduleParser';
 import { useSettings } from '@/contexts/SettingsContext';
 
 interface StopSelectorProps {
-  value: number | null;
-  onChange: (stopId: number | null) => void;
+  value: StopId | null;
+  onChange: (stopId: StopId | null) => void;
   label?: string;
 }
 

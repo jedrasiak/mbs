@@ -1,12 +1,12 @@
 import { ToggleButtonGroup, ToggleButton, Box, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import type { DayType } from '@/types';
+import type { DayType, LineId } from '@/types';
 import { doesLineOperateOnDayType, getLineById } from '@/utils/scheduleParser';
 
 interface DayTypeToggleProps {
   value: DayType;
   onChange: (value: DayType) => void;
-  lineId?: number;
+  lineId?: LineId;
 }
 
 export function DayTypeToggle({ value, onChange, lineId }: DayTypeToggleProps) {

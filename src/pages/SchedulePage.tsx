@@ -21,7 +21,7 @@ import {
   getNextOperatingDay,
 } from '@/utils/timeCalculations';
 import { useLocalizedDate } from '@/hooks/useLocalizedDate';
-import type { DayType } from '@/types';
+import type { DayType, LineId, DirectionId } from '@/types';
 
 export function SchedulePage() {
   const { t } = useTranslation();
@@ -30,11 +30,11 @@ export function SchedulePage() {
   const defaultLine = lines[0];
   const serviceStatus = getServiceStatus();
 
-  const [selectedLineId, setSelectedLineId] = useState(defaultLine?.id ?? 1);
+  const [selectedLineId, setSelectedLineId] = useState<LineId>(defaultLine?.id ?? 'line1');
   const [dayType, setDayType] = useState<DayType>(
     getDayType() ?? 'weekday'
   );
-  const [selectedDirectionId, setSelectedDirectionId] = useState<string | null>(null);
+  const [selectedDirectionId, setSelectedDirectionId] = useState<DirectionId | null>(null);
 
   // When line changes, reset direction and check if line operates on current day type
   useEffect(() => {

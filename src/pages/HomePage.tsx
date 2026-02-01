@@ -15,12 +15,13 @@ import { useNextDepartures } from '@/hooks/useNextDepartures';
 import { getStopById } from '@/utils/scheduleParser';
 import { getServiceStatus, getNextOperatingDay } from '@/utils/timeCalculations';
 import { useLocalizedDate } from '@/hooks/useLocalizedDate';
+import type { StopId } from '@/types';
 
 export function HomePage() {
   const { t } = useTranslation();
   const { settings } = useSettings();
   const { formatDate } = useLocalizedDate();
-  const [selectedStopId, setSelectedStopId] = useState<number | null>(
+  const [selectedStopId, setSelectedStopId] = useState<StopId | null>(
     settings.defaultStopId
   );
   const [selectedRoute, setSelectedRoute] = useState<string>(FILTER_ALL_VALUE);
@@ -36,7 +37,7 @@ export function HomePage() {
     let result = departures;
 
     if (selectedRoute !== FILTER_ALL_VALUE) {
-      result = result.filter((d) => String(d.lineId) === selectedRoute);
+      result = result.filter((d) => d.lineId === selectedRoute);
     }
 
     if (selectedDirection !== FILTER_ALL_VALUE) {
@@ -47,7 +48,7 @@ export function HomePage() {
   }, [departures, selectedRoute, selectedDirection]);
 
   // Reset filters when stop changes
-  const handleStopChange = (stopId: number | null) => {
+  const handleStopChange = (stopId: StopId | null) => {
     setSelectedStopId(stopId);
     setSelectedRoute(FILTER_ALL_VALUE);
     setSelectedDirection(FILTER_ALL_VALUE);

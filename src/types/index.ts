@@ -1,121 +1,131 @@
-// Platform coordinates for a single side of a stop
+// ==========================================
+// New string-based ID types
+// ==========================================
+
+export type StopId = string;
+export type PlatformId = string;
+export type RouteId = string;
+export type LineId = string;
+export type DirectionId = string;
+export type TripId = string;
+export type ScheduleId = string;
+
+// ==========================================
+// Core Data Types (new relational structure)
+// ==========================================
+
+export interface Stop {
+  id: StopId;
+  name: string;
+}
+
 export interface Platform {
+  id: PlatformId;
+  parent_stop: StopId;
   lat: number;
   lng: number;
   description?: string;
 }
 
-// Platform identifier type
-export type PlatformId = 'A' | 'B';
-
-// Stop with optional platforms (A and/or B)
-// Some stops may only have one platform if buses only go in one direction
-export interface Stop {
-  id: number;
-  name: string;
-  platforms: {
-    A?: Platform;
-    B?: Platform;
-  };
+export interface Route {
+  id: RouteId;
+  parent_platform_start: PlatformId;
+  parent_platform_end: PlatformId;
+  coordinates: [number, number][];
 }
 
-// A stop within a trip, with departure time
-export interface TripStop {
-  stopId: number;
+export interface Line {
+  id: LineId;
+  name: string;
+  color: string;
+}
+
+export interface Direction {
+  id: DirectionId;
+  name: string;
+  parent_line: LineId;
+}
+
+export interface Stage {
   platform: PlatformId;
   time: string;
 }
 
-// A single trip (one bus run through the route)
 export interface Trip {
-  tripId: string; // Roman numeral: "I", "II", "III", etc.
-  stops: TripStop[];
-}
-
-// Schedule for a day type (weekday/weekend)
-export interface DaySchedule {
-  trips: Trip[];
-}
-
-// Direction schedules by day type
-export interface DirectionSchedules {
-  weekday?: DaySchedule;
-  weekend?: DaySchedule;
-}
-
-// Direction of a line (e.g., "to Mrówka" or "from Mrówka")
-export interface Direction {
-  id: string;
-  name: string; // Destination name, e.g., "PSB Mrówka"
-  schedules: DirectionSchedules;
-}
-
-// Bus line with two directions
-export interface Line {
-  id: number;
+  id: TripId;
   name: string;
-  color: string;
-  operatingDays?: ('weekday' | 'weekend')[]; // If undefined, operates every day
-  directions: Direction[];
+  parent_direction: DirectionId;
+  stages: Stage[];
+  daysGroup?: DaysGroup;
+  daysInclude?: string[];  // YYYY-MM-DD
+  daysExclude?: string[];  // YYYY-MM-DD
 }
 
-// Explicit non-operating day definition
-export interface NonOperatingDay {
-  day: number;
-  month: number;
-  year: number;
-  name: string;
+export interface Schedule {
+  id: ScheduleId;
+  updated_at: string;
+  valid_from: string;
+  lines: LineId[];
 }
 
-// Schedule metadata
-export interface ScheduleMetadata {
-  cityName: string;
-  timezone: string;
-  lastUpdated: string;
-  nonOperatingDays: NonOperatingDay[];
-}
+// ==========================================
+// Day type and schedule types
+// ==========================================
 
-// Complete schedule data structure
-export interface ScheduleData {
-  metadata: ScheduleMetadata;
-  lines: Line[];
-  stops: Stop[];
-}
-
-// Day type for schedule lookup
+export type DaysGroup = 'weekday' | 'weekend';
 export type DayType = 'weekday' | 'weekend';
 
-// Departure information with direction
+// ==========================================
+// Departure and Service Types
+// ==========================================
+
 export interface Departure {
-  lineId: number;
+  lineId: LineId;
   lineName: string;
   lineColor: string;
-  directionId: string;
+  directionId: DirectionId;
   destinationName: string;
+  platformId: PlatformId;
   time: string;
   minutesUntil: number;
 }
 
-// Service status for a given date
 export interface ServiceStatus {
   isOperating: boolean;
   dayType: DayType | null;
-  reason?: string; // e.g., "Christmas", "Easter Sunday"
+  reason?: string;
 }
 
-// Supported language codes
+// ==========================================
+// Direction info for display
+// ==========================================
+
+export interface DirectionInfo {
+  lineId: LineId;
+  lineName: string;
+  lineColor: string;
+  directionId: DirectionId;
+  directionName: string;
+}
+
+// ==========================================
+// User Settings
+// ==========================================
+
 export type Language = 'en' | 'pl' | 'uk';
 
-// User settings
 export interface UserSettings {
-  defaultStopId: number | null;
-  favoriteStops: number[];
+  defaultStopId: StopId | null;
+  favoriteStops: StopId[];
   timeFormat: '12h' | '24h';
   darkMode: boolean;
-  language: Language | null; // null means use browser default
+  language: Language | null;
 }
 
-// Geolocation state
+// ==========================================
+// Geolocation
+// ==========================================
+
 export interface GeolocationState {
   latitude: number | null;
   longitude: number | null;
@@ -124,11 +134,18 @@ export interface GeolocationState {
   loading: boolean;
 }
 
-// Direction info for display (used in map/bottom sheet)
-export interface DirectionInfo {
-  lineId: number;
-  lineName: string;
-  lineColor: string;
-  directionId: string;
-  directionName: string;
+// ==========================================
+// Platform direction type (for map display)
+// ==========================================
+
+export type PlatformDirection = 'south' | 'north';
+
+/**
+ * Extract the direction part from a platform ID
+ * e.g., "kazimierza-wielkiego:south" -> "south"
+ */
+export function getPlatformDirection(platformId: PlatformId): PlatformDirection {
+  const parts = platformId.split(':');
+  const direction = parts[parts.length - 1];
+  return direction as PlatformDirection;
 }

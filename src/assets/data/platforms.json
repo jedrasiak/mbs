@@ -1,0 +1,324 @@
+[
+  {
+    "id": "kazimierza-wielkiego:south",
+    "parent_stop": "kazimierza-wielkiego",
+    "lat": 51.773347452781,
+    "lng": 20.260259433666647,
+    "description": "Kierunek: Katowicka (Mrówka) / Księże Domki"
+  },
+  {
+    "id": "kazimierza-wielkiego:north",
+    "parent_stop": "kazimierza-wielkiego",
+    "lat": 51.77247905285628,
+    "lng": 20.260776464643534,
+    "description": "Kierunek: Mszczonowska"
+  },
+  {
+    "id": "jerozolimska:south",
+    "parent_stop": "jerozolimska",
+    "lat": 51.76739574498035,
+    "lng": 20.259705502790712,
+    "description": "Kierunek: Katowicka (Mrówka)"
+  },
+  {
+    "id": "jerozolimska:north",
+    "parent_stop": "jerozolimska",
+    "lat": 51.767915678886816,
+    "lng": 20.260332520619848,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  },
+  {
+    "id": "plac-pilsudskiego:south",
+    "parent_stop": "plac-pilsudskiego",
+    "lat": 51.76586085629598,
+    "lng": 20.254150291694906,
+    "description": "Kierunek: Katowicka (Mrówka)"
+  },
+  {
+    "id": "plac-pilsudskiego:north",
+    "parent_stop": "plac-pilsudskiego",
+    "lat": 51.76586085629598,
+    "lng": 20.254150291694906,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  },
+  {
+    "id": "mila:south",
+    "parent_stop": "mila",
+    "lat": 51.76488638701276,
+    "lng": 20.256501619573626
+  },
+  {
+    "id": "sadowa-willowa:south",
+    "parent_stop": "sadowa-willowa",
+    "lat": 51.769578,
+    "lng": 20.244115
+  },
+  {
+    "id": "willowa:south",
+    "parent_stop": "willowa",
+    "lat": 51.770577096948706,
+    "lng": 20.24173552036208
+  },
+  {
+    "id": "ogrodowa:south",
+    "parent_stop": "ogrodowa",
+    "lat": 51.768933791330646,
+    "lng": 20.238845365813972
+  },
+  {
+    "id": "sadowa-ogrodowa:south",
+    "parent_stop": "sadowa-ogrodowa",
+    "lat": 51.76865172505815,
+    "lng": 20.244035795327086
+  },
+  {
+    "id": "kosciuszki:south",
+    "parent_stop": "kosciuszki",
+    "lat": 51.76393779624841,
+    "lng": 20.250645754726015,
+    "description": "Kierunek: Katowicka (Mrówka)"
+  },
+  {
+    "id": "kosciuszki-liceum:south",
+    "parent_stop": "kosciuszki-liceum",
+    "lat": 51.76159025741317,
+    "lng": 20.247028673866165,
+    "description": "Kierunek: Katowicka (Mrówka)"
+  },
+  {
+    "id": "kosciuszki-liceum:north",
+    "parent_stop": "kosciuszki-liceum",
+    "lat": 51.76159025741317,
+    "lng": 20.247028673866165,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  },
+  {
+    "id": "kosciuszki-szkola:south",
+    "parent_stop": "kosciuszki-szkola",
+    "lat": 51.76244448553878,
+    "lng": 20.24817111413339,
+    "description": "Kierunek: Katowicka (Mrówka)"
+  },
+  {
+    "id": "kosciuszki-szkola:north",
+    "parent_stop": "kosciuszki-szkola",
+    "lat": 51.76244448553878,
+    "lng": 20.24817111413339,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  },
+  {
+    "id": "tomaszowska-cmentarz:south",
+    "parent_stop": "tomaszowska-cmentarz",
+    "lat": 51.75786215101163,
+    "lng": 20.24449244291742,
+    "description": "Kierunek: Katowicka (Mrówka)"
+  },
+  {
+    "id": "tomaszowska-cmentarz:north",
+    "parent_stop": "tomaszowska-cmentarz",
+    "lat": 51.75794461929431,
+    "lng": 20.244689445086248,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  },
+  {
+    "id": "tomaszowska-adar:south",
+    "parent_stop": "tomaszowska-adar",
+    "lat": 51.75413375942842,
+    "lng": 20.242324559553253,
+    "description": "Kierunek: Katowicka (Mrówka)"
+  },
+  {
+    "id": "tomaszowska-adar:north",
+    "parent_stop": "tomaszowska-adar",
+    "lat": 51.75331542274436,
+    "lng": 20.24199815822624,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  },
+  {
+    "id": "orzeszkowej:south",
+    "parent_stop": "orzeszkowej",
+    "lat": 51.750561,
+    "lng": 20.238474,
+    "description": "Kierunek: Katowicka (Mrówka)"
+  },
+  {
+    "id": "orzeszkowej:north",
+    "parent_stop": "orzeszkowej",
+    "lat": 51.750237,
+    "lng": 20.239432,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  },
+  {
+    "id": "katowicka-aquarium:south",
+    "parent_stop": "katowicka-aquarium",
+    "lat": 51.75380735411695,
+    "lng": 20.235027367487543
+  },
+  {
+    "id": "katowicka-osiedle:south",
+    "parent_stop": "katowicka-osiedle",
+    "lat": 51.75236233804316,
+    "lng": 20.226443519639343,
+    "description": "Kierunek: Katowicka (Mrówka)"
+  },
+  {
+    "id": "katowicka-osiedle:north",
+    "parent_stop": "katowicka-osiedle",
+    "lat": 51.752048511432115,
+    "lng": 20.225107779696877,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  },
+  {
+    "id": "katowicka-mrowka:south",
+    "parent_stop": "katowicka-mrowka",
+    "lat": 51.75124331078189,
+    "lng": 20.220324812725266,
+    "description": "Krańcówka"
+  },
+  {
+    "id": "aleksandrowka-1:south",
+    "parent_stop": "aleksandrowka-1",
+    "lat": 51.772891160839016,
+    "lng": 20.283665069801472,
+    "description": "Kierunek: Księże Domki / Katowicka (Mrówka)"
+  },
+  {
+    "id": "aleksandrowka-1:north",
+    "parent_stop": "aleksandrowka-1",
+    "lat": 51.772084932509756,
+    "lng": 20.282394118205374,
+    "description": "Kierunek: Kazimierza Wielkiego / Mszczonowska"
+  },
+  {
+    "id": "aleksandrowka-2:south",
+    "parent_stop": "aleksandrowka-2",
+    "lat": 51.76620198040499,
+    "lng": 20.27171715817809,
+    "description": "Kierunek: Księże Domki / Katowicka (Mrówka)"
+  },
+  {
+    "id": "aleksandrowka-2:north",
+    "parent_stop": "aleksandrowka-2",
+    "lat": 51.766292709956176,
+    "lng": 20.271972025123905,
+    "description": "Kierunek: Kazimierza Wielkiego / Mszczonowska"
+  },
+  {
+    "id": "zamkowa-wola:south",
+    "parent_stop": "zamkowa-wola",
+    "lat": 51.767697,
+    "lng": 20.265822,
+    "description": "Kierunek: Księże Domki / Katowicka (Mrówka)"
+  },
+  {
+    "id": "zamkowa-wola:north",
+    "parent_stop": "zamkowa-wola",
+    "lat": 51.767563,
+    "lng": 20.266181,
+    "description": "Kierunek: Kazimierza Wielkiego / Mszczonowska"
+  },
+  {
+    "id": "mszczonowska:south",
+    "parent_stop": "mszczonowska",
+    "lat": 51.77891957954707,
+    "lng": 20.27118669924335
+  },
+  {
+    "id": "targowa:south",
+    "parent_stop": "targowa",
+    "lat": 51.76439347362884,
+    "lng": 20.25899323989535,
+    "description": "Kierunek: Księże Domki"
+  },
+  {
+    "id": "targowa:north",
+    "parent_stop": "targowa",
+    "lat": 51.76458271438761,
+    "lng": 20.260130496392552,
+    "description": "Kierunek: Mszczonowska"
+  },
+  {
+    "id": "przemyslowa:south",
+    "parent_stop": "przemyslowa",
+    "lat": 51.755416,
+    "lng": 20.251043,
+    "description": "Kierunek: Księże Domki"
+  },
+  {
+    "id": "przemyslowa:north",
+    "parent_stop": "przemyslowa",
+    "lat": 51.755406,
+    "lng": 20.251697,
+    "description": "Kierunek: Mszczonowska"
+  },
+  {
+    "id": "zwolinskiego:south",
+    "parent_stop": "zwolinskiego",
+    "lat": 51.75816662918352,
+    "lng": 20.251991728561457,
+    "description": "Kierunek: Księże Domki"
+  },
+  {
+    "id": "zwolinskiego:north",
+    "parent_stop": "zwolinskiego",
+    "lat": 51.75765286547225,
+    "lng": 20.25201428315843,
+    "description": "Kierunek: Mszczonowska"
+  },
+  {
+    "id": "1-maja:south",
+    "parent_stop": "1-maja",
+    "lat": 51.76273992273433,
+    "lng": 20.239238496828335,
+    "description": "Kierunek: Księże Domki"
+  },
+  {
+    "id": "1-maja:north",
+    "parent_stop": "1-maja",
+    "lat": 51.76290045643438,
+    "lng": 20.239565538484463,
+    "description": "Kierunek: Mszczonowska"
+  },
+  {
+    "id": "ksieze-domki-zalew:south",
+    "parent_stop": "ksieze-domki-zalew",
+    "lat": 51.760061,
+    "lng": 20.234727,
+    "description": "Kierunek: Księże Domki"
+  },
+  {
+    "id": "ksieze-domki-zalew:north",
+    "parent_stop": "ksieze-domki-zalew",
+    "lat": 51.760229,
+    "lng": 20.235121,
+    "description": "Kierunek: Mszczonowska"
+  },
+  {
+    "id": "ksieze-domki-granica:south",
+    "parent_stop": "ksieze-domki-granica",
+    "lat": 51.756677,
+    "lng": 20.223322,
+    "description": "Przystanek końcowy"
+  },
+  {
+    "id": "ksieze-domki-granica:north",
+    "parent_stop": "ksieze-domki-granica",
+    "lat": 51.756726,
+    "lng": 20.223738,
+    "description": "Przystanek początkowy"
+  },
+  {
+    "id": "mickiewicza:south",
+    "parent_stop": "mickiewicza",
+    "lat": 51.7643683346067,
+    "lng": 20.253151704850303,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  },
+  {
+    "id": "kolejowa:south",
+    "parent_stop": "kolejowa",
+    "lat": 51.76671589930158,
+    "lng": 20.24645253881083,
+    "description": "Kierunek: Kazimierza Wielkiego"
+  }
+]

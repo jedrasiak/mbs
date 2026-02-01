@@ -26,12 +26,12 @@ export function DepartureFilters({
     new Map(
       departures.map((d) => [d.lineId, { id: d.lineId, name: d.lineName, color: d.lineColor }])
     ).values()
-  ).sort((a, b) => a.id - b.id);
+  ).sort((a, b) => a.name.localeCompare(b.name));
 
   // Extract unique directions from departures (filtered by selected route if applicable)
   const filteredForDirections = selectedRoute === ALL_VALUE
     ? departures
-    : departures.filter((d) => String(d.lineId) === selectedRoute);
+    : departures.filter((d) => d.lineId === selectedRoute);
 
   const directions = Array.from(
     new Map(
@@ -40,7 +40,13 @@ export function DepartureFilters({
   ).sort((a, b) => a.localeCompare(b));
 
   // Get the selected route data for display in the select
-  const selectedRouteData = routes.find((r) => String(r.id) === selectedRoute);
+  const selectedRouteData = routes.find((r) => r.id === selectedRoute);
+
+  // Extract line number from line name for display (e.g., "Linia 1" -> "1")
+  const getLineNumber = (lineName: string): string => {
+    const match = lineName.match(/\d+/);
+    return match ? match[0] : lineName;
+  };
 
   return (
     <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
@@ -60,6 +66,7 @@ export function DepartureFilters({
               return t('home.allRoutes');
             }
             if (selectedRouteData) {
+              const lineNum = getLineNumber(selectedRouteData.name);
               return (
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <Box
@@ -77,9 +84,9 @@ export function DepartureFilters({
                       fontWeight: 'bold',
                     }}
                   >
-                    {selectedRouteData.id}
+                    {lineNum}
                   </Box>
-                  {t('home.line')} {selectedRouteData.id}
+                  {t('home.line')} {lineNum}
                 </Box>
               );
             }
@@ -87,29 +94,32 @@ export function DepartureFilters({
           }}
         >
           <MenuItem value={ALL_VALUE}>{t('home.allRoutes')}</MenuItem>
-          {routes.map((route) => (
-            <MenuItem key={route.id} value={String(route.id)}>
-              <Box
-                component="span"
-                sx={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: 24,
-                  height: 24,
-                  borderRadius: 1,
-                  bgcolor: route.color,
-                  color: 'white',
-                  fontSize: '0.75rem',
-                  fontWeight: 'bold',
-                  mr: 1,
-                }}
-              >
-                {route.id}
-              </Box>
-              {t('home.line')} {route.id}
-            </MenuItem>
-          ))}
+          {routes.map((route) => {
+            const lineNum = getLineNumber(route.name);
+            return (
+              <MenuItem key={route.id} value={route.id}>
+                <Box
+                  component="span"
+                  sx={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 24,
+                    height: 24,
+                    borderRadius: 1,
+                    bgcolor: route.color,
+                    color: 'white',
+                    fontSize: '0.75rem',
+                    fontWeight: 'bold',
+                    mr: 1,
+                  }}
+                >
+                  {lineNum}
+                </Box>
+                {t('home.line')} {lineNum}
+              </MenuItem>
+            );
+          })}
         </Select>
       </FormControl>
 

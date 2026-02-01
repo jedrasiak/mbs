@@ -51,8 +51,8 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
 
   // Find the current trip (first trip that hasn't fully departed)
   const currentTripIndex = trips.findIndex(trip => {
-    // Check if any stop on this trip is in the future
-    return trip.stops.some(stop => !isPastTime(stop.time));
+    // Check if any stage on this trip is in the future
+    return trip.stages.some(stage => !isPastTime(stage.time));
   });
 
   return (
@@ -95,8 +95,8 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
             const isCurrentTrip = index === currentTripIndex;
             return (
               <ButtonBase
-                key={`header-${trip.tripId}`}
-                onClick={() => handleTripClick(trip.tripId)}
+                key={`header-${trip.name}`}
+                onClick={() => handleTripClick(trip.name)}
                 sx={{
                   position: 'sticky',
                   top: 0,
@@ -112,7 +112,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
                   },
                 }}
               >
-                {trip.tripId}
+                {trip.name}
               </ButtonBase>
             );
           })}
@@ -153,7 +153,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
                   const timesOnTrip = getAllTimesForStopOnTrip(
                     stop.id,
                     directionId,
-                    trip.tripId,
+                    trip.name,
                     dayType
                   );
 
@@ -165,7 +165,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
 
                   return (
                     <Box
-                      key={`time-${stop.id}-${trip.tripId}-${colIndex}`}
+                      key={`time-${stop.id}-${trip.name}-${colIndex}`}
                       sx={{
                         p: 1.5,
                         textAlign: 'center',

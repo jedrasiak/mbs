@@ -1,13 +1,12 @@
 import { Tabs, Tab, Box, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import type { Line } from '@/types';
+import type { Line, LineId, DayType } from '@/types';
 import { getAllLines, doesLineOperateOnDayType } from '@/utils/scheduleParser';
 import { getDayType } from '@/utils/timeCalculations';
-import type { DayType } from '@/types';
 
 interface LineTabsProps {
-  value: number;
-  onChange: (lineId: number) => void;
+  value: LineId;
+  onChange: (lineId: LineId) => void;
   dayType?: DayType;
 }
 
@@ -16,7 +15,7 @@ export function LineTabs({ value, onChange, dayType }: LineTabsProps) {
   const lines = getAllLines();
   const currentDayType = dayType ?? getDayType() ?? 'weekday';
 
-  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: LineId) => {
     onChange(newValue);
   };
 

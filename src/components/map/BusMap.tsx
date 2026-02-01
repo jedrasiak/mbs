@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { Box } from '@mui/material';
-import type { DayType, PlatformId } from '@/types';
+import type { DayType, PlatformId, StopId } from '@/types';
 import { StopMarker } from './StopMarker';
 import { RouteLayer } from './RouteLayer';
 import { UserLocationMarker } from './UserLocationMarker';
@@ -9,7 +9,7 @@ import {
   getAllPlatformMarkers,
   getMapCenter,
   getTripById,
-  getStopById,
+  getPlatformById,
   getLineForDirection,
   getTripRouteCoordinates,
 } from '@/utils/scheduleParser';
@@ -20,9 +20,9 @@ interface BusMapProps {
   tripId: string | null;
   dayType: DayType | null;
   userLocation: { lat: number; lng: number } | null;
-  selectedStopId: number | null;
-  selectedPlatform: PlatformId | null;
-  onStopSelect: (stopId: number, platform: PlatformId) => void;
+  selectedStopId: StopId | null;
+  selectedPlatformId: PlatformId | null;
+  onStopSelect: (stopId: StopId, platformId: PlatformId) => void;
   centerOnUser?: boolean;
 }
 
@@ -50,7 +50,7 @@ export function BusMap({
   dayType,
   userLocation,
   selectedStopId,
-  selectedPlatform,
+  selectedPlatformId,
   onStopSelect,
   centerOnUser = false,
 }: BusMapProps) {
@@ -66,38 +66,35 @@ export function BusMap({
     return getLineForDirection(directionId);
   }, [directionId]);
 
-  // Get trip-specific stops and coordinates if tripId is provided
-  const { tripStops, tripCoordinates } = useMemo(() => {
+  // Get trip-specific platforms and coordinates if tripId is provided
+  const { tripPlatforms, tripCoordinates } = useMemo(() => {
     if (!directionId || !tripId || !dayType) {
-      return { tripStops: null, tripCoordinates: null };
+      return { tripPlatforms: null, tripCoordinates: null };
     }
     const trip = getTripById(directionId, tripId, dayType);
     if (!trip) {
-      return { tripStops: null, tripCoordinates: null };
+      return { tripPlatforms: null, tripCoordinates: null };
     }
 
-    const stops = trip.stops.map(ts => ({
-      stopId: ts.stopId,
-      platform: ts.platform,
-      stop: getStopById(ts.stopId),
-    })).filter(s => s.stop !== undefined);
+    const platforms = trip.stages.map(stage => ({
+      platformId: stage.platform,
+      platform: getPlatformById(stage.platform),
+    })).filter(p => p.platform !== undefined);
 
-    // Get route coordinates (uses shapes if available, falls back to stop-to-stop)
+    // Get route coordinates (uses shapes if available, falls back to platform-to-platform)
     const coordinates = getTripRouteCoordinates(directionId, tripId, dayType);
 
-    return { tripStops: stops, tripCoordinates: coordinates };
+    return { tripPlatforms: platforms, tripCoordinates: coordinates };
   }, [directionId, tripId, dayType]);
 
   // Get platform markers based on mode
   const platformMarkers = useMemo(() => {
     const allMarkers = getAllPlatformMarkers(dayType ?? 'weekday');
 
-    if (tripStops && directionId) {
-      // Show only stops from the specific trip with direction's line color
-      return tripStops.map(ts => {
-        const marker = allMarkers.find(
-          m => m.stopId === ts.stopId && m.platform === ts.platform
-        );
+    if (tripPlatforms && directionId) {
+      // Show only platforms from the specific trip with direction's line color
+      return tripPlatforms.map(tp => {
+        const marker = allMarkers.find(m => m.platformId === tp.platformId);
         if (!marker) return undefined;
         // Override directions to only include the viewed direction (for correct color)
         const tripDirection = marker.directions.find(d => d.directionId === directionId);
@@ -109,7 +106,7 @@ export function BusMap({
     }
 
     if (directionId) {
-      // Show stops for the direction with direction's line color
+      // Show platforms for the direction with direction's line color
       return allMarkers
         .filter(marker => marker.directions.some(dir => dir.directionId === directionId))
         .map(marker => {
@@ -121,9 +118,9 @@ export function BusMap({
         });
     }
 
-    // Default: show all stops
+    // Default: show all platforms
     return allMarkers;
-  }, [tripStops, directionId, dayType]);
+  }, [tripPlatforms, directionId, dayType]);
 
   return (
     <Box
@@ -161,18 +158,18 @@ export function BusMap({
         {/* Stop markers */}
         {platformMarkers.map(marker => (
           <StopMarker
-            key={`${marker.stopId}-${marker.platform}`}
+            key={marker.platformId}
             stopId={marker.stopId}
-            platform={marker.platform}
+            platformId={marker.platformId}
             lat={marker.lat}
             lng={marker.lng}
             stopName={marker.stopName}
             directions={marker.directions}
             isSelected={
               marker.stopId === selectedStopId &&
-              marker.platform === selectedPlatform
+              marker.platformId === selectedPlatformId
             }
-            onClick={() => onStopSelect(marker.stopId, marker.platform)}
+            onClick={() => onStopSelect(marker.stopId, marker.platformId)}
           />
         ))}
 

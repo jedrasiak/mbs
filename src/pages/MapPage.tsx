@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { Header, LoadingSpinner } from '@/components/common';
 import { MapFAB, SearchBar, StopBottomSheet } from '@/components/map';
 import { useGeolocation } from '@/hooks/useGeolocation';
-import { getStopById, getFirstAvailablePlatform } from '@/utils/scheduleParser';
+import { getStopById, getFirstAvailablePlatformId, getPlatformById } from '@/utils/scheduleParser';
 import { getServiceStatus } from '@/utils/timeCalculations';
-import type { PlatformId } from '@/types';
+import type { StopId, PlatformId } from '@/types';
 
 // Lazy load the map component
 const BusMap = lazy(() =>
@@ -17,8 +17,8 @@ const BusMap = lazy(() =>
 export function MapPage() {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
-  const [selectedStopId, setSelectedStopId] = useState<number | null>(null);
-  const [selectedPlatform, setSelectedPlatform] = useState<PlatformId | null>(null);
+  const [selectedStopId, setSelectedStopId] = useState<StopId | null>(null);
+  const [selectedPlatformId, setSelectedPlatformId] = useState<PlatformId | null>(null);
   const [centerOnUser, setCenterOnUser] = useState(false);
 
   const { latitude, longitude, refresh } = useGeolocation({ watch: true });
@@ -29,6 +29,7 @@ export function MapPage() {
       : null;
 
   const selectedStop = selectedStopId ? getStopById(selectedStopId) : undefined;
+  const selectedPlatform = selectedPlatformId ? getPlatformById(selectedPlatformId) : undefined;
 
   // Get route parameters from URL
   const directionId = searchParams.get('direction');
@@ -44,22 +45,21 @@ export function MapPage() {
     setTimeout(() => setCenterOnUser(false), 100);
   }, [refresh]);
 
-  const handleStopSelect = useCallback((stopId: number, platform: PlatformId) => {
+  const handleStopSelect = useCallback((stopId: StopId, platformId: PlatformId) => {
     setSelectedStopId(stopId);
-    setSelectedPlatform(platform);
+    setSelectedPlatformId(platformId);
   }, []);
 
-  const handleSearchSelect = useCallback((stopId: number) => {
+  const handleSearchSelect = useCallback((stopId: StopId) => {
     setSelectedStopId(stopId);
     // Find the first available platform for this stop
-    const stop = getStopById(stopId);
-    const platform = stop ? getFirstAvailablePlatform(stop) : null;
-    setSelectedPlatform(platform);
+    const platformId = getFirstAvailablePlatformId(stopId);
+    setSelectedPlatformId(platformId);
   }, []);
 
   const handleClose = useCallback(() => {
     setSelectedStopId(null);
-    setSelectedPlatform(null);
+    setSelectedPlatformId(null);
   }, []);
 
   return (
@@ -73,7 +73,7 @@ export function MapPage() {
             dayType={dayType}
             userLocation={userLocation}
             selectedStopId={selectedStopId}
-            selectedPlatform={selectedPlatform}
+            selectedPlatformId={selectedPlatformId}
             onStopSelect={handleStopSelect}
             centerOnUser={centerOnUser}
           />

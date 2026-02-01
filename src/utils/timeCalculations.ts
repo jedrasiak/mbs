@@ -1,8 +1,25 @@
-import { isWeekend as dateFnsIsWeekend, format, parse, getYear, getMonth, getDate } from 'date-fns';
-import type { DayType, ServiceStatus, NonOperatingDay } from '@/types';
-import schedulesData from '@/assets/data/schedules.json';
+import { isWeekend as dateFnsIsWeekend, format, parse } from 'date-fns';
+import type { DayType, ServiceStatus, Trip } from '@/types';
+import tripsData from '@/assets/data/trips.json';
 
-const nonOperatingDays: NonOperatingDay[] = schedulesData.metadata.nonOperatingDays;
+const trips = tripsData as Trip[];
+
+// Extract non-operating days from the first trip's daysExclude
+// All trips share the same non-operating days
+const nonOperatingDates: Set<string> = new Set();
+for (const trip of trips) {
+  if (trip.daysExclude) {
+    for (const date of trip.daysExclude) {
+      nonOperatingDates.add(date);
+    }
+  }
+}
+
+// For display purposes, map known holidays
+const holidayNames: Record<string, string> = {
+  '12-25': 'Christmas',
+  '01-01': 'New Year',
+};
 
 export function isWeekend(date: Date = new Date()): boolean {
   return dateFnsIsWeekend(date);
@@ -59,19 +76,16 @@ export function formatCurrentTime(use24Hour: boolean): string {
 
 /**
  * Check if a date is a non-operating day (no bus service).
- * Uses the explicit list of non-operating days from schedule data.
+ * Uses the daysExclude from trip data.
  */
 export function isNonOperatingDay(date: Date = new Date()): { isNonOperating: boolean; reason?: string } {
-  const year = getYear(date);
-  const month = getMonth(date) + 1; // getMonth is 0-indexed
-  const day = getDate(date);
+  const dateStr = format(date, 'yyyy-MM-dd');
 
-  const holiday = nonOperatingDays.find(
-    h => h.year === year && h.month === month && h.day === day
-  );
-
-  if (holiday) {
-    return { isNonOperating: true, reason: holiday.name };
+  if (nonOperatingDates.has(dateStr)) {
+    // Try to get a friendly name for the holiday
+    const monthDay = format(date, 'MM-dd');
+    const reason = holidayNames[monthDay] ?? 'Holiday';
+    return { isNonOperating: true, reason };
   }
 
   return { isNonOperating: false };
