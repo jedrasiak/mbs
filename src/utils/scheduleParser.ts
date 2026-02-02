@@ -279,6 +279,85 @@ export function getStopIdsForDirection(directionId: DirectionId, dayType: DayTyp
   return stops.map(s => s.id);
 }
 
+/**
+ * Stop entry for schedule display, including position for loop routes.
+ */
+export interface StopEntry {
+  stop: Stop;
+  position: number; // Position in the trip (0-indexed)
+  platformId: PlatformId;
+}
+
+/**
+ * Get the full stop sequence for a direction including duplicates for loop routes.
+ * Uses the longest trip as the reference for the stop sequence.
+ */
+export function getStopSequenceForDirection(directionId: DirectionId, dayType: DayType = 'weekday'): StopEntry[] {
+  const trips = getTripsForDirection(directionId, dayType);
+  if (trips.length === 0) return [];
+
+  // Find the longest trip to use as the reference sequence
+  const longestTrip = trips.reduce((longest, current) =>
+    current.stages.length > longest.stages.length ? current : longest
+  );
+
+  return longestTrip.stages
+    .map((stage, index) => {
+      const stopId = getStopIdForPlatform(stage.platform);
+      if (!stopId) return null;
+      const stop = getStopById(stopId);
+      if (!stop) return null;
+      return {
+        stop,
+        position: index,
+        platformId: stage.platform,
+      };
+    })
+    .filter((entry): entry is StopEntry => entry !== null);
+}
+
+/**
+ * Build a mapping from canonical positions to trip stage times.
+ * Maps each trip's stages to positions in the canonical sequence by matching platforms in order.
+ * This correctly handles loop routes where the same stop appears multiple times.
+ */
+export function buildTripPositionMap(
+  canonicalSequence: StopEntry[],
+  trip: Trip
+): Map<number, string> {
+  const positionToTime = new Map<number, string>();
+  const usedCanonicalPositions = new Set<number>();
+
+  // For each stage in the trip, find the next matching canonical position
+  for (const stage of trip.stages) {
+    // Find the first unused canonical position with the same platform
+    for (const entry of canonicalSequence) {
+      if (entry.platformId === stage.platform && !usedCanonicalPositions.has(entry.position)) {
+        positionToTime.set(entry.position, stage.time);
+        usedCanonicalPositions.add(entry.position);
+        break;
+      }
+    }
+  }
+
+  return positionToTime;
+}
+
+/**
+ * Get times for all positions in a trip, mapped to the canonical sequence.
+ */
+export function getTripTimesForCanonicalSequence(
+  directionId: DirectionId,
+  tripName: string,
+  dayType: DayType
+): Map<number, string> {
+  const trip = getTripById(directionId, tripName, dayType);
+  if (!trip) return new Map();
+
+  const canonicalSequence = getStopSequenceForDirection(directionId, dayType);
+  return buildTripPositionMap(canonicalSequence, trip);
+}
+
 // ==========================================
 // Line Operating Status
 // ==========================================

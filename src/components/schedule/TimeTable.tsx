@@ -1,12 +1,14 @@
+import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Paper, useTheme, ButtonBase } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import type { Stop, DayType, Trip } from '@/types';
+import type { DayType, Trip } from '@/types';
 import {
-  getStopsForDirection,
+  getStopSequenceForDirection,
   getTripsForDirection,
   getDirectionById,
-  getAllTimesForStopOnTrip,
+  buildTripPositionMap,
+  type StopEntry,
 } from '@/utils/scheduleParser';
 import { useSettings } from '@/contexts/SettingsContext';
 import { formatTime, isPastTime } from '@/utils/timeCalculations';
@@ -23,13 +25,18 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
   const { settings } = useSettings();
   const direction = getDirectionById(directionId);
   const trips = getTripsForDirection(directionId, dayType);
-  const stops = getStopsForDirection(directionId, dayType);
+  const stopEntries = getStopSequenceForDirection(directionId, dayType);
+
+  // Pre-compute position-to-time maps for all trips
+  const tripTimeMaps = useMemo(() => {
+    return trips.map(trip => buildTripPositionMap(stopEntries, trip));
+  }, [trips, stopEntries]);
 
   const handleTripClick = (tripId: string) => {
     navigate(`/map?direction=${directionId}&trip=${tripId}&dayType=${dayType}`);
   };
 
-  if (!direction || stops.length === 0) {
+  if (!direction || stopEntries.length === 0) {
     return (
       <Paper sx={{ p: 3, textAlign: 'center' }}>
         <Typography color="text.secondary">
@@ -117,12 +124,12 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
             );
           })}
 
-          {/* Data rows - one per stop */}
-          {stops.map((stop: Stop, rowIndex: number) => {
+          {/* Data rows - one per stop entry (may include duplicates for loop routes) */}
+          {stopEntries.map((entry: StopEntry, rowIndex: number) => {
             const isEvenRow = rowIndex % 2 === 0;
 
             return (
-              <Box key={`row-${stop.id}-${rowIndex}`} sx={{ display: 'contents' }}>
+              <Box key={`row-${entry.position}`} sx={{ display: 'contents' }}>
                 {/* Stop name cell */}
                 <Box
                   sx={{
@@ -142,30 +149,24 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
                     alignItems: 'center',
                   }}
                 >
-                  <Typography variant="body2" noWrap title={stop.name}>
-                    {stop.name}
+                  <Typography variant="body2" noWrap title={entry.stop.name}>
+                    {entry.stop.name}
                   </Typography>
                 </Box>
 
                 {/* Time cells - one per trip */}
                 {trips.map((trip: Trip, colIndex: number) => {
-                  // Get all times this stop appears on this trip (handles loop routes)
-                  const timesOnTrip = getAllTimesForStopOnTrip(
-                    stop.id,
-                    directionId,
-                    trip.name,
-                    dayType
-                  );
+                  // Look up time from pre-computed map
+                  const timeMap = tripTimeMaps[colIndex];
+                  const time = timeMap?.get(entry.position) ?? null;
 
-                  // For display, use first time if available
-                  const firstTime = timesOnTrip[0];
-                  const hasTime = firstTime !== undefined;
-                  const past = hasTime ? isPastTime(firstTime) : false;
+                  const hasTime = time !== null;
+                  const past = hasTime ? isPastTime(time) : false;
                   const isCurrentTrip = colIndex === currentTripIndex;
 
                   return (
                     <Box
-                      key={`time-${stop.id}-${trip.name}-${colIndex}`}
+                      key={`time-${entry.position}-${trip.name}`}
                       sx={{
                         p: 1.5,
                         textAlign: 'center',
@@ -188,7 +189,7 @@ export function TimeTable({ directionId, dayType }: TimeTableProps) {
                       }}
                     >
                       {hasTime
-                        ? formatTime(firstTime, settings.timeFormat === '24h')
+                        ? formatTime(time, settings.timeFormat === '24h')
                         : '—'}
                     </Box>
                   );

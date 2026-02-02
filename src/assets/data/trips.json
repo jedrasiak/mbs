@@ -17,7 +17,7 @@
         "time": "06:05"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "06:07"
       },
       {
@@ -89,7 +89,7 @@
         "time": "06:38"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "06:40"
       },
       {
@@ -161,7 +161,7 @@
         "time": "07:11"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "07:13"
       },
       {
@@ -257,7 +257,7 @@
         "time": "08:19"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "08:21"
       },
       {
@@ -329,7 +329,7 @@
         "time": "09:15"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "09:17"
       },
       {
@@ -401,7 +401,7 @@
         "time": "11:39"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "11:41"
       },
       {
@@ -473,7 +473,7 @@
         "time": "12:32"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "12:34"
       },
       {
@@ -545,7 +545,7 @@
         "time": "13:40"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "13:42"
       },
       {
@@ -641,7 +641,7 @@
         "time": "14:44"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "14:46"
       },
       {
@@ -713,7 +713,7 @@
         "time": "15:32"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "15:34"
       },
       {
@@ -809,7 +809,7 @@
         "time": "17:24"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "17:26"
       },
       {
@@ -881,7 +881,7 @@
         "time": "18:21"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "18:23"
       },
       {
@@ -977,7 +977,7 @@
         "time": "08:02"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "08:03"
       },
       {
@@ -1089,7 +1089,7 @@
         "time": "10:03"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "10:04"
       },
       {
@@ -1161,7 +1161,7 @@
         "time": "10:47"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "10:48"
       },
       {
@@ -1257,7 +1257,7 @@
         "time": "12:47"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "12:48"
       },
       {
@@ -1329,7 +1329,7 @@
         "time": "13:49"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "13:50"
       },
       {
@@ -1425,7 +1425,7 @@
         "time": "15:45"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "15:46"
       },
       {
@@ -1497,7 +1497,7 @@
         "time": "16:20"
       },
       {
-        "platform": "kosciuszki:south",
+        "platform": "kosciuszki-starostwo:south",
         "time": "16:21"
       },
       {
@@ -3949,11 +3949,11 @@
         "time": "14:56"
       },
       {
-        "platform": "tomaszowska-adar:north",
+        "platform": "tomaszowska-adar:south",
         "time": "14:57"
       },
       {
-        "platform": "tomaszowska-adar:south",
+        "platform": "tomaszowska-adar:north",
         "time": "14:59"
       },
       {

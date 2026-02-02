@@ -72,8 +72,8 @@
     "lng": 20.244035795327086
   },
   {
-    "id": "kosciuszki:south",
-    "parent_stop": "kosciuszki",
+    "id": "kosciuszki-starostwo:south",
+    "parent_stop": "kosciuszki-starostwo",
     "lat": 51.76393779624841,
     "lng": 20.250645754726015,
     "description": "Kierunek: Katowicka (Mrówka)"

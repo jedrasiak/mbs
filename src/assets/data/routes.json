@@ -50,9 +50,9 @@
     ]
   },
   {
-    "id": "plac-pilsudskiego:south--kosciuszki:south",
+    "id": "plac-pilsudskiego:south--kosciuszki-starostwo:south",
     "parent_platform_start": "plac-pilsudskiego:south",
-    "parent_platform_end": "kosciuszki:south",
+    "parent_platform_end": "kosciuszki-starostwo:south",
     "coordinates": [
       [
         51.76452179896609,
@@ -175,8 +175,8 @@
     ]
   },
   {
-    "id": "kosciuszki:south--kosciuszki-liceum:south",
-    "parent_platform_start": "kosciuszki:south",
+    "id": "kosciuszki-starostwo:south--kosciuszki-liceum:south",
+    "parent_platform_start": "kosciuszki-starostwo:south",
     "parent_platform_end": "kosciuszki-liceum:south",
     "coordinates": [
       [
