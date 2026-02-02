@@ -36,7 +36,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { StopSelector } from '@/components/home/StopSelector';
 import { getStopById, getMetadata } from '@/utils/scheduleParser';
 import { setLanguage, supportedLanguages, detectBrowserLanguage, type SupportedLanguage } from '@/i18n';
-import type { Language as LanguageType } from '@/types';
+import type { Language as LanguageType, StopId } from '@/types';
 import { usePWA } from '@/contexts/PWAContext';
 import { trackEvent } from '@/hooks/usePlausible';
 
@@ -46,7 +46,7 @@ export function SettingsForm() {
   const { toggleDarkMode } = useTheme();
   const { isInstallable, isInstalled, install } = usePWA();
 
-  const handleAddFavorite = (stopId: number | null) => {
+  const handleAddFavorite = (stopId: StopId | null) => {
     if (stopId === null) return;
     if (settings.favoriteStops.includes(stopId)) return;
     if (settings.favoriteStops.length >= 3) return;
@@ -56,7 +56,7 @@ export function SettingsForm() {
     });
   };
 
-  const handleRemoveFavorite = (stopId: number) => {
+  const handleRemoveFavorite = (stopId: StopId) => {
     updateSettings({
       favoriteStops: settings.favoriteStops.filter(id => id !== stopId),
     });
@@ -278,6 +278,20 @@ export function SettingsForm() {
           <ListItemIcon>
             <Update />
           </ListItemIcon>
+          <ListItemText
+            primary={getMetadata().id}
+            secondary={t('settings.scheduleId')}
+          />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon />
+          <ListItemText
+            primary={getMetadata().validFrom}
+            secondary={t('settings.scheduleValidFrom')}
+          />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon />
           <ListItemText
             primary={getMetadata().lastUpdated}
             secondary={t('settings.scheduleUpdated')}

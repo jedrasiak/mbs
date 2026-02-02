@@ -1,0 +1,12 @@
+[
+  {
+    "id": "line1",
+    "name": "Linia 1",
+    "color": "#1976D2"
+  },
+  {
+    "id": "line2",
+    "name": "Linia 2",
+    "color": "#388E3C"
+  }
+]

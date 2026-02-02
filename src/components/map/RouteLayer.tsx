@@ -1,10 +1,10 @@
 import { Polyline } from 'react-leaflet';
-import type { Line, Direction } from '@/types';
-import { getRouteCoordinates } from '@/utils/scheduleParser';
+import type { Line, Direction, DirectionId } from '@/types';
+import { getRouteCoordinates, getDirectionsForLine } from '@/utils/scheduleParser';
 
 interface RouteLayerProps {
   line: Line;
-  visibleDirectionIds: string[];
+  visibleDirectionIds: DirectionId[];
   customCoordinates?: [number, number][];
 }
 
@@ -23,8 +23,11 @@ export function RouteLayer({ line, visibleDirectionIds, customCoordinates }: Rou
     );
   }
 
+  // Get all directions for this line
+  const lineDirections = getDirectionsForLine(line.id);
+
   // Filter directions based on visibility
-  const directionsToShow = line.directions.filter(d =>
+  const directionsToShow = lineDirections.filter(d =>
     visibleDirectionIds.includes(d.id)
   );
 

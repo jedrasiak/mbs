@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
-import type { Departure } from '@/types';
+import type { Departure, StopId } from '@/types';
 import { getNextDepartures } from '@/utils/scheduleParser';
 import { useCurrentTime } from './useCurrentTime';
 
 export function useNextDepartures(
-  stopId: number | null,
+  stopId: StopId | null,
   limit: number = 5
 ): Departure[] {
   const currentTime = useCurrentTime();

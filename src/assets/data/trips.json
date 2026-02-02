@@ -1,0 +1,4110 @@
+[
+  {
+    "id": "line1:south:weekday:I",
+    "name": "I",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "06:00"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "06:03"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "06:05"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "06:07"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "06:08"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "06:10"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "06:12"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "06:13"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "06:14"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "06:15"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "06:16"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:II",
+    "name": "II",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "06:33"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "06:36"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "06:38"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "06:40"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "06:41"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "06:43"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "06:45"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "06:46"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "06:47"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "06:48"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "06:49"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:III",
+    "name": "III",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "07:06"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "07:09"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "07:11"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "07:13"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "07:14"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "07:16"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "07:18"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "07:19"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "07:20"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "07:21"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "07:22"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:IV",
+    "name": "IV",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "08:00"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "08:03"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "08:05"
+      },
+      {
+        "platform": "mila:south",
+        "time": "08:07"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "08:11"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "08:12"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "08:14"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "08:15"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "08:19"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "08:21"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "08:22"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "08:24"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "08:26"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "08:27"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "08:28"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "08:29"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "08:30"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:V",
+    "name": "V",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "09:10"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "09:13"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "09:15"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "09:17"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "09:18"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "09:20"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "09:22"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "09:23"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "09:24"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "09:25"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "09:26"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:VI",
+    "name": "VI",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "11:34"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "11:37"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "11:39"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "11:41"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "11:42"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "11:44"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "11:46"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "11:47"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "11:48"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "11:49"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "11:50"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:VII",
+    "name": "VII",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "12:27"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "12:30"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "12:32"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "12:34"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "12:35"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "12:37"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "12:39"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "12:40"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "12:41"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "12:42"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "12:43"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:VIII",
+    "name": "VIII",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "13:35"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "13:38"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "13:40"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "13:42"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "13:43"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "13:45"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "13:47"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "13:48"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "13:49"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "13:50"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "13:51"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:IX",
+    "name": "IX",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "14:25"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "14:28"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "14:30"
+      },
+      {
+        "platform": "mila:south",
+        "time": "14:32"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "14:36"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "14:37"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "14:39"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "14:40"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "14:44"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "14:46"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "14:47"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "14:49"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "14:51"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "14:52"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "14:53"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "14:54"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "14:55"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:X",
+    "name": "X",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "15:27"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "15:30"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "15:32"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "15:34"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "15:35"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "15:37"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "15:39"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "15:40"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "15:41"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "15:42"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "15:43"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:XI",
+    "name": "XI",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "17:05"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "17:08"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "17:10"
+      },
+      {
+        "platform": "mila:south",
+        "time": "17:12"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "17:16"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "17:17"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "17:19"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "17:20"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "17:24"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "17:26"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "17:27"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "17:29"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "17:31"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "17:32"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "17:33"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "17:34"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "17:35"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekday:XII",
+    "name": "XII",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "18:16"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "18:19"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "18:21"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "18:23"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "18:24"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "18:26"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "18:28"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "18:29"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "18:30"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "18:31"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "18:32"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekend:I",
+    "name": "I",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "07:45"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "07:48"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "07:50"
+      },
+      {
+        "platform": "mila:south",
+        "time": "07:52"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "07:56"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "07:57"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "07:58"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "07:59"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "08:02"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "08:03"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "08:04"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "08:05"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "08:08"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "08:10"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "08:11"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "08:12"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "08:13"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekend:II",
+    "name": "II",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "09:34"
+      },
+      {
+        "platform": "mszczonowska:south",
+        "time": "09:39"
+      },
+      {
+        "platform": "aleksandrowka-1:south",
+        "time": "09:44"
+      },
+      {
+        "platform": "aleksandrowka-2:south",
+        "time": "09:45"
+      },
+      {
+        "platform": "zamkowa-wola:south",
+        "time": "09:47"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "09:49"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "09:51"
+      },
+      {
+        "platform": "mila:south",
+        "time": "09:53"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "09:57"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "09:58"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "09:59"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "10:00"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "10:03"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "10:04"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "10:06"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "10:08"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "10:10"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "10:12"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "10:13"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "10:14"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "10:15"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekend:III",
+    "name": "III",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "10:42"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "10:45"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "10:47"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "10:48"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "10:50"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "10:52"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "10:54"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "10:56"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "10:57"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "10:58"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "10:59"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekend:IV",
+    "name": "IV",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "12:30"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "12:33"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "12:35"
+      },
+      {
+        "platform": "mila:south",
+        "time": "12:37"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "12:41"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "12:42"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "12:43"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "12:44"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "12:47"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "12:48"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "12:50"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "12:52"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "12:54"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "12:56"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "12:57"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "12:58"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "12:59"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekend:V",
+    "name": "V",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "13:44"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "13:47"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "13:49"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "13:50"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "13:52"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "13:54"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "13:56"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "13:58"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "13:59"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "14:00"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "14:01"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekend:VI",
+    "name": "VI",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "15:28"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "15:31"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "15:33"
+      },
+      {
+        "platform": "mila:south",
+        "time": "15:35"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "15:39"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "15:40"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "15:41"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "15:42"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "15:45"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "15:46"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "15:48"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "15:50"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "15:52"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "15:54"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "15:55"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "15:56"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "15:57"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:south:weekend:VII",
+    "name": "VII",
+    "parent_direction": "line1:south",
+    "stages": [
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "16:15"
+      },
+      {
+        "platform": "jerozolimska:south",
+        "time": "16:18"
+      },
+      {
+        "platform": "plac-pilsudskiego:south",
+        "time": "16:20"
+      },
+      {
+        "platform": "kosciuszki-starostwo:south",
+        "time": "16:21"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "16:23"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "16:25"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "16:27"
+      },
+      {
+        "platform": "orzeszkowej:south",
+        "time": "16:29"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "16:30"
+      },
+      {
+        "platform": "katowicka-osiedle:south",
+        "time": "16:31"
+      },
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "16:32"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:I",
+    "name": "I",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "06:16"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "06:17"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "06:19"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "06:20"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "06:21"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "06:23"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "06:25"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "06:27"
+      },
+      {
+        "platform": "mila:south",
+        "time": "06:29"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "06:31"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "06:33"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:II",
+    "name": "II",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "06:49"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "06:50"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "06:52"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "06:53"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "06:54"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "06:56"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "06:58"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "07:00"
+      },
+      {
+        "platform": "mila:south",
+        "time": "07:02"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "07:04"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "07:06"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:III",
+    "name": "III",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "07:23"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "07:24"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "07:26"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "07:27"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "07:28"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "07:30"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "07:32"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "07:34"
+      },
+      {
+        "platform": "mila:south",
+        "time": "07:36"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "07:40"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "07:41"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "07:42"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "07:43"
+      },
+      {
+        "platform": "kolejowa:south",
+        "time": "07:46"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "07:49"
+      },
+      {
+        "platform": "mila:south",
+        "time": "07:51"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "07:53"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "07:55"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:IV",
+    "name": "IV",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "08:30"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "08:31"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "08:33"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "08:34"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "08:35"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "08:37"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "08:39"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "08:41"
+      },
+      {
+        "platform": "mila:south",
+        "time": "08:43"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "08:45"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "08:47"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:V",
+    "name": "V",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "09:27"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "09:28"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "09:30"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "09:31"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "09:32"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "09:34"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "09:36"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "09:38"
+      },
+      {
+        "platform": "mila:south",
+        "time": "09:40"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "09:44"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "09:45"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "09:46"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "09:47"
+      },
+      {
+        "platform": "kolejowa:south",
+        "time": "09:50"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "09:53"
+      },
+      {
+        "platform": "mila:south",
+        "time": "09:55"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "09:57"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "09:59"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:VI",
+    "name": "VI",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "11:51"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "11:52"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "11:54"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "11:55"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "11:56"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "11:58"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "12:00"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "12:02"
+      },
+      {
+        "platform": "mila:south",
+        "time": "12:04"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "12:08"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "12:09"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "12:10"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "12:11"
+      },
+      {
+        "platform": "kolejowa:south",
+        "time": "12:14"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "12:17"
+      },
+      {
+        "platform": "mila:south",
+        "time": "12:19"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "12:21"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "12:23"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:VII",
+    "name": "VII",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "13:18"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "13:19"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "13:21"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "13:22"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "13:23"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "13:25"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "13:27"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "13:29"
+      },
+      {
+        "platform": "mila:south",
+        "time": "13:31"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "13:33"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "13:35"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:VIII",
+    "name": "VIII",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "14:08"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "14:09"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "14:11"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "14:12"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "14:13"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "14:15"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "14:17"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "14:19"
+      },
+      {
+        "platform": "mila:south",
+        "time": "14:21"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "14:23"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "14:25"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:IX",
+    "name": "IX",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "15:09"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "15:10"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "15:12"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "15:13"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "15:14"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "15:16"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "15:18"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "15:20"
+      },
+      {
+        "platform": "mila:south",
+        "time": "15:22"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "15:24"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "15:26"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:X",
+    "name": "X",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "16:02"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "16:03"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "16:05"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "16:06"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "16:07"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "16:09"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "16:11"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "16:13"
+      },
+      {
+        "platform": "mila:south",
+        "time": "16:15"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "16:19"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "16:20"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "16:21"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "16:22"
+      },
+      {
+        "platform": "kolejowa:south",
+        "time": "16:25"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "16:28"
+      },
+      {
+        "platform": "mila:south",
+        "time": "16:30"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "16:32"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "16:34"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:XI",
+    "name": "XI",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "17:35"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "17:36"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "17:38"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "17:39"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "17:40"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "17:42"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "17:44"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "17:46"
+      },
+      {
+        "platform": "mila:south",
+        "time": "17:48"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "17:50"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "17:52"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekday:XII",
+    "name": "XII",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "18:32"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "18:33"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "18:35"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "18:36"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "18:37"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "18:39"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "18:41"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "18:43"
+      },
+      {
+        "platform": "mila:south",
+        "time": "18:45"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "18:49"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "18:50"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "18:51"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "18:52"
+      },
+      {
+        "platform": "kolejowa:south",
+        "time": "18:55"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "18:58"
+      },
+      {
+        "platform": "mila:south",
+        "time": "19:00"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "19:02"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "19:04"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekend:I",
+    "name": "I",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "08:14"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "08:15"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "08:16"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "08:18"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "08:19"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "08:21"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "08:23"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "08:25"
+      },
+      {
+        "platform": "mila:south",
+        "time": "08:27"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "08:30"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "08:31"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "08:32"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "08:33"
+      },
+      {
+        "platform": "kolejowa:south",
+        "time": "08:36"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "08:39"
+      },
+      {
+        "platform": "mila:south",
+        "time": "08:41"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "08:43"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "08:45"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekend:II",
+    "name": "II",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "10:16"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "10:17"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "10:18"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "10:20"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "10:21"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "10:23"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "10:25"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "10:27"
+      },
+      {
+        "platform": "mila:south",
+        "time": "10:29"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "10:31"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "10:33"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekend:III",
+    "name": "III",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "11:00"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "11:01"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "11:02"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "11:04"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "11:05"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "11:07"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "11:09"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "11:11"
+      },
+      {
+        "platform": "mila:south",
+        "time": "11:13"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "11:16"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "11:17"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "11:18"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "11:19"
+      },
+      {
+        "platform": "kolejowa:south",
+        "time": "11:22"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "11:25"
+      },
+      {
+        "platform": "mila:south",
+        "time": "11:27"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "11:29"
+      },
+      {
+        "platform": "zamkowa-wola:north",
+        "time": "11:31"
+      },
+      {
+        "platform": "aleksandrowka-2:north",
+        "time": "11:33"
+      },
+      {
+        "platform": "aleksandrowka-1:north",
+        "time": "11:34"
+      },
+      {
+        "platform": "mszczonowska:south",
+        "time": "11:38"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "11:43"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekend:IV",
+    "name": "IV",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "13:00"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "13:01"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "13:02"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "13:04"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "13:05"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "13:07"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "13:09"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "13:11"
+      },
+      {
+        "platform": "mila:south",
+        "time": "13:13"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "13:15"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "13:17"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekend:V",
+    "name": "V",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "14:02"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "14:03"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "14:04"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "14:06"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "14:07"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "14:09"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "14:11"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "14:13"
+      },
+      {
+        "platform": "mila:south",
+        "time": "14:15"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "14:18"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "14:19"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "14:20"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "14:21"
+      },
+      {
+        "platform": "kolejowa:south",
+        "time": "14:24"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "14:27"
+      },
+      {
+        "platform": "mila:south",
+        "time": "14:29"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "14:31"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "14:33"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekend:VI",
+    "name": "VI",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "15:58"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "15:59"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "16:00"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "16:02"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "16:03"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "16:05"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "16:07"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "16:09"
+      },
+      {
+        "platform": "mila:south",
+        "time": "16:11"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "16:13"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "16:15"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line1:north:weekend:VII",
+    "name": "VII",
+    "parent_direction": "line1:north",
+    "stages": [
+      {
+        "platform": "katowicka-mrowka:south",
+        "time": "16:33"
+      },
+      {
+        "platform": "katowicka-osiedle:north",
+        "time": "16:34"
+      },
+      {
+        "platform": "katowicka-aquarium:south",
+        "time": "16:35"
+      },
+      {
+        "platform": "orzeszkowej:north",
+        "time": "16:37"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "16:38"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "16:40"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "16:42"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "16:44"
+      },
+      {
+        "platform": "mila:south",
+        "time": "16:46"
+      },
+      {
+        "platform": "sadowa-willowa:south",
+        "time": "16:49"
+      },
+      {
+        "platform": "willowa:south",
+        "time": "16:50"
+      },
+      {
+        "platform": "ogrodowa:south",
+        "time": "16:51"
+      },
+      {
+        "platform": "sadowa-ogrodowa:south",
+        "time": "16:52"
+      },
+      {
+        "platform": "kolejowa:south",
+        "time": "16:55"
+      },
+      {
+        "platform": "mickiewicza:south",
+        "time": "16:58"
+      },
+      {
+        "platform": "mila:south",
+        "time": "17:00"
+      },
+      {
+        "platform": "jerozolimska:north",
+        "time": "17:02"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "17:04"
+      }
+    ],
+    "daysGroup": "weekend",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:south:weekday:I",
+    "name": "I",
+    "parent_direction": "line2:south",
+    "stages": [
+      {
+        "platform": "mszczonowska:south",
+        "time": "06:40"
+      },
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "06:44"
+      },
+      {
+        "platform": "aleksandrowka-1:south",
+        "time": "06:49"
+      },
+      {
+        "platform": "aleksandrowka-2:south",
+        "time": "06:50"
+      },
+      {
+        "platform": "zamkowa-wola:south",
+        "time": "06:52"
+      },
+      {
+        "platform": "targowa:south",
+        "time": "06:54"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "06:58"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "06:59"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "07:00"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "07:02"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "07:05"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "07:06"
+      },
+      {
+        "platform": "kosciuszki-szkola:south",
+        "time": "07:09"
+      },
+      {
+        "platform": "1-maja:south",
+        "time": "07:11"
+      },
+      {
+        "platform": "ksieze-domki-zalew:south",
+        "time": "07:12"
+      },
+      {
+        "platform": "ksieze-domki-granica:south",
+        "time": "07:13"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:south:weekday:II",
+    "name": "II",
+    "parent_direction": "line2:south",
+    "stages": [
+      {
+        "platform": "mszczonowska:south",
+        "time": "07:47"
+      },
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "07:51"
+      },
+      {
+        "platform": "aleksandrowka-1:south",
+        "time": "07:56"
+      },
+      {
+        "platform": "aleksandrowka-2:south",
+        "time": "07:57"
+      },
+      {
+        "platform": "zamkowa-wola:south",
+        "time": "07:59"
+      },
+      {
+        "platform": "targowa:south",
+        "time": "08:01"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "08:05"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "08:06"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "08:07"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "08:09"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "08:12"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "08:13"
+      },
+      {
+        "platform": "kosciuszki-szkola:south",
+        "time": "08:16"
+      },
+      {
+        "platform": "1-maja:south",
+        "time": "08:18"
+      },
+      {
+        "platform": "ksieze-domki-zalew:south",
+        "time": "08:19"
+      },
+      {
+        "platform": "ksieze-domki-granica:south",
+        "time": "08:20"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:south:weekday:III",
+    "name": "III",
+    "parent_direction": "line2:south",
+    "stages": [
+      {
+        "platform": "mszczonowska:south",
+        "time": "12:39"
+      },
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "12:43"
+      },
+      {
+        "platform": "aleksandrowka-1:south",
+        "time": "12:48"
+      },
+      {
+        "platform": "aleksandrowka-2:south",
+        "time": "12:49"
+      },
+      {
+        "platform": "zamkowa-wola:south",
+        "time": "12:51"
+      },
+      {
+        "platform": "targowa:south",
+        "time": "12:53"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "12:57"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "12:58"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "12:59"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "13:01"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "13:04"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "13:05"
+      },
+      {
+        "platform": "kosciuszki-szkola:south",
+        "time": "13:08"
+      },
+      {
+        "platform": "1-maja:south",
+        "time": "13:10"
+      },
+      {
+        "platform": "ksieze-domki-zalew:south",
+        "time": "13:11"
+      },
+      {
+        "platform": "ksieze-domki-granica:south",
+        "time": "13:12"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:south:weekday:IV",
+    "name": "IV",
+    "parent_direction": "line2:south",
+    "stages": [
+      {
+        "platform": "mszczonowska:south",
+        "time": "14:18"
+      },
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "14:22"
+      },
+      {
+        "platform": "aleksandrowka-1:south",
+        "time": "14:27"
+      },
+      {
+        "platform": "aleksandrowka-2:south",
+        "time": "14:28"
+      },
+      {
+        "platform": "zamkowa-wola:south",
+        "time": "14:30"
+      },
+      {
+        "platform": "targowa:south",
+        "time": "14:32"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "14:36"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "14:37"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "14:38"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "14:40"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "14:43"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "14:44"
+      },
+      {
+        "platform": "kosciuszki-szkola:south",
+        "time": "14:47"
+      },
+      {
+        "platform": "1-maja:south",
+        "time": "14:49"
+      },
+      {
+        "platform": "ksieze-domki-zalew:south",
+        "time": "14:50"
+      },
+      {
+        "platform": "ksieze-domki-granica:south",
+        "time": "14:51"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:south:weekday:V",
+    "name": "V",
+    "parent_direction": "line2:south",
+    "stages": [
+      {
+        "platform": "mszczonowska:south",
+        "time": "15:29"
+      },
+      {
+        "platform": "kazimierza-wielkiego:south",
+        "time": "15:33"
+      },
+      {
+        "platform": "aleksandrowka-1:south",
+        "time": "15:38"
+      },
+      {
+        "platform": "aleksandrowka-2:south",
+        "time": "15:39"
+      },
+      {
+        "platform": "zamkowa-wola:south",
+        "time": "15:41"
+      },
+      {
+        "platform": "targowa:south",
+        "time": "15:43"
+      },
+      {
+        "platform": "kosciuszki-liceum:south",
+        "time": "15:47"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:south",
+        "time": "15:48"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "15:49"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "15:51"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "15:54"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "15:55"
+      },
+      {
+        "platform": "kosciuszki-szkola:south",
+        "time": "15:58"
+      },
+      {
+        "platform": "1-maja:south",
+        "time": "16:00"
+      },
+      {
+        "platform": "ksieze-domki-zalew:south",
+        "time": "16:01"
+      },
+      {
+        "platform": "ksieze-domki-granica:south",
+        "time": "16:02"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:north:weekday:I",
+    "name": "I",
+    "parent_direction": "line2:north",
+    "stages": [
+      {
+        "platform": "ksieze-domki-granica:north",
+        "time": "07:14"
+      },
+      {
+        "platform": "ksieze-domki-zalew:north",
+        "time": "07:15"
+      },
+      {
+        "platform": "1-maja:north",
+        "time": "07:16"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "07:18"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "07:19"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "07:20"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "07:22"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "07:25"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "07:26"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "07:29"
+      },
+      {
+        "platform": "targowa:north",
+        "time": "07:33"
+      },
+      {
+        "platform": "zamkowa-wola:north",
+        "time": "07:35"
+      },
+      {
+        "platform": "aleksandrowka-2:north",
+        "time": "07:37"
+      },
+      {
+        "platform": "aleksandrowka-1:north",
+        "time": "07:38"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "07:43"
+      },
+      {
+        "platform": "mszczonowska:south",
+        "time": "07:47"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:north:weekday:II",
+    "name": "II",
+    "parent_direction": "line2:north",
+    "stages": [
+      {
+        "platform": "ksieze-domki-granica:north",
+        "time": "08:21"
+      },
+      {
+        "platform": "ksieze-domki-zalew:north",
+        "time": "08:22"
+      },
+      {
+        "platform": "1-maja:north",
+        "time": "08:23"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "08:25"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "08:26"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "08:27"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "08:29"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "08:32"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "08:33"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "08:36"
+      },
+      {
+        "platform": "targowa:north",
+        "time": "08:40"
+      },
+      {
+        "platform": "zamkowa-wola:north",
+        "time": "08:42"
+      },
+      {
+        "platform": "aleksandrowka-2:north",
+        "time": "08:44"
+      },
+      {
+        "platform": "aleksandrowka-1:north",
+        "time": "08:45"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "08:50"
+      },
+      {
+        "platform": "mszczonowska:south",
+        "time": "08:54"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:north:weekday:III",
+    "name": "III",
+    "parent_direction": "line2:north",
+    "stages": [
+      {
+        "platform": "ksieze-domki-granica:north",
+        "time": "13:22"
+      },
+      {
+        "platform": "ksieze-domki-zalew:north",
+        "time": "13:23"
+      },
+      {
+        "platform": "1-maja:north",
+        "time": "13:24"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "13:26"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "13:27"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "13:28"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "13:30"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "13:33"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "13:34"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "13:37"
+      },
+      {
+        "platform": "targowa:north",
+        "time": "13:41"
+      },
+      {
+        "platform": "zamkowa-wola:north",
+        "time": "13:43"
+      },
+      {
+        "platform": "aleksandrowka-2:north",
+        "time": "13:45"
+      },
+      {
+        "platform": "aleksandrowka-1:north",
+        "time": "13:46"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "13:51"
+      },
+      {
+        "platform": "mszczonowska:south",
+        "time": "13:55"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:north:weekday:IV",
+    "name": "IV",
+    "parent_direction": "line2:north",
+    "stages": [
+      {
+        "platform": "ksieze-domki-granica:north",
+        "time": "14:51"
+      },
+      {
+        "platform": "ksieze-domki-zalew:north",
+        "time": "14:52"
+      },
+      {
+        "platform": "1-maja:north",
+        "time": "14:53"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "14:55"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "14:56"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "14:57"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "14:59"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "15:02"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "15:03"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "15:06"
+      },
+      {
+        "platform": "targowa:north",
+        "time": "15:10"
+      },
+      {
+        "platform": "zamkowa-wola:north",
+        "time": "15:12"
+      },
+      {
+        "platform": "aleksandrowka-2:north",
+        "time": "15:14"
+      },
+      {
+        "platform": "aleksandrowka-1:north",
+        "time": "15:15"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "15:20"
+      },
+      {
+        "platform": "mszczonowska:south",
+        "time": "15:24"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  },
+  {
+    "id": "line2:north:weekday:V",
+    "name": "V",
+    "parent_direction": "line2:north",
+    "stages": [
+      {
+        "platform": "ksieze-domki-granica:north",
+        "time": "16:17"
+      },
+      {
+        "platform": "ksieze-domki-zalew:north",
+        "time": "16:18"
+      },
+      {
+        "platform": "1-maja:north",
+        "time": "16:19"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "16:21"
+      },
+      {
+        "platform": "tomaszowska-cmentarz:north",
+        "time": "16:22"
+      },
+      {
+        "platform": "tomaszowska-adar:south",
+        "time": "16:23"
+      },
+      {
+        "platform": "tomaszowska-adar:north",
+        "time": "16:25"
+      },
+      {
+        "platform": "przemyslowa:south",
+        "time": "16:28"
+      },
+      {
+        "platform": "zwolinskiego:south",
+        "time": "16:29"
+      },
+      {
+        "platform": "kosciuszki-szkola:north",
+        "time": "16:32"
+      },
+      {
+        "platform": "targowa:north",
+        "time": "16:36"
+      },
+      {
+        "platform": "zamkowa-wola:north",
+        "time": "16:38"
+      },
+      {
+        "platform": "aleksandrowka-2:north",
+        "time": "16:40"
+      },
+      {
+        "platform": "aleksandrowka-1:north",
+        "time": "16:41"
+      },
+      {
+        "platform": "kazimierza-wielkiego:north",
+        "time": "16:46"
+      },
+      {
+        "platform": "mszczonowska:south",
+        "time": "16:50"
+      }
+    ],
+    "daysGroup": "weekday",
+    "daysExclude": [
+      "2025-12-25",
+      "2026-01-01",
+      "2025-04-20",
+      "2026-12-25",
+      "2027-01-01",
+      "2026-04-05",
+      "2027-12-25",
+      "2028-01-01",
+      "2027-03-28",
+      "2028-12-25",
+      "2029-01-01",
+      "2028-04-16",
+      "2029-12-25",
+      "2030-01-01",
+      "2029-04-01",
+      "2030-12-25",
+      "2031-01-01",
+      "2030-04-21"
+    ]
+  }
+]

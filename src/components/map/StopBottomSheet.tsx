@@ -2,7 +2,8 @@ import { Paper, Box, Typography, Chip, IconButton, Divider, Button } from '@mui/
 import { Close, Directions, ArrowForward } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import type { Stop, PlatformId } from '@/types';
+import type { Stop, Platform } from '@/types';
+import { getPlatformDirection } from '@/types';
 import { useNextDepartures } from '@/hooks/useNextDepartures';
 import { useSettings } from '@/contexts/SettingsContext';
 import { useLocalizedTime } from '@/hooks/useLocalizedTime';
@@ -10,13 +11,12 @@ import {
   formatDistance,
   calculateDistance,
   getAllDirectionsServingPlatform,
-  getPlatformCoordinates,
 } from '@/utils/scheduleParser';
 import { formatTime, getServiceStatus } from '@/utils/timeCalculations';
 
 interface StopBottomSheetProps {
   stop: Stop;
-  platform: PlatformId;
+  platform: Platform;
   userLocation: { lat: number; lng: number } | null;
   onClose: () => void;
 }
@@ -35,16 +35,15 @@ export function StopBottomSheet({
   const serviceStatus = getServiceStatus();
 
   // Get all directions serving this platform (regardless of day type)
-  const directions = getAllDirectionsServingPlatform(stop.id, platform);
-  const platformInfo = getPlatformCoordinates(stop, platform);
+  const directions = getAllDirectionsServingPlatform(platform.id);
 
   // Calculate distance to this platform
-  const distance = userLocation && platformInfo
+  const distance = userLocation
     ? calculateDistance(
         userLocation.lat,
         userLocation.lng,
-        platformInfo.lat,
-        platformInfo.lng
+        platform.lat,
+        platform.lng
       )
     : null;
 
@@ -56,6 +55,10 @@ export function StopBottomSheet({
 
   // Get unique lines
   const uniqueLines = [...new Map(directions.map(d => [d.lineId, d])).values()];
+
+  // Get platform direction for display
+  const platformDir = getPlatformDirection(platform.id);
+  const platformLabel = platformDir === 'south' ? 'A' : 'B';
 
   return (
     <Paper
@@ -92,8 +95,8 @@ export function StopBottomSheet({
               {stop.name}
             </Typography>
             <Typography variant="caption" color="text.secondary">
-              {t('map.platform', { platform })}
-              {platformInfo?.description && ` - ${platformInfo.description}`}
+              {t('map.platform', { platform: platformLabel })}
+              {platform.description && ` - ${platform.description}`}
             </Typography>
             <Box sx={{ display: 'flex', gap: 1, mt: 1, alignItems: 'center', flexWrap: 'wrap' }}>
               {uniqueLines.map(line => (
@@ -130,7 +133,7 @@ export function StopBottomSheet({
       {/* Departures */}
       <Box sx={{ p: 2 }}>
         <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-          {t('map.nextDeparturesFrom', { platform })}
+          {t('map.nextDeparturesFrom', { platform: platformLabel })}
         </Typography>
 
         {!serviceStatus.isOperating ? (

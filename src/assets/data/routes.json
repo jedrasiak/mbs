@@ -1,0 +1,464 @@
+[
+  {
+    "id": "kazimierza-wielkiego:south--jerozolimska:south",
+    "parent_platform_start": "kazimierza-wielkiego:south",
+    "parent_platform_end": "jerozolimska:south",
+    "coordinates": [
+      [
+        51.77181703107977,
+        20.260971754473566
+      ],
+      [
+        51.77069942686604,
+        20.26120726760655
+      ],
+      [
+        51.770534657526866,
+        20.26138184113664
+      ],
+      [
+        51.770395162895696,
+        20.261798198047284
+      ],
+      [
+        51.7683802060464,
+        20.260598636137928
+      ]
+    ]
+  },
+  {
+    "id": "jerozolimska:south--plac-pilsudskiego:south",
+    "parent_platform_start": "jerozolimska:south",
+    "parent_platform_end": "plac-pilsudskiego:south",
+    "coordinates": [
+      [
+        51.76679975128608,
+        20.25902186963293
+      ],
+      [
+        51.76652671379366,
+        20.258077846439328
+      ],
+      [
+        51.76630167693862,
+        20.256840242182243
+      ],
+      [
+        51.76604505459447,
+        20.25423744560033
+      ]
+    ]
+  },
+  {
+    "id": "plac-pilsudskiego:south--kosciuszki-starostwo:south",
+    "parent_platform_start": "plac-pilsudskiego:south",
+    "parent_platform_end": "kosciuszki-starostwo:south",
+    "coordinates": [
+      [
+        51.76452179896609,
+        20.254575099150372
+      ],
+      [
+        51.764525118976806,
+        20.253722156709433
+      ]
+    ]
+  },
+  {
+    "id": "plac-pilsudskiego:south--mila:south",
+    "parent_platform_start": "plac-pilsudskiego:south",
+    "parent_platform_end": "mila:south",
+    "coordinates": [
+      [
+        51.76451690723377,
+        20.25472434711193
+      ],
+      [
+        51.764659288070284,
+        20.256542247773094
+      ]
+    ]
+  },
+  {
+    "id": "mila:south--sadowa-willowa:south",
+    "parent_platform_start": "mila:south",
+    "parent_platform_end": "sadowa-willowa:south",
+    "coordinates": [
+      [
+        51.76617798907211,
+        20.256100177666735
+      ],
+      [
+        51.76602573883939,
+        20.253518308844903
+      ],
+      [
+        51.76613197552511,
+        20.25308379097038
+      ],
+      [
+        51.76716113045735,
+        20.25256344241549
+      ],
+      [
+        51.76841932348624,
+        20.24918922349552
+      ],
+      [
+        51.768890721878,
+        20.248534764473337
+      ],
+      [
+        51.769295722188325,
+        20.24719365997157
+      ],
+      [
+        51.7691562962673,
+        20.244093026355866
+      ]
+    ]
+  },
+  {
+    "id": "sadowa-willowa:south--willowa:south",
+    "parent_platform_start": "sadowa-willowa:south",
+    "parent_platform_end": "willowa:south",
+    "coordinates": [
+      [
+        51.770381237884465,
+        20.244205679120864
+      ]
+    ]
+  },
+  {
+    "id": "willowa:south--ogrodowa:south",
+    "parent_platform_start": "willowa:south",
+    "parent_platform_end": "ogrodowa:south",
+    "coordinates": [
+      [
+        51.770666720856816,
+        20.239425982697373
+      ]
+    ]
+  },
+  {
+    "id": "ogrodowa:south--sadowa-ogrodowa:south",
+    "parent_platform_start": "ogrodowa:south",
+    "parent_platform_end": "sadowa-ogrodowa:south",
+    "coordinates": [
+      [
+        51.76830977247734,
+        20.240010704173233
+      ]
+    ]
+  },
+  {
+    "id": "sadowa-ogrodowa:south--plac-pilsudskiego:south",
+    "parent_platform_start": "sadowa-ogrodowa:south",
+    "parent_platform_end": "plac-pilsudskiego:south",
+    "coordinates": [
+      [
+        51.76913559915231,
+        20.244062751634925
+      ],
+      [
+        51.769243577686275,
+        20.247195948387866
+      ],
+      [
+        51.76705914073312,
+        20.252539849450436
+      ],
+      [
+        51.766045022204466,
+        20.25308607259062
+      ]
+    ]
+  },
+  {
+    "id": "kosciuszki-starostwo:south--kosciuszki-liceum:south",
+    "parent_platform_start": "kosciuszki-starostwo:south",
+    "parent_platform_end": "kosciuszki-liceum:south",
+    "coordinates": [
+      [
+        51.76310731157282,
+        20.248757936091007
+      ]
+    ]
+  },
+  {
+    "id": "kosciuszki-liceum:south--tomaszowska-cmentarz:south",
+    "parent_platform_start": "kosciuszki-liceum:south",
+    "parent_platform_end": "tomaszowska-cmentarz:south",
+    "coordinates": []
+  },
+  {
+    "id": "tomaszowska-cmentarz:south--tomaszowska-adar:south",
+    "parent_platform_start": "tomaszowska-cmentarz:south",
+    "parent_platform_end": "tomaszowska-adar:south",
+    "coordinates": []
+  },
+  {
+    "id": "tomaszowska-adar:south--orzeszkowej:south",
+    "parent_platform_start": "tomaszowska-adar:south",
+    "parent_platform_end": "orzeszkowej:south",
+    "coordinates": [
+      [
+        51.75008422691295,
+        20.24004222219344
+      ]
+    ]
+  },
+  {
+    "id": "orzeszkowej:south--katowicka-aquarium:south",
+    "parent_platform_start": "orzeszkowej:south",
+    "parent_platform_end": "katowicka-aquarium:south",
+    "coordinates": [
+      [
+        51.75101233650734,
+        20.237228905014376
+      ],
+      [
+        51.752761869950525,
+        20.2377520161404
+      ],
+      [
+        51.75322787420911,
+        20.23409023821037
+      ]
+    ]
+  },
+  {
+    "id": "katowicka-aquarium:south--katowicka-osiedle:south",
+    "parent_platform_start": "katowicka-aquarium:south",
+    "parent_platform_end": "katowicka-osiedle:south",
+    "coordinates": [
+      [
+        51.75322787420911,
+        20.23409023821037
+      ],
+      [
+        51.75333845078567,
+        20.2314683031256
+      ]
+    ]
+  },
+  {
+    "id": "katowicka-osiedle:south--katowicka-mrowka:south",
+    "parent_platform_start": "katowicka-osiedle:south",
+    "parent_platform_end": "katowicka-mrowka:south",
+    "coordinates": [
+      [
+        51.75143670323753,
+        20.222113023022406
+      ]
+    ]
+  },
+  {
+    "id": "katowicka-mrowka:south--katowicka-osiedle:north",
+    "parent_platform_start": "katowicka-mrowka:south",
+    "parent_platform_end": "katowicka-osiedle:north",
+    "coordinates": [
+      [
+        51.75143670323753,
+        20.222113023022406
+      ]
+    ]
+  },
+  {
+    "id": "katowicka-osiedle:north--katowicka-aquarium:south",
+    "parent_platform_start": "katowicka-osiedle:north",
+    "parent_platform_end": "katowicka-aquarium:south",
+    "coordinates": [
+      [
+        51.75333845078567,
+        20.2314683031256
+      ],
+      [
+        51.75322787420911,
+        20.23409023821037
+      ]
+    ]
+  },
+  {
+    "id": "katowicka-aquarium:south--orzeszkowej:north",
+    "parent_platform_start": "katowicka-aquarium:south",
+    "parent_platform_end": "orzeszkowej:north",
+    "coordinates": [
+      [
+        51.75322787420911,
+        20.23409023821037
+      ],
+      [
+        51.752761869950525,
+        20.2377520161404
+      ],
+      [
+        51.75101233650734,
+        20.237228905014376
+      ]
+    ]
+  },
+  {
+    "id": "orzeszkowej:north--tomaszowska-adar:north",
+    "parent_platform_start": "orzeszkowej:north",
+    "parent_platform_end": "tomaszowska-adar:north",
+    "coordinates": [
+      [
+        51.75008422691295,
+        20.24004222219344
+      ]
+    ]
+  },
+  {
+    "id": "tomaszowska-adar:north--tomaszowska-cmentarz:north",
+    "parent_platform_start": "tomaszowska-adar:north",
+    "parent_platform_end": "tomaszowska-cmentarz:north",
+    "coordinates": []
+  },
+  {
+    "id": "tomaszowska-cmentarz:north--kosciuszki-szkola:north",
+    "parent_platform_start": "tomaszowska-cmentarz:north",
+    "parent_platform_end": "kosciuszki-szkola:north",
+    "coordinates": []
+  },
+  {
+    "id": "mila:south--jerozolimska:north",
+    "parent_platform_start": "mila:south",
+    "parent_platform_end": "jerozolimska:north",
+    "coordinates": [
+      [
+        51.76617798907211,
+        20.256100177666735
+      ],
+      [
+        51.7683802060464,
+        20.260598636137928
+      ]
+    ]
+  },
+  {
+    "id": "jerozolimska:north--kazimierza-wielkiego:north",
+    "parent_platform_start": "jerozolimska:north",
+    "parent_platform_end": "kazimierza-wielkiego:north",
+    "coordinates": [
+      [
+        51.770395162895696,
+        20.261798198047284
+      ],
+      [
+        51.770534657526866,
+        20.26138184113664
+      ],
+      [
+        51.77069942686604,
+        20.26120726760655
+      ],
+      [
+        51.77181703107977,
+        20.260971754473566
+      ]
+    ]
+  },
+  {
+    "id": "kazimierza-wielkiego:south--mszczonowska:south",
+    "parent_platform_start": "kazimierza-wielkiego:south",
+    "parent_platform_end": "mszczonowska:south",
+    "coordinates": [
+      [
+        51.77181703107977,
+        20.260971754473566
+      ],
+      [
+        51.77069942686604,
+        20.26120726760655
+      ],
+      [
+        51.770534657526866,
+        20.26138184113664
+      ],
+      [
+        51.770395162895696,
+        20.261798198047284
+      ],
+      [
+        51.77099382661557,
+        20.262603294542174
+      ],
+      [
+        51.771329098390154,
+        20.262560379199233
+      ],
+      [
+        51.77861898742296,
+        20.271600013632973
+      ]
+    ]
+  },
+  {
+    "id": "mszczonowska:south--aleksandrowka-1:south",
+    "parent_platform_start": "mszczonowska:south",
+    "parent_platform_end": "aleksandrowka-1:south",
+    "coordinates": [
+      [
+        51.77861898742296,
+        20.271600013632973
+      ],
+      [
+        51.771329098390154,
+        20.262560379199233
+      ],
+      [
+        51.77247857245625,
+        20.269820490357617
+      ],
+      [
+        51.77203645201608,
+        20.270471189594744
+      ],
+      [
+        51.77233646278996,
+        20.270853953840465
+      ],
+      [
+        51.77479240769037,
+        20.285550759598344
+      ],
+      [
+        51.77393978667754,
+        20.2853083422503
+      ]
+    ]
+  },
+  {
+    "id": "aleksandrowka-1:south--aleksandrowka-2:south",
+    "parent_platform_start": "aleksandrowka-1:south",
+    "parent_platform_end": "aleksandrowka-2:south",
+    "coordinates": []
+  },
+  {
+    "id": "aleksandrowka-2:south--zamkowa-wola:south",
+    "parent_platform_start": "aleksandrowka-2:south",
+    "parent_platform_end": "zamkowa-wola:south",
+    "coordinates": [
+      [
+        51.76589430273536,
+        20.27101793897929
+      ]
+    ]
+  },
+  {
+    "id": "zamkowa-wola:south--jerozolimska:south",
+    "parent_platform_start": "zamkowa-wola:south",
+    "parent_platform_end": "jerozolimska:south",
+    "coordinates": [
+      [
+        51.768994041265486,
+        20.26213088388078
+      ],
+      [
+        51.76863873882397,
+        20.260893279524968
+      ]
+    ]
+  }
+]

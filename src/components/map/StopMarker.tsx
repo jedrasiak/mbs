@@ -1,11 +1,12 @@
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import type { DirectionInfo, PlatformId } from '@/types';
+import type { DirectionInfo, PlatformId, StopId } from '@/types';
+import { getPlatformDirection } from '@/types';
 import { getAllDirectionsServingPlatform } from '@/utils/scheduleParser';
 
 interface StopMarkerProps {
-  stopId: number;
-  platform: PlatformId;
+  stopId: StopId; // kept for marker key
+  platformId: PlatformId;
   lat: number;
   lng: number;
   stopName: string;
@@ -37,8 +38,8 @@ function createStopIcon(color: string, isSelected: boolean): L.DivIcon {
 }
 
 export function StopMarker({
-  stopId,
-  platform,
+  stopId: _stopId,
+  platformId,
   lat,
   lng,
   stopName,
@@ -50,9 +51,13 @@ export function StopMarker({
   const primaryColor = directions[0]?.lineColor ?? '#1976D2';
   const icon = createStopIcon(primaryColor, isSelected);
 
-  // Get all lines serving this stop (regardless of day type) for the popup
-  const allDirections = getAllDirectionsServingPlatform(stopId, platform);
+  // Get all lines serving this platform (regardless of day type) for the popup
+  const allDirections = getAllDirectionsServingPlatform(platformId);
   const lineNames = [...new Set(allDirections.map(d => d.lineName))];
+
+  // Get platform direction for display
+  const platformDir = getPlatformDirection(platformId);
+  const platformLabel = platformDir === 'south' ? 'A' : 'B';
 
   return (
     <Marker
@@ -65,7 +70,7 @@ export function StopMarker({
       <Popup>
         <strong>{stopName}</strong>
         <br />
-        <small style={{ color: '#666' }}>Platform {platform}</small>
+        <small style={{ color: '#666' }}>Platform {platformLabel}</small>
         <br />
         <small>
           Lines: {lineNames.join(', ')}

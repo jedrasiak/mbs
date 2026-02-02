@@ -90,7 +90,9 @@
     "install": "Install",
     "appInstalled": "App Installed",
     "appInstalledDescription": "You're using the installed version",
-    "scheduleUpdated": "Schedule last updated"
+    "scheduleUpdated": "Schedule last updated",
+    "scheduleId": "Schedule version",
+    "scheduleValidFrom": "Valid from"
   },
   "time": {
     "departed": "Departed",

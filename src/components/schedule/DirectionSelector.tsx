@@ -1,13 +1,13 @@
 import { Box, Chip, Typography } from '@mui/material';
 import { ArrowForward } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import type { Direction } from '@/types';
+import type { Direction, LineId, DirectionId } from '@/types';
 import { getDirectionsForLine, getLineById } from '@/utils/scheduleParser';
 
 interface DirectionSelectorProps {
-  lineId: number;
-  selectedDirectionId: string | null;
-  onChange: (directionId: string) => void;
+  lineId: LineId;
+  selectedDirectionId: DirectionId | null;
+  onChange: (directionId: DirectionId) => void;
 }
 
 export function DirectionSelector({

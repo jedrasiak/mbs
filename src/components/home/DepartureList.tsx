@@ -1,14 +1,14 @@
 import { Box, Typography, Paper } from '@mui/material';
 import { Schedule, EventBusy } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import type { Departure, ServiceStatus } from '@/types';
+import type { Departure, ServiceStatus, StopId } from '@/types';
 import { DepartureCard } from './DepartureCard';
 import { getServiceStatus, getNextOperatingDay } from '@/utils/timeCalculations';
 import { useLocalizedDate } from '@/hooks/useLocalizedDate';
 
 interface DepartureListProps {
   departures: Departure[];
-  stopId: number | null;
+  stopId: StopId | null;
   stopName?: string;
   serviceStatus?: ServiceStatus;
 }
@@ -94,7 +94,6 @@ export function DepartureList({ departures, stopId, stopName, serviceStatus }: D
         <DepartureCard
           key={`${departure.directionId}-${departure.time}`}
           departure={departure}
-          stopId={stopId!}
           isNext={index === 0}
         />
       ))}

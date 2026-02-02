@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { Paper, InputBase, IconButton, List, ListItemButton, ListItemText, Box } from '@mui/material';
 import { Search, Close } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import type { Stop } from '@/types';
+import type { Stop, StopId } from '@/types';
 import { getAllStops } from '@/utils/scheduleParser';
 
 interface SearchBarProps {
-  onSelectStop: (stopId: number) => void;
+  onSelectStop: (stopId: StopId) => void;
 }
 
 export function SearchBar({ onSelectStop }: SearchBarProps) {

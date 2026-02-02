@@ -1,0 +1,22 @@
+[
+  {
+    "id": "line1:south",
+    "name": "Katowicka (Mrówka)",
+    "parent_line": "line1"
+  },
+  {
+    "id": "line1:north",
+    "name": "Kazimierza Wielkiego",
+    "parent_line": "line1"
+  },
+  {
+    "id": "line2:south",
+    "name": "Księże Domki",
+    "parent_line": "line2"
+  },
+  {
+    "id": "line2:north",
+    "name": "Mszczonowska",
+    "parent_line": "line2"
+  }
+]

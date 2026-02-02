@@ -90,7 +90,9 @@
     "install": "Встановити",
     "appInstalled": "Додаток встановлено",
     "appInstalledDescription": "Ви використовуєте встановлену версію",
-    "scheduleUpdated": "Розклад оновлено"
+    "scheduleUpdated": "Розклад оновлено",
+    "scheduleId": "Версія розкладу",
+    "scheduleValidFrom": "Діє з"
   },
   "time": {
     "departed": "Виїхав",

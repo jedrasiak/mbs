@@ -1,0 +1,118 @@
+[
+  {
+    "id": "kazimierza-wielkiego",
+    "name": "Kazimierza Wielkiego"
+  },
+  {
+    "id": "jerozolimska",
+    "name": "Jerozolimska"
+  },
+  {
+    "id": "plac-pilsudskiego",
+    "name": "Plac Piłsudskiego"
+  },
+  {
+    "id": "mila",
+    "name": "Miła"
+  },
+  {
+    "id": "sadowa-willowa",
+    "name": "Sadowa (Willowa)"
+  },
+  {
+    "id": "willowa",
+    "name": "Willowa"
+  },
+  {
+    "id": "ogrodowa",
+    "name": "Ogrodowa"
+  },
+  {
+    "id": "sadowa-ogrodowa",
+    "name": "Sadowa (Ogrodowa)"
+  },
+  {
+    "id": "kosciuszki-starostwo",
+    "name": "Kościuszki (Starostwo)"
+  },
+  {
+    "id": "kosciuszki-liceum",
+    "name": "Kościuszki (Liceum)"
+  },
+  {
+    "id": "kosciuszki-szkola",
+    "name": "Kościuszki (Szkoła)"
+  },
+  {
+    "id": "tomaszowska-cmentarz",
+    "name": "Tomaszowska (Cmentarz)"
+  },
+  {
+    "id": "tomaszowska-adar",
+    "name": "Tomaszowska (Adar)"
+  },
+  {
+    "id": "orzeszkowej",
+    "name": "Orzeszkowej"
+  },
+  {
+    "id": "katowicka-aquarium",
+    "name": "Katowicka (Aquarium)"
+  },
+  {
+    "id": "katowicka-osiedle",
+    "name": "Katowicka (Osiedle)"
+  },
+  {
+    "id": "katowicka-mrowka",
+    "name": "Katowicka (Mrówka)"
+  },
+  {
+    "id": "aleksandrowka-1",
+    "name": "Aleksandrówka 1"
+  },
+  {
+    "id": "aleksandrowka-2",
+    "name": "Aleksandrówka 2"
+  },
+  {
+    "id": "zamkowa-wola",
+    "name": "Zamkowa Wola"
+  },
+  {
+    "id": "mszczonowska",
+    "name": "Mszczonowska"
+  },
+  {
+    "id": "targowa",
+    "name": "Targowa"
+  },
+  {
+    "id": "przemyslowa",
+    "name": "Przemysłowa"
+  },
+  {
+    "id": "zwolinskiego",
+    "name": "Zwolińskiego"
+  },
+  {
+    "id": "1-maja",
+    "name": "1-Maja"
+  },
+  {
+    "id": "ksieze-domki-zalew",
+    "name": "Księże Domki (Zalew)"
+  },
+  {
+    "id": "ksieze-domki-granica",
+    "name": "Księże Domki (Granica)"
+  },
+  {
+    "id": "mickiewicza",
+    "name": "Mickiewicza"
+  },
+  {
+    "id": "kolejowa",
+    "name": "Kolejowa"
+  }
+]

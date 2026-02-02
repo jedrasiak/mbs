@@ -1,65 +1,216 @@
 import type {
-  ScheduleData,
   Stop,
+  Platform,
+  Route,
   Line,
   Direction,
+  Trip,
+  Schedule,
   Departure,
   DayType,
-  Platform,
   DirectionInfo,
-  Trip,
+  StopId,
   PlatformId,
+  LineId,
+  DirectionId,
+  TripId,
+  PlatformDirection,
 } from '@/types';
+import { getPlatformDirection } from '@/types';
 import { getDayType, getMinutesUntil, isPastTime, getServiceStatus } from './timeCalculations';
+
+// Import all new JSON data files
+import stopsData from '@/assets/data/stops.json';
+import platformsData from '@/assets/data/platforms.json';
+import routesData from '@/assets/data/routes.json';
+import linesData from '@/assets/data/lines.json';
+import directionsData from '@/assets/data/directions.json';
+import tripsData from '@/assets/data/trips.json';
 import schedulesData from '@/assets/data/schedules.json';
 
-const data = schedulesData as ScheduleData;
+// Type assertions for JSON imports
+const stops = stopsData as Stop[];
+const platforms = platformsData as Platform[];
+const routes = routesData as Route[];
+const allLines = linesData as Line[];
+const allDirections = directionsData as Direction[];
+const allTrips = tripsData as Trip[];
+const schedules = schedulesData as Schedule[];
+
+// ==========================================
+// Schedule Validity Functions
+// ==========================================
+
+/**
+ * Get the currently valid schedule based on today's date.
+ * Returns the schedule with the most recent valid_from date that is not in the future.
+ */
+export function getCurrentSchedule(referenceDate: Date = new Date()): Schedule | null {
+  const today = referenceDate.toISOString().split('T')[0]!;
+
+  // Filter schedules where valid_from <= today
+  const validSchedules = schedules.filter(schedule => schedule.valid_from <= today);
+
+  if (validSchedules.length === 0) {
+    return null;
+  }
+
+  // Sort by valid_from descending and return the most recent
+  validSchedules.sort((a, b) => b.valid_from.localeCompare(a.valid_from));
+  return validSchedules[0] ?? null;
+}
+
+/**
+ * Check if there is a valid schedule for the given date.
+ */
+export function hasValidSchedule(referenceDate: Date = new Date()): boolean {
+  return getCurrentSchedule(referenceDate) !== null;
+}
+
+/**
+ * Get the set of line IDs that are active in the current schedule.
+ */
+function getActiveLineIds(): Set<LineId> {
+  const currentSchedule = getCurrentSchedule();
+  if (!currentSchedule) {
+    // Fallback: if no valid schedule, use all lines
+    return new Set(allLines.map(l => l.id));
+  }
+  return new Set(currentSchedule.lines);
+}
+
+// Get active line IDs for filtering
+const activeLineIds = getActiveLineIds();
+
+// Filter data based on active schedule
+const lines = allLines.filter(l => activeLineIds.has(l.id));
+const directions = allDirections.filter(d => activeLineIds.has(d.parent_line));
+const activeDirectionIds = new Set(directions.map(d => d.id));
+const trips = allTrips.filter(t => activeDirectionIds.has(t.parent_direction));
+
+// ==========================================
+// Lookup Maps for O(1) access
+// ==========================================
+
+const stopsById = new Map<StopId, Stop>(stops.map(s => [s.id, s]));
+const platformsById = new Map<PlatformId, Platform>(platforms.map(p => [p.id, p]));
+const linesById = new Map<LineId, Line>(lines.map(l => [l.id, l]));
+const directionsById = new Map<DirectionId, Direction>(directions.map(d => [d.id, d]));
+const tripsById = new Map<TripId, Trip>(trips.map(t => [t.id, t]));
+
+// Build platform-to-platform route lookup for quick coordinate retrieval
+const routesByPlatforms = new Map<string, Route>();
+for (const route of routes) {
+  const key = `${route.parent_platform_start}--${route.parent_platform_end}`;
+  routesByPlatforms.set(key, route);
+}
+
+// Build platforms by stop lookup
+const platformsByStop = new Map<StopId, Platform[]>();
+for (const platform of platforms) {
+  const existing = platformsByStop.get(platform.parent_stop) ?? [];
+  existing.push(platform);
+  platformsByStop.set(platform.parent_stop, existing);
+}
+
+// Build trips by direction lookup
+const tripsByDirection = new Map<DirectionId, Trip[]>();
+for (const trip of trips) {
+  const existing = tripsByDirection.get(trip.parent_direction) ?? [];
+  existing.push(trip);
+  tripsByDirection.set(trip.parent_direction, existing);
+}
+
+// Build directions by line lookup
+const directionsByLine = new Map<LineId, Direction[]>();
+for (const direction of directions) {
+  const existing = directionsByLine.get(direction.parent_line) ?? [];
+  existing.push(direction);
+  directionsByLine.set(direction.parent_line, existing);
+}
+
+/**
+ * Get stop ID from a platform ID using the platform's parent_stop property.
+ */
+function getStopIdForPlatform(platformId: PlatformId): StopId | undefined {
+  const platform = platformsById.get(platformId);
+  return platform?.parent_stop;
+}
 
 // ==========================================
 // Basic Data Access
 // ==========================================
 
 export function getAllStops(): Stop[] {
-  return data.stops;
+  return stops;
 }
 
-export function getStopById(id: number): Stop | undefined {
-  return data.stops.find(stop => stop.id === id);
+export function getStopById(id: StopId): Stop | undefined {
+  return stopsById.get(id);
+}
+
+export function getAllPlatforms(): Platform[] {
+  return platforms;
+}
+
+export function getPlatformById(id: PlatformId): Platform | undefined {
+  return platformsById.get(id);
+}
+
+export function getPlatformsForStop(stopId: StopId): Platform[] {
+  return platformsByStop.get(stopId) ?? [];
 }
 
 export function getAllLines(): Line[] {
-  return data.lines;
+  return lines;
 }
 
-export function getLineById(id: number): Line | undefined {
-  return data.lines.find(line => line.id === id);
+export function getLineById(id: LineId): Line | undefined {
+  return linesById.get(id);
+}
+
+export function getAllDirections(): Direction[] {
+  return directions;
+}
+
+export function getDirectionById(id: DirectionId): Direction | undefined {
+  return directionsById.get(id);
+}
+
+export function getAllTrips(): Trip[] {
+  return trips;
+}
+
+export function getTripByFullId(id: TripId): Trip | undefined {
+  return tripsById.get(id);
+}
+
+export function getAllSchedules(): Schedule[] {
+  return schedules;
 }
 
 export function getMetadata() {
-  return data.metadata;
+  // Return the currently valid schedule as metadata
+  const currentSchedule = getCurrentSchedule();
+  return {
+    id: currentSchedule?.id ?? '',
+    lastUpdated: currentSchedule?.updated_at ?? '',
+    validFrom: currentSchedule?.valid_from ?? '',
+  };
 }
 
 // ==========================================
 // Direction Functions
 // ==========================================
 
-export function getDirectionById(directionId: string): Direction | undefined {
-  for (const line of data.lines) {
-    const direction = line.directions.find(d => d.id === directionId);
-    if (direction) return direction;
-  }
-  return undefined;
+export function getLineForDirection(directionId: DirectionId): Line | undefined {
+  const direction = directionsById.get(directionId);
+  if (!direction) return undefined;
+  return linesById.get(direction.parent_line);
 }
 
-export function getLineForDirection(directionId: string): Line | undefined {
-  return data.lines.find(line =>
-    line.directions.some(d => d.id === directionId)
-  );
-}
-
-export function getDirectionsForLine(lineId: number): Direction[] {
-  const line = getLineById(lineId);
-  return line?.directions ?? [];
+export function getDirectionsForLine(lineId: LineId): Direction[] {
+  return directionsByLine.get(lineId) ?? [];
 }
 
 // ==========================================
@@ -68,98 +219,102 @@ export function getDirectionsForLine(lineId: number): Direction[] {
 
 /**
  * Get all trips for a direction on a given day type.
+ * Filters by daysGroup and checks daysExclude/daysInclude.
  */
 export function getTripsForDirection(
-  directionId: string,
+  directionId: DirectionId,
   dayType: DayType
 ): Trip[] {
-  const direction = getDirectionById(directionId);
-  if (!direction) return [];
+  const dirTrips = tripsByDirection.get(directionId) ?? [];
 
-  const daySchedule = direction.schedules[dayType];
-  return daySchedule?.trips ?? [];
+  return dirTrips.filter(trip => {
+    // Filter by daysGroup
+    if (trip.daysGroup && trip.daysGroup !== dayType) {
+      return false;
+    }
+    return true;
+  });
 }
 
 /**
- * Get a specific trip by ID.
+ * Get a specific trip by direction, trip name, and day type.
  */
 export function getTripById(
-  directionId: string,
-  tripId: string,
+  directionId: DirectionId,
+  tripName: string,
   dayType: DayType
 ): Trip | undefined {
   const trips = getTripsForDirection(directionId, dayType);
-  return trips.find(t => t.tripId === tripId);
+  return trips.find(t => t.name === tripName);
 }
 
 /**
- * Find the trip that contains a specific stop at a specific time.
+ * Find the trip that contains a specific platform at a specific time.
  */
-export function getTripByStopAndTime(
-  directionId: string,
-  stopId: number,
+export function getTripByPlatformAndTime(
+  directionId: DirectionId,
+  platformId: PlatformId,
   time: string,
   dayType: DayType
 ): Trip | undefined {
   const trips = getTripsForDirection(directionId, dayType);
   return trips.find(trip =>
-    trip.stops.some(s => s.stopId === stopId && s.time === time)
+    trip.stages.some(s => s.platform === platformId && s.time === time)
   );
 }
 
 /**
  * Get all unique stops for a direction (union of all trips' stops).
  * Returns stops sorted chronologically based on their positions in trips.
- * Uses the longest trip as the base order, then merges additional stops
- * from other trips in their proper chronological positions.
  */
-export function getStopsForDirection(directionId: string, dayType: DayType = 'weekday'): Stop[] {
+export function getStopsForDirection(directionId: DirectionId, dayType: DayType = 'weekday'): Stop[] {
   const trips = getTripsForDirection(directionId, dayType);
   if (trips.length === 0) return [];
 
   // Find the longest trip to use as the base order
   const longestTrip = trips.reduce((longest, current) =>
-    current.stops.length > longest.stops.length ? current : longest
+    current.stages.length > longest.stages.length ? current : longest
   );
 
   // Build the base order from the longest trip (only first occurrence of each stop)
-  const stopOrder: number[] = [];
-  const seenStops = new Set<number>();
+  const stopOrder: StopId[] = [];
+  const seenStops = new Set<StopId>();
 
-  for (const tripStop of longestTrip.stops) {
-    if (!seenStops.has(tripStop.stopId)) {
-      seenStops.add(tripStop.stopId);
-      stopOrder.push(tripStop.stopId);
-    }
+  for (const stage of longestTrip.stages) {
+    const stopId = getStopIdForPlatform(stage.platform);
+    if (!stopId || seenStops.has(stopId)) continue;
+    seenStops.add(stopId);
+    stopOrder.push(stopId);
   }
 
-  // Collect any additional stops from other trips that aren't in the base order
-  // and find their proper insertion position based on neighboring stops
+  // Collect any additional stops from other trips
   for (const trip of trips) {
-    if (trip.tripId === longestTrip.tripId) continue;
+    if (trip.id === longestTrip.id) continue;
 
-    for (let i = 0; i < trip.stops.length; i++) {
-      const tripStop = trip.stops[i];
-      if (!tripStop || seenStops.has(tripStop.stopId)) continue;
+    for (let i = 0; i < trip.stages.length; i++) {
+      const stage = trip.stages[i];
+      if (!stage) continue;
+
+      const stopId = getStopIdForPlatform(stage.platform);
+      if (!stopId || seenStops.has(stopId)) continue;
 
       // Find the best position to insert this stop
-      // Look for the nearest preceding stop that exists in our order
-      let insertIndex = stopOrder.length; // Default to end
+      let insertIndex = stopOrder.length;
 
-      // Search backward to find a preceding stop that's in our order
       for (let j = i - 1; j >= 0; j--) {
-        const precedingStop = trip.stops[j];
-        if (!precedingStop) continue;
-        const precedingIndex = stopOrder.indexOf(precedingStop.stopId);
+        const precedingStage = trip.stages[j];
+        if (!precedingStage) continue;
+        const precedingStopId = getStopIdForPlatform(precedingStage.platform);
+        if (!precedingStopId) continue;
+        const precedingIndex = stopOrder.indexOf(precedingStopId);
         if (precedingIndex !== -1) {
           insertIndex = precedingIndex + 1;
           break;
         }
       }
 
-      // Insert the stop at the found position
-      stopOrder.splice(insertIndex, 0, tripStop.stopId);
-      seenStops.add(tripStop.stopId);
+      stopOrder.splice(insertIndex, 0, stopId);
+      seenStops.add(stopId);
     }
   }
 
@@ -171,9 +326,88 @@ export function getStopsForDirection(directionId: string, dayType: DayType = 'we
 /**
  * Get all unique stop IDs for a direction.
  */
-export function getStopIdsForDirection(directionId: string, dayType: DayType = 'weekday'): number[] {
+export function getStopIdsForDirection(directionId: DirectionId, dayType: DayType = 'weekday'): StopId[] {
   const stops = getStopsForDirection(directionId, dayType);
   return stops.map(s => s.id);
+}
+
+/**
+ * Stop entry for schedule display, including position for loop routes.
+ */
+export interface StopEntry {
+  stop: Stop;
+  position: number; // Position in the trip (0-indexed)
+  platformId: PlatformId;
+}
+
+/**
+ * Get the full stop sequence for a direction including duplicates for loop routes.
+ * Uses the longest trip as the reference for the stop sequence.
+ */
+export function getStopSequenceForDirection(directionId: DirectionId, dayType: DayType = 'weekday'): StopEntry[] {
+  const trips = getTripsForDirection(directionId, dayType);
+  if (trips.length === 0) return [];
+
+  // Find the longest trip to use as the reference sequence
+  const longestTrip = trips.reduce((longest, current) =>
+    current.stages.length > longest.stages.length ? current : longest
+  );
+
+  return longestTrip.stages
+    .map((stage, index) => {
+      const stopId = getStopIdForPlatform(stage.platform);
+      if (!stopId) return null;
+      const stop = getStopById(stopId);
+      if (!stop) return null;
+      return {
+        stop,
+        position: index,
+        platformId: stage.platform,
+      };
+    })
+    .filter((entry): entry is StopEntry => entry !== null);
+}
+
+/**
+ * Build a mapping from canonical positions to trip stage times.
+ * Maps each trip's stages to positions in the canonical sequence by matching platforms in order.
+ * This correctly handles loop routes where the same stop appears multiple times.
+ */
+export function buildTripPositionMap(
+  canonicalSequence: StopEntry[],
+  trip: Trip
+): Map<number, string> {
+  const positionToTime = new Map<number, string>();
+  const usedCanonicalPositions = new Set<number>();
+
+  // For each stage in the trip, find the next matching canonical position
+  for (const stage of trip.stages) {
+    // Find the first unused canonical position with the same platform
+    for (const entry of canonicalSequence) {
+      if (entry.platformId === stage.platform && !usedCanonicalPositions.has(entry.position)) {
+        positionToTime.set(entry.position, stage.time);
+        usedCanonicalPositions.add(entry.position);
+        break;
+      }
+    }
+  }
+
+  return positionToTime;
+}
+
+/**
+ * Get times for all positions in a trip, mapped to the canonical sequence.
+ */
+export function getTripTimesForCanonicalSequence(
+  directionId: DirectionId,
+  tripName: string,
+  dayType: DayType
+): Map<number, string> {
+  const trip = getTripById(directionId, tripName, dayType);
+  if (!trip) return new Map();
+
+  const canonicalSequence = getStopSequenceForDirection(directionId, dayType);
+  return buildTripPositionMap(canonicalSequence, trip);
 }
 
 // ==========================================
@@ -182,27 +416,60 @@ export function getStopIdsForDirection(directionId: string, dayType: DayType = '
 
 /**
  * Check if a line operates on a given day type.
- * Lines without operatingDays specified run every day.
+ * With the new structure, we check if there are any trips for that day type.
  */
 export function doesLineOperateOnDayType(line: Line, dayType: DayType): boolean {
-  // If no restriction, line operates every day
-  if (!line.operatingDays || line.operatingDays.length === 0) {
-    return true;
+  const lineDirections = getDirectionsForLine(line.id);
+
+  for (const direction of lineDirections) {
+    const dirTrips = getTripsForDirection(direction.id, dayType);
+    if (dirTrips.length > 0) {
+      return true;
+    }
   }
-  return line.operatingDays.includes(dayType);
+
+  return false;
 }
 
 /**
  * Check if a line is operating on a given date.
  */
-export function isLineOperating(lineId: number, date: Date = new Date()): boolean {
+export function isLineOperating(lineId: LineId, date: Date = new Date()): boolean {
   const line = getLineById(lineId);
   if (!line) return false;
 
   const dayType = getDayType(date);
-  if (dayType === null) return false; // Non-operating day
+  if (dayType === null) return false;
 
   return doesLineOperateOnDayType(line, dayType);
+}
+
+/**
+ * Check if a trip should run on a specific date.
+ * Handles daysGroup, daysInclude, and daysExclude.
+ */
+export function isTripOperatingOnDate(trip: Trip, date: Date): boolean {
+  const dayType = getDayType(date);
+  if (dayType === null) return false;
+
+  // Check daysGroup
+  if (trip.daysGroup && trip.daysGroup !== dayType) {
+    return false;
+  }
+
+  const dateStr = date.toISOString().split('T')[0]!;
+
+  // Check daysExclude
+  if (trip.daysExclude?.includes(dateStr)) {
+    return false;
+  }
+
+  // Check daysInclude (overrides daysGroup)
+  if (trip.daysInclude?.includes(dateStr)) {
+    return true;
+  }
+
+  return true;
 }
 
 /**
@@ -210,37 +477,53 @@ export function isLineOperating(lineId: number, date: Date = new Date()): boolea
  */
 export function getOperatingLines(date: Date = new Date()): Line[] {
   const dayType = getDayType(date);
-  if (dayType === null) return []; // Non-operating day
+  if (dayType === null) return [];
 
-  return data.lines.filter(line => doesLineOperateOnDayType(line, dayType));
+  return lines.filter(line => doesLineOperateOnDayType(line, dayType));
 }
 
 // ==========================================
-// Stop and Platform Functions
+// Platform Functions
 // ==========================================
 
 /**
  * Get the first available platform for a stop.
- * Returns 'A' if available, otherwise 'B', or null if no platforms exist.
  */
-export function getFirstAvailablePlatform(stop: Stop): PlatformId | null {
-  if (stop.platforms.A) return 'A';
-  if (stop.platforms.B) return 'B';
-  return null;
+export function getFirstAvailablePlatform(stop: Stop): Platform | null {
+  const stopPlatforms = platformsByStop.get(stop.id) ?? [];
+  // Prefer south platform first (like old 'A')
+  const southPlatform = stopPlatforms.find(p => p.id.endsWith(':south'));
+  if (southPlatform) return southPlatform;
+  return stopPlatforms[0] ?? null;
 }
 
 /**
- * Check if a stop has a specific platform.
+ * Get the first available platform ID for a stop.
  */
-export function hasPlaftorm(stop: Stop, platform: PlatformId): boolean {
-  return stop.platforms[platform] !== undefined;
+export function getFirstAvailablePlatformId(stopId: StopId): PlatformId | null {
+  const stop = getStopById(stopId);
+  if (!stop) return null;
+  const platform = getFirstAvailablePlatform(stop);
+  return platform?.id ?? null;
 }
 
 /**
- * Get platform coordinates safely, returning null if platform doesn't exist.
+ * Check if a stop has a platform in a specific direction.
  */
-export function getPlatformCoordinates(stop: Stop, platform: PlatformId): Platform | null {
-  return stop.platforms[platform] ?? null;
+export function hasPlatformDirection(stopId: StopId, direction: PlatformDirection): boolean {
+  const platformId = `${stopId}:${direction}`;
+  return platformsById.has(platformId);
+}
+
+/**
+ * Get platform by stop and direction.
+ */
+export function getPlatformByStopAndDirection(
+  stopId: StopId,
+  direction: PlatformDirection
+): Platform | null {
+  const platformId = `${stopId}:${direction}`;
+  return platformsById.get(platformId) ?? null;
 }
 
 /**
@@ -248,20 +531,23 @@ export function getPlatformCoordinates(stop: Stop, platform: PlatformId): Platfo
  * Uses the first trip to determine the platform.
  */
 export function getStopCoordinates(
-  stopId: number,
-  directionId: string,
+  stopId: StopId,
+  directionId: DirectionId,
   dayType: DayType = 'weekday'
-): Platform | null {
+): { lat: number; lng: number } | null {
   const trips = getTripsForDirection(directionId, dayType);
   if (trips.length === 0) return null;
 
-  // Find the stop in any trip
+  // Find the platform in any trip
   for (const trip of trips) {
-    const tripStop = trip.stops.find(s => s.stopId === stopId);
-    if (tripStop) {
-      const stop = getStopById(stopId);
-      if (!stop) return null;
-      return getPlatformCoordinates(stop, tripStop.platform);
+    for (const stage of trip.stages) {
+      const stageStopId = getStopIdForPlatform(stage.platform);
+      if (stageStopId === stopId) {
+        const platform = platformsById.get(stage.platform);
+        if (platform) {
+          return { lat: platform.lat, lng: platform.lng };
+        }
+      }
     }
   }
 
@@ -272,19 +558,16 @@ export function getStopCoordinates(
  * Get route coordinates for a direction (for drawing polylines).
  * Uses the first trip's stop order.
  */
-export function getRouteCoordinates(directionId: string, dayType: DayType = 'weekday'): [number, number][] {
+export function getRouteCoordinates(directionId: DirectionId, dayType: DayType = 'weekday'): [number, number][] {
   const trips = getTripsForDirection(directionId, dayType);
   if (trips.length === 0) return [];
 
-  // Use the first trip for the route
   const firstTrip = trips[0];
   if (!firstTrip) return [];
 
-  return firstTrip.stops
-    .map(tripStop => {
-      const stop = getStopById(tripStop.stopId);
-      if (!stop) return null;
-      const platform = getPlatformCoordinates(stop, tripStop.platform);
+  return firstTrip.stages
+    .map(stage => {
+      const platform = platformsById.get(stage.platform);
       if (!platform) return null;
       return [platform.lat, platform.lng] as [number, number];
     })
@@ -295,32 +578,33 @@ export function getRouteCoordinates(directionId: string, dayType: DayType = 'wee
  * Check if a stop is served by a specific direction.
  */
 export function isStopServedBy(
-  stopId: number,
-  directionId: string,
+  stopId: StopId,
+  directionId: DirectionId,
   dayType: DayType = 'weekday'
 ): boolean {
   const trips = getTripsForDirection(directionId, dayType);
-  return trips.some(trip => trip.stops.some(s => s.stopId === stopId));
+  return trips.some(trip =>
+    trip.stages.some(s => getStopIdForPlatform(s.platform) === stopId)
+  );
 }
 
 /**
  * Check if a stop is served by a specific line (in any direction).
  */
-export function isStopServedByLine(stopId: number, lineId: number, dayType: DayType = 'weekday'): boolean {
-  const line = getLineById(lineId);
-  if (!line) return false;
-
-  return line.directions.some(direction => isStopServedBy(stopId, direction.id, dayType));
+export function isStopServedByLine(stopId: StopId, lineId: LineId, dayType: DayType = 'weekday'): boolean {
+  const lineDirections = getDirectionsForLine(lineId);
+  return lineDirections.some(direction => isStopServedBy(stopId, direction.id, dayType));
 }
 
 /**
  * Get all directions that serve a specific stop.
  */
-export function getDirectionsServingStop(stopId: number, dayType: DayType = 'weekday'): DirectionInfo[] {
+export function getDirectionsServingStop(stopId: StopId, dayType: DayType = 'weekday'): DirectionInfo[] {
   const result: DirectionInfo[] = [];
 
-  for (const line of data.lines) {
-    for (const direction of line.directions) {
+  for (const line of lines) {
+    const lineDirections = getDirectionsForLine(line.id);
+    for (const direction of lineDirections) {
       if (isStopServedBy(stopId, direction.id, dayType)) {
         result.push({
           lineId: line.id,
@@ -337,20 +621,20 @@ export function getDirectionsServingStop(stopId: number, dayType: DayType = 'wee
 }
 
 /**
- * Get all directions that serve a specific platform at a stop.
+ * Get all directions that serve a specific platform.
  */
 export function getDirectionsServingPlatform(
-  stopId: number,
-  platform: PlatformId,
+  platformId: PlatformId,
   dayType: DayType = 'weekday'
 ): DirectionInfo[] {
   const result: DirectionInfo[] = [];
 
-  for (const line of data.lines) {
-    for (const direction of line.directions) {
+  for (const line of lines) {
+    const lineDirections = getDirectionsForLine(line.id);
+    for (const direction of lineDirections) {
       const trips = getTripsForDirection(direction.id, dayType);
       const servesThisPlatform = trips.some(trip =>
-        trip.stops.some(s => s.stopId === stopId && s.platform === platform)
+        trip.stages.some(s => s.platform === platformId)
       );
 
       if (servesThisPlatform) {
@@ -370,17 +654,12 @@ export function getDirectionsServingPlatform(
 
 /**
  * Get all directions serving a platform regardless of day type.
- * Useful for displaying all lines that ever serve a stop.
  */
-export function getAllDirectionsServingPlatform(
-  stopId: number,
-  platform: PlatformId
-): DirectionInfo[] {
-  const weekdayDirs = getDirectionsServingPlatform(stopId, platform, 'weekday');
-  const weekendDirs = getDirectionsServingPlatform(stopId, platform, 'weekend');
+export function getAllDirectionsServingPlatform(platformId: PlatformId): DirectionInfo[] {
+  const weekdayDirs = getDirectionsServingPlatform(platformId, 'weekday');
+  const weekendDirs = getDirectionsServingPlatform(platformId, 'weekend');
 
-  // Merge and deduplicate by directionId
-  const seen = new Set<string>();
+  const seen = new Set<DirectionId>();
   const result: DirectionInfo[] = [];
 
   for (const dir of [...weekdayDirs, ...weekendDirs]) {
@@ -394,12 +673,10 @@ export function getAllDirectionsServingPlatform(
 }
 
 /**
- * Get lines that serve a stop (for backward compatibility and map display).
+ * Get lines that serve a stop.
  */
-export function getLinesForStop(stopId: number, dayType: DayType = 'weekday'): Line[] {
-  return data.lines.filter(line =>
-    line.directions.some(direction => isStopServedBy(stopId, direction.id, dayType))
-  );
+export function getLinesForStop(stopId: StopId, dayType: DayType = 'weekday'): Line[] {
+  return lines.filter(line => isStopServedByLine(stopId, line.id, dayType));
 }
 
 // ==========================================
@@ -408,20 +685,20 @@ export function getLinesForStop(stopId: number, dayType: DayType = 'weekday'): L
 
 /**
  * Get departure times for a stop in a specific direction.
- * Returns all times from all trips where this stop appears.
  */
 export function getTimesForStopInDirection(
-  stopId: number,
-  directionId: string,
+  stopId: StopId,
+  directionId: DirectionId,
   dayType: DayType
 ): string[] {
   const trips = getTripsForDirection(directionId, dayType);
   const times: string[] = [];
 
   for (const trip of trips) {
-    for (const tripStop of trip.stops) {
-      if (tripStop.stopId === stopId) {
-        times.push(tripStop.time);
+    for (const stage of trip.stages) {
+      const stageStopId = getStopIdForPlatform(stage.platform);
+      if (stageStopId === stopId) {
+        times.push(stage.time);
       }
     }
   }
@@ -433,34 +710,32 @@ export function getTimesForStopInDirection(
  * Get the time for a specific stop on a specific trip.
  */
 export function getTimeForStopOnTrip(
-  stopId: number,
-  directionId: string,
-  tripId: string,
+  stopId: StopId,
+  directionId: DirectionId,
+  tripName: string,
   dayType: DayType
 ): string | null {
-  const trip = getTripById(directionId, tripId, dayType);
+  const trip = getTripById(directionId, tripName, dayType);
   if (!trip) return null;
 
-  // A stop might appear multiple times in a trip (loop routes)
-  // Return the first occurrence
-  const tripStop = trip.stops.find(s => s.stopId === stopId);
-  return tripStop?.time ?? null;
+  const stage = trip.stages.find(s => getStopIdForPlatform(s.platform) === stopId);
+  return stage?.time ?? null;
 }
 
 /**
  * Get all times for a stop on a trip (for loop routes where stop appears multiple times).
  */
 export function getAllTimesForStopOnTrip(
-  stopId: number,
-  directionId: string,
-  tripId: string,
+  stopId: StopId,
+  directionId: DirectionId,
+  tripName: string,
   dayType: DayType
 ): string[] {
-  const trip = getTripById(directionId, tripId, dayType);
+  const trip = getTripById(directionId, tripName, dayType);
   if (!trip) return [];
 
-  return trip.stops
-    .filter(s => s.stopId === stopId)
+  return trip.stages
+    .filter(s => getStopIdForPlatform(s.platform) === stopId)
     .map(s => s.time);
 }
 
@@ -468,8 +743,8 @@ export function getAllTimesForStopOnTrip(
  * Get departure times for a stop (backward compatibility).
  */
 export function getTimesForStop(
-  directionId: string,
-  stopId: number,
+  directionId: DirectionId,
+  stopId: StopId,
   isWeekendDay: boolean
 ): string[] {
   const dayType: DayType = isWeekendDay ? 'weekend' : 'weekday';
@@ -482,16 +757,14 @@ export function getTimesForStop(
 
 /**
  * Get next departures from a stop for all directions.
- * This is the main function for the home page.
  */
 export function getNextDepartures(
-  stopId: number,
+  stopId: StopId,
   limit: number = 5,
   now: Date = new Date()
 ): Departure[] {
   const serviceStatus = getServiceStatus(now);
 
-  // No service on non-operating days
   if (!serviceStatus.isOperating || !serviceStatus.dayType) {
     return [];
   }
@@ -499,30 +772,35 @@ export function getNextDepartures(
   const dayType = serviceStatus.dayType;
   const departures: Departure[] = [];
 
-  // Get all directions serving this stop
   const directionsInfo = getDirectionsServingStop(stopId, dayType);
 
   for (const dirInfo of directionsInfo) {
-    // Check if the line operates on this day type
     const line = getLineById(dirInfo.lineId);
     if (!line || !doesLineOperateOnDayType(line, dayType)) {
       continue;
     }
 
-    // Get times for this stop in this direction
-    const times = getTimesForStopInDirection(stopId, dirInfo.directionId, dayType);
+    // Get all trips for this direction
+    const trips = getTripsForDirection(dirInfo.directionId, dayType);
 
-    for (const time of times) {
-      if (!isPastTime(time, now)) {
-        departures.push({
-          lineId: dirInfo.lineId,
-          lineName: dirInfo.lineName,
-          lineColor: dirInfo.lineColor,
-          directionId: dirInfo.directionId,
-          destinationName: dirInfo.directionName,
-          time,
-          minutesUntil: getMinutesUntil(time, now),
-        });
+    for (const trip of trips) {
+      for (const stage of trip.stages) {
+        // Check if this stage is at the requested stop
+        const stageStopId = getStopIdForPlatform(stage.platform);
+        if (stageStopId !== stopId) continue;
+
+        if (!isPastTime(stage.time, now)) {
+          departures.push({
+            lineId: dirInfo.lineId,
+            lineName: dirInfo.lineName,
+            lineColor: dirInfo.lineColor,
+            directionId: dirInfo.directionId,
+            destinationName: dirInfo.directionName,
+            platformId: stage.platform,
+            time: stage.time,
+            minutesUntil: getMinutesUntil(stage.time, now),
+          });
+        }
       }
     }
   }
@@ -536,8 +814,8 @@ export function getNextDepartures(
  * Get next departures for a specific direction from a stop.
  */
 export function getNextDeparturesForDirection(
-  stopId: number,
-  directionId: string,
+  stopId: StopId,
+  directionId: DirectionId,
   limit: number = 5,
   now: Date = new Date()
 ): Departure[] {
@@ -553,25 +831,30 @@ export function getNextDeparturesForDirection(
 
   if (!line || !direction) return [];
 
-  // Check if line operates on this day
   if (!doesLineOperateOnDayType(line, dayType)) {
     return [];
   }
 
-  const times = getTimesForStopInDirection(stopId, directionId, dayType);
+  const trips = getTripsForDirection(directionId, dayType);
   const departures: Departure[] = [];
 
-  for (const time of times) {
-    if (!isPastTime(time, now)) {
-      departures.push({
-        lineId: line.id,
-        lineName: line.name,
-        lineColor: line.color,
-        directionId: direction.id,
-        destinationName: direction.name,
-        time,
-        minutesUntil: getMinutesUntil(time, now),
-      });
+  for (const trip of trips) {
+    for (const stage of trip.stages) {
+      const stageStopId = getStopIdForPlatform(stage.platform);
+      if (stageStopId !== stopId) continue;
+
+      if (!isPastTime(stage.time, now)) {
+        departures.push({
+          lineId: line.id,
+          lineName: line.name,
+          lineColor: line.color,
+          directionId: direction.id,
+          destinationName: direction.name,
+          platformId: stage.platform,
+          time: stage.time,
+          minutesUntil: getMinutesUntil(stage.time, now),
+        });
+      }
     }
   }
 
@@ -590,7 +873,7 @@ export function calculateDistance(
   lat2: number,
   lng2: number
 ): number {
-  const R = 6371e3; // Earth radius in meters
+  const R = 6371e3;
   const φ1 = (lat1 * Math.PI) / 180;
   const φ2 = (lat2 * Math.PI) / 180;
   const Δφ = ((lat2 - lat1) * Math.PI) / 180;
@@ -612,86 +895,100 @@ export function formatDistance(meters: number): string {
 }
 
 /**
- * Calculate distance to a stop's platform from user location.
- * Falls back to first available platform if requested platform doesn't exist.
+ * Calculate distance to a platform from user location.
+ */
+export function calculateDistanceToPlatform(
+  userLat: number,
+  userLng: number,
+  platformId: PlatformId
+): number | null {
+  const platform = platformsById.get(platformId);
+  if (!platform) return null;
+
+  return calculateDistance(userLat, userLng, platform.lat, platform.lng);
+}
+
+/**
+ * Calculate distance to a stop (using first available platform).
  */
 export function calculateDistanceToStop(
   userLat: number,
   userLng: number,
-  stopId: number,
-  platform: PlatformId = 'A'
+  stopId: StopId,
+  preferredDirection?: PlatformDirection
 ): number | null {
   const stop = getStopById(stopId);
   if (!stop) return null;
 
-  // Try requested platform first, then fall back to first available
-  let platformCoords = getPlatformCoordinates(stop, platform);
-  if (!platformCoords) {
-    const fallbackPlatform = getFirstAvailablePlatform(stop);
-    if (!fallbackPlatform) return null;
-    platformCoords = getPlatformCoordinates(stop, fallbackPlatform);
+  // Try preferred direction first
+  if (preferredDirection) {
+    const platform = getPlatformByStopAndDirection(stopId, preferredDirection);
+    if (platform) {
+      return calculateDistance(userLat, userLng, platform.lat, platform.lng);
+    }
   }
-  if (!platformCoords) return null;
 
-  return calculateDistance(userLat, userLng, platformCoords.lat, platformCoords.lng);
+  // Fall back to first available
+  const platform = getFirstAvailablePlatform(stop);
+  if (!platform) return null;
+
+  return calculateDistance(userLat, userLng, platform.lat, platform.lng);
 }
 
 // ==========================================
-// Utility Functions for Map
+// Map Utility Functions
 // ==========================================
 
 /**
  * Get all unique platforms that need markers.
- * Returns an array of { stopId, platform, lat, lng, stopName }.
  */
 export function getAllPlatformMarkers(dayType: DayType = 'weekday'): Array<{
-  stopId: number;
-  platform: PlatformId;
+  platformId: PlatformId;
+  stopId: StopId;
   lat: number;
   lng: number;
   stopName: string;
+  platformDirection: PlatformDirection;
   directions: DirectionInfo[];
 }> {
   const markers: Array<{
-    stopId: number;
-    platform: PlatformId;
+    platformId: PlatformId;
+    stopId: StopId;
     lat: number;
     lng: number;
     stopName: string;
+    platformDirection: PlatformDirection;
     directions: DirectionInfo[];
   }> = [];
 
-  const seenPlatforms = new Set<string>();
+  const seenPlatforms = new Set<PlatformId>();
 
-  for (const line of data.lines) {
-    for (const direction of line.directions) {
-      const trips = getTripsForDirection(direction.id, dayType);
+  for (const line of lines) {
+    const lineDirections = getDirectionsForLine(line.id);
+    for (const direction of lineDirections) {
+      const dirTrips = getTripsForDirection(direction.id, dayType);
 
-      for (const trip of trips) {
-        for (const tripStop of trip.stops) {
-          const key = `${tripStop.stopId}-${tripStop.platform}`;
+      for (const trip of dirTrips) {
+        for (const stage of trip.stages) {
+          if (seenPlatforms.has(stage.platform)) continue;
+          seenPlatforms.add(stage.platform);
 
-          if (seenPlatforms.has(key)) continue;
-          seenPlatforms.add(key);
+          const platform = platformsById.get(stage.platform);
+          if (!platform) continue;
 
-          const stop = getStopById(tripStop.stopId);
+          const stop = stopsById.get(platform.parent_stop);
           if (!stop) continue;
 
-          const platform = getPlatformCoordinates(stop, tripStop.platform);
-          if (!platform) continue; // Skip if platform doesn't exist
-
-          const directions = getDirectionsServingPlatform(
-            tripStop.stopId,
-            tripStop.platform,
-            dayType
-          );
+          const platformDir = getPlatformDirection(stage.platform);
+          const directions = getDirectionsServingPlatform(stage.platform, dayType);
 
           markers.push({
-            stopId: tripStop.stopId,
-            platform: tripStop.platform,
+            platformId: stage.platform,
+            stopId: platform.parent_stop,
             lat: platform.lat,
             lng: platform.lng,
             stopName: stop.name,
+            platformDirection: platformDir,
             directions,
           });
         }
@@ -703,33 +1000,130 @@ export function getAllPlatformMarkers(dayType: DayType = 'weekday'): Array<{
 }
 
 /**
- * Get the center point for the map based on all stops.
- * Uses first available platform from each stop.
+ * Get the center point for the map based on all platforms.
  */
 export function getMapCenter(): [number, number] {
-  if (data.stops.length === 0) {
-    return [51.75, 20.5]; // Default center
+  if (platforms.length === 0) {
+    return [51.75, 20.5];
   }
 
   let totalLat = 0;
   let totalLng = 0;
-  let count = 0;
 
-  for (const stop of data.stops) {
-    const platformId = getFirstAvailablePlatform(stop);
-    if (!platformId) continue;
-
-    const platform = getPlatformCoordinates(stop, platformId);
-    if (!platform) continue;
-
+  for (const platform of platforms) {
     totalLat += platform.lat;
     totalLng += platform.lng;
-    count++;
   }
 
-  if (count === 0) {
-    return [51.75, 20.5]; // Default center if no valid platforms
+  return [totalLat / platforms.length, totalLng / platforms.length];
+}
+
+// ==========================================
+// Route/Shape Functions
+// ==========================================
+
+/**
+ * Get route coordinates between two platforms.
+ */
+export function getRouteBetweenPlatforms(
+  startPlatformId: PlatformId,
+  endPlatformId: PlatformId
+): [number, number][] {
+  const routeKey = `${startPlatformId}--${endPlatformId}`;
+  const route = routesByPlatforms.get(routeKey);
+
+  const coordinates: [number, number][] = [];
+
+  // Get start platform coordinates
+  const startPlatform = platformsById.get(startPlatformId);
+  if (startPlatform) {
+    coordinates.push([startPlatform.lat, startPlatform.lng]);
   }
 
-  return [totalLat / count, totalLng / count];
+  // Add route middle coordinates
+  if (route) {
+    for (const coord of route.coordinates) {
+      coordinates.push(coord);
+    }
+  }
+
+  // Get end platform coordinates
+  const endPlatform = platformsById.get(endPlatformId);
+  if (endPlatform) {
+    coordinates.push([endPlatform.lat, endPlatform.lng]);
+  }
+
+  return coordinates;
+}
+
+/**
+ * Get route coordinates for a specific trip.
+ * Builds the full route by connecting all consecutive platforms.
+ */
+export function getTripRouteCoordinates(
+  directionId: DirectionId,
+  tripName: string,
+  dayType: DayType
+): [number, number][] {
+  const trip = getTripById(directionId, tripName, dayType);
+  if (!trip || trip.stages.length === 0) return [];
+
+  const coordinates: [number, number][] = [];
+
+  for (let i = 0; i < trip.stages.length; i++) {
+    const stage = trip.stages[i];
+    if (!stage) continue;
+
+    if (i === 0) {
+      // For first stage, add the platform coordinates
+      const platform = platformsById.get(stage.platform);
+      if (platform) {
+        coordinates.push([platform.lat, platform.lng]);
+      }
+    } else {
+      // Get route from previous to current platform
+      const prevStage = trip.stages[i - 1];
+      if (!prevStage) continue;
+
+      const segmentCoords = getRouteBetweenPlatforms(prevStage.platform, stage.platform);
+
+      // Add segment coordinates, avoiding duplicates at boundaries
+      for (let j = 0; j < segmentCoords.length; j++) {
+        const coord = segmentCoords[j];
+        if (!coord) continue;
+
+        // Skip first point if it matches last point (boundary)
+        if (j === 0 && coordinates.length > 0) {
+          const lastCoord = coordinates[coordinates.length - 1];
+          if (lastCoord &&
+              Math.abs(lastCoord[0] - coord[0]) < 0.000001 &&
+              Math.abs(lastCoord[1] - coord[1]) < 0.000001) {
+            continue;
+          }
+        }
+
+        coordinates.push(coord);
+      }
+    }
+  }
+
+  return coordinates;
+}
+
+/**
+ * Check if a route is defined between two platforms.
+ */
+export function hasRouteBetweenPlatforms(
+  startPlatformId: PlatformId,
+  endPlatformId: PlatformId
+): boolean {
+  const routeKey = `${startPlatformId}--${endPlatformId}`;
+  return routesByPlatforms.has(routeKey);
+}
+
+/**
+ * Get all route segments.
+ */
+export function getAllRoutes(): Route[] {
+  return routes;
 }
