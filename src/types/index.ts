@@ -122,6 +122,12 @@ export interface UserSettings {
   language: Language | null;
 }
 
+export interface ScheduleSelection {
+  lineId: LineId;
+  dayType: DayType;
+  directionId: DirectionId;
+}
+
 // ==========================================
 // Geolocation
 // ==========================================

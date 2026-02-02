@@ -1,7 +1,8 @@
-import type { UserSettings, StopId } from '@/types';
+import type { UserSettings, StopId, ScheduleSelection } from '@/types';
 
 const SETTINGS_KEY = 'bus-schedule-settings';
 const SETTINGS_VERSION_KEY = 'bus-schedule-settings-version';
+const SCHEDULE_SELECTION_KEY = 'bus-schedule-selection';
 const CURRENT_VERSION = 2; // Version 2 = string IDs
 
 export const DEFAULT_SETTINGS: UserSettings = {
@@ -114,5 +115,25 @@ export function saveSettings(settings: UserSettings): void {
     localStorage.setItem(SETTINGS_VERSION_KEY, String(CURRENT_VERSION));
   } catch (error) {
     console.error('Failed to save settings:', error);
+  }
+}
+
+export function loadScheduleSelection(): ScheduleSelection | null {
+  try {
+    const stored = localStorage.getItem(SCHEDULE_SELECTION_KEY);
+    if (stored) {
+      return JSON.parse(stored) as ScheduleSelection;
+    }
+  } catch (error) {
+    console.error('Failed to load schedule selection:', error);
+  }
+  return null;
+}
+
+export function saveScheduleSelection(selection: ScheduleSelection): void {
+  try {
+    localStorage.setItem(SCHEDULE_SELECTION_KEY, JSON.stringify(selection));
+  } catch (error) {
+    console.error('Failed to save schedule selection:', error);
   }
 }
