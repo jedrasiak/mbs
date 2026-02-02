@@ -90,7 +90,9 @@
     "install": "Zainstaluj",
     "appInstalled": "Aplikacja zainstalowana",
     "appInstalledDescription": "Używasz zainstalowanej wersji",
-    "scheduleUpdated": "Rozkład zaktualizowany"
+    "scheduleUpdated": "Rozkład zaktualizowany",
+    "scheduleId": "Wersja rozkładu",
+    "scheduleValidFrom": "Obowiązuje od"
   },
   "time": {
     "departed": "Odjechał",

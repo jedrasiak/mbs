@@ -279,6 +279,20 @@ export function SettingsForm() {
             <Update />
           </ListItemIcon>
           <ListItemText
+            primary={getMetadata().id}
+            secondary={t('settings.scheduleId')}
+          />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon />
+          <ListItemText
+            primary={getMetadata().validFrom}
+            secondary={t('settings.scheduleValidFrom')}
+          />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon />
+          <ListItemText
             primary={getMetadata().lastUpdated}
             secondary={t('settings.scheduleUpdated')}
           />

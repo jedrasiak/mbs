@@ -32,10 +32,61 @@ import schedulesData from '@/assets/data/schedules.json';
 const stops = stopsData as Stop[];
 const platforms = platformsData as Platform[];
 const routes = routesData as Route[];
-const lines = linesData as Line[];
-const directions = directionsData as Direction[];
-const trips = tripsData as Trip[];
+const allLines = linesData as Line[];
+const allDirections = directionsData as Direction[];
+const allTrips = tripsData as Trip[];
 const schedules = schedulesData as Schedule[];
+
+// ==========================================
+// Schedule Validity Functions
+// ==========================================
+
+/**
+ * Get the currently valid schedule based on today's date.
+ * Returns the schedule with the most recent valid_from date that is not in the future.
+ */
+export function getCurrentSchedule(referenceDate: Date = new Date()): Schedule | null {
+  const today = referenceDate.toISOString().split('T')[0]!;
+
+  // Filter schedules where valid_from <= today
+  const validSchedules = schedules.filter(schedule => schedule.valid_from <= today);
+
+  if (validSchedules.length === 0) {
+    return null;
+  }
+
+  // Sort by valid_from descending and return the most recent
+  validSchedules.sort((a, b) => b.valid_from.localeCompare(a.valid_from));
+  return validSchedules[0] ?? null;
+}
+
+/**
+ * Check if there is a valid schedule for the given date.
+ */
+export function hasValidSchedule(referenceDate: Date = new Date()): boolean {
+  return getCurrentSchedule(referenceDate) !== null;
+}
+
+/**
+ * Get the set of line IDs that are active in the current schedule.
+ */
+function getActiveLineIds(): Set<LineId> {
+  const currentSchedule = getCurrentSchedule();
+  if (!currentSchedule) {
+    // Fallback: if no valid schedule, use all lines
+    return new Set(allLines.map(l => l.id));
+  }
+  return new Set(currentSchedule.lines);
+}
+
+// Get active line IDs for filtering
+const activeLineIds = getActiveLineIds();
+
+// Filter data based on active schedule
+const lines = allLines.filter(l => activeLineIds.has(l.id));
+const directions = allDirections.filter(d => activeLineIds.has(d.parent_line));
+const activeDirectionIds = new Set(directions.map(d => d.id));
+const trips = allTrips.filter(t => activeDirectionIds.has(t.parent_direction));
 
 // ==========================================
 // Lookup Maps for O(1) access
@@ -139,11 +190,12 @@ export function getAllSchedules(): Schedule[] {
 }
 
 export function getMetadata() {
-  // Return the most recent schedule as metadata
-  const latestSchedule = schedules[0];
+  // Return the currently valid schedule as metadata
+  const currentSchedule = getCurrentSchedule();
   return {
-    lastUpdated: latestSchedule?.updated_at ?? '',
-    validFrom: latestSchedule?.valid_from ?? '',
+    id: currentSchedule?.id ?? '',
+    lastUpdated: currentSchedule?.updated_at ?? '',
+    validFrom: currentSchedule?.valid_from ?? '',
   };
 }
 
