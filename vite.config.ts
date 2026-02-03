@@ -13,9 +13,10 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: 'Autobusy | Rawa Mazowiecka',
+        name: 'Autobusy miejskie | Rawa Mazowiecka | Rozkład jazdy',
         short_name: 'Autobusy',
-        description: 'Municipal bus schedule with offline support',
+        description: 'Rozkład jazdy autobusów miejskich w Rawie Mazowieckiej. Sprawdź godziny odjazdów i mapę przystanków.',
+        lang: 'pl',
         theme_color: '#1976D2',
         background_color: '#ffffff',
         display: 'standalone',

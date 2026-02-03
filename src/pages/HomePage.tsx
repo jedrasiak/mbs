@@ -95,6 +95,24 @@ export function HomePage() {
           stopName={selectedStop?.name}
           serviceStatus={serviceStatus}
         />
+
+        {/* SEO footer text - only visible in Polish for search engines */}
+        <Box
+          component="footer"
+          sx={{
+            mt: 6,
+            pt: 3,
+            borderTop: 1,
+            borderColor: 'divider',
+            color: 'text.secondary',
+            fontSize: '0.75rem',
+            lineHeight: 1.5,
+          }}
+        >
+          Autobusy Rawa Mazowiecka. Rozkład jazdy autobusów miejskich w Rawie
+          Mazowieckiej. Sprawdź godziny odjazdów i mapę przystanków. Zainstaluj
+          aplikację na telefon.
+        </Box>
       </Container>
     </Box>
   );
