@@ -13,15 +13,15 @@
         "time": "06:03"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "06:05"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "06:07"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "06:08"
       },
       {
@@ -37,7 +37,7 @@
         "time": "06:13"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "06:14"
       },
       {
@@ -45,7 +45,7 @@
         "time": "06:15"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "06:16"
       }
     ],
@@ -85,15 +85,15 @@
         "time": "06:36"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "06:38"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "06:40"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "06:41"
       },
       {
@@ -109,7 +109,7 @@
         "time": "06:46"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "06:47"
       },
       {
@@ -117,7 +117,7 @@
         "time": "06:48"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "06:49"
       }
     ],
@@ -157,15 +157,15 @@
         "time": "07:09"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "07:11"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "07:13"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "07:14"
       },
       {
@@ -181,7 +181,7 @@
         "time": "07:19"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "07:20"
       },
       {
@@ -189,7 +189,7 @@
         "time": "07:21"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "07:22"
       }
     ],
@@ -229,23 +229,23 @@
         "time": "08:03"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "08:05"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "08:07"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "08:11"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "08:12"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "08:14"
       },
       {
@@ -253,15 +253,15 @@
         "time": "08:15"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "08:19"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "08:21"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "08:22"
       },
       {
@@ -277,7 +277,7 @@
         "time": "08:27"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "08:28"
       },
       {
@@ -285,7 +285,7 @@
         "time": "08:29"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "08:30"
       }
     ],
@@ -325,15 +325,15 @@
         "time": "09:13"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "09:15"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "09:17"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "09:18"
       },
       {
@@ -349,7 +349,7 @@
         "time": "09:23"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "09:24"
       },
       {
@@ -357,7 +357,7 @@
         "time": "09:25"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "09:26"
       }
     ],
@@ -397,15 +397,15 @@
         "time": "11:37"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "11:39"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "11:41"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "11:42"
       },
       {
@@ -421,7 +421,7 @@
         "time": "11:47"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "11:48"
       },
       {
@@ -429,7 +429,7 @@
         "time": "11:49"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "11:50"
       }
     ],
@@ -469,15 +469,15 @@
         "time": "12:30"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "12:32"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "12:34"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "12:35"
       },
       {
@@ -493,7 +493,7 @@
         "time": "12:40"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "12:41"
       },
       {
@@ -501,7 +501,7 @@
         "time": "12:42"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "12:43"
       }
     ],
@@ -541,15 +541,15 @@
         "time": "13:38"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "13:40"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "13:42"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "13:43"
       },
       {
@@ -565,7 +565,7 @@
         "time": "13:48"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "13:49"
       },
       {
@@ -573,7 +573,7 @@
         "time": "13:50"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "13:51"
       }
     ],
@@ -613,23 +613,23 @@
         "time": "14:28"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "14:30"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "14:32"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "14:36"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "14:37"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "14:39"
       },
       {
@@ -637,15 +637,15 @@
         "time": "14:40"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "14:44"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "14:46"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "14:47"
       },
       {
@@ -661,7 +661,7 @@
         "time": "14:52"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "14:53"
       },
       {
@@ -669,7 +669,7 @@
         "time": "14:54"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "14:55"
       }
     ],
@@ -709,15 +709,15 @@
         "time": "15:30"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "15:32"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "15:34"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "15:35"
       },
       {
@@ -733,7 +733,7 @@
         "time": "15:40"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "15:41"
       },
       {
@@ -741,7 +741,7 @@
         "time": "15:42"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "15:43"
       }
     ],
@@ -781,23 +781,23 @@
         "time": "17:08"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "17:10"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "17:12"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "17:16"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "17:17"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "17:19"
       },
       {
@@ -805,15 +805,15 @@
         "time": "17:20"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "17:24"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "17:26"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "17:27"
       },
       {
@@ -829,7 +829,7 @@
         "time": "17:32"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "17:33"
       },
       {
@@ -837,7 +837,7 @@
         "time": "17:34"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "17:35"
       }
     ],
@@ -877,15 +877,15 @@
         "time": "18:19"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "18:21"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "18:23"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "18:24"
       },
       {
@@ -901,7 +901,7 @@
         "time": "18:29"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "18:30"
       },
       {
@@ -909,7 +909,7 @@
         "time": "18:31"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "18:32"
       }
     ],
@@ -949,23 +949,23 @@
         "time": "07:48"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "07:50"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "07:52"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "07:56"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "07:57"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "07:58"
       },
       {
@@ -973,15 +973,15 @@
         "time": "07:59"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "08:02"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "08:03"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "08:04"
       },
       {
@@ -997,7 +997,7 @@
         "time": "08:10"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "08:11"
       },
       {
@@ -1005,7 +1005,7 @@
         "time": "08:12"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "08:13"
       }
     ],
@@ -1061,23 +1061,23 @@
         "time": "09:49"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "09:51"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "09:53"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "09:57"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "09:58"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "09:59"
       },
       {
@@ -1085,15 +1085,15 @@
         "time": "10:00"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "10:03"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "10:04"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "10:06"
       },
       {
@@ -1109,7 +1109,7 @@
         "time": "10:12"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "10:13"
       },
       {
@@ -1117,7 +1117,7 @@
         "time": "10:14"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "10:15"
       }
     ],
@@ -1157,15 +1157,15 @@
         "time": "10:45"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "10:47"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "10:48"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "10:50"
       },
       {
@@ -1181,7 +1181,7 @@
         "time": "10:56"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "10:57"
       },
       {
@@ -1189,7 +1189,7 @@
         "time": "10:58"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "10:59"
       }
     ],
@@ -1229,23 +1229,23 @@
         "time": "12:33"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "12:35"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "12:37"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "12:41"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "12:42"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "12:43"
       },
       {
@@ -1253,15 +1253,15 @@
         "time": "12:44"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "12:47"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "12:48"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "12:50"
       },
       {
@@ -1277,7 +1277,7 @@
         "time": "12:56"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "12:57"
       },
       {
@@ -1285,7 +1285,7 @@
         "time": "12:58"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "12:59"
       }
     ],
@@ -1325,15 +1325,15 @@
         "time": "13:47"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "13:49"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "13:50"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "13:52"
       },
       {
@@ -1349,7 +1349,7 @@
         "time": "13:58"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "13:59"
       },
       {
@@ -1357,7 +1357,7 @@
         "time": "14:00"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "14:01"
       }
     ],
@@ -1397,23 +1397,23 @@
         "time": "15:31"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "15:33"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "15:35"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "15:39"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "15:40"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "15:41"
       },
       {
@@ -1421,15 +1421,15 @@
         "time": "15:42"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "15:45"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "15:46"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "15:48"
       },
       {
@@ -1445,7 +1445,7 @@
         "time": "15:54"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "15:55"
       },
       {
@@ -1453,7 +1453,7 @@
         "time": "15:56"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "15:57"
       }
     ],
@@ -1493,15 +1493,15 @@
         "time": "16:18"
       },
       {
-        "platform": "plac-pilsudskiego:south",
+        "platform": "plac-pilsudskiego:common",
         "time": "16:20"
       },
       {
-        "platform": "kosciuszki-starostwo:south",
+        "platform": "kosciuszki-starostwo:common",
         "time": "16:21"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "16:23"
       },
       {
@@ -1517,7 +1517,7 @@
         "time": "16:29"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "16:30"
       },
       {
@@ -1525,7 +1525,7 @@
         "time": "16:31"
       },
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "16:32"
       }
     ],
@@ -1557,7 +1557,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "06:16"
       },
       {
@@ -1565,7 +1565,7 @@
         "time": "06:17"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "06:19"
       },
       {
@@ -1581,15 +1581,15 @@
         "time": "06:23"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "06:25"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "06:27"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "06:29"
       },
       {
@@ -1629,7 +1629,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "06:49"
       },
       {
@@ -1637,7 +1637,7 @@
         "time": "06:50"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "06:52"
       },
       {
@@ -1653,15 +1653,15 @@
         "time": "06:56"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "06:58"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "07:00"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "07:02"
       },
       {
@@ -1701,7 +1701,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "07:23"
       },
       {
@@ -1709,7 +1709,7 @@
         "time": "07:24"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "07:26"
       },
       {
@@ -1725,27 +1725,27 @@
         "time": "07:30"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "07:32"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "07:34"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "07:36"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "07:40"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "07:41"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "07:42"
       },
       {
@@ -1753,15 +1753,15 @@
         "time": "07:43"
       },
       {
-        "platform": "kolejowa:north",
+        "platform": "kolejowa:common",
         "time": "07:46"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "07:49"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "07:51"
       },
       {
@@ -1801,7 +1801,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "08:30"
       },
       {
@@ -1809,7 +1809,7 @@
         "time": "08:31"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "08:33"
       },
       {
@@ -1825,15 +1825,15 @@
         "time": "08:37"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "08:39"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "08:41"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "08:43"
       },
       {
@@ -1873,7 +1873,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "09:27"
       },
       {
@@ -1881,7 +1881,7 @@
         "time": "09:28"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "09:30"
       },
       {
@@ -1897,27 +1897,27 @@
         "time": "09:34"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "09:36"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "09:38"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "09:40"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "09:44"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "09:45"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "09:46"
       },
       {
@@ -1925,15 +1925,15 @@
         "time": "09:47"
       },
       {
-        "platform": "kolejowa:north",
+        "platform": "kolejowa:common",
         "time": "09:50"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "09:53"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "09:55"
       },
       {
@@ -1973,7 +1973,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "11:51"
       },
       {
@@ -1981,7 +1981,7 @@
         "time": "11:52"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "11:54"
       },
       {
@@ -1997,27 +1997,27 @@
         "time": "11:58"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "12:00"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "12:02"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "12:04"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "12:08"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "12:09"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "12:10"
       },
       {
@@ -2025,15 +2025,15 @@
         "time": "12:11"
       },
       {
-        "platform": "kolejowa:north",
+        "platform": "kolejowa:common",
         "time": "12:14"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "12:17"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "12:19"
       },
       {
@@ -2073,7 +2073,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "13:18"
       },
       {
@@ -2081,7 +2081,7 @@
         "time": "13:19"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "13:21"
       },
       {
@@ -2097,15 +2097,15 @@
         "time": "13:25"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "13:27"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "13:29"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "13:31"
       },
       {
@@ -2145,7 +2145,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "14:08"
       },
       {
@@ -2153,7 +2153,7 @@
         "time": "14:09"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "14:11"
       },
       {
@@ -2169,15 +2169,15 @@
         "time": "14:15"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "14:17"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "14:19"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "14:21"
       },
       {
@@ -2217,7 +2217,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "15:09"
       },
       {
@@ -2225,7 +2225,7 @@
         "time": "15:10"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "15:12"
       },
       {
@@ -2241,15 +2241,15 @@
         "time": "15:16"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "15:18"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "15:20"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "15:22"
       },
       {
@@ -2289,7 +2289,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "16:02"
       },
       {
@@ -2297,7 +2297,7 @@
         "time": "16:03"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "16:05"
       },
       {
@@ -2313,27 +2313,27 @@
         "time": "16:09"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "16:11"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "16:13"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "16:15"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "16:19"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "16:20"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "16:21"
       },
       {
@@ -2341,15 +2341,15 @@
         "time": "16:22"
       },
       {
-        "platform": "kolejowa:north",
+        "platform": "kolejowa:common",
         "time": "16:25"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "16:28"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "16:30"
       },
       {
@@ -2389,7 +2389,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "17:35"
       },
       {
@@ -2397,7 +2397,7 @@
         "time": "17:36"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "17:38"
       },
       {
@@ -2413,15 +2413,15 @@
         "time": "17:42"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "17:44"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "17:46"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "17:48"
       },
       {
@@ -2461,7 +2461,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "18:32"
       },
       {
@@ -2469,7 +2469,7 @@
         "time": "18:33"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "18:35"
       },
       {
@@ -2485,27 +2485,27 @@
         "time": "18:39"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "18:41"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "18:43"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "18:45"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "18:49"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "18:50"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "18:51"
       },
       {
@@ -2513,15 +2513,15 @@
         "time": "18:52"
       },
       {
-        "platform": "kolejowa:north",
+        "platform": "kolejowa:common",
         "time": "18:55"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "18:58"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "19:00"
       },
       {
@@ -2561,7 +2561,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "08:14"
       },
       {
@@ -2569,7 +2569,7 @@
         "time": "08:15"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "08:16"
       },
       {
@@ -2585,27 +2585,27 @@
         "time": "08:21"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "08:23"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "08:25"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "08:27"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "08:30"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "08:31"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "08:32"
       },
       {
@@ -2613,15 +2613,15 @@
         "time": "08:33"
       },
       {
-        "platform": "kolejowa:north",
+        "platform": "kolejowa:common",
         "time": "08:36"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "08:39"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "08:41"
       },
       {
@@ -2661,7 +2661,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "10:16"
       },
       {
@@ -2669,7 +2669,7 @@
         "time": "10:17"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "10:18"
       },
       {
@@ -2685,15 +2685,15 @@
         "time": "10:23"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "10:25"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "10:27"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "10:29"
       },
       {
@@ -2733,7 +2733,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "11:00"
       },
       {
@@ -2741,7 +2741,7 @@
         "time": "11:01"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "11:02"
       },
       {
@@ -2757,27 +2757,27 @@
         "time": "11:07"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "11:09"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "11:11"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "11:13"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "11:16"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "11:17"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "11:18"
       },
       {
@@ -2785,15 +2785,15 @@
         "time": "11:19"
       },
       {
-        "platform": "kolejowa:north",
+        "platform": "kolejowa:common",
         "time": "11:22"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "11:25"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "11:27"
       },
       {
@@ -2849,7 +2849,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "13:00"
       },
       {
@@ -2857,7 +2857,7 @@
         "time": "13:01"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "13:02"
       },
       {
@@ -2873,15 +2873,15 @@
         "time": "13:07"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "13:09"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "13:11"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "13:13"
       },
       {
@@ -2921,7 +2921,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "14:02"
       },
       {
@@ -2929,7 +2929,7 @@
         "time": "14:03"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "14:04"
       },
       {
@@ -2945,27 +2945,27 @@
         "time": "14:09"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "14:11"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "14:13"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "14:15"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "14:18"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "14:19"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "14:20"
       },
       {
@@ -2973,15 +2973,15 @@
         "time": "14:21"
       },
       {
-        "platform": "kolejowa:north",
+        "platform": "kolejowa:common",
         "time": "14:24"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "14:27"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "14:29"
       },
       {
@@ -3021,7 +3021,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "15:58"
       },
       {
@@ -3029,7 +3029,7 @@
         "time": "15:59"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "16:00"
       },
       {
@@ -3045,15 +3045,15 @@
         "time": "16:05"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "16:07"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "16:09"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "16:11"
       },
       {
@@ -3093,7 +3093,7 @@
     "parent_direction": "line1:north",
     "stages": [
       {
-        "platform": "katowicka-mrowka:south",
+        "platform": "katowicka-mrowka:common",
         "time": "16:33"
       },
       {
@@ -3101,7 +3101,7 @@
         "time": "16:34"
       },
       {
-        "platform": "katowicka-aquarium:south",
+        "platform": "katowicka-aquarium:common",
         "time": "16:35"
       },
       {
@@ -3117,27 +3117,27 @@
         "time": "16:40"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "16:42"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "16:44"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "16:46"
       },
       {
-        "platform": "sadowa-willowa:south",
+        "platform": "sadowa-willowa:common",
         "time": "16:49"
       },
       {
-        "platform": "willowa:south",
+        "platform": "willowa:common",
         "time": "16:50"
       },
       {
-        "platform": "ogrodowa:south",
+        "platform": "ogrodowa:common",
         "time": "16:51"
       },
       {
@@ -3145,15 +3145,15 @@
         "time": "16:52"
       },
       {
-        "platform": "kolejowa:north",
+        "platform": "kolejowa:common",
         "time": "16:55"
       },
       {
-        "platform": "mickiewicza:north",
+        "platform": "mickiewicza:common",
         "time": "16:58"
       },
       {
-        "platform": "mila:south",
+        "platform": "mila:common",
         "time": "17:00"
       },
       {
@@ -3217,7 +3217,7 @@
         "time": "06:54"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "06:58"
       },
       {
@@ -3241,7 +3241,7 @@
         "time": "07:06"
       },
       {
-        "platform": "kosciuszki-szkola:south",
+        "platform": "kosciuszki-szkola:common",
         "time": "07:09"
       },
       {
@@ -3309,7 +3309,7 @@
         "time": "08:01"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "08:05"
       },
       {
@@ -3333,7 +3333,7 @@
         "time": "08:13"
       },
       {
-        "platform": "kosciuszki-szkola:south",
+        "platform": "kosciuszki-szkola:common",
         "time": "08:16"
       },
       {
@@ -3401,7 +3401,7 @@
         "time": "12:53"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "12:57"
       },
       {
@@ -3425,7 +3425,7 @@
         "time": "13:05"
       },
       {
-        "platform": "kosciuszki-szkola:south",
+        "platform": "kosciuszki-szkola:common",
         "time": "13:08"
       },
       {
@@ -3493,7 +3493,7 @@
         "time": "14:32"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "14:36"
       },
       {
@@ -3517,7 +3517,7 @@
         "time": "14:44"
       },
       {
-        "platform": "kosciuszki-szkola:south",
+        "platform": "kosciuszki-szkola:common",
         "time": "14:47"
       },
       {
@@ -3585,7 +3585,7 @@
         "time": "15:43"
       },
       {
-        "platform": "kosciuszki-liceum:south",
+        "platform": "kosciuszki-liceum:common",
         "time": "15:47"
       },
       {
@@ -3609,7 +3609,7 @@
         "time": "15:55"
       },
       {
-        "platform": "kosciuszki-szkola:south",
+        "platform": "kosciuszki-szkola:common",
         "time": "15:58"
       },
       {
@@ -3665,7 +3665,7 @@
         "time": "07:16"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-liceum:common",
         "time": "07:18"
       },
       {
@@ -3689,7 +3689,7 @@
         "time": "07:26"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "07:29"
       },
       {
@@ -3757,7 +3757,7 @@
         "time": "08:23"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-liceum:common",
         "time": "08:25"
       },
       {
@@ -3781,7 +3781,7 @@
         "time": "08:33"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "08:36"
       },
       {
@@ -3849,7 +3849,7 @@
         "time": "13:24"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-liceum:common",
         "time": "13:26"
       },
       {
@@ -3873,7 +3873,7 @@
         "time": "13:34"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "13:37"
       },
       {
@@ -3941,7 +3941,7 @@
         "time": "14:53"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-liceum:common",
         "time": "14:55"
       },
       {
@@ -3965,7 +3965,7 @@
         "time": "15:03"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "15:06"
       },
       {
@@ -4033,7 +4033,7 @@
         "time": "16:19"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-liceum:common",
         "time": "16:21"
       },
       {
@@ -4057,7 +4057,7 @@
         "time": "16:29"
       },
       {
-        "platform": "kosciuszki-szkola:north",
+        "platform": "kosciuszki-szkola:common",
         "time": "16:32"
       },
       {

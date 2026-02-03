@@ -28,39 +28,31 @@
     "description": "Kierunek: Kazimierza Wielkiego"
   },
   {
-    "id": "plac-pilsudskiego:south",
+    "id": "plac-pilsudskiego:common",
     "parent_stop": "plac-pilsudskiego",
     "lat": 51.76586085629598,
-    "lng": 20.254150291694906,
-    "description": "Kierunek: Katowicka (Mrówka)"
+    "lng": 20.254150291694906
   },
   {
-    "id": "plac-pilsudskiego:north",
-    "parent_stop": "plac-pilsudskiego",
-    "lat": 51.76586085629598,
-    "lng": 20.254150291694906,
-    "description": "Kierunek: Kazimierza Wielkiego"
-  },
-  {
-    "id": "mila:south",
+    "id": "mila:common",
     "parent_stop": "mila",
     "lat": 51.76488638701276,
     "lng": 20.256501619573626
   },
   {
-    "id": "sadowa-willowa:south",
+    "id": "sadowa-willowa:common",
     "parent_stop": "sadowa-willowa",
     "lat": 51.769578,
     "lng": 20.244115
   },
   {
-    "id": "willowa:south",
+    "id": "willowa:common",
     "parent_stop": "willowa",
     "lat": 51.770577096948706,
     "lng": 20.24173552036208
   },
   {
-    "id": "ogrodowa:south",
+    "id": "ogrodowa:common",
     "parent_stop": "ogrodowa",
     "lat": 51.768933791330646,
     "lng": 20.238845365813972
@@ -72,39 +64,22 @@
     "lng": 20.244035795327086
   },
   {
-    "id": "kosciuszki-starostwo:south",
+    "id": "kosciuszki-starostwo:common",
     "parent_stop": "kosciuszki-starostwo",
     "lat": 51.76393779624841,
-    "lng": 20.250645754726015,
-    "description": "Kierunek: Katowicka (Mrówka)"
+    "lng": 20.250645754726015
   },
   {
-    "id": "kosciuszki-liceum:south",
+    "id": "kosciuszki-liceum:common",
     "parent_stop": "kosciuszki-liceum",
     "lat": 51.76159025741317,
-    "lng": 20.247028673866165,
-    "description": "Kierunek: Katowicka (Mrówka)"
+    "lng": 20.247028673866165
   },
   {
-    "id": "kosciuszki-liceum:north",
-    "parent_stop": "kosciuszki-liceum",
-    "lat": 51.76159025741317,
-    "lng": 20.247028673866165,
-    "description": "Kierunek: Kazimierza Wielkiego"
-  },
-  {
-    "id": "kosciuszki-szkola:south",
+    "id": "kosciuszki-szkola:common",
     "parent_stop": "kosciuszki-szkola",
     "lat": 51.76244448553878,
-    "lng": 20.24817111413339,
-    "description": "Kierunek: Katowicka (Mrówka)"
-  },
-  {
-    "id": "kosciuszki-szkola:north",
-    "parent_stop": "kosciuszki-szkola",
-    "lat": 51.76244448553878,
-    "lng": 20.24817111413339,
-    "description": "Kierunek: Kazimierza Wielkiego"
+    "lng": 20.24817111413339
   },
   {
     "id": "tomaszowska-cmentarz:south",
@@ -149,7 +124,7 @@
     "description": "Kierunek: Kazimierza Wielkiego"
   },
   {
-    "id": "katowicka-aquarium:south",
+    "id": "katowicka-aquarium:common",
     "parent_stop": "katowicka-aquarium",
     "lat": 51.75380735411695,
     "lng": 20.235027367487543
@@ -169,11 +144,10 @@
     "description": "Kierunek: Kazimierza Wielkiego"
   },
   {
-    "id": "katowicka-mrowka:south",
+    "id": "katowicka-mrowka:common",
     "parent_stop": "katowicka-mrowka",
     "lat": 51.75124331078189,
-    "lng": 20.220324812725266,
-    "description": "Krańcówka"
+    "lng": 20.220324812725266
   },
   {
     "id": "aleksandrowka-1:south",
@@ -308,17 +282,15 @@
     "description": "Przystanek początkowy"
   },
   {
-    "id": "mickiewicza:north",
+    "id": "mickiewicza:common",
     "parent_stop": "mickiewicza",
     "lat": 51.7643683346067,
-    "lng": 20.253151704850303,
-    "description": "Kierunek: Kazimierza Wielkiego"
+    "lng": 20.253151704850303
   },
   {
-    "id": "kolejowa:north",
+    "id": "kolejowa:common",
     "parent_stop": "kolejowa",
     "lat": 51.76671589930158,
-    "lng": 20.24645253881083,
-    "description": "Kierunek: Kazimierza Wielkiego"
+    "lng": 20.24645253881083
   }
 ]
