@@ -5,7 +5,7 @@ import { SettingsProvider, useSettings } from '@/contexts/SettingsContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { PWAProvider } from '@/contexts/PWAContext';
 import { BottomNav } from '@/components/common';
-import { HomePage, SchedulePage, MapPage, SettingsPage } from '@/pages';
+import { HomePage, SchedulePage, MapPage, SettingsPage, NotFoundPage } from '@/pages';
 import { setLanguage } from '@/i18n';
 import '@/hooks/usePlausible';
 
@@ -31,6 +31,7 @@ function AppContent() {
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <BottomNav />
       </Box>
