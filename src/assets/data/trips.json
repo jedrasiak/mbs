@@ -249,7 +249,7 @@
         "time": "08:14"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "08:15"
       },
       {
@@ -633,7 +633,7 @@
         "time": "14:39"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "14:40"
       },
       {
@@ -801,7 +801,7 @@
         "time": "17:19"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "17:20"
       },
       {
@@ -969,7 +969,7 @@
         "time": "07:58"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "07:59"
       },
       {
@@ -1041,7 +1041,7 @@
         "time": "09:34"
       },
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "09:39"
       },
       {
@@ -1081,7 +1081,7 @@
         "time": "09:59"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "10:00"
       },
       {
@@ -1249,7 +1249,7 @@
         "time": "12:43"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "12:44"
       },
       {
@@ -1417,7 +1417,7 @@
         "time": "15:41"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "15:42"
       },
       {
@@ -1585,7 +1585,7 @@
         "time": "06:25"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "06:27"
       },
       {
@@ -1657,7 +1657,7 @@
         "time": "06:58"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "07:00"
       },
       {
@@ -1729,7 +1729,7 @@
         "time": "07:32"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "07:34"
       },
       {
@@ -1749,15 +1749,15 @@
         "time": "07:42"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "07:43"
       },
       {
-        "platform": "kolejowa:south",
+        "platform": "kolejowa:north",
         "time": "07:46"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "07:49"
       },
       {
@@ -1829,7 +1829,7 @@
         "time": "08:39"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "08:41"
       },
       {
@@ -1901,7 +1901,7 @@
         "time": "09:36"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "09:38"
       },
       {
@@ -1921,15 +1921,15 @@
         "time": "09:46"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "09:47"
       },
       {
-        "platform": "kolejowa:south",
+        "platform": "kolejowa:north",
         "time": "09:50"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "09:53"
       },
       {
@@ -2001,7 +2001,7 @@
         "time": "12:00"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "12:02"
       },
       {
@@ -2021,15 +2021,15 @@
         "time": "12:10"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "12:11"
       },
       {
-        "platform": "kolejowa:south",
+        "platform": "kolejowa:north",
         "time": "12:14"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "12:17"
       },
       {
@@ -2101,7 +2101,7 @@
         "time": "13:27"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "13:29"
       },
       {
@@ -2173,7 +2173,7 @@
         "time": "14:17"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "14:19"
       },
       {
@@ -2245,7 +2245,7 @@
         "time": "15:18"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "15:20"
       },
       {
@@ -2317,7 +2317,7 @@
         "time": "16:11"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "16:13"
       },
       {
@@ -2337,15 +2337,15 @@
         "time": "16:21"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "16:22"
       },
       {
-        "platform": "kolejowa:south",
+        "platform": "kolejowa:north",
         "time": "16:25"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "16:28"
       },
       {
@@ -2417,7 +2417,7 @@
         "time": "17:44"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "17:46"
       },
       {
@@ -2489,7 +2489,7 @@
         "time": "18:41"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "18:43"
       },
       {
@@ -2509,15 +2509,15 @@
         "time": "18:51"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "18:52"
       },
       {
-        "platform": "kolejowa:south",
+        "platform": "kolejowa:north",
         "time": "18:55"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "18:58"
       },
       {
@@ -2589,7 +2589,7 @@
         "time": "08:23"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "08:25"
       },
       {
@@ -2609,15 +2609,15 @@
         "time": "08:32"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "08:33"
       },
       {
-        "platform": "kolejowa:south",
+        "platform": "kolejowa:north",
         "time": "08:36"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "08:39"
       },
       {
@@ -2689,7 +2689,7 @@
         "time": "10:25"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "10:27"
       },
       {
@@ -2761,7 +2761,7 @@
         "time": "11:09"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "11:11"
       },
       {
@@ -2781,15 +2781,15 @@
         "time": "11:18"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "11:19"
       },
       {
-        "platform": "kolejowa:south",
+        "platform": "kolejowa:north",
         "time": "11:22"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "11:25"
       },
       {
@@ -2813,7 +2813,7 @@
         "time": "11:34"
       },
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "11:38"
       },
       {
@@ -2877,7 +2877,7 @@
         "time": "13:09"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "13:11"
       },
       {
@@ -2949,7 +2949,7 @@
         "time": "14:11"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "14:13"
       },
       {
@@ -2969,15 +2969,15 @@
         "time": "14:20"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "14:21"
       },
       {
-        "platform": "kolejowa:south",
+        "platform": "kolejowa:north",
         "time": "14:24"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "14:27"
       },
       {
@@ -3049,7 +3049,7 @@
         "time": "16:07"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "16:09"
       },
       {
@@ -3121,7 +3121,7 @@
         "time": "16:42"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "16:44"
       },
       {
@@ -3141,15 +3141,15 @@
         "time": "16:51"
       },
       {
-        "platform": "sadowa-ogrodowa:south",
+        "platform": "sadowa-ogrodowa:common",
         "time": "16:52"
       },
       {
-        "platform": "kolejowa:south",
+        "platform": "kolejowa:north",
         "time": "16:55"
       },
       {
-        "platform": "mickiewicza:south",
+        "platform": "mickiewicza:north",
         "time": "16:58"
       },
       {
@@ -3193,7 +3193,7 @@
     "parent_direction": "line2:south",
     "stages": [
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "06:40"
       },
       {
@@ -3285,7 +3285,7 @@
     "parent_direction": "line2:south",
     "stages": [
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "07:47"
       },
       {
@@ -3377,7 +3377,7 @@
     "parent_direction": "line2:south",
     "stages": [
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "12:39"
       },
       {
@@ -3469,7 +3469,7 @@
     "parent_direction": "line2:south",
     "stages": [
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "14:18"
       },
       {
@@ -3561,7 +3561,7 @@
     "parent_direction": "line2:south",
     "stages": [
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "15:29"
       },
       {
@@ -3713,7 +3713,7 @@
         "time": "07:43"
       },
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "07:47"
       }
     ],
@@ -3805,7 +3805,7 @@
         "time": "08:50"
       },
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "08:54"
       }
     ],
@@ -3897,7 +3897,7 @@
         "time": "13:51"
       },
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "13:55"
       }
     ],
@@ -3989,7 +3989,7 @@
         "time": "15:20"
       },
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "15:24"
       }
     ],
@@ -4081,7 +4081,7 @@
         "time": "16:46"
       },
       {
-        "platform": "mszczonowska:south",
+        "platform": "mszczonowska:common",
         "time": "16:50"
       }
     ],

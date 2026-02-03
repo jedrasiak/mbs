@@ -66,7 +66,7 @@
     "lng": 20.238845365813972
   },
   {
-    "id": "sadowa-ogrodowa:south",
+    "id": "sadowa-ogrodowa:common",
     "parent_stop": "sadowa-ogrodowa",
     "lat": 51.76865172505815,
     "lng": 20.244035795327086
@@ -218,7 +218,7 @@
     "description": "Kierunek: Kazimierza Wielkiego / Mszczonowska"
   },
   {
-    "id": "mszczonowska:south",
+    "id": "mszczonowska:common",
     "parent_stop": "mszczonowska",
     "lat": 51.77891957954707,
     "lng": 20.27118669924335
@@ -308,14 +308,14 @@
     "description": "Przystanek początkowy"
   },
   {
-    "id": "mickiewicza:south",
+    "id": "mickiewicza:north",
     "parent_stop": "mickiewicza",
     "lat": 51.7643683346067,
     "lng": 20.253151704850303,
     "description": "Kierunek: Kazimierza Wielkiego"
   },
   {
-    "id": "kolejowa:south",
+    "id": "kolejowa:north",
     "parent_stop": "kolejowa",
     "lat": 51.76671589930158,
     "lng": 20.24645253881083,

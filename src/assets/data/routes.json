@@ -39,14 +39,7 @@
         51.76652671379366,
         20.258077846439328
       ],
-      [
-        51.76630167693862,
-        20.256840242182243
-      ],
-      [
-        51.76604505459447,
-        20.25423744560033
-      ]
+      [51.76612216492493, 20.254103180665382]
     ]
   },
   {
@@ -69,6 +62,7 @@
     "parent_platform_start": "plac-pilsudskiego:south",
     "parent_platform_end": "mila:south",
     "coordinates": [
+        [51.76587483220855, 20.25425874877113],
       [
         51.76451690723377,
         20.25472434711193
@@ -92,10 +86,7 @@
         51.76602573883939,
         20.253518308844903
       ],
-      [
-        51.76613197552511,
-        20.25308379097038
-      ],
+      [51.76617232905694, 20.253152619933353],
       [
         51.76716113045735,
         20.25256344241549
@@ -141,9 +132,9 @@
     ]
   },
   {
-    "id": "ogrodowa:south--sadowa-ogrodowa:south",
+    "id": "ogrodowa:south--sadowa-ogrodowa:common",
     "parent_platform_start": "ogrodowa:south",
-    "parent_platform_end": "sadowa-ogrodowa:south",
+    "parent_platform_end": "sadowa-ogrodowa:common",
     "coordinates": [
       [
         51.76830977247734,
@@ -152,22 +143,17 @@
     ]
   },
   {
-    "id": "sadowa-ogrodowa:south--plac-pilsudskiego:south",
-    "parent_platform_start": "sadowa-ogrodowa:south",
+    "id": "sadowa-ogrodowa:common--plac-pilsudskiego:south",
+    "parent_platform_start": "sadowa-ogrodowa:common",
     "parent_platform_end": "plac-pilsudskiego:south",
     "coordinates": [
-      [
-        51.76913559915231,
-        20.244062751634925
-      ],
+      [51.7690874883794, 20.244073374832986],
       [
         51.769243577686275,
         20.247195948387866
       ],
-      [
-        51.76705914073312,
-        20.252539849450436
-      ],
+      [51.768371366759105, 20.24912398012345],
+      [51.76708435130856, 20.252434890580986],
       [
         51.766045022204466,
         20.25308607259062
@@ -360,53 +346,36 @@
     ]
   },
   {
-    "id": "kazimierza-wielkiego:south--mszczonowska:south",
+    "id": "kazimierza-wielkiego:south--mszczonowska:common",
     "parent_platform_start": "kazimierza-wielkiego:south",
-    "parent_platform_end": "mszczonowska:south",
+    "parent_platform_end": "mszczonowska:common",
     "coordinates": [
-      [
-        51.77181703107977,
-        20.260971754473566
-      ],
-      [
-        51.77069942686604,
-        20.26120726760655
-      ],
-      [
-        51.770534657526866,
-        20.26138184113664
-      ],
-      [
-        51.770395162895696,
-        20.261798198047284
-      ],
-      [
-        51.77099382661557,
-        20.262603294542174
-      ],
-      [
-        51.771329098390154,
-        20.262560379199233
-      ],
-      [
-        51.77861898742296,
-        20.271600013632973
-      ]
+      [51.77181703107977, 20.260971754473566],
+      [51.77069942686604, 20.26120726760655],
+      [51.770534657526866, 20.26138184113664],
+      [51.770395162895696, 20.261798198047284],
+      [51.77113570402104, 20.262224969673536]
     ]
   },
   {
-    "id": "mszczonowska:south--aleksandrowka-1:south",
-    "parent_platform_start": "mszczonowska:south",
+    "id": "mszczonowska:common--kazimierza-wielkiego:north",
+    "parent_platform_start": "mszczonowska:common",
+    "parent_platform_end": "kazimierza-wielkiego:north",
+    "coordinates": [
+        [51.77113570402104, 20.262224969673536],
+        [51.770395162895696, 20.261798198047284],
+        [51.770534657526866, 20.26138184113664],
+        [51.77069942686604, 20.26120726760655],
+        [51.77181703107977, 20.260971754473566]
+    ]
+  },
+  {
+    "id": "mszczonowska:common--aleksandrowka-1:south",
+    "parent_platform_start": "mszczonowska:common",
     "parent_platform_end": "aleksandrowka-1:south",
     "coordinates": [
-      [
-        51.77861898742296,
-        20.271600013632973
-      ],
-      [
-        51.771329098390154,
-        20.262560379199233
-      ],
+        [51.77858519038959, 20.27166471397143],
+        [51.77105589717085, 20.26278636563394],
       [
         51.77247857245625,
         20.269820490357617
@@ -429,6 +398,20 @@
       ]
     ]
   },
+    {
+    "id": "aleksandrowka-1:north--mszczonowska:common",
+    "parent_platform_start": "aleksandrowka-1:north",
+    "parent_platform_end": "mszczonowska:common",
+    "coordinates": [
+        [51.77393978667754, 20.2853083422503],
+        [51.77479240769037, 20.285550759598344],
+        [51.77233646278996, 20.270853953840465],
+        [51.77203645201608, 20.270471189594744],
+        [51.77247857245625, 20.269820490357617],
+        [51.77105589717085, 20.26278636563394],
+        [51.77858519038959, 20.27166471397143]
+    ]
+  },
   {
     "id": "aleksandrowka-1:south--aleksandrowka-2:south",
     "parent_platform_start": "aleksandrowka-1:south",
@@ -439,6 +422,17 @@
     "id": "aleksandrowka-2:south--zamkowa-wola:south",
     "parent_platform_start": "aleksandrowka-2:south",
     "parent_platform_end": "zamkowa-wola:south",
+    "coordinates": [
+      [
+        51.76589430273536,
+        20.27101793897929
+      ]
+    ]
+  },
+  {
+    "id": "zamkowa-wola:north--aleksandrowka-2:north",
+    "parent_platform_start": "zamkowa-wola:north",
+    "parent_platform_end": "aleksandrowka-2:north",
     "coordinates": [
       [
         51.76589430273536,
@@ -459,6 +453,62 @@
         51.76863873882397,
         20.260893279524968
       ]
+    ]
+  },
+    {
+    "id": "jerozolimska:north--zamkowa-wola:north",
+    "parent_platform_start": "jerozolimska:north",
+    "parent_platform_end": "zamkowa-wola:north",
+    "coordinates": [
+        [51.76863873882397, 20.260893279524968],
+        [51.768994041265486, 20.26213088388078]
+    ]
+  },
+  {
+    "id": "kosciuszki-szkola:north--mickiewicza:north",
+    "parent_platform_start": "kosciuszki-szkola:north",
+    "parent_platform_end": "mickiewicza:north",
+    "coordinates": [
+        [51.76312100954913, 20.24876392832769],
+        [51.76403700656277, 20.25097758132545]
+    ]
+  },
+  {
+    "id": "mickiewicza:north--mila:south",
+    "parent_platform_start": "mickiewicza:north",
+    "parent_platform_end": "mila:south",
+    "coordinates": [
+        [51.76465687332345, 20.256521283467436]
+    ]
+  },
+  {
+    "id": "mila:south--jerozolimska:north",
+    "parent_platform_start": "mila:south",
+    "parent_platform_end": "jerozolimska:north",
+    "coordinates": [
+        [51.76619663288444, 20.256317142775195],
+        [51.766804626043765, 20.259085803960286]
+    ]
+  },
+  {
+    "id": "sadowa-ogrodowa:common--kolejowa:north",
+    "parent_platform_start": "sadowa-ogrodowa:common",
+    "parent_platform_end": "kolejowa:north",
+    "coordinates": [
+        [51.769106595113044, 20.2441141451994],
+        [51.769264506038695, 20.247086947007908],
+        [51.768869727741006, 20.248362827685316],
+        [51.76832492801998, 20.249064562057892]
+    ]
+  },
+  {
+    "id": "kolejowa:north--mickewicza:north",
+    "parent_platform_start": "kolejowa:north",
+    "parent_platform_end": "mickiewicza:north",
+    "coordinates": [
+        [51.76549818039424, 20.24462449710119],
+        [51.763176640734336, 20.24865628006988],
+        [51.7641206390608, 20.25093082882231]
     ]
   }
 ]
